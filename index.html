@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Javi Pérez — Production AI Systems, Shipped in Days</title>
+  <meta name="description" content="Builder of production AI systems and Claude-powered websites for non-technical founders. Daily Claude Code operator across 9 production sites." />
+  <link rel="canonical" href="https://javiperezbuilds.com/" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <meta name="theme-color" content="#0A0A0B" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="author" content="Javi Pérez" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://javiperezbuilds.com/" />
+  <meta property="og:title" content="Javi Pérez — Production AI Systems, Shipped in Days" />
+  <meta property="og:description" content="Builder of production AI systems and Claude-powered websites for non-technical founders. Daily Claude Code operator across 9 production sites." />
+  <meta property="og:image" content="https://javiperezbuilds.com/assets/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Portrait of Javi Pérez with tagline: Production AI systems, shipped in days." />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="Javi Pérez" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Javi Pérez — Production AI Systems, Shipped in Days" />
+  <meta name="twitter:description" content="Builder of production AI systems and Claude-powered websites for non-technical founders." />
+  <meta name="twitter:image" content="https://javiperezbuilds.com/assets/og-image.jpg" />
+  <meta name="twitter:image:alt" content="Portrait of Javi Pérez with tagline: Production AI systems, shipped in days." />
+  <meta name="twitter:creator" content="@javiperezbuilds" />
+
+  <!-- Preconnect Fonts + CDNs -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://unpkg.com" />
+  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="preload" as="image" href="assets/javi-portrait.jpg" fetchpriority="high" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'bg-base': '#0A0A0B',
+            'bg-elevated': '#141413',
+            'bg-card': '#1A1A1B',
+            'text-primary': '#FAF9F5',
+            'text-secondary': '#B4B9B5',
+            'text-dim': '#8A8E8A',
+            'accent': '#D97757',
+            'border-subtle': '#2A2A2B',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['Geist Mono', 'ui-monospace', 'monospace'],
+            serif: ['Instrument Serif', 'Georgia', 'serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <link rel="stylesheet" href="styles/custom.css" />
+
+  <!-- Schema.org Person -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Javi Pérez",
+    "url": "https://javiperezbuilds.com/",
+    "image": "https://javiperezbuilds.com/assets/javi-portrait.jpg",
+    "jobTitle": "Builder of production AI systems",
+    "email": "javiperezguides@gmail.com",
+    "address": { "@type": "PostalAddress", "addressLocality": "Almería", "addressRegion": "Almería", "addressCountry": "ES" },
+    "knowsAbout": ["Claude Code", "AI Automation", "Cloudflare Pages", "n8n", "Multi-agent Systems"],
+    "sameAs": [
+      "https://github.com/JaviPerez07",
+      "https://www.linkedin.com/in/javi-perez-guides",
+      "https://twitter.com/javiperezbuilds"
+    ]
+  }
+  </script>
+
+  <!-- Schema.org ProfessionalService -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Javi Pérez — AI Systems & Automation",
+    "url": "https://javiperezbuilds.com/",
+    "image": "https://javiperezbuilds.com/assets/javi-portrait.jpg",
+    "areaServed": "Worldwide",
+    "priceRange": "$$",
+    "address": { "@type": "PostalAddress", "addressLocality": "Almería", "addressRegion": "Almería", "addressCountry": "ES" },
+    "founder": { "@type": "Person", "name": "Javi Pérez" },
+    "makesOffer": [
+      { "@type": "Offer", "name": "AI Site Deploy", "priceCurrency": "USD", "price": "200-750", "description": "From Claude/Lovable build to live site with analytics in 48–72h." },
+      { "@type": "Offer", "name": "AI Workflow Automation", "priceCurrency": "USD", "price": "600-2000", "description": "Claude API + n8n workflows for existing tools, 5–10 days." },
+      { "@type": "Offer", "name": "Custom AI Consulting", "priceCurrency": "USD", "price": "75", "description": "Strategy and implementation, hourly." }
+    ]
+  }
+  </script>
+</head>
+
+<body class="bg-bg-base text-text-primary">
+
+  <!-- Scroll progress bar -->
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <!-- ===== NAV ===== -->
+  <header class="nav-blur fixed top-0 inset-x-0 z-50">
+    <nav class="max-w-[1200px] mx-auto px-6 sm:px-8 h-[68px] flex items-center justify-between">
+      <a href="#top" class="wordmark group" aria-label="Javi Pérez — home">Javi Pérez</a>
+
+      <ul class="hidden md:flex items-center gap-9 text-[14px] font-medium">
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#work" class="nav-link">Work</a></li>
+        <li><a href="#process" class="nav-link">Process</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+      </ul>
+
+      <div class="flex items-center gap-3">
+        <a href="#contact" class="nav-link hidden md:inline-flex text-[14px] font-medium">Get in touch</a>
+
+        <button class="hamburger md:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5 -mr-2" aria-label="Open menu">
+          <span class="block w-5 h-[1.5px] bg-text-primary"></span>
+          <span class="block w-5 h-[1.5px] bg-text-primary"></span>
+          <span class="block w-5 h-[1.5px] bg-text-primary"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu fixed inset-0 z-40 bg-bg-base/95 backdrop-blur-xl md:hidden flex flex-col pt-24 px-8">
+    <ul class="flex flex-col gap-7 text-2xl font-medium tracking-tight">
+      <li><a href="#services" class="text-text-primary">Services</a></li>
+      <li><a href="#work" class="text-text-primary">Work</a></li>
+      <li><a href="#process" class="text-text-primary">Process</a></li>
+      <li><a href="#about" class="text-text-primary">About</a></li>
+    </ul>
+    <a href="#contact" class="btn-primary mt-10 self-start">
+      Start a project
+      <svg class="arrow w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+    </a>
+  </div>
+
+  <main id="top">
+
+  <!-- ===== HERO ===== -->
+  <section class="relative min-h-screen flex items-center pt-[68px] overflow-hidden">
+    <div class="grid-bg" aria-hidden="true"></div>
+    <div class="hero-glow" aria-hidden="true"></div>
+
+    <div class="relative max-w-[1200px] w-full mx-auto px-6 sm:px-8 py-16 md:py-20">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-10 items-center">
+
+        <!-- Left -->
+        <div class="md:col-span-7 order-2 md:order-1">
+          <div class="fade-up d-1">
+            <span class="eyebrow"><span class="dot"></span>Available for hire · May 2026</span>
+          </div>
+
+          <h1 class="hero-h1 h1-reveal mt-7" aria-label="Production AI systems, shipped in days.">
+            <span class="h1-word"><span class="h1-word__inner">Production</span><span class="h1-word__sweep" aria-hidden="true"></span></span>
+            <span class="h1-word"><span class="h1-word__inner">AI</span><span class="h1-word__sweep" aria-hidden="true"></span></span>
+            <span class="h1-word"><span class="h1-word__inner">systems,</span><span class="h1-word__sweep" aria-hidden="true"></span></span>
+            <br />
+            <span class="h1-word"><span class="h1-word__inner accent-italic">shipped</span><span class="h1-word__sweep" aria-hidden="true"></span></span>
+            <span class="h1-word"><span class="h1-word__inner">in</span><span class="h1-word__sweep" aria-hidden="true"></span></span>
+            <span class="h1-word"><span class="h1-word__inner">days.</span><span class="h1-word__sweep" aria-hidden="true"></span></span>
+          </h1>
+
+          <p class="hero-sub mt-7 fade-up d-3">
+            I build websites and AI automation for non-technical founders. Daily Claude Code operator across nine production sites in U.S. financial verticals.
+          </p>
+
+          <div class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 mt-9 fade-up d-4">
+            <a href="#contact" class="btn-primary">
+              Start a project
+              <svg class="arrow w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+            <a href="mailto:javiperezguides@gmail.com?subject=Project%20inquiry" class="btn-secondary">
+              javiperezguides@gmail.com
+            </a>
+          </div>
+
+          <div class="mt-12 fade-up d-5">
+            <p class="trust-strip">
+              Featured in&nbsp;
+              <span class="text-text-secondary">The Epoch Times</span>
+              <span class="mx-2 text-text-dim/40">·</span>
+              <span class="text-text-secondary">CMSWire</span>
+              <span class="mx-2 text-text-dim/40">·</span>
+              <span class="text-text-secondary">ValiantCEO</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- Right — Portrait -->
+        <div class="md:col-span-5 order-1 md:order-2 flex flex-col items-center md:items-end gap-5 fade-in">
+          <div class="portrait-tilt" id="portrait-tilt">
+            <div class="portrait-wrap">
+              <img src="assets/javi-portrait.jpg" alt="Portrait of Javi Pérez" width="420" height="420" loading="eager" decoding="async" fetchpriority="high" />
+            </div>
+          </div>
+          <div class="portrait-caption">
+            <span class="pin"></span>
+            Almería, Spain · Working async
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Scroll cue -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 fade-in hidden md:flex flex-col items-center gap-2 text-text-dim">
+      <span class="font-mono text-[11px] tracking-[0.2em] uppercase">Scroll</span>
+      <svg class="w-3 h-5 animate-bounce" viewBox="0 0 12 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M6 2v16"/><path d="m2 14 4 4 4-4"/></svg>
+    </div>
+  </section>
+
+  <!-- ===== SOCIAL PROOF STRIP ===== -->
+  <section class="proof-strip" aria-label="Editorial coverage">
+    <div class="max-w-[1200px] mx-auto px-6 sm:px-8 proof-strip-inner reveal">
+      <span class="proof-caption">Editorial coverage and citations</span>
+      <div class="proof-list">
+        <span class="proof-list-item">The Epoch Times</span>
+        <span class="proof-sep" aria-hidden="true"></span>
+        <span class="proof-list-item">CMSWire</span>
+        <span class="proof-sep" aria-hidden="true"></span>
+        <span class="proof-list-item">ValiantCEO Magazine</span>
+        <span class="proof-sep" aria-hidden="true"></span>
+        <span class="proof-list-item">SumatoSoft</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES ===== -->
+  <section id="services" class="section relative">
+    <div class="max-w-[1200px] mx-auto px-6 sm:px-8">
+      <div class="reveal-stagger">
+        <span class="eyebrow"><span class="dot"></span>What I build</span>
+        <h2 class="section-h2 mt-6 max-w-3xl">
+          Three ways I work with <span class="accent-italic">founders.</span>
+        </h2>
+        <p class="section-sub mt-6">
+          Productized engagements with clear scope, timeline, and price. No project bloat. No discovery calls disguised as scoping.
+        </p>
+      </div>
+
+      <div class="services-grid">
+
+        <!-- Card 1 -->
+        <article class="service-card reveal">
+          <span class="trace trace--top" aria-hidden="true"></span>
+          <span class="trace trace--right" aria-hidden="true"></span>
+          <span class="trace trace--bottom" aria-hidden="true"></span>
+          <span class="trace trace--left" aria-hidden="true"></span>
+          <span class="service-card-badge">Most popular</span>
+          <h3 class="service-card-title">AI Site Deploy</h3>
+          <p class="service-card-tag">From Claude/Lovable build → live site with analytics.</p>
+
+          <div class="service-meta-row">
+            <div class="service-meta-block">
+              <span class="service-meta-label">Price</span>
+              <span class="service-meta-value price">$200 — $750</span>
+            </div>
+            <div class="service-meta-block">
+              <span class="service-meta-label">Timeline</span>
+              <span class="service-meta-value">48–72h turnaround</span>
+            </div>
+          </div>
+
+          <ul class="service-bullets">
+            <li>Vercel or Cloudflare Pages deployment</li>
+            <li>Custom domain + SSL + DNS configuration</li>
+            <li>GA4 + Search Console + Bing Webmaster setup</li>
+            <li>Sitemap submission + verification</li>
+            <li>Production handover documentation</li>
+          </ul>
+
+          <a href="#contact" class="service-card-cta">
+            Start a project
+            <svg class="arrow w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="service-card reveal">
+          <span class="trace trace--top" aria-hidden="true"></span>
+          <span class="trace trace--right" aria-hidden="true"></span>
+          <span class="trace trace--bottom" aria-hidden="true"></span>
+          <span class="trace trace--left" aria-hidden="true"></span>
+          <h3 class="service-card-title">AI Workflow Automation</h3>
+          <p class="service-card-tag">Claude API + n8n workflows for your existing tools.</p>
+
+          <div class="service-meta-row">
+            <div class="service-meta-block">
+              <span class="service-meta-label">Price</span>
+              <span class="service-meta-value price">$600 — $2,000</span>
+            </div>
+            <div class="service-meta-block">
+              <span class="service-meta-label">Timeline</span>
+              <span class="service-meta-value">5–10 days build</span>
+            </div>
+          </div>
+
+          <ul class="service-bullets">
+            <li>Lead qualification + intake automation</li>
+            <li>Content pipeline (research → draft → review)</li>
+            <li>Customer support triage with Claude API</li>
+            <li>Document drafting + summarization workflows</li>
+            <li>n8n flows + integrations (Slack, Notion, CRMs)</li>
+            <li>Monthly maintenance retainer included</li>
+          </ul>
+
+          <a href="#contact" class="service-card-cta">
+            Start a project
+            <svg class="arrow w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="service-card reveal">
+          <span class="trace trace--top" aria-hidden="true"></span>
+          <span class="trace trace--right" aria-hidden="true"></span>
+          <span class="trace trace--bottom" aria-hidden="true"></span>
+          <span class="trace trace--left" aria-hidden="true"></span>
+          <h3 class="service-card-title">Custom AI Consulting</h3>
+          <p class="service-card-tag">Strategy and implementation, hourly.</p>
+
+          <div class="service-meta-row">
+            <div class="service-meta-block">
+              <span class="service-meta-label">Price</span>
+              <span class="service-meta-value price">$75 / hour</span>
+            </div>
+            <div class="service-meta-block">
+              <span class="service-meta-label">Timeline</span>
+              <span class="service-meta-value">Flexible blocks</span>
+            </div>
+          </div>
+
+          <ul class="service-bullets">
+            <li>Claude Code workflow architecture</li>
+            <li>Multi-agent system design</li>
+            <li>Production prompt engineering</li>
+            <li>AI tooling stack audits</li>
+            <li>Async-first, no Zoom required</li>
+          </ul>
+
+          <a href="#contact" class="service-card-cta">
+            Start a project
+            <svg class="arrow w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WORK / PROOF ===== -->
+  <section id="work" class="section relative">
+    <div class="max-w-[1200px] mx-auto px-6 sm:px-8">
+      <div class="reveal-stagger">
+        <span class="eyebrow"><span class="dot"></span>Recent work</span>
+        <h2 class="section-h2 mt-6 max-w-3xl">
+          Production builds, not <span class="accent-italic">portfolio fluff.</span>
+        </h2>
+      </div>
+
+      <div class="work-grid">
+
+        <article class="work-card reveal">
+          <div class="work-tags">
+            <span class="work-tag">Claude Code</span>
+            <span class="work-tag">Opus 4.7</span>
+            <span class="work-tag">Sonnet 4.6</span>
+          </div>
+          <div class="work-metric">95%</div>
+          <h3 class="work-title">Multi-agent editorial review system</h3>
+          <p class="work-context">Reduction in full-site audit time. From ~16 hours of manual review to ~45 minutes of guided multi-agent execution across nine sites.</p>
+        </article>
+
+        <article class="work-card reveal">
+          <div class="work-tags">
+            <span class="work-tag">Cloudflare Workers</span>
+            <span class="work-tag">Pages Functions</span>
+            <span class="work-tag">JavaScript</span>
+          </div>
+          <div class="work-metric">53 lines</div>
+          <h3 class="work-title">Cloudflare Pages middleware fix</h3>
+          <p class="work-context">Resolved an AdSense crawling issue that blocked monetization on a credit education site. Diagnosed via multi-agent debugging workflow.</p>
+        </article>
+
+        <article class="work-card reveal">
+          <div class="work-tags">
+            <span class="work-tag">HTML/CSS/JS</span>
+            <span class="work-tag">Cloudflare Pages</span>
+            <span class="work-tag">Schema.org</span>
+            <span class="work-tag">Search Console</span>
+          </div>
+          <div class="work-metric">9 / 200+</div>
+          <h3 class="work-title">Nine-site production portfolio</h3>
+          <p class="work-context">Nine production sites built in U.S. consumer-finance verticals. 200+ E-E-A-T compliance issues resolved via systematic AI-assisted audit.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROCESS ===== -->
+  <section id="process" class="section relative">
+    <div class="max-w-[1200px] mx-auto px-6 sm:px-8">
+      <div class="reveal-stagger">
+        <span class="eyebrow"><span class="dot"></span>How it works</span>
+        <h2 class="section-h2 mt-6 max-w-3xl">
+          Async-first. <span class="accent-italic">Shipped,</span> not staged.
+        </h2>
+        <p class="section-sub mt-6">
+          A predictable flow from inquiry to handover. No status meetings. No discovery theater.
+        </p>
+      </div>
+
+      <div class="process-grid">
+
+        <div class="process-step reveal">
+          <span class="process-num">01</span>
+          <h3 class="process-step-title">Discovery <span class="meta">— email</span></h3>
+          <p class="process-step-body">You describe the project in writing. I respond within 24 hours with scope, timeline, and a fixed price. No discovery calls disguised as scoping.</p>
+        </div>
+
+        <div class="process-step reveal">
+          <span class="process-num">02</span>
+          <h3 class="process-step-title">Sign + start <span class="meta">— same day</span></h3>
+          <p class="process-step-body">Contract setup same day. Multiple payment options including Stripe and invoicing. 50% upfront for projects over $500. I start within hours, not days.</p>
+        </div>
+
+        <div class="process-step reveal">
+          <span class="process-num">03</span>
+          <h3 class="process-step-title">Build <span class="meta">— async updates</span></h3>
+          <p class="process-step-body">Daily written progress logs. Loom screen-recordings for technical handovers — async, watch at your speed. You review, I iterate. No status meetings.</p>
+        </div>
+
+        <div class="process-step reveal">
+          <span class="process-num">04</span>
+          <h3 class="process-step-title">Ship + support <span class="meta">— handover</span></h3>
+          <p class="process-step-body">Production deploy + documentation + handover. 7–30 days post-launch support included depending on tier.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about" class="section relative">
+    <div class="max-w-[1200px] mx-auto px-6 sm:px-8">
+      <div class="about-grid">
+
+        <div class="about-portrait reveal">
+          <img src="assets/javi-portrait.jpg" alt="Portrait of Javi Pérez at his workspace" width="460" height="575" loading="lazy" decoding="async" />
+        </div>
+
+        <div class="about-body reveal-stagger">
+          <span class="eyebrow"><span class="dot"></span>About</span>
+          <h2 class="about-h2">Hi, I'm <span class="accent-italic">Javi.</span></h2>
+
+          <p>I'm 20 years old, based in Almería, Spain. I build production AI systems and websites with <strong>Claude Code</strong> as my daily driver.</p>
+
+          <p>I don't have a CS degree. I don't come from a fintech job. What I have is 15+ months of intensive AI tool deployment, an operator's mindset, and the discipline to ship production-grade work fast.</p>
+
+          <p>My portfolio runs across <strong>nine sites</strong> in U.S. consumer-finance verticals: insurance, mortgage refinance, tax relief, legal costs, Medicare, VPN pricing, credit, travel budgeting, and personal finance. Every workflow on this site has been pressure-tested in live production environments.</p>
+
+          <p>Available for hire. I work async, in English or Spanish, and I deliver in days, not months.</p>
+
+          <div class="about-socials">
+            <a href="https://github.com/JaviPerez07" target="_blank" rel="noopener" class="about-social" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12.04c0 5.1 3.29 9.42 7.86 10.95.57.11.78-.25.78-.55v-1.93c-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.21-1.49 3.18-1.18 3.18-1.18.62 1.58.23 2.75.11 3.04.73.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.4-5.26 5.69.41.36.78 1.07.78 2.16v3.2c0 .31.21.67.79.55 4.56-1.53 7.85-5.85 7.85-10.95C23.5 5.65 18.35.5 12 .5Z"/></svg>
+              GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/javi-perez-guides" target="_blank" rel="noopener" class="about-social" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5ZM.25 8h4.5v15H.25V8Zm7.5 0h4.32v2.05h.06c.6-1.13 2.06-2.33 4.24-2.33 4.54 0 5.38 2.99 5.38 6.87V23h-4.5v-6.55c0-1.56-.03-3.57-2.18-3.57-2.18 0-2.51 1.7-2.51 3.46V23H7.75V8Z"/></svg>
+              LinkedIn
+            </a>
+            <a href="https://twitter.com/javiperezbuilds" target="_blank" rel="noopener" class="about-social" aria-label="X / Twitter">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2H21.5l-7.59 8.67L23 22h-7.04l-5.51-6.93L4.13 22H.87l8.12-9.28L.5 2h7.22l4.98 6.34L18.24 2Zm-2.47 18h1.95L7.32 4h-2.1l10.55 16Z"/></svg>
+              Twitter
+            </a>
+            <a href="mailto:javiperezguides@gmail.com" class="about-social" aria-label="Email">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+              Email
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" class="contact-section section">
+    <div class="max-w-[1200px] mx-auto px-6 sm:px-8 contact-inner">
+      <div class="reveal-stagger">
+        <span class="eyebrow"><span class="dot"></span>Get in touch</span>
+        <h2 class="contact-h2 mt-6">Ready to <span class="accent-italic">ship?</span></h2>
+        <p class="contact-sub">Tell me what you're building. I'll respond within 24 hours.</p>
+      </div>
+
+      <form class="contact-form reveal" id="contact-form" novalidate>
+        <div>
+          <label for="cf-name" class="contact-label">Name</label>
+          <input type="text" id="cf-name" name="name" class="contact-input" placeholder="Your name" autocomplete="name" required />
+        </div>
+        <div>
+          <label for="cf-email" class="contact-label">Email</label>
+          <input type="email" id="cf-email" name="email" class="contact-input" placeholder="you@company.com" autocomplete="email" required />
+        </div>
+        <div class="contact-field-full">
+          <label for="cf-message" class="contact-label">What you're working on</label>
+          <textarea id="cf-message" name="message" class="contact-textarea" placeholder="A short brief: what you're building, timeline, and what kind of help you need." required></textarea>
+        </div>
+        <div class="contact-submit-row">
+          <button type="submit" class="btn-primary">
+            Send message
+            <svg class="arrow w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </button>
+        </div>
+      </form>
+
+      <div class="contact-direct reveal">
+        <span class="contact-direct-label">Or DM directly</span>
+        <div class="contact-direct-list">
+          <a href="https://www.linkedin.com/in/javi-perez-guides" target="_blank" rel="noopener" class="contact-direct-item">linkedin.com/in/javi-perez-guides</a>
+          <a href="https://twitter.com/javiperezbuilds" target="_blank" rel="noopener" class="contact-direct-item">twitter.com/javiperezbuilds</a>
+          <a href="mailto:javiperezguides@gmail.com" class="contact-direct-item">javiperezguides@gmail.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="max-w-[1200px] mx-auto px-6 sm:px-8 footer-inner">
+      <div class="footer-brand">
+        <a href="#top" class="wordmark wordmark--footer" aria-label="Javi Pérez — home">Javi Pérez</a>
+        <span class="footer-tagline">Production AI systems · shipped in days</span>
+      </div>
+      <div class="footer-meta">
+        <span>© 2026 Javi Pérez · Almería, Spain</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js" defer></script>
+  <script src="scripts/main.js" defer></script>
+</body>
+</html>
