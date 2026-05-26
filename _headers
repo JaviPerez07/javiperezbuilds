@@ -4,12 +4,19 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: geolocation=(), microphone=(), camera=()
   Strict-Transport-Security: max-age=31536000; includeSubDomains
+  Cache-Control: public, max-age=0, must-revalidate
 
+# Assets (binaries) — long cache, but revalidate (not immutable).
+# Filename changes will be naturally cache-busted.
 /assets/*
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=86400, must-revalidate
 
+# CSS/JS — short cache + must-revalidate.
+# We do NOT use 'immutable' because we don't hash filenames; that
+# combination strands users on stale code after deploys.
+# Cache-bust is also done in HTML via ?v=N query strings.
 /styles/*
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=300, must-revalidate
 
 /scripts/*
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=300, must-revalidate
