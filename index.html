@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Javi Pérez — Production AI Systems, Shipped in Days</title>
-  <meta name="description" content="Builder of production AI systems and Claude-powered websites for non-technical founders. Daily Claude Code operator across 9 production sites." />
+  <title>Javi Pérez — Stop burning money on busywork. AI shipped in 48–72h.</title>
+  <meta name="description" content="Daily Claude Code operator. Production AI systems and websites for non-technical founders. Fixed scope, fixed price, async only. From $200, shipped in 48–72h." />
   <link rel="canonical" href="https://javiperezbuilds.com/" />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <meta name="theme-color" content="#0A0A0B" />
@@ -14,21 +14,21 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://javiperezbuilds.com/" />
-  <meta property="og:title" content="Javi Pérez — Production AI Systems, Shipped in Days" />
-  <meta property="og:description" content="Builder of production AI systems and Claude-powered websites for non-technical founders. Daily Claude Code operator across 9 production sites." />
+  <meta property="og:title" content="Javi Pérez — Stop burning money on busywork. AI shipped in 48–72h." />
+  <meta property="og:description" content="Daily Claude Code operator. Production AI systems and websites for non-technical founders. Fixed scope, fixed price, async only. From $200, shipped in 48–72h." />
   <meta property="og:image" content="https://javiperezbuilds.com/assets/og-image.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Portrait of Javi Pérez with tagline: Production AI systems, shipped in days." />
+  <meta property="og:image:alt" content="Portrait of Javi Pérez with tagline: You're burning money on busywork. AI shipped in 48–72h." />
   <meta property="og:locale" content="en_US" />
   <meta property="og:site_name" content="Javi Pérez" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Javi Pérez — Production AI Systems, Shipped in Days" />
-  <meta name="twitter:description" content="Builder of production AI systems and Claude-powered websites for non-technical founders." />
+  <meta name="twitter:title" content="Javi Pérez — Stop burning money on busywork. AI shipped in 48–72h." />
+  <meta name="twitter:description" content="Daily Claude Code operator. Production AI for non-technical founders. Fixed scope, async only, 48–72h." />
   <meta name="twitter:image" content="https://javiperezbuilds.com/assets/og-image.jpg" />
-  <meta name="twitter:image:alt" content="Portrait of Javi Pérez with tagline: Production AI systems, shipped in days." />
+  <meta name="twitter:image:alt" content="Portrait of Javi Pérez with tagline: You're burning money on busywork. AI shipped in 48–72h." />
   <meta name="twitter:creator" content="@javiperezbuilds" />
 
   <!-- Preconnect Fonts + CDNs -->
@@ -100,9 +100,10 @@
     "address": { "@type": "PostalAddress", "addressLocality": "Almería", "addressRegion": "Almería", "addressCountry": "ES" },
     "founder": { "@type": "Person", "name": "Javi Pérez" },
     "makesOffer": [
-      { "@type": "Offer", "name": "AI Site Deploy", "priceCurrency": "USD", "price": "200-750", "description": "From Claude/Lovable build to live site with analytics in 48–72h." },
-      { "@type": "Offer", "name": "AI Workflow Automation", "priceCurrency": "USD", "price": "600-2000", "description": "Claude API + n8n workflows for existing tools, 5–10 days." },
-      { "@type": "Offer", "name": "Custom AI Consulting", "priceCurrency": "USD", "price": "75", "description": "Strategy and implementation, hourly." }
+      { "@type": "Offer", "name": "AI Site Build for AdSense", "priceCurrency": "USD", "price": "1500-4500", "description": "Static site built with Claude Code, E-E-A-T compliant, AdSense-ready. 10–21 days." },
+      { "@type": "Offer", "name": "Claude Code Production Setup", "priceCurrency": "USD", "price": "450-1200", "description": "Zero-to-shipping Claude Code setup with multi-agent workflow architecture. 4–7 days." },
+      { "@type": "Offer", "name": "AI Workflow Automation", "priceCurrency": "USD", "price": "800-2500", "description": "Claude API + n8n workflows for existing stack. 5–10 days." },
+      { "@type": "Offer", "name": "AI Site Deploy", "priceCurrency": "USD", "price": "200-750", "description": "From Claude/Lovable build to live site with analytics in 48–72h." }
     ]
   }
   </script>
@@ -110,11 +111,21 @@
 
 <body class="bg-bg-base text-text-primary">
 
+  <!-- ===== URGENCY STRIP ===== -->
+  <div class="urgency-strip" id="urgency-strip" role="region" aria-label="Booking availability">
+    <span class="urgency-live" aria-hidden="true"></span>
+    <span><b id="urgency-slots">3 slots left</b> for <span id="urgency-month">this month</span> builds</span>
+    <span class="urgency-sep" aria-hidden="true">·</span>
+    <span>Closing in <b id="urgency-countdown">—</b></span>
+    <span class="urgency-sep" aria-hidden="true">·</span>
+    <span>Avg. response: <b>under 4h</b></span>
+  </div>
+
   <!-- Scroll progress bar -->
   <div class="scroll-progress" aria-hidden="true"></div>
 
   <!-- ===== NAV ===== -->
-  <header class="nav-blur fixed top-0 inset-x-0 z-50">
+  <header class="nav-blur fixed inset-x-0 z-50">
     <nav class="max-w-[1200px] mx-auto px-6 sm:px-8 h-[68px] flex items-center justify-between">
       <a href="#top" class="wordmark group" aria-label="Javi Pérez — home">Javi Pérez</a>
 
@@ -154,7 +165,7 @@
   <main id="top">
 
   <!-- ===== HERO ===== -->
-  <section class="relative min-h-screen flex items-center pt-[68px] overflow-hidden">
+  <section class="hero-with-urgency relative min-h-screen flex items-center overflow-hidden">
     <div class="grid-bg" aria-hidden="true"></div>
     <div class="hero-glow" aria-hidden="true"></div>
 
@@ -164,34 +175,46 @@
         <!-- Left -->
         <div class="md:col-span-7 order-2 md:order-1">
           <div class="fade-up d-1">
-            <span class="eyebrow"><span class="dot"></span>Available for hire · May 2026</span>
+            <span class="hero-hook">
+              <span class="hero-hook-bang" aria-hidden="true">!</span>
+              The average founder wastes 11h/week on tasks Claude does in seconds.
+            </span>
           </div>
 
-          <h1 class="hero-h1 h1-reveal mt-7" aria-label="Production AI systems, shipped in days.">
-            <span class="h1-word"><span class="h1-word__inner">Production</span><span class="h1-word__sweep" aria-hidden="true"></span></span>
-            <span class="h1-word"><span class="h1-word__inner">AI</span><span class="h1-word__sweep" aria-hidden="true"></span></span>
-            <span class="h1-word"><span class="h1-word__inner">systems,</span><span class="h1-word__sweep" aria-hidden="true"></span></span>
-            <br />
-            <span class="h1-word"><span class="h1-word__inner accent-italic">shipped</span><span class="h1-word__sweep" aria-hidden="true"></span></span>
-            <span class="h1-word"><span class="h1-word__inner">in</span><span class="h1-word__sweep" aria-hidden="true"></span></span>
-            <span class="h1-word"><span class="h1-word__inner">days.</span><span class="h1-word__sweep" aria-hidden="true"></span></span>
+          <h1 class="hero-h1 h1-reveal mt-7" aria-label="You're burning money on busywork.">
+            <span class="h1-word"><span class="h1-word__inner">You're</span><span class="h1-word__sweep" aria-hidden="true"></span></span>
+            <span class="h1-word"><span class="h1-word__inner accent-italic">burning</span><span class="h1-word__sweep" aria-hidden="true"></span></span>
+            <span class="h1-word"><span class="h1-word__inner">money</span><span class="h1-word__sweep" aria-hidden="true"></span></span>
+            <span class="h1-word"><span class="h1-word__inner">on</span><span class="h1-word__sweep" aria-hidden="true"></span></span>
+            <span class="h1-word"><span class="h1-word__inner">busywork.</span><span class="h1-word__sweep" aria-hidden="true"></span></span>
           </h1>
 
           <p class="hero-sub mt-7 fade-up d-3">
-            I build websites and AI automation for non-technical founders. Daily Claude Code operator across nine production sites in U.S. financial verticals.
+            I ship the AI systems that stop the bleeding — in 48–72h. Daily Claude Code operator across nine production sites in U.S. financial verticals. Fixed scope, fixed price, async only.
           </p>
 
-          <div class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 mt-9 fade-up d-4">
-            <a href="#contact" class="btn-primary">
-              Start a project
-              <svg class="arrow w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-            </a>
-            <a href="mailto:javiperezguides@gmail.com?subject=Project%20inquiry" class="btn-secondary">
-              javiperezguides@gmail.com
-            </a>
+          <div class="hero-counter fade-up d-4">
+            <span class="live-dot" aria-hidden="true"></span>
+            <div class="hero-counter-block">
+              <span class="num" id="burned-num">$2,847</span>
+              <span class="lbl">burned by founders<br/>since you opened this page</span>
+            </div>
+            <span class="hero-counter-divider" aria-hidden="true"></span>
+            <div class="hero-counter-block">
+              <span class="num num--green">9</span>
+              <span class="lbl">sites live<br/>in production</span>
+            </div>
           </div>
 
-          <div class="mt-12 fade-up d-5">
+          <div class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 mt-9 fade-up d-5">
+            <a href="#contact" class="btn-primary">
+              Claim a slot
+              <svg class="arrow w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+            <a href="#services" class="btn-secondary">See what I build →</a>
+          </div>
+
+          <div class="mt-12 fade-up d-6">
             <p class="trust-strip">
               Featured in&nbsp;
               <span class="text-text-secondary">The Epoch Times</span>
@@ -242,13 +265,55 @@
     </div>
   </section>
 
+  <!-- ===== PAIN DASHBOARD ===== -->
+  <section id="pain" class="section pain-section">
+    <div class="max-w-[1200px] mx-auto px-6 sm:px-8">
+      <div class="reveal-stagger">
+        <span class="eyebrow"><span class="dot"></span>The cost of doing nothing</span>
+        <h2 class="section-h2 mt-6 max-w-3xl">
+          Every week without automation is <span class="accent-italic">money on fire.</span>
+        </h2>
+        <p class="section-sub mt-6">
+          Industry benchmarks for founder-led teams shipping content, support, or lead-gen by hand. The math doesn't care how busy you feel.
+        </p>
+      </div>
+
+      <div class="pain-grid">
+        <div class="pain-card reveal" data-pain-value="11" data-pain-suffix="h">
+          <span class="pain-num" data-pain-display>11h</span>
+          <span class="pain-lbl">Wasted weekly</span>
+          <p class="pain-ctx">Avg. founder time spent on tasks Claude can ship in seconds.</p>
+        </div>
+        <div class="pain-card reveal" data-pain-value="2400" data-pain-prefix="$">
+          <span class="pain-num" data-pain-display>$2,400</span>
+          <span class="pain-lbl">Monthly cost</span>
+          <p class="pain-ctx">Of your time at $50/h, doing copy-paste work an agent should own.</p>
+        </div>
+        <div class="pain-card reveal" data-pain-value="47" data-pain-suffix="%">
+          <span class="pain-num" data-pain-display>47%</span>
+          <span class="pain-lbl">Slower than rivals</span>
+          <p class="pain-ctx">Time-to-ship gap between teams using AI workflows and teams that don't.</p>
+        </div>
+        <div class="pain-card reveal" data-pain-value="9" data-pain-suffix=" mo">
+          <span class="pain-num" data-pain-display>9 mo</span>
+          <span class="pain-lbl">Lost lead-time</span>
+          <p class="pain-ctx">What most agencies need to deliver what I ship in 5–10 days.</p>
+        </div>
+      </div>
+
+      <p class="pain-disclaimer">
+        Industry benchmarks · founder time priced at $50/h · indicative figures for illustration, not a quote from your data.
+      </p>
+    </div>
+  </section>
+
   <!-- ===== SERVICES ===== -->
   <section id="services" class="section relative">
     <div class="max-w-[1200px] mx-auto px-6 sm:px-8">
       <div class="reveal-stagger">
         <span class="eyebrow"><span class="dot"></span>What I build</span>
         <h2 class="section-h2 mt-6 max-w-3xl">
-          Three ways I work with <span class="accent-italic">founders.</span>
+          Four ways I work with <span class="accent-italic">founders.</span>
         </h2>
         <p class="section-sub mt-6">
           Productized engagements with clear scope, timeline, and price. No project bloat. No discovery calls disguised as scoping.
@@ -257,20 +322,134 @@
 
       <div class="services-grid">
 
-        <!-- Card 1 -->
+        <!-- Card 1 — Flagship: AI Site Build for AdSense -->
         <article class="service-card reveal">
           <span class="trace trace--top" aria-hidden="true"></span>
           <span class="trace trace--right" aria-hidden="true"></span>
           <span class="trace trace--bottom" aria-hidden="true"></span>
           <span class="trace trace--left" aria-hidden="true"></span>
           <span class="service-card-badge">Most popular</span>
+          <h3 class="service-card-title">AI Site Build for AdSense</h3>
+          <p class="service-card-tag">Static site built with Claude Code, E-E-A-T compliant, AdSense-ready out of the box. No WordPress, no bloat.</p>
+
+          <div class="service-meta-row">
+            <div class="service-meta-block">
+              <span class="service-meta-label">Price</span>
+              <span class="service-meta-value price">$1,500 — $4,500</span>
+              <span class="service-savings">Save $15,000+ vs. agency</span>
+            </div>
+            <div class="service-meta-block">
+              <span class="service-meta-label">Timeline</span>
+              <span class="service-meta-value">10–21 days</span>
+            </div>
+          </div>
+
+          <ul class="service-bullets">
+            <li>Claude-powered static site (HTML or framework, your call)</li>
+            <li>Cloudflare Pages or Vercel deployment</li>
+            <li>E-E-A-T compliant structure (editor schema, citations, sourcing)</li>
+            <li>AdSense application package (ads.txt, schemas, policies)</li>
+            <li>5–15 pillar pages + supporting structure</li>
+            <li>Calculators or interactive tools (1–3 included)</li>
+            <li>Search Console + GA4 + Bing Webmaster setup</li>
+            <li>30-day post-launch support</li>
+          </ul>
+
+          <a href="#contact" class="service-card-cta">
+            Lock in this price
+            <svg class="arrow w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </article>
+
+        <!-- Card 2 — Claude Code Production Setup -->
+        <article class="service-card reveal">
+          <span class="trace trace--top" aria-hidden="true"></span>
+          <span class="trace trace--right" aria-hidden="true"></span>
+          <span class="trace trace--bottom" aria-hidden="true"></span>
+          <span class="trace trace--left" aria-hidden="true"></span>
+          <h3 class="service-card-title">Claude Code Production Setup</h3>
+          <p class="service-card-tag">From zero to shipping with Claude Code in 7 days. For devs and founders who want to start right without burning 6 hours debugging multi-agent loops.</p>
+
+          <div class="service-meta-row">
+            <div class="service-meta-block">
+              <span class="service-meta-label">Price</span>
+              <span class="service-meta-value price">$450 — $1,200</span>
+              <span class="service-savings">Save 50h+ of trial &amp; error</span>
+            </div>
+            <div class="service-meta-block">
+              <span class="service-meta-label">Timeline</span>
+              <span class="service-meta-value">4–7 days</span>
+            </div>
+          </div>
+
+          <ul class="service-bullets">
+            <li>Claude Code CLI configured for your stack</li>
+            <li>Multi-agent workflow architecture (Opus + Sonnet split)</li>
+            <li>Custom slash commands + agent definitions</li>
+            <li>MCP server setup (relevant integrations)</li>
+            <li>Token budget + rate limit handling patterns</li>
+            <li>Production prompt engineering templates</li>
+            <li>Async handover documentation</li>
+            <li>14-day chat support</li>
+          </ul>
+
+          <a href="#contact" class="service-card-cta">
+            Lock in this price
+            <svg class="arrow w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </article>
+
+        <!-- Card 3 — AI Workflow Automation -->
+        <article class="service-card reveal">
+          <span class="trace trace--top" aria-hidden="true"></span>
+          <span class="trace trace--right" aria-hidden="true"></span>
+          <span class="trace trace--bottom" aria-hidden="true"></span>
+          <span class="trace trace--left" aria-hidden="true"></span>
+          <h3 class="service-card-title">AI Workflow Automation</h3>
+          <p class="service-card-tag">Claude API + n8n workflows for your existing stack. Lead intake, content pipelines, support triage.</p>
+
+          <div class="service-meta-row">
+            <div class="service-meta-block">
+              <span class="service-meta-label">Price</span>
+              <span class="service-meta-value price">$800 — $2,500</span>
+              <span class="service-savings">Save 11h/week, every week</span>
+            </div>
+            <div class="service-meta-block">
+              <span class="service-meta-label">Timeline</span>
+              <span class="service-meta-value">5–10 days</span>
+            </div>
+          </div>
+
+          <ul class="service-bullets">
+            <li>Lead qualification + intake automation</li>
+            <li>Content pipeline (research → draft → review)</li>
+            <li>Customer support triage with Claude API</li>
+            <li>Document drafting + summarization workflows</li>
+            <li>n8n flows + integrations (Slack, Notion, CRMs, Sheets)</li>
+            <li>Webhook + retry logic + observability</li>
+            <li>30-day maintenance retainer included</li>
+          </ul>
+
+          <a href="#contact" class="service-card-cta">
+            Lock in this price
+            <svg class="arrow w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </article>
+
+        <!-- Card 4 — Quick win: AI Site Deploy -->
+        <article class="service-card reveal">
+          <span class="trace trace--top" aria-hidden="true"></span>
+          <span class="trace trace--right" aria-hidden="true"></span>
+          <span class="trace trace--bottom" aria-hidden="true"></span>
+          <span class="trace trace--left" aria-hidden="true"></span>
           <h3 class="service-card-title">AI Site Deploy</h3>
-          <p class="service-card-tag">From Claude/Lovable build → live site with analytics.</p>
+          <p class="service-card-tag">From Claude/Lovable build → live site with analytics. Fast turnaround for founders who already have the build.</p>
 
           <div class="service-meta-row">
             <div class="service-meta-block">
               <span class="service-meta-label">Price</span>
               <span class="service-meta-value price">$200 — $750</span>
+              <span class="service-savings">Save 5 days vs. typical agency</span>
             </div>
             <div class="service-meta-block">
               <span class="service-meta-label">Timeline</span>
@@ -287,79 +466,498 @@
           </ul>
 
           <a href="#contact" class="service-card-cta">
-            Start a project
+            Lock in this price
             <svg class="arrow w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </a>
         </article>
 
-        <!-- Card 2 -->
-        <article class="service-card reveal">
-          <span class="trace trace--top" aria-hidden="true"></span>
-          <span class="trace trace--right" aria-hidden="true"></span>
-          <span class="trace trace--bottom" aria-hidden="true"></span>
-          <span class="trace trace--left" aria-hidden="true"></span>
-          <h3 class="service-card-title">AI Workflow Automation</h3>
-          <p class="service-card-tag">Claude API + n8n workflows for your existing tools.</p>
+      </div>
+    </div>
+  </section>
 
-          <div class="service-meta-row">
-            <div class="service-meta-block">
-              <span class="service-meta-label">Price</span>
-              <span class="service-meta-value price">$600 — $2,000</span>
+  <!-- ===== COMPARISON TABLE ===== -->
+  <section class="section compare-section">
+    <div class="max-w-[1200px] mx-auto px-6 sm:px-8">
+      <div class="reveal-stagger">
+        <span class="eyebrow"><span class="dot"></span>You vs. them</span>
+        <h2 class="section-h2 mt-6 max-w-3xl">
+          The math is <span class="accent-italic">embarrassing.</span>
+        </h2>
+        <p class="section-sub mt-6">
+          Compare your three real options against the one you keep avoiding. Pretty obvious which column wins.
+        </p>
+      </div>
+
+      <div class="compare-grid reveal" aria-label="Comparison of options">
+        <span class="winner-badge" aria-hidden="true">Winner</span>
+
+        <!-- Row labels (desktop only — duplicated inside cells on mobile via .cell-row-label) -->
+        <div class="compare-col compare-col-labels">
+          <div class="compare-cell compare-cell--head" aria-hidden="true">&nbsp;</div>
+          <div class="compare-cell compare-cell--row-label">Price</div>
+          <div class="compare-cell compare-cell--row-label">Time to ship</div>
+          <div class="compare-cell compare-cell--row-label">Built with AI</div>
+          <div class="compare-cell compare-cell--row-label">Discovery calls</div>
+          <div class="compare-cell compare-cell--row-label">Async-first</div>
+          <div class="compare-cell compare-cell--row-label">Production-tested</div>
+          <div class="compare-cell compare-cell--row-label">Risk</div>
+        </div>
+
+        <!-- Option 1: Do nothing -->
+        <div class="compare-col">
+          <div class="compare-cell compare-cell--head">
+            <span class="head-amount">Do nothing</span>
+            <span class="head-sub">Status quo</span>
+          </div>
+          <div class="compare-cell is-bad">
+            <span class="cell-row-label">Price</span>
+            <svg class="compare-icon compare-icon--x" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8"/></svg>
+            <span class="cell-row-value">$0 + lost revenue</span>
+          </div>
+          <div class="compare-cell is-bad">
+            <span class="cell-row-label">Time to ship</span>
+            <svg class="compare-icon compare-icon--x" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8"/></svg>
+            <span class="cell-row-value">Never</span>
+          </div>
+          <div class="compare-cell is-bad">
+            <span class="cell-row-label">Built with AI</span>
+            <svg class="compare-icon compare-icon--x" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8"/></svg>
+            <span class="cell-row-value">No</span>
+          </div>
+          <div class="compare-cell is-bad">
+            <span class="cell-row-label">Discovery calls</span>
+            <svg class="compare-icon compare-icon--x" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8"/></svg>
+            <span class="cell-row-value">Constant tab spirals</span>
+          </div>
+          <div class="compare-cell is-bad">
+            <span class="cell-row-label">Async-first</span>
+            <svg class="compare-icon compare-icon--x" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8"/></svg>
+            <span class="cell-row-value">—</span>
+          </div>
+          <div class="compare-cell is-bad">
+            <span class="cell-row-label">Production-tested</span>
+            <svg class="compare-icon compare-icon--x" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8"/></svg>
+            <span class="cell-row-value">—</span>
+          </div>
+          <div class="compare-cell is-bad">
+            <span class="cell-row-label">Risk</span>
+            <svg class="compare-icon compare-icon--x" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8"/></svg>
+            <span class="cell-row-value">100% — every day</span>
+          </div>
+        </div>
+
+        <!-- Option 2: Hire a dev -->
+        <div class="compare-col">
+          <div class="compare-cell compare-cell--head">
+            <span class="head-amount">Hire a dev</span>
+            <span class="head-sub">In-house · $8k+/mo</span>
+          </div>
+          <div class="compare-cell is-meh">
+            <span class="cell-row-label">Price</span>
+            <svg class="compare-icon compare-icon--meh" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 8h10"/></svg>
+            <span class="cell-row-value">$8,000+/mo</span>
+          </div>
+          <div class="compare-cell is-meh">
+            <span class="cell-row-label">Time to ship</span>
+            <svg class="compare-icon compare-icon--meh" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 8h10"/></svg>
+            <span class="cell-row-value">6–10 weeks</span>
+          </div>
+          <div class="compare-cell is-meh">
+            <span class="cell-row-label">Built with AI</span>
+            <svg class="compare-icon compare-icon--meh" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 8h10"/></svg>
+            <span class="cell-row-value">Maybe</span>
+          </div>
+          <div class="compare-cell is-meh">
+            <span class="cell-row-label">Discovery calls</span>
+            <svg class="compare-icon compare-icon--meh" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 8h10"/></svg>
+            <span class="cell-row-value">3 weekly meetings</span>
+          </div>
+          <div class="compare-cell is-bad">
+            <span class="cell-row-label">Async-first</span>
+            <svg class="compare-icon compare-icon--x" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8"/></svg>
+            <span class="cell-row-value">No</span>
+          </div>
+          <div class="compare-cell is-meh">
+            <span class="cell-row-label">Production-tested</span>
+            <svg class="compare-icon compare-icon--meh" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 8h10"/></svg>
+            <span class="cell-row-value">Side projects</span>
+          </div>
+          <div class="compare-cell is-meh">
+            <span class="cell-row-label">Risk</span>
+            <svg class="compare-icon compare-icon--meh" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 8h10"/></svg>
+            <span class="cell-row-value">50%</span>
+          </div>
+        </div>
+
+        <!-- Option 3: Hire an agency -->
+        <div class="compare-col">
+          <div class="compare-cell compare-cell--head">
+            <span class="head-amount">Hire an agency</span>
+            <span class="head-sub">$20k–$50k · 3+ months</span>
+          </div>
+          <div class="compare-cell is-bad">
+            <span class="cell-row-label">Price</span>
+            <svg class="compare-icon compare-icon--x" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8"/></svg>
+            <span class="cell-row-value">$20,000–$50,000</span>
+          </div>
+          <div class="compare-cell is-bad">
+            <span class="cell-row-label">Time to ship</span>
+            <svg class="compare-icon compare-icon--x" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8"/></svg>
+            <span class="cell-row-value">3–6 months</span>
+          </div>
+          <div class="compare-cell is-bad">
+            <span class="cell-row-label">Built with AI</span>
+            <svg class="compare-icon compare-icon--x" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8"/></svg>
+            <span class="cell-row-value">Add-on $$$</span>
+          </div>
+          <div class="compare-cell is-meh">
+            <span class="cell-row-label">Discovery calls</span>
+            <svg class="compare-icon compare-icon--meh" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 8h10"/></svg>
+            <span class="cell-row-value">2-week kickoff phase</span>
+          </div>
+          <div class="compare-cell is-bad">
+            <span class="cell-row-label">Async-first</span>
+            <svg class="compare-icon compare-icon--x" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8"/></svg>
+            <span class="cell-row-value">No</span>
+          </div>
+          <div class="compare-cell is-meh">
+            <span class="cell-row-label">Production-tested</span>
+            <svg class="compare-icon compare-icon--meh" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 8h10"/></svg>
+            <span class="cell-row-value">Outsourced offshore</span>
+          </div>
+          <div class="compare-cell is-bad">
+            <span class="cell-row-label">Risk</span>
+            <svg class="compare-icon compare-icon--x" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8"/></svg>
+            <span class="cell-row-value">70%</span>
+          </div>
+        </div>
+
+        <!-- Option 4: Work with me (WINNER) -->
+        <div class="compare-col compare-col--winner">
+          <div class="compare-cell compare-cell--head">
+            <span class="head-amount">Work with me</span>
+            <span class="head-sub">Async · 48h–10d · $200–$4,500</span>
+          </div>
+          <div class="compare-cell is-good">
+            <span class="cell-row-label">Price</span>
+            <svg class="compare-icon compare-icon--check" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 8 3 3 7-7"/></svg>
+            <span class="cell-row-value">$200 — $4,500</span>
+          </div>
+          <div class="compare-cell is-good">
+            <span class="cell-row-label">Time to ship</span>
+            <svg class="compare-icon compare-icon--check" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 8 3 3 7-7"/></svg>
+            <span class="cell-row-value">48h — 10 days</span>
+          </div>
+          <div class="compare-cell is-good">
+            <span class="cell-row-label">Built with AI</span>
+            <svg class="compare-icon compare-icon--check" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 8 3 3 7-7"/></svg>
+            <span class="cell-row-value">Default</span>
+          </div>
+          <div class="compare-cell is-good">
+            <span class="cell-row-label">Discovery calls</span>
+            <svg class="compare-icon compare-icon--check" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 8 3 3 7-7"/></svg>
+            <span class="cell-row-value">Zero — async only</span>
+          </div>
+          <div class="compare-cell is-good">
+            <span class="cell-row-label">Async-first</span>
+            <svg class="compare-icon compare-icon--check" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 8 3 3 7-7"/></svg>
+            <span class="cell-row-value">Yes — no Zoom</span>
+          </div>
+          <div class="compare-cell is-good">
+            <span class="cell-row-label">Production-tested</span>
+            <svg class="compare-icon compare-icon--check" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 8 3 3 7-7"/></svg>
+            <span class="cell-row-value">9 live sites</span>
+          </div>
+          <div class="compare-cell is-good">
+            <span class="cell-row-label">Risk</span>
+            <svg class="compare-icon compare-icon--check" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 8 3 3 7-7"/></svg>
+            <span class="cell-row-value">0% — miss deadline = free</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="compare-cta-row reveal">
+        <a href="#contact" class="btn-primary">
+          Stop overpaying — claim a slot
+          <svg class="arrow w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CASE STUDY ANIMATED ===== -->
+  <section class="section case-section">
+    <div class="max-w-[1200px] mx-auto px-6 sm:px-8">
+      <div class="reveal-stagger">
+        <span class="eyebrow"><span class="dot"></span>Receipts</span>
+        <h2 class="section-h2 mt-6 max-w-3xl">
+          Real production. <span class="accent-italic">Real numbers.</span>
+        </h2>
+      </div>
+
+      <div class="case-wrap reveal">
+        <div class="case-copy">
+          <span class="case-tag">Multi-agent editorial review · 9 sites</span>
+          <h3 class="case-title">From 16 hours of human review to 45 minutes of guided agents.</h3>
+          <p class="case-body">
+            Nine production sites in U.S. consumer-finance verticals. <strong>200+ E-E-A-T compliance issues</strong> blocking AdSense monetization. Typical industry quote: <strong>$20k–$50k and 3–4 months.</strong> Cost of doing nothing: <strong>~$3,200/mo in lost ad revenue.</strong>
+          </p>
+          <p class="case-body">
+            I shipped a <strong>multi-agent review pipeline</strong> using Claude Code + custom prompts. One operator now audits all nine sites in under an hour. Built solo, in 6 working days.
+          </p>
+        </div>
+
+        <div class="case-stack">
+          <div class="case-bar case-bar--before">
+            <div class="case-bar-row">
+              <span class="case-bar-lbl">Before — manual review</span>
+              <span class="case-bar-val">16h / site / week</span>
             </div>
-            <div class="service-meta-block">
-              <span class="service-meta-label">Timeline</span>
-              <span class="service-meta-value">5–10 days build</span>
-            </div>
+            <div class="case-bar-track"><div class="case-bar-fill" data-fill="1.0" data-delay="0"></div></div>
           </div>
 
-          <ul class="service-bullets">
-            <li>Lead qualification + intake automation</li>
-            <li>Content pipeline (research → draft → review)</li>
-            <li>Customer support triage with Claude API</li>
-            <li>Document drafting + summarization workflows</li>
-            <li>n8n flows + integrations (Slack, Notion, CRMs)</li>
-            <li>Monthly maintenance retainer included</li>
-          </ul>
-
-          <a href="#contact" class="service-card-cta">
-            Start a project
-            <svg class="arrow w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-          </a>
-        </article>
-
-        <!-- Card 3 -->
-        <article class="service-card reveal">
-          <span class="trace trace--top" aria-hidden="true"></span>
-          <span class="trace trace--right" aria-hidden="true"></span>
-          <span class="trace trace--bottom" aria-hidden="true"></span>
-          <span class="trace trace--left" aria-hidden="true"></span>
-          <h3 class="service-card-title">Custom AI Consulting</h3>
-          <p class="service-card-tag">Strategy and implementation, hourly.</p>
-
-          <div class="service-meta-row">
-            <div class="service-meta-block">
-              <span class="service-meta-label">Price</span>
-              <span class="service-meta-value price">$75 / hour</span>
+          <div class="case-bar case-bar--after">
+            <div class="case-bar-row">
+              <span class="case-bar-lbl">After — multi-agent pipeline</span>
+              <span class="case-bar-val">0.75h / site / week</span>
             </div>
-            <div class="service-meta-block">
-              <span class="service-meta-label">Timeline</span>
-              <span class="service-meta-value">Flexible blocks</span>
-            </div>
+            <div class="case-bar-track"><div class="case-bar-fill" data-fill="0.05" data-delay="300"></div></div>
           </div>
 
-          <ul class="service-bullets">
-            <li>Claude Code workflow architecture</li>
-            <li>Multi-agent system design</li>
-            <li>Production prompt engineering</li>
-            <li>AI tooling stack audits</li>
-            <li>Async-first, no Zoom required</li>
-          </ul>
+          <div class="case-delta">↓ 95% time saved · industry quote avoided · ad revenue restored in 6 days</div>
 
-          <a href="#contact" class="service-card-cta">
-            Start a project
-            <svg class="arrow w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-          </a>
-        </article>
+          <div class="case-bar case-bar--before">
+            <div class="case-bar-row">
+              <span class="case-bar-lbl">Industry quote</span>
+              <span class="case-bar-val">$20k–$50k · 3–4 mo</span>
+            </div>
+            <div class="case-bar-track"><div class="case-bar-fill" data-fill="1.0" data-delay="500"></div></div>
+          </div>
+
+          <div class="case-bar case-bar--after">
+            <div class="case-bar-row">
+              <span class="case-bar-lbl">My build</span>
+              <span class="case-bar-val">6 days · solo</span>
+            </div>
+            <div class="case-bar-track"><div class="case-bar-fill" data-fill="0.05" data-delay="800"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== INTERACTIVE DEMOS ===== -->
+  <section id="demos" class="section demos-section">
+    <div class="max-w-[1200px] mx-auto px-6 sm:px-8">
+      <div class="reveal-stagger">
+        <span class="eyebrow"><span class="dot"></span>Interactive demos</span>
+        <h2 class="section-h2 mt-6 max-w-3xl">
+          How I'd lift <span class="accent-italic">your numbers.</span>
+        </h2>
+        <p class="section-sub mt-6">
+          Three live tools I run on every project. Pick one — see the math behind a senior conversion build vs. the typical founder homepage.
+        </p>
+      </div>
+
+      <nav class="demo-tabs reveal" role="tablist" aria-label="Interactive demos">
+        <button type="button" class="demo-tab is-active" data-demo="adsense" role="tab" aria-selected="true" aria-controls="demo-adsense">AdSense compliance</button>
+        <button type="button" class="demo-tab" data-demo="conversion" role="tab" aria-selected="false" aria-controls="demo-conversion">Conversion audit</button>
+        <button type="button" class="demo-tab" data-demo="revenue" role="tab" aria-selected="false" aria-controls="demo-revenue">Revenue lift</button>
+      </nav>
+
+      <div class="demo-panels">
+
+        <!-- ===== Panel 1 · AdSense Compliance Checker ===== -->
+        <div id="demo-adsense" class="demo-panel adsense-checker is-active" data-panel="adsense" role="tabpanel" aria-label="AdSense compliance auditor">
+          <div class="checker-head">
+            <div class="work-tags">
+              <span class="work-tag work-tag--demo">Live audit</span>
+              <span class="work-tag">E-E-A-T</span>
+              <span class="work-tag">Schema.org</span>
+              <span class="work-tag">AdSense policy</span>
+            </div>
+            <h3 class="work-title">AdSense compliance auditor</h3>
+            <p class="work-context">Same audit I run on production YMYL sites — distilled into 5 categories and rendered in real time. Pick an example to see the breakdown.</p>
+          </div>
+
+          <div class="checker-controls">
+            <div class="checker-select-wrap">
+              <label for="checker-select" class="checker-label">Example site</label>
+              <select id="checker-select" class="checker-select" aria-label="Choose an example site to audit">
+                <option value="strong">Strong example</option>
+                <option value="typical">Typical AI-generated example</option>
+                <option value="underoptimized">Underoptimized example</option>
+              </select>
+            </div>
+            <button type="button" class="checker-run" aria-controls="checker-result">
+              Run audit
+              <svg class="arrow w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </button>
+          </div>
+
+          <div class="checker-result" id="checker-result" data-state="idle" aria-live="polite">
+            <div class="checker-idle">
+              <span class="checker-idle-dot" aria-hidden="true"></span>
+              <span class="checker-idle-msg">Pick an example and run the audit.</span>
+            </div>
+            <div class="checker-scanning" hidden>
+              <div class="scanning-bar" aria-hidden="true"></div>
+              <span class="scanning-label">Scanning E-E-A-T signals, schema, citations…</span>
+            </div>
+            <div class="checker-output" hidden>
+              <div class="score-headline">
+                <div class="score-number" aria-label="Total score">0</div>
+                <div class="score-meta">
+                  <span class="score-meta-out">out of 100</span>
+                  <span class="score-meta-label" aria-hidden="true">Overall compliance score</span>
+                </div>
+              </div>
+              <ul class="score-categories" role="list"></ul>
+              <p class="score-summary"></p>
+              <a href="#contact" class="checker-cta">
+                Get this audit on your site
+                <svg class="arrow w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== Panel 2 · Conversion Audit ===== -->
+        <div id="demo-conversion" class="demo-panel conversion-checker" data-panel="conversion" role="tabpanel" aria-label="Conversion audit" hidden>
+          <div class="checker-head">
+            <div class="work-tags">
+              <span class="work-tag work-tag--demo">Live audit</span>
+              <span class="work-tag">Hero clarity</span>
+              <span class="work-tag">CTA visibility</span>
+              <span class="work-tag">Trust signals</span>
+            </div>
+            <h3 class="work-title">Conversion audit</h3>
+            <p class="work-context">The same 5-factor diagnostic I run on landing pages before quoting a rebuild. Compare three real-world archetypes — see where the leaks are.</p>
+          </div>
+
+          <div class="checker-controls">
+            <div class="checker-select-wrap">
+              <label for="conversion-select" class="checker-label">Example page</label>
+              <select id="conversion-select" class="checker-select" aria-label="Choose an example page to audit">
+                <option value="founder">Typical founder homepage</option>
+                <option value="saas">Templated SaaS landing</option>
+                <option value="rebuilt">Same page, after my rebuild</option>
+              </select>
+            </div>
+            <button type="button" class="checker-run" aria-controls="conversion-result">
+              Run audit
+              <svg class="arrow w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </button>
+          </div>
+
+          <div class="checker-result" id="conversion-result" data-state="idle" aria-live="polite">
+            <div class="checker-idle">
+              <span class="checker-idle-dot" aria-hidden="true"></span>
+              <span class="checker-idle-msg">Pick an example and run the audit.</span>
+            </div>
+            <div class="checker-scanning" hidden>
+              <div class="scanning-bar" aria-hidden="true"></div>
+              <span class="scanning-label">Measuring hero clarity, CTA visibility, social proof…</span>
+            </div>
+            <div class="checker-output" hidden>
+              <div class="score-headline">
+                <div class="score-number" aria-label="Total score">0</div>
+                <div class="score-meta">
+                  <span class="score-meta-out">out of 100</span>
+                  <span class="score-meta-label" aria-hidden="true">Overall conversion score</span>
+                </div>
+              </div>
+              <ul class="score-categories" role="list"></ul>
+              <p class="score-summary"></p>
+              <a href="#contact" class="checker-cta">
+                Lift these numbers on your site
+                <svg class="arrow w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== Panel 3 · Revenue Lift Calculator ===== -->
+        <div id="demo-revenue" class="demo-panel revenue-calc" data-panel="revenue" role="tabpanel" aria-label="Revenue lift calculator" hidden>
+          <div class="checker-head">
+            <div class="work-tags">
+              <span class="work-tag work-tag--demo">Calculator</span>
+              <span class="work-tag">Conversion math</span>
+              <span class="work-tag">Live preview</span>
+            </div>
+            <h3 class="work-title">Revenue lift calculator</h3>
+            <p class="work-context">Plug in your real numbers. See what a senior conversion build adds vs. doing nothing, vs. an industry-average landing.</p>
+          </div>
+
+          <div class="revenue-grid">
+            <div class="revenue-sliders">
+              <div class="slider-row">
+                <label for="slider-visitors">
+                  <span class="slider-label">Monthly visitors</span>
+                  <output id="out-visitors" class="slider-value" for="slider-visitors">5,000</output>
+                </label>
+                <input id="slider-visitors" type="range" min="500" max="100000" step="500" value="5000" class="slider" />
+                <div class="slider-ticks"><span>500</span><span>100K</span></div>
+              </div>
+
+              <div class="slider-row">
+                <label for="slider-rate">
+                  <span class="slider-label">Current conversion rate</span>
+                  <output id="out-rate" class="slider-value" for="slider-rate">1.5%</output>
+                </label>
+                <input id="slider-rate" type="range" min="0.1" max="5" step="0.1" value="1.5" class="slider" />
+                <div class="slider-ticks"><span>0.1%</span><span>5%</span></div>
+              </div>
+
+              <div class="slider-row">
+                <label for="slider-value">
+                  <span class="slider-label">Avg. customer value</span>
+                  <output id="out-value" class="slider-value" for="slider-value">$200</output>
+                </label>
+                <input id="slider-value" type="range" min="20" max="2000" step="20" value="200" class="slider" />
+                <div class="slider-ticks"><span>$20</span><span>$2,000</span></div>
+              </div>
+            </div>
+
+            <div class="revenue-results">
+              <h4 class="revenue-results-title">Monthly revenue scenarios</h4>
+              <ul class="revenue-rows">
+                <li class="revenue-row revenue-row--today">
+                  <div>
+                    <span class="revenue-row-name">Today</span>
+                    <span class="revenue-row-sub">Your numbers</span>
+                  </div>
+                  <span class="revenue-row-value" id="rev-today">$15,000</span>
+                </li>
+                <li class="revenue-row revenue-row--industry">
+                  <div>
+                    <span class="revenue-row-name">Industry-avg landing</span>
+                    <span class="revenue-row-sub">2.5% conversion</span>
+                  </div>
+                  <span class="revenue-row-value" id="rev-industry">$25,000</span>
+                </li>
+                <li class="revenue-row revenue-row--mine">
+                  <div>
+                    <span class="revenue-row-name">Built by me</span>
+                    <span class="revenue-row-sub">5% conversion target</span>
+                  </div>
+                  <span class="revenue-row-value" id="rev-mine">$50,000</span>
+                </li>
+              </ul>
+
+              <div class="revenue-lift">
+                <span class="revenue-lift-label">Net monthly lift</span>
+                <span class="revenue-lift-value" id="rev-lift">+$35,000</span>
+                <span class="revenue-lift-yr"><span id="rev-lift-yr">+$420,000</span> / year</span>
+              </div>
+
+              <a href="#contact" class="checker-cta">
+                Lock in this lift
+                <svg class="arrow w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
 
       </div>
     </div>
@@ -377,7 +975,7 @@
 
       <div class="work-grid">
 
-        <article class="work-card reveal">
+        <article class="work-card work-card--case reveal" data-case-study="multiagent" tabindex="0" role="link" aria-disabled="true" aria-label="Case study coming soon: multi-agent editorial review system">
           <div class="work-tags">
             <span class="work-tag">Claude Code</span>
             <span class="work-tag">Opus 4.7</span>
@@ -386,9 +984,13 @@
           <div class="work-metric">95%</div>
           <h3 class="work-title">Multi-agent editorial review system</h3>
           <p class="work-context">Reduction in full-site audit time. From ~16 hours of manual review to ~45 minutes of guided multi-agent execution across nine sites.</p>
+          <span class="work-card-footer">
+            <span class="work-card-footer-text">Case study coming soon</span>
+            <svg class="work-card-footer-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </span>
         </article>
 
-        <article class="work-card reveal">
+        <article class="work-card work-card--case reveal" data-case-study="cloudflare-fix" tabindex="0" role="link" aria-disabled="true" aria-label="Case study coming soon: Cloudflare Pages middleware fix">
           <div class="work-tags">
             <span class="work-tag">Cloudflare Workers</span>
             <span class="work-tag">Pages Functions</span>
@@ -397,9 +999,13 @@
           <div class="work-metric">53 lines</div>
           <h3 class="work-title">Cloudflare Pages middleware fix</h3>
           <p class="work-context">Resolved an AdSense crawling issue that blocked monetization on a credit education site. Diagnosed via multi-agent debugging workflow.</p>
+          <span class="work-card-footer">
+            <span class="work-card-footer-text">Case study coming soon</span>
+            <svg class="work-card-footer-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </span>
         </article>
 
-        <article class="work-card reveal">
+        <article class="work-card work-card--case reveal" data-case-study="portfolio" tabindex="0" role="link" aria-disabled="true" aria-label="Portfolio overview coming soon: nine-site production portfolio">
           <div class="work-tags">
             <span class="work-tag">HTML/CSS/JS</span>
             <span class="work-tag">Cloudflare Pages</span>
@@ -409,6 +1015,10 @@
           <div class="work-metric">9 / 200+</div>
           <h3 class="work-title">Nine-site production portfolio</h3>
           <p class="work-context">Nine production sites built in U.S. consumer-finance verticals. 200+ E-E-A-T compliance issues resolved via systematic AI-assisted audit.</p>
+          <span class="work-card-footer">
+            <span class="work-card-footer-text">Portfolio overview coming soon</span>
+            <svg class="work-card-footer-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </span>
         </article>
 
       </div>
@@ -419,12 +1029,12 @@
   <section id="process" class="section relative">
     <div class="max-w-[1200px] mx-auto px-6 sm:px-8">
       <div class="reveal-stagger">
-        <span class="eyebrow"><span class="dot"></span>How it works</span>
+        <span class="eyebrow"><span class="dot"></span>Zero friction</span>
         <h2 class="section-h2 mt-6 max-w-3xl">
-          Async-first. <span class="accent-italic">Shipped,</span> not staged.
+          From email to <span class="accent-italic">shipped</span> in four moves.
         </h2>
         <p class="section-sub mt-6">
-          A predictable flow from inquiry to handover. No status meetings. No discovery theater.
+          No discovery calls. No status meetings. No Slack at midnight. You write me an email, I send you a fixed quote, and the work starts.
         </p>
       </div>
 
@@ -432,26 +1042,26 @@
 
         <div class="process-step reveal">
           <span class="process-num">01</span>
-          <h3 class="process-step-title">Discovery <span class="meta">— email</span></h3>
-          <p class="process-step-body">You describe the project in writing. I respond within 24 hours with scope, timeline, and a fixed price. No discovery calls disguised as scoping.</p>
+          <h3 class="process-step-title">You email <span class="meta">— under 4h reply</span></h3>
+          <p class="process-step-body">Describe the project in writing. I respond within 4 hours with scope, timeline, and a fixed price. No call required, ever.</p>
         </div>
 
         <div class="process-step reveal">
           <span class="process-num">02</span>
           <h3 class="process-step-title">Sign + start <span class="meta">— same day</span></h3>
-          <p class="process-step-body">Contract setup same day. Multiple payment options including Stripe and invoicing. 50% upfront for projects over $500. I start within hours, not days.</p>
+          <p class="process-step-body">Contract setup same day. Multiple payment options including Stripe and invoicing. 50% upfront for projects over $500. Work begins within hours of payment.</p>
         </div>
 
         <div class="process-step reveal">
           <span class="process-num">03</span>
-          <h3 class="process-step-title">Build <span class="meta">— async updates</span></h3>
-          <p class="process-step-body">Daily written progress logs. Loom screen-recordings for technical handovers — async, watch at your speed. You review, I iterate. No status meetings.</p>
+          <h3 class="process-step-title">Daily logs <span class="meta">— async</span></h3>
+          <p class="process-step-body">Written progress updates daily. Loom screen-recordings for technical handovers — watch at your speed. You review, I iterate. No status meetings.</p>
         </div>
 
         <div class="process-step reveal">
           <span class="process-num">04</span>
-          <h3 class="process-step-title">Ship + support <span class="meta">— handover</span></h3>
-          <p class="process-step-body">Production deploy + documentation + handover. 7–30 days post-launch support included depending on tier.</p>
+          <h3 class="process-step-title">Ship + warranty <span class="meta">— 7–30 days</span></h3>
+          <p class="process-step-body">Production deploy + documentation + 7–30 days post-launch support. If something breaks, I fix it. Miss the deadline and the deploy is free.</p>
         </div>
 
       </div>
@@ -475,6 +1085,80 @@
 
           <p>I don't have a CS degree. I don't come from a fintech job. What I have is 15+ months of intensive AI tool deployment, an operator's mindset, and the discipline to ship production-grade work fast.</p>
 
+          <!-- Multi-agent visualizer -->
+          <section class="agent-flow" aria-label="Claude Code multi-agent workflow">
+            <header class="agent-flow-header">
+              <h3 class="agent-flow-title">How I actually work with Claude Code</h3>
+              <div class="agent-flow-controls" role="group" aria-label="Animation controls">
+                <button type="button" class="agent-flow-btn" data-action="pause" aria-pressed="false">
+                  <svg class="agent-flow-btn-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 3v10M10 3v10"/></svg>
+                  <span class="agent-flow-btn-label">Pause</span>
+                </button>
+                <button type="button" class="agent-flow-btn" data-action="replay">
+                  <svg class="agent-flow-btn-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4v4h-4"/><path d="M14 8a6 6 0 1 1-2-4.5L14 4"/></svg>
+                  <span class="agent-flow-btn-label">Replay</span>
+                </button>
+              </div>
+            </header>
+
+            <div class="agent-flow-graph">
+              <div class="agent-node" data-step="0" data-color="opus" tabindex="0" role="button" aria-label="Opus 4.7 — diagnostic">
+                <div class="agent-node-icon" aria-hidden="true">
+                  <!-- Diamond — depth thinking -->
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 12l8 10 8-10z"/><path d="M4 12h16"/></svg>
+                </div>
+                <div class="agent-node-text">
+                  <span class="agent-node-label">Opus 4.7</span>
+                  <span class="agent-node-role">Diagnostic</span>
+                </div>
+              </div>
+
+              <div class="agent-connector" data-from="0" aria-hidden="true"></div>
+
+              <div class="agent-node" data-step="1" data-color="sonnet" tabindex="0" role="button" aria-label="Sonnet 4.6 — executor">
+                <div class="agent-node-icon" aria-hidden="true">
+                  <!-- Stacked blocks — execution -->
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="5" rx="1"/><rect x="3" y="11" width="18" height="5" rx="1"/><rect x="3" y="18" width="18" height="3" rx="1"/></svg>
+                </div>
+                <div class="agent-node-text">
+                  <span class="agent-node-label">Sonnet 4.6</span>
+                  <span class="agent-node-role">Executor</span>
+                </div>
+              </div>
+
+              <div class="agent-connector" data-from="1" aria-hidden="true"></div>
+
+              <div class="agent-node" data-step="2" data-color="verify" tabindex="0" role="button" aria-label="Verification — live audit">
+                <div class="agent-node-icon" aria-hidden="true">
+                  <!-- Checkmark circle — verification -->
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg>
+                </div>
+                <div class="agent-node-text">
+                  <span class="agent-node-label">Verification</span>
+                  <span class="agent-node-role">Audit live</span>
+                </div>
+              </div>
+
+              <div class="agent-connector" data-from="2" aria-hidden="true"></div>
+
+              <div class="agent-node" data-step="3" data-color="human" tabindex="0" role="button" aria-label="Human approval — you">
+                <div class="agent-node-icon" aria-hidden="true">
+                  <!-- Person silhouette — human -->
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg>
+                </div>
+                <div class="agent-node-text">
+                  <span class="agent-node-label">Human approval</span>
+                  <span class="agent-node-role">You</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="agent-flow-detail" aria-live="polite">
+              <span class="agent-flow-detail-title"></span>
+              <span class="agent-flow-detail-body"></span>
+            </div>
+          </section>
+
           <p>My portfolio runs across <strong>nine sites</strong> in U.S. consumer-finance verticals: insurance, mortgage refinance, tax relief, legal costs, Medicare, VPN pricing, credit, travel budgeting, and personal finance. Every workflow on this site has been pressure-tested in live production environments.</p>
 
           <p>Available for hire. I work async, in English or Spanish, and I deliver in days, not months.</p>
@@ -492,7 +1176,7 @@
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2H21.5l-7.59 8.67L23 22h-7.04l-5.51-6.93L4.13 22H.87l8.12-9.28L.5 2h7.22l4.98 6.34L18.24 2Zm-2.47 18h1.95L7.32 4h-2.1l10.55 16Z"/></svg>
               Twitter
             </a>
-            <a href="mailto:javiperezguides@gmail.com" class="about-social" aria-label="Email">
+            <a href="#" class="about-social" data-email-user="javiperezguides" data-email-domain="gmail.com" aria-label="Email">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
               Email
             </a>
@@ -503,16 +1187,120 @@
     </div>
   </section>
 
-  <!-- ===== CONTACT ===== -->
+  <!-- ===== GUARANTEE ===== -->
+  <section class="section guarantee-section">
+    <div class="max-w-[1200px] mx-auto px-6 sm:px-8">
+      <div class="reveal-stagger">
+        <span class="eyebrow"><span class="dot"></span>Risk reversal</span>
+        <h2 class="section-h2 mt-6 max-w-3xl">
+          You don't take the risk. <span class="accent-italic">I do.</span>
+        </h2>
+      </div>
+
+      <div class="guarantee-card reveal">
+        <div class="guarantee-shield" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/>
+            <path d="m9 12 2 2 4-4"/>
+          </svg>
+        </div>
+        <div class="guarantee-content">
+          <h3 class="guarantee-title">
+            Miss the deadline, and the <span class="accent-italic">deploy is free.</span>
+          </h3>
+          <p class="guarantee-body">
+            Every project ships with a written delivery date. If I miss it for any reason on my end, you get the production deploy free — keep the code, keep the work, owe me $0.
+          </p>
+          <p class="guarantee-body">
+            <strong>9 production sites shipped, zero missed deadlines.</strong> If you're going to bet on someone you've never worked with, this is how I de-risk it.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="section faq-section">
+    <div class="max-w-[1200px] mx-auto px-6 sm:px-8">
+      <div class="reveal-stagger">
+        <span class="eyebrow"><span class="dot"></span>Objections, handled</span>
+        <h2 class="section-h2 mt-6 max-w-3xl">
+          The questions you were about to <span class="accent-italic">type.</span>
+        </h2>
+      </div>
+
+      <div class="faq-list reveal">
+        <details class="faq-item">
+          <summary>Why so cheap? What's the catch?</summary>
+          <div class="faq-body">
+            There isn't one. I use AI to do in days what agencies bill 3 months for. They pay junior teams hourly; I ship solo with Claude Code as a force multiplier. Same output, fraction of the time, fraction of the price. <strong>You are not the customer they're built for, and that's good news.</strong>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>What if I already have a developer?</summary>
+          <div class="faq-body">
+            Great — they'll thank you. I plug into existing repos, deploy to your stack, and hand back clean documentation. Most of my workflow automation gigs are <strong>bought by founders to give to their developers.</strong> Frees them up for higher-leverage work.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>I've never hired async. What if I need a call?</summary>
+          <div class="faq-body">
+            Try writing the email first. 95% of the time, the question that "needs a call" gets resolved in 3 lines of writing. If it genuinely doesn't, I'll do one 20-min Loom for free. <strong>Zero recurring meetings, ever.</strong>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>What's your stack?</summary>
+          <div class="faq-body">
+            Claude Code (daily driver), Cloudflare Pages, Vercel, n8n, Anthropic API, GA4, Search Console. For workflows: Slack, Notion, Airtable, Stripe, most major CRMs. If you have an unusual stack, ask — I've seen most of them.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Do you take equity instead of cash?</summary>
+          <div class="faq-body">
+            No. Fixed-price USD only. I keep things simple so you can fire me anytime.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>You're 20. Why should I trust you?</summary>
+          <div class="faq-body">
+            Because I have <strong>nine sites in live U.S. production</strong>, editorial coverage in The Epoch Times and CMSWire, and a multi-agent workflow that solves the AdSense E-E-A-T problem no agency I've seen has solved. Age isn't a credential. Receipts are.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>How fast can we actually start?</summary>
+          <div class="faq-body">
+            If you email today and pay tomorrow, I'm writing code Wednesday. <strong>3 slots open for the current intake</strong> — when they fill, the next intake is the following month.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FINAL CTA ===== -->
   <section id="contact" class="contact-section section">
     <div class="max-w-[1200px] mx-auto px-6 sm:px-8 contact-inner">
       <div class="reveal-stagger">
-        <span class="eyebrow"><span class="dot"></span>Get in touch</span>
-        <h2 class="contact-h2 mt-6">Ready to <span class="accent-italic">ship?</span></h2>
-        <p class="contact-sub">Tell me what you're building. I'll respond within 24 hours.</p>
+        <span class="eyebrow"><span class="dot"></span>Last call</span>
+        <h2 class="contact-h2 mt-6">Or keep <span class="accent-italic">bleeding.</span></h2>
+        <p class="contact-sub">
+          $2,400/month doing busywork. Slow rivals lapping you. Agencies quoting you next quarter.<br/>
+          Or one email. Today.
+        </p>
       </div>
 
-      <form class="contact-form reveal" id="contact-form" novalidate>
+      <div class="contact-countdown reveal" aria-live="polite">
+        <span class="contact-countdown-live" aria-hidden="true"></span>
+        <span><span data-intake-month>this month</span> intake closes in</span>
+        <span class="contact-countdown-num" data-intake-countdown>—</span>
+      </div>
+
+      <form class="contact-form reveal" id="contact-form" data-email-user="javiperezguides" data-email-domain="gmail.com" novalidate>
         <div>
           <label for="cf-name" class="contact-label">Name</label>
           <input type="text" id="cf-name" name="name" class="contact-input" placeholder="Your name" autocomplete="name" required />
@@ -527,18 +1315,28 @@
         </div>
         <div class="contact-submit-row">
           <button type="submit" class="btn-primary">
-            Send message
+            Claim my slot
             <svg class="arrow w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </button>
         </div>
       </form>
+
+      <div class="contact-meta reveal">
+        <b>4h avg. reply</b>
+        <span class="contact-meta-sep" aria-hidden="true">·</span>
+        <b>Fixed price</b>
+        <span class="contact-meta-sep" aria-hidden="true">·</span>
+        <b>Async only</b>
+        <span class="contact-meta-sep" aria-hidden="true">·</span>
+        <b>Deploy free if I miss</b>
+      </div>
 
       <div class="contact-direct reveal">
         <span class="contact-direct-label">Or DM directly</span>
         <div class="contact-direct-list">
           <a href="https://www.linkedin.com/in/javi-perez-guides" target="_blank" rel="noopener" class="contact-direct-item">linkedin.com/in/javi-perez-guides</a>
           <a href="https://twitter.com/javiperezbuilds" target="_blank" rel="noopener" class="contact-direct-item">twitter.com/javiperezbuilds</a>
-          <a href="mailto:javiperezguides@gmail.com" class="contact-direct-item">javiperezguides@gmail.com</a>
+          <a href="#" class="contact-direct-item" data-email-user="javiperezguides" data-email-domain="gmail.com"><span class="email-display"></span></a>
         </div>
       </div>
     </div>
@@ -558,6 +1356,18 @@
       </div>
     </div>
   </footer>
+
+  <!-- ===== STICKY MOBILE CTA ===== -->
+  <div class="sticky-cta" id="sticky-cta" inert>
+    <div class="sticky-cta-info">
+      <span class="from">Async · Fixed price</span>
+      <span class="price">From <b>$200</b> — ships in days</span>
+    </div>
+    <a href="#contact" class="btn-primary" id="sticky-cta-btn">
+      Claim slot
+      <svg class="arrow w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+    </a>
+  </div>
 
   <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js" defer></script>
   <script src="scripts/main.js" defer></script>

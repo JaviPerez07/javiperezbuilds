@@ -110,25 +110,28 @@ left = 70
 top = 180
 
 # Eyebrow
-eyebrow = "PRODUCTION AI · MAY 2026"
+eyebrow = "STOP BLEEDING ON BUSYWORK · BUILT IN 48-72H"
 draw.text((left, top), eyebrow, font=f_eyebrow, fill=ACCENT)
 
-# Headline (2 lines, italic for "shipped")
+# Headline (2 lines, italic for "burning")
 y = top + 50
-line1 = "Production AI systems,"
-draw.text((left, y), line1, font=f_h1, fill=TEXT_PRIMARY)
-
-# Second line: italic "shipped" + " in days."
-y2 = y + 78
-italic_word = "shipped"
-draw.text((left, y2), italic_word, font=f_h1_italic, fill=ACCENT)
+# Line 1: "You're "  +  italic "burning"  +  " money"
+prefix = "You're "
+draw.text((left, y), prefix, font=f_h1, fill=TEXT_PRIMARY)
+prefix_w = draw.textlength(prefix, font=f_h1)
+italic_word = "burning"
+draw.text((left + prefix_w, y), italic_word, font=f_h1_italic, fill=ACCENT)
 italic_w = draw.textlength(italic_word, font=f_h1_italic)
-rest = " in days."
-draw.text((left + italic_w, y2), rest, font=f_h1, fill=TEXT_PRIMARY)
+after = " money"
+draw.text((left + prefix_w + italic_w, y), after, font=f_h1, fill=TEXT_PRIMARY)
+
+# Line 2: "on busywork."
+y2 = y + 78
+draw.text((left, y2), "on busywork.", font=f_h1, fill=TEXT_PRIMARY)
 
 # Sub
 y3 = y2 + 100
-draw.text((left, y3), "Javi Pérez — Builder, Almería · Spain", font=f_sub, fill=TEXT_SECONDARY)
+draw.text((left, y3), "Javi Pérez — Production AI, shipped in days · Almería", font=f_sub, fill=TEXT_SECONDARY)
 
 # Wordmark top-left
 f_wordmark = load_font(sans_paths, 28)
