@@ -597,10 +597,10 @@ body::before {
    FASE 2 — Social Proof + Services + Work
    ============================================ */
 
-/* Section utility */
+/* Section utility — compact vertical rhythm (was clamp(80px, 12vw, 140px)) */
 .section {
   position: relative;
-  padding: clamp(80px, 12vw, 140px) 0;
+  padding: clamp(56px, 8vw, 96px) 0;
 }
 
 .section-h2 {
@@ -686,7 +686,7 @@ body::before {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.25rem;
-  margin-top: 3.5rem;
+  margin-top: 2.5rem;
 }
 
 @media (min-width: 760px) {
@@ -857,7 +857,7 @@ body::before {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.25rem;
-  margin-top: 3.5rem;
+  margin-top: 2.5rem;
 }
 
 @media (min-width: 900px) {
@@ -1016,7 +1016,7 @@ body::before {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.25rem;
-  margin-top: 3.5rem;
+  margin-top: 2.5rem;
   position: relative;
 }
 
@@ -1342,7 +1342,7 @@ body::before {
 }
 
 .contact-direct {
-  margin: 3rem auto 0;
+  margin: 2.25rem auto 0;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -2302,7 +2302,7 @@ body::before {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
-  margin-top: 3.5rem;
+  margin-top: 2.5rem;
 }
 @media (min-width: 640px)  { .pain-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 1000px) { .pain-grid { grid-template-columns: repeat(4, 1fr); } }
@@ -2420,7 +2420,7 @@ body::before {
 }
 
 .compare-grid {
-  margin-top: 3.5rem;
+  margin-top: 2.5rem;
   border: 1px solid var(--border-subtle);
   border-radius: 18px;
   overflow: hidden;
@@ -2445,7 +2445,9 @@ body::before {
   display: flex;
   align-items: center;
   gap: 0.55rem;
-  min-height: 56px;
+  /* Uniform row height across columns — keeps the winner column rows
+     aligned with the row-label column even when text wraps. */
+  min-height: 62px;
   position: relative;
 }
 .compare-cell:last-child { border-right: none; }
@@ -2461,14 +2463,17 @@ body::before {
   background: rgba(255,255,255,0.015);
 }
 
-/* Column header */
+/* Column header — explicit min-height so 2-line subtitles in the winner
+   column don't push the body rows out of horizontal alignment. */
 .compare-cell--head {
   font-family: 'Geist Mono', ui-monospace, monospace;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: center;
   gap: 0.3rem;
   padding: 1.2rem 1.1rem 1rem;
   background: rgba(255,255,255,0.015);
+  min-height: 92px;
 }
 .compare-cell--head .head-amount {
   font-family: 'Inter', sans-serif;
@@ -3215,7 +3220,7 @@ body::before {
 }
 
 .faq-list {
-  margin: 3rem auto 0;
+  margin: 2.25rem auto 0;
   max-width: 760px;
   display: flex;
   flex-direction: column;

@@ -61,22 +61,24 @@
     const d = Math.max(0, Math.floor(diff / 86400000));
     const h = Math.max(0, Math.floor((diff % 86400000) / 3600000));
     const m = Math.max(0, Math.floor((diff % 3600000) / 60000));
+    const s = Math.max(0, Math.floor((diff % 60000) / 1000));
+    const pad = (n) => String(n).padStart(2, '0');
+    // Include seconds so the countdown visibly ticks — preserves urgency feel.
+    const fmt = `${d}d ${pad(h)}h ${pad(m)}m ${pad(s)}s`;
 
-    // Compact format for the urgency strip
     const shortEl = document.getElementById('urgency-countdown');
-    if (shortEl) shortEl.textContent = `${d}d ${String(h).padStart(2, '0')}h ${String(m).padStart(2, '0')}m`;
+    if (shortEl) shortEl.textContent = fmt;
 
-    // Same string surfaced into any other element that wants it
     document.querySelectorAll('[data-intake-countdown]').forEach(el => {
-      el.textContent = `${d}d ${String(h).padStart(2, '0')}h ${String(m).padStart(2, '0')}m`;
+      el.textContent = fmt;
     });
     document.querySelectorAll('[data-intake-month]').forEach(el => {
       el.textContent = intakeMonthLabel(target);
     });
   };
   updateIntakeCountdown();
-  // Refresh every minute — sufficient resolution for d/h/m format, low CPU
-  setInterval(updateIntakeCountdown, 60_000);
+  // 1s tick so seconds visibly count down — cheap (single setInterval).
+  setInterval(updateIntakeCountdown, 1000);
 
   // ============================================
   // Funnel · live "$ burned" hero counter
