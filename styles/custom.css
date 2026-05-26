@@ -96,6 +96,8 @@ body::before {
 
 /* Nav — static (no scroll-reactive stage transitions) */
 .nav-blur {
+  position: relative;
+  z-index: 50;
   background: rgba(10, 10, 11, 0.92);
   backdrop-filter: saturate(180%) blur(24px);
   -webkit-backdrop-filter: saturate(180%) blur(24px);
@@ -2068,13 +2070,13 @@ body::before {
 }
 
 .urgency-strip {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  position: relative;
+  
+  
+  
   z-index: 60;
-  height: var(--urgency-height);
-  padding: 0 1rem;
+  min-height: var(--urgency-height);
+  padding: 0.5rem 1rem;
   background: linear-gradient(90deg, rgba(217,119,87,0.16), rgba(217,119,87,0.06));
   border-bottom: 1px solid rgba(217,119,87,0.25);
   font-family: 'Geist Mono', ui-monospace, monospace;
@@ -2106,7 +2108,8 @@ body::before {
 
 /* Push nav below urgency strip */
 .nav-blur {
-  top: var(--urgency-height);
+  position: relative;
+  z-index: 50;
 }
 
 @media (max-width: 640px) {
@@ -2121,19 +2124,17 @@ body::before {
     white-space: nowrap;
   }
   .nav-blur {
-    top: var(--urgency-height-mobile);
-  }
 }
 
 /* Hero — offset for nav + urgency */
 .hero-with-urgency {
-  padding-top: calc(68px + var(--urgency-height));
-  min-height: calc(100vh - var(--urgency-height));
+  padding-top: 0;
+  min-height: calc(100vh - 38px - 68px);
 }
 @media (max-width: 640px) {
   .hero-with-urgency {
-    padding-top: calc(68px + var(--urgency-height-mobile));
-    min-height: calc(100vh - var(--urgency-height-mobile));
+    padding-top: 0;
+    min-height: auto;
   }
 }
 
@@ -2447,7 +2448,7 @@ body::before {
   gap: 0.55rem;
   /* Uniform row height across columns — keeps the winner column rows
      aligned with the row-label column even when text wraps. */
-  min-height: 62px;
+  min-height: 72px;
   position: relative;
 }
 .compare-cell:last-child { border-right: none; }
@@ -2473,7 +2474,7 @@ body::before {
   gap: 0.3rem;
   padding: 1.2rem 1.1rem 1rem;
   background: rgba(255,255,255,0.015);
-  min-height: 92px;
+  min-height: 104px;
 }
 .compare-cell--head .head-amount {
   font-family: 'Inter', sans-serif;
