@@ -96,8 +96,7 @@ body::before {
 
 /* Nav — static (no scroll-reactive stage transitions) */
 .nav-blur {
-  position: relative;
-  z-index: 50;
+  top: var(--urgency-height);
   background: rgba(10, 10, 11, 0.92);
   backdrop-filter: saturate(180%) blur(24px);
   -webkit-backdrop-filter: saturate(180%) blur(24px);
@@ -2070,13 +2069,16 @@ body::before {
 }
 
 .urgency-strip {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   
   
   
   z-index: 60;
-  min-height: var(--urgency-height);
-  padding: 0.5rem 1rem;
+  height: var(--urgency-height);
+  padding: 0 1rem;
   background: linear-gradient(90deg, rgba(217,119,87,0.16), rgba(217,119,87,0.06));
   border-bottom: 1px solid rgba(217,119,87,0.25);
   font-family: 'Geist Mono', ui-monospace, monospace;
@@ -2108,8 +2110,7 @@ body::before {
 
 /* Push nav below urgency strip */
 .nav-blur {
-  position: relative;
-  z-index: 50;
+  top: var(--urgency-height);
 }
 
 @media (max-width: 640px) {
@@ -2124,16 +2125,19 @@ body::before {
     white-space: nowrap;
   }
   .nav-blur {
+    top: var(--urgency-height-mobile);
+  }
 }
 
-/* Hero — offset for nav + urgency */
+/* Hero — offset for fixed urgency + nav above it. Desktop keeps full
+   viewport presence; mobile collapses to content height (kills black void). */
 .hero-with-urgency {
-  padding-top: 0;
-  min-height: calc(100vh - 38px - 68px);
+  padding-top: calc(68px + var(--urgency-height));
+  min-height: calc(100vh - var(--urgency-height));
 }
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .hero-with-urgency {
-    padding-top: 0;
+    padding-top: calc(68px + var(--urgency-height-mobile));
     min-height: auto;
   }
 }
