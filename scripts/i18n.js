@@ -266,6 +266,22 @@
       work_c3_ctx: 'Built the complete sales funnel for nico66fx PRO — a Spanish algorithmic trading community. Hero, 3-tier persona segmentation, live demo panel, Myfxbook audit integration, Stripe checkout, WhatsApp + Telegram CTAs, Skool community embedded. 102 PRO members live in production.',
       work_c3_footer: 'Visit live site',
 
+      // ===== Real client results (B7) =====
+      results_kicker: 'Real client results',
+      results_heading_pre: "Don't take my word ",
+      results_heading_accent: 'for it.',
+      results_intro: 'Spontaneous messages from clients after shipping. No retainers, no pressure to leave reviews — just real reactions to real work.',
+      testimonial_nico_quote: '“Javi, what a crazy website optimization — nothing like before. This is what converted today on autopilot without me having to be glued to my phone, letting me focus on what really matters: attending to the community and the bots. Great work man, let’s go for more.”',
+      testimonial_nico_role: 'Founder, nico66fx PRO · Algorithmic trading community',
+      testimonial_nico_link: 'See the live project →',
+      screenshot_badge: 'Real WhatsApp · May 27, 2026',
+      tag_funnel: 'Sales funnel',
+      tag_stripe: 'Stripe integration',
+      tag_segmentation: '3-tier segmentation',
+      tag_automated: 'Automated conversion',
+      more_testimonials: 'More client results coming as projects ship.',
+      be_next: 'Be next →',
+
       // ===== Local business (already authored in B2 markup) =====
       local_kicker: 'For local businesses',
       local_heading_pre: 'Your local business deserves to be online ',
@@ -685,6 +701,22 @@
       work_c3_title: 'Funnel de ventas para comunidad de trading algorítmico',
       work_c3_ctx: 'Construí el funnel de ventas completo para nico66fx PRO — comunidad española de trading algorítmico. Hero, segmentación 3 perfiles, demo panel en vivo, integración con Myfxbook, Stripe checkout, WhatsApp + Telegram CTAs, comunidad Skool embebida. 102 miembros PRO en producción.',
       work_c3_footer: 'Visita la web',
+
+      // ===== Resultados reales de clientes (B7) =====
+      results_kicker: 'Resultados reales de clientes',
+      results_heading_pre: 'No te lo digo yo. Te lo dicen ',
+      results_heading_accent: 'ellos.',
+      results_intro: 'Mensajes espontáneos de clientes después de entregar el proyecto. Sin retainers, sin pedir reseñas — solo reacciones reales a trabajos reales.',
+      testimonial_nico_quote: '“Javi, qué locura la optimización de la web, no tiene nada que ver a como estaba antes. Esto es lo que ha convertido solo hoy automáticamente sin tener que estar atento al móvil y pudiéndome centrar en lo que de verdad importa, que es atender a la comunidad y los robots. Gran trabajo tío, vamos a por más.”',
+      testimonial_nico_role: 'Founder, nico66fx PRO · Comunidad de trading algorítmico',
+      testimonial_nico_link: 'Ver el proyecto en vivo →',
+      screenshot_badge: 'WhatsApp real · 27 mayo 2026',
+      tag_funnel: 'Funnel de ventas',
+      tag_stripe: 'Integración Stripe',
+      tag_segmentation: 'Segmentación 3 perfiles',
+      tag_automated: 'Conversión automática',
+      more_testimonials: 'Más resultados de clientes según vayan saliendo los proyectos.',
+      be_next: 'Ser el siguiente →',
 
       // ===== Local business =====
       local_kicker: 'Para negocios locales',
