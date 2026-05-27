@@ -86,11 +86,14 @@
   // ============================================
   const burnedEl = document.getElementById('burned-num');
   if (burnedEl && !reducedMotion) {
-    let v = 2847;
+    const baseline = 2847;
+    const cap = baseline + 1000; // Hard ceiling so long sessions don't show absurd $50k
+    let v = baseline;
     const render = () => { burnedEl.textContent = '$' + v.toLocaleString('en-US'); };
     render();
     setInterval(() => {
-      v += Math.floor(Math.random() * 3) + 1;
+      if (v >= cap) return; // Stop ticking once cap reached
+      v = Math.min(cap, v + Math.floor(Math.random() * 3) + 1);
       render();
     }, 1100);
   }
@@ -512,23 +515,26 @@
   // the winner column (responsive — recomputes on resize).
   // ============================================
   const compareGrid = document.querySelector('.compare-grid');
-  const winnerBadge = compareGrid?.querySelector('.winner-badge');
+  // Badge is now a sibling of .compare-grid inside .compare-grid-wrap (so it can
+  // float above the grid without being clipped by the grid's overflow:hidden).
+  const compareWrap = document.querySelector('.compare-grid-wrap');
+  const winnerBadge = compareWrap?.querySelector('.winner-badge');
   const winnerColHead = compareGrid?.querySelector('.compare-col--winner .compare-cell--head');
-  if (compareGrid && winnerBadge && winnerColHead) {
+  if (compareWrap && compareGrid && winnerBadge && winnerColHead) {
     const positionBadge = () => {
-      // On mobile (single-col stack) the badge uses left:50% via CSS — no JS needed
       if (window.matchMedia('(max-width: 880px)').matches) {
         winnerBadge.style.left = '50%';
+        winnerBadge.style.transform = 'translateX(-50%)';
         return;
       }
-      const gridRect = compareGrid.getBoundingClientRect();
+      const wrapRect = compareWrap.getBoundingClientRect();
       const headRect = winnerColHead.getBoundingClientRect();
-      const centerX = (headRect.left - gridRect.left) + headRect.width / 2;
+      const centerX = (headRect.left - wrapRect.left) + headRect.width / 2;
       winnerBadge.style.left = centerX + 'px';
+      winnerBadge.style.transform = 'translateX(-50%)';
     };
     positionBadge();
     window.addEventListener('resize', positionBadge);
-    // Re-run after fonts settle (1 frame later)
     requestAnimationFrame(() => requestAnimationFrame(positionBadge));
   }
 

@@ -96,7 +96,6 @@ body::before {
 
 /* Nav — static (no scroll-reactive stage transitions) */
 .nav-blur {
-  top: var(--urgency-height);
   background: rgba(10, 10, 11, 0.92);
   backdrop-filter: saturate(180%) blur(24px);
   -webkit-backdrop-filter: saturate(180%) blur(24px);
@@ -708,7 +707,7 @@ body::before {
   flex-direction: column;
   transition: transform 350ms var(--ease-out-quart), box-shadow 350ms ease, border-color 350ms ease;
   isolation: isolate;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .service-card::before {
@@ -737,7 +736,7 @@ body::before {
 
 .service-card-badge {
   position: absolute;
-  top: 1.25rem;
+  top: -12px;
   right: 1.25rem;
   background: var(--accent);
   color: var(--bg-base);
@@ -746,9 +745,10 @@ body::before {
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  padding: 0.35rem 0.65rem;
+  padding: 0.35rem 0.7rem;
   border-radius: 999px;
-  box-shadow: 0 4px 16px -4px var(--accent-glow);
+  z-index: 2;
+  box-shadow: 0 4px 16px -4px var(--accent-glow), 0 0 0 4px var(--bg-base);
 }
 
 .service-card-title {
@@ -879,7 +879,7 @@ body::before {
   gap: 1.5rem;
   transition: transform 350ms var(--ease-out-quart), box-shadow 350ms ease;
   isolation: isolate;
-  overflow: hidden;
+  overflow: visible;
   min-height: 320px;
 }
 
@@ -2069,10 +2069,7 @@ body::before {
 }
 
 .urgency-strip {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  position: relative;
   
   
   
@@ -2110,7 +2107,6 @@ body::before {
 
 /* Push nav below urgency strip */
 .nav-blur {
-  top: var(--urgency-height);
 }
 
 @media (max-width: 640px) {
@@ -2125,19 +2121,18 @@ body::before {
     white-space: nowrap;
   }
   .nav-blur {
-    top: var(--urgency-height-mobile);
   }
 }
 
 /* Hero — offset for fixed urgency + nav above it. Desktop keeps full
    viewport presence; mobile collapses to content height (kills black void). */
 .hero-with-urgency {
-  padding-top: calc(68px + var(--urgency-height));
-  min-height: calc(100vh - var(--urgency-height));
+  padding-top: 0;
+  min-height: calc(100vh - 38px - 68px);
 }
 @media (max-width: 768px) {
   .hero-with-urgency {
-    padding-top: calc(68px + var(--urgency-height-mobile));
+    padding-top: 0;
     min-height: auto;
   }
 }
@@ -3132,10 +3127,17 @@ body::before {
 .guarantee-section {
   background: var(--bg-base);
   border-top: 1px solid var(--border-subtle);
+  /* B7 — compress gap About → Guarantee (was inheriting full .section padding) */
+  padding-top: clamp(28px, 4vw, 48px);
+}
+
+/* B7 — also trim About section bottom padding so the pair lands ~80px apart desktop */
+#about.section {
+  padding-bottom: clamp(28px, 4vw, 48px);
 }
 
 .guarantee-card {
-  margin-top: 3rem;
+  margin-top: 1.5rem;
   background: linear-gradient(135deg, rgba(217,119,87,0.10), rgba(217,119,87,0.02));
   border: 1px solid rgba(217,119,87,0.3);
   border-radius: 20px;
@@ -3362,4 +3364,691 @@ body::before {
 
 @media (prefers-reduced-motion: reduce) {
   .contact-countdown-live { animation: none; }
+}
+
+/* Sprint v2 — Bloque 1 fixes */
+
+/* Fix 1.3: hide the empty header cell in the labels column (orphan box
+   between "The math is embarrassing" and the start of the table). Keep
+   min-height so it aligns with the other column headers, but drop visible
+   background + borders so it reads as empty space, not a box. */
+.compare-col-labels .compare-cell--head {
+  background: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+}
+
+/* Fix 1.4: mobile spacing audit — tighten section padding more aggressively
+   on narrow screens. Default desktop uses clamp(56,8vw,96). Mobile gets a
+   hard 40px to reduce the black gaps the user reported. */
+@media (max-width: 768px) {
+  .section {
+    padding: 40px 0;
+  }
+  /* Reduce internal section header → grid spacing */
+  .services-grid,
+  .pain-grid,
+  .work-grid,
+  .process-grid,
+  .compare-grid,
+  .case-wrap,
+  .test-grid,
+  .faq-list,
+  .guarantee-card {
+    margin-top: 1.75rem;
+  }
+  /* Tighter cards padding on mobile */
+  .pain-card,
+  .service-card,
+  .work-card,
+  .process-step,
+  .test-card {
+    padding: 1.25rem 1.1rem 1.4rem;
+  }
+  /* Hero counter card tighter */
+  .hero-counter {
+    padding: 0.9rem 1rem;
+  }
+}
+
+/* Fix 1.8: "Case study coming soon" placeholder — make it visibly intentional
+   with italic + dim color + lock icon. */
+.work-card-footer-lock {
+  width: 11px;
+  height: 11px;
+  flex-shrink: 0;
+  margin-right: 0.4rem;
+  color: var(--text-dim);
+}
+.work-card--case .work-card-footer-text {
+  font-style: italic;
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  text-transform: none;
+  letter-spacing: 0.02em;
+  font-size: 0.72rem;
+  color: var(--text-dim);
+}
+.work-card--case:hover .work-card-footer-text,
+.work-card--case:focus-visible .work-card-footer-text {
+  color: var(--accent);
+}
+.work-card--case:hover .work-card-footer-lock {
+  color: var(--accent);
+}
+
+/* Fix 1.7: footer email link (renderer-driven mailto via data-email-*) */
+.footer-email {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--text-secondary);
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+  transition: color 200ms ease;
+}
+.footer-email svg {
+  color: var(--text-dim);
+  transition: color 200ms ease;
+  flex-shrink: 0;
+}
+.footer-email:hover,
+.footer-email:hover svg {
+  color: var(--accent);
+}
+.footer-meta {
+  flex-wrap: wrap;
+  gap: 0.6rem 1.25rem;
+}
+
+/* ============================================
+   Sprint v2 — BLOQUE 2: Local Business section
+   Reuses .service-card chrome + adds the green "Local" badge
+   variant, recent-builds strip, and section CTA row with
+   WhatsApp gradient button.
+   ============================================ */
+
+.local-business-section {
+  background: var(--bg-base);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.local-services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+}
+@media (min-width: 760px) {
+  .local-services-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+/* Local badge — green variant of .service-card-badge (distinct from
+   the coral "Most popular" badge so users don't confuse them) */
+.local-badge {
+  position: absolute;
+  top: -12px;
+  left: 1.25rem;
+  right: auto;
+  z-index: 2;
+  background: rgba(74, 222, 128, 0.14);
+  color: var(--success);
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid rgba(74, 222, 128, 0.35);
+  box-shadow: 0 4px 16px -4px rgba(74, 222, 128, 0.4), 0 0 0 4px var(--bg-base);
+}
+
+/* Card-trace + lift hover already inherited from .service-card */
+
+/* Recent local builds strip */
+.local-recent-strip {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.strip-label {
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0;
+}
+
+.strip-items {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+@media (min-width: 760px) {
+  .strip-items { grid-template-columns: repeat(3, 1fr); }
+}
+
+.strip-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 1.1rem 1.2rem;
+  transition: border-color 300ms ease, transform 300ms var(--ease-out-quart);
+}
+.strip-item:hover {
+  transform: translateY(-2px);
+  border-color: rgba(217, 119, 87, 0.3);
+}
+
+.strip-item .strip-tag {
+  display: block;
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.strip-item p {
+  margin: 0;
+  font-size: 0.86rem;
+  line-height: 1.55;
+  color: var(--text-secondary);
+}
+
+.strip-item.open-slot {
+  border-style: dashed;
+  background: transparent;
+  opacity: 0.75;
+}
+.strip-item.open-slot .strip-tag { color: var(--text-secondary); }
+.strip-item.open-slot p { color: var(--text-dim); }
+
+/* Section CTA row */
+.local-section-cta {
+  margin-top: 3rem;
+  padding-top: 2.25rem;
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: center;
+}
+.local-section-cta p {
+  margin: 0;
+  max-width: 640px;
+  font-size: clamp(1rem, 1.3vw, 1.1rem);
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.local-cta-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  align-items: stretch;
+}
+@media (min-width: 520px) {
+  .local-cta-buttons {
+    flex-direction: row;
+    align-items: center;
+    gap: 1.25rem;
+  }
+}
+
+/* WhatsApp inline button (only visible when lang = es — toggled in Bloque 3 JS) */
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0.85rem 1.5rem;
+  background: linear-gradient(135deg, #25D366 0%, #1DA851 100%);
+  color: #FFFFFF;
+  border-radius: 10px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  text-decoration: none;
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.06) inset,
+    0 0 18px rgba(37, 211, 102, 0.32),
+    0 8px 24px -8px rgba(37, 211, 102, 0.4);
+  transition: transform 250ms var(--ease-out-quart), box-shadow 350ms var(--ease-out-quart);
+}
+.btn-whatsapp:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.12) inset,
+    0 0 28px rgba(37, 211, 102, 0.5),
+    0 12px 32px -8px rgba(37, 211, 102, 0.55);
+}
+.btn-whatsapp:focus-visible {
+  outline: 2px solid #25D366;
+  outline-offset: 3px;
+}
+.btn-whatsapp svg { flex-shrink: 0; }
+
+/* Hide WhatsApp button when language is English (Bloque 3 toggles html[lang]) */
+html[lang="en"] .btn-whatsapp { display: none; }
+
+@media (max-width: 768px) {
+  .local-recent-strip { margin-top: 2.5rem; padding-top: 1.5rem; }
+  .local-section-cta  { margin-top: 2rem; padding-top: 1.5rem; gap: 1rem; }
+}
+
+/* ============================================
+   Sprint v2 — BLOQUE 3: i18n toggle UI
+   ============================================ */
+
+.lang-toggle-wrap {
+  align-items: center;
+  gap: 0.25rem;
+  margin-right: 0.85rem;
+  padding: 0.15rem 0.4rem;
+  border: 1px solid var(--border-subtle);
+  border-radius: 999px;
+}
+
+.lang-toggle {
+  background: none;
+  border: none;
+  color: var(--text-dim);
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  padding: 0.25rem 0.4rem;
+  border-radius: 999px;
+  transition: color 200ms ease, background 200ms ease;
+}
+.lang-toggle:hover {
+  color: var(--text-primary);
+}
+.lang-toggle.is-active {
+  color: var(--accent);
+}
+.lang-toggle:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.lang-divider {
+  color: var(--text-dim);
+  opacity: 0.5;
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-size: 0.7rem;
+  line-height: 1;
+}
+
+/* Mobile lang toggle (inside .mobile-menu) — slightly bigger, top spacing */
+.lang-toggle-wrap--mobile {
+  display: inline-flex;
+  align-self: flex-start;
+  margin: 1rem 0 0;
+}
+.lang-toggle-wrap--mobile .lang-toggle {
+  font-size: 0.85rem;
+  padding: 0.4rem 0.65rem;
+}
+
+/* ============================================
+   Sprint v2 — BLOQUE 4: WhatsApp FAB + B4.5: nico66fx Live card
+   ============================================ */
+
+/* ---- WhatsApp Floating Action Button ---- */
+.whatsapp-fab {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 65;  /* below sticky-cta (z-70) but above content */
+  display: none; /* hidden by default; show only when lang=es via rule below */
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.85rem 1.3rem;
+  background: linear-gradient(135deg, #25D366 0%, #1DA851 100%);
+  color: #FFFFFF;
+  border-radius: 999px;
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.08) inset,
+    0 0 22px rgba(37, 211, 102, 0.45),
+    0 0 44px rgba(37, 211, 102, 0.25),
+    0 10px 28px rgba(0, 0, 0, 0.35);
+  animation: whatsapp-pulse 2.5s ease-in-out infinite;
+  transition: transform 250ms var(--ease-out-quart), box-shadow 350ms var(--ease-out-quart);
+  text-decoration: none;
+}
+
+/* Shown only when html[lang="es"] */
+html[lang="es"] .whatsapp-fab {
+  display: inline-flex;
+}
+
+.whatsapp-fab:hover {
+  transform: scale(1.05);
+  animation-play-state: paused;
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.15) inset,
+    0 0 32px rgba(37, 211, 102, 0.65),
+    0 0 64px rgba(37, 211, 102, 0.35),
+    0 14px 36px rgba(0, 0, 0, 0.4);
+}
+.whatsapp-fab:focus-visible {
+  outline: 2px solid #25D366;
+  outline-offset: 4px;
+}
+.whatsapp-fab-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+@keyframes whatsapp-pulse {
+  0%, 100% {
+    box-shadow:
+      0 0 0 1px rgba(255,255,255,0.08) inset,
+      0 0 22px rgba(37, 211, 102, 0.45),
+      0 0 44px rgba(37, 211, 102, 0.25),
+      0 10px 28px rgba(0, 0, 0, 0.35);
+  }
+  50% {
+    box-shadow:
+      0 0 0 1px rgba(255,255,255,0.12) inset,
+      0 0 32px rgba(37, 211, 102, 0.6),
+      0 0 64px rgba(37, 211, 102, 0.35),
+      0 10px 28px rgba(0, 0, 0, 0.35);
+  }
+}
+
+/* Mobile: icon-only, bottom-left of right corner (clears sticky CTA on right) */
+@media (max-width: 640px) {
+  .whatsapp-fab {
+    bottom: 84px;  /* clears sticky CTA (~70px tall) */
+    right: 16px;
+    padding: 0.85rem;
+    gap: 0;
+  }
+  .whatsapp-fab-label { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .whatsapp-fab { animation: none; }
+}
+
+/* ---- Last Call submit row — flex side-by-side btn-primary + btn-whatsapp ---- */
+.contact-submit-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  margin-top: 1rem;
+}
+@media (min-width: 520px) {
+  .contact-submit-row {
+    flex-direction: row;
+    gap: 1.25rem;
+  }
+}
+
+/* ============================================
+   BLOQUE 4.5 — nico66fx Live work card
+   ============================================ */
+
+/* Override work-card chrome when it's a live link <a> */
+a.work-card.work-card--live {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.work-card--live {
+  padding-top: 0.75rem;  /* tighter top — image sits above */
+}
+
+.work-card-live-badge {
+  position: absolute;
+  top: -12px;
+  right: 1.25rem;
+  z-index: 2;
+  background: rgba(74, 222, 128, 0.16);
+  color: var(--success);
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.65rem;
+  border-radius: 999px;
+  border: 1px solid rgba(74, 222, 128, 0.4);
+  box-shadow: 0 4px 16px -4px rgba(74, 222, 128, 0.45), 0 0 0 4px var(--bg-card);
+}
+.work-card--live-badge::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--success);
+  margin-right: 0.35rem;
+  vertical-align: 1px;
+  animation: pulse-dot 2.2s ease-in-out infinite;
+}
+
+.work-card-thumb {
+  position: relative;
+  margin: 0 -0.25rem 1rem;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-base);
+  aspect-ratio: 800 / 415;
+  transition: border-color 350ms ease;
+}
+.work-card-thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: contrast(1.02) saturate(1.04);
+  transition: transform 700ms var(--ease-out-quart);
+}
+.work-card--live:hover .work-card-thumb img {
+  transform: scale(1.03);
+}
+.work-card--live:hover .work-card-thumb {
+  border-color: rgba(74, 222, 128, 0.35);
+}
+
+.work-metric-sub {
+  display: block;
+  margin-top: 0.2rem;
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+/* "Visit live site →" footer treatment — distinct from "coming soon" */
+.work-card--live .work-card-footer {
+  color: var(--success);
+}
+.work-card--live .work-card-footer-text {
+  font-style: normal;
+  color: var(--success);
+  font-weight: 500;
+}
+.work-card--live:hover .work-card-footer-text,
+.work-card--live:hover .work-card-footer-arrow {
+  color: var(--success);
+}
+
+/* ---- Local strip — live link variant ---- */
+a.strip-item.strip-item--live {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+.strip-item--live .strip-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-size: 0.66rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--success);
+  transition: color 200ms ease;
+}
+.strip-item--live:hover {
+  border-color: rgba(74, 222, 128, 0.4);
+}
+.strip-item--live:hover .strip-link {
+  color: var(--accent);
+}
+
+/* ============================================
+   Sprint v2 — BLOQUE 6 hotfixes
+   ============================================ */
+
+/* FIX 2: Winner badge — move anchor from .compare-grid (overflow:hidden) to
+   parent .compare-grid-wrap (overflow:visible). Badge can now float above. */
+.compare-grid-wrap {
+  position: relative;
+}
+.compare-grid-wrap .winner-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  /* All other badge styling is already in the existing .compare-grid .winner-badge rule;
+     keep that for backward compat but also apply here. */
+}
+
+/* FIX 3: WhatsApp FAB mobile reposition — Option A (more to corner edge).
+   Glow box-shadow values are NOT touched. */
+@media (max-width: 768px) {
+  .whatsapp-fab {
+    bottom: 16px;
+    right: 12px;
+  }
+}
+/* If FAB sticky CTA overlap detected on smaller phones, push FAB above sticky */
+@media (max-width: 480px) {
+  .whatsapp-fab {
+    bottom: 86px; /* clears the ~70px tall sticky CTA */
+  }
+}
+
+/* FIX 5: nico66fx metric — split number + sub label into separate blocks
+   so word-break never affects the number. */
+.work-metric {
+  /* override default — keep tabular for sizing */
+  font-variant-numeric: tabular-nums;
+  hyphens: none;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+.work-metric-sub {
+  /* Already defined; ensure it sits BELOW the number, not inline */
+  display: block;
+  margin-top: 0.3rem;
+  line-height: 1.2;
+  /* Allow sub label to wrap normally on narrow widths */
+  word-break: normal;
+}
+
+/* FIX 6 — Aggressive mobile spacing audit to kill any black gaps.
+   Targets ALL section-internal grids/strips/CTAs we might've missed in B1.4. */
+@media (max-width: 768px) {
+  .local-services-grid {
+    margin-top: 1.75rem;
+    gap: 1.1rem;
+  }
+  .local-recent-strip {
+    margin-top: 1.75rem;
+    padding-top: 1.25rem;
+  }
+  .local-section-cta {
+    margin-top: 1.75rem;
+    padding-top: 1.25rem;
+    gap: 1rem;
+  }
+  .demo-tabs {
+    margin-top: 1.75rem;
+  }
+  .demo-panels {
+    margin-top: 1.25rem;
+  }
+  .demo-panel {
+    padding: 1.25rem 1.1rem 1.4rem;
+  }
+  .case-wrap {
+    padding: 1.5rem 1.25rem;
+    gap: 1.25rem;
+  }
+  .about-grid {
+    margin-top: 1.75rem;
+    gap: 1.75rem;
+  }
+  .agent-flow {
+    padding: 1.1rem 1.1rem 1.25rem;
+  }
+  .compare-cta-row {
+    margin-top: 1.75rem;
+  }
+  .contact-countdown {
+    margin-top: 1.5rem;
+  }
+  .contact-form {
+    margin-top: 1.5rem;
+    gap: 0.85rem;
+  }
+  .contact-direct {
+    margin-top: 1.5rem;
+  }
+  .contact-meta {
+    margin-top: 1.25rem;
+  }
+  .pain-disclaimer {
+    margin-top: 1.5rem;
+  }
+}
+
+/* FIX 7 — extra audit: thumbnail margin in nico66fx card on mobile */
+@media (max-width: 768px) {
+  .work-card-thumb {
+    margin-bottom: 0.75rem;
+  }
+}
+
+/* FIX 5: number isolated in its own block so the sub-label never affects
+   word-break/hyphenation of the big number. */
+.work-metric-num {
+  display: block;
+  white-space: nowrap;
 }
