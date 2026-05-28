@@ -37,7 +37,7 @@
       hero_h1_w4: 'on',
       hero_h1_w5: 'busywork.',
       hero_h1_aria: "You're burning money on busywork.",
-      hero_sub: 'I ship the AI systems that stop the bleeding — in 48–72h. Daily Claude Code operator across nine production sites in U.S. financial verticals. Fixed scope, fixed price, async only.',
+      hero_sub: 'I build AI sites and ship the systems that stop the bleeding — in 48–72h. Daily Claude Code operator across nine production sites in U.S. financial verticals. Fixed scope, fixed price, async only.',
       hero_counter_burned: 'burned by founders',
       hero_counter_burned2: 'since you opened this page',
       hero_counter_sites: 'sites live',
@@ -68,9 +68,9 @@
 
       // ===== Services =====
       srv_kicker: 'What I build',
-      srv_h2_pre: 'Four ways I work with ',
+      srv_h2_pre: 'Four ways a Claude Code operator works with ',
       srv_h2_accent: 'founders.',
-      srv_sub: 'Productized engagements with clear scope, timeline, and price. No project bloat. No discovery calls disguised as scoping.',
+      srv_sub: 'Productized engagements with clear scope, timeline, and price — from AdSense-ready websites to AI workflow automation. No project bloat. No discovery calls disguised as scoping.',
       srv_price: 'Price',
       srv_timeline: 'Timeline',
       srv_cta: 'Lock in this price',
@@ -473,7 +473,7 @@
       hero_h1_w4: 'en',
       hero_h1_w5: 'busywork.',
       hero_h1_aria: 'Estás quemando dinero en busywork.',
-      hero_sub: 'Construyo los sistemas de IA que paran la hemorragia — en 48–72h. Operador diario de Claude Code en nueve sites en producción del sector financiero US. Scope cerrado, precio cerrado, todo async.',
+      hero_sub: 'Construyo sites de IA y entrego los sistemas que paran la hemorragia — en 48–72h. Operador diario de Claude Code en nueve sites en producción del sector financiero US. Scope cerrado, precio cerrado, todo async.',
       hero_counter_burned: 'quemados por founders',
       hero_counter_burned2: 'desde que abriste esta página',
       hero_counter_sites: 'sites live',
@@ -504,9 +504,9 @@
 
       // ===== Services =====
       srv_kicker: 'Qué construyo',
-      srv_h2_pre: 'Cuatro formas de trabajar con ',
+      srv_h2_pre: 'Cuatro formas en que un operador de Claude Code trabaja con ',
       srv_h2_accent: 'founders.',
-      srv_sub: 'Engagements productizados con scope, plazo y precio cerrados. Sin project bloat. Sin discovery calls disfrazadas de scoping.',
+      srv_sub: 'Engagements productizados con scope, plazo y precio cerrados — desde webs AdSense-ready hasta automatización de workflows con IA. Sin project bloat. Sin discovery calls disfrazadas de scoping.',
       srv_price: 'Precio',
       srv_timeline: 'Plazo',
       srv_cta: 'Reservar este precio',
