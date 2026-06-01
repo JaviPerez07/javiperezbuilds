@@ -521,10 +521,19 @@
   const winnerBadge = compareWrap?.querySelector('.winner-badge');
   const winnerColHead = compareGrid?.querySelector('.compare-col--winner .compare-cell--head');
   if (compareWrap && compareGrid && winnerBadge && winnerColHead) {
+    const winnerCol = compareGrid.querySelector('.compare-col--winner');
     const positionBadge = () => {
       if (window.matchMedia('(max-width: 880px)').matches) {
+        // Columns stack on mobile; pin the badge to the top of the winner card
+        // (it's the last column in the DOM) instead of the top of the whole stack.
         winnerBadge.style.left = '50%';
         winnerBadge.style.transform = 'translateX(-50%)';
+        const anchor = winnerCol || winnerColHead;
+        if (anchor) {
+          const wrapRect = compareWrap.getBoundingClientRect();
+          const colRect = anchor.getBoundingClientRect();
+          winnerBadge.style.top = (colRect.top - wrapRect.top - 13) + 'px';
+        }
         return;
       }
       const wrapRect = compareWrap.getBoundingClientRect();
@@ -532,6 +541,7 @@
       const centerX = (headRect.left - wrapRect.left) + headRect.width / 2;
       winnerBadge.style.left = centerX + 'px';
       winnerBadge.style.transform = 'translateX(-50%)';
+      winnerBadge.style.top = '-13px';
     };
     positionBadge();
     window.addEventListener('resize', positionBadge);

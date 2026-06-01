@@ -2533,7 +2533,7 @@ body::before {
 .compare-grid {
   position: relative;
 }
-.compare-grid .winner-badge {
+.compare-grid-wrap .winner-badge {
   position: absolute;
   top: -10px;
   /* Positioned by JS to sit above the winner column on desktop */
@@ -2603,7 +2603,7 @@ body::before {
   .compare-col--winner .compare-cell {
     border-left: none;
   }
-  .compare-grid .winner-badge {
+  .compare-grid-wrap .winner-badge {
     top: 0;
     transform: translate(-50%, -50%);
   }
@@ -4323,5 +4323,63 @@ a.strip-item.strip-item--live {
   .testimonials-more {
     margin-top: 1.75rem;
     padding-top: 1.5rem;
+  }
+}
+
+/* ============================================
+   BLOQUE 7b — Testimonial slide-in + drift animation
+   ============================================ */
+
+/* Directional slide-in. Overrides .reveal's translateY with a horizontal
+   offset; the two cards enter from opposite sides for a dynamic feel.
+   When .is-visible lands (via the existing IntersectionObserver), they
+   settle into place AND begin a slow, looping left↔right drift. */
+.reveal-slide {
+  /* slightly longer + springier than the base .reveal for a richer entrance */
+  transition: opacity 900ms var(--ease-out-expo), transform 900ms var(--ease-out-expo);
+}
+.reveal-slide.reveal-slide--left {
+  transform: translateX(-64px);
+}
+.reveal-slide.reveal-slide--right {
+  transform: translateX(64px);
+}
+
+/* Settled state — then hand off to the continuous drift keyframes */
+.reveal-slide.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+  animation: testimonial-drift 9s ease-in-out 1100ms infinite;
+}
+/* Offset the second card's drift phase so they sway in counterpoint,
+   reinforcing the left→right motion across the pair. */
+.reveal-slide--right.is-visible {
+  animation-name: testimonial-drift-alt;
+}
+
+@keyframes testimonial-drift {
+  0%   { transform: translateX(0); }
+  50%  { transform: translateX(14px); }
+  100% { transform: translateX(0); }
+}
+@keyframes testimonial-drift-alt {
+  0%   { transform: translateX(0); }
+  50%  { transform: translateX(-14px); }
+  100% { transform: translateX(0); }
+}
+
+/* Lift the drift on hover so reading is never disturbed by motion */
+.reveal-slide.is-visible:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-slide.reveal-slide--left,
+  .reveal-slide.reveal-slide--right {
+    transform: none;
+  }
+  .reveal-slide.is-visible {
+    animation: none;
+    transform: none;
   }
 }
