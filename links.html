@@ -46,11 +46,15 @@
   <style>
     .links-page {
       min-height: 100svh;
+      box-sizing: border-box;
+      width: 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: flex-start;
-      padding: clamp(2.5rem, 8vh, 5rem) 1.25rem 3rem;
+      justify-content: center;
+      /* Symmetric side padding at ALL widths (not just inside the mobile
+         media query, which only fires ≤480px). */
+      padding: clamp(2.5rem, 8vh, 5rem) clamp(1.5rem, 7vw, 3rem) 3rem;
       position: relative;
       overflow: hidden;
     }
@@ -71,7 +75,8 @@
       position: relative;
       z-index: 1;
       width: 100%;
-      max-width: 480px;
+      max-width: 400px;
+      margin: 0 auto;            /* explicit horizontal centering */
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -191,17 +196,11 @@
     /* ---- Mobile optimisation (most traffic is IG/TikTok in-app browsers) ---- */
     @media (max-width: 480px) {
       .links-page {
-        /* Center content vertically + respect iPhone notch / home-bar safe areas.
-           Wider side padding so buttons have symmetric breathing room (were
-           nearly edge-to-edge before). */
-        justify-content: center;
-        padding: calc(env(safe-area-inset-top, 0px) + 2rem)
-                 calc(env(safe-area-inset-left, 0px) + 1.75rem)
-                 calc(env(safe-area-inset-bottom, 0px) + 1.75rem)
-                 calc(env(safe-area-inset-right, 0px) + 1.75rem);
+        /* Respect iPhone notch / home-bar safe areas; base rule already gives
+           symmetric side padding via clamp(). */
+        padding-top: calc(env(safe-area-inset-top, 0px) + 2rem);
+        padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 1.75rem);
       }
-      /* Constrain the column a touch so it never feels cramped on wide phones */
-      .links-wrap { max-width: 22rem; }
       .links-avatar { width: 92px; height: 92px; }
       .links-name { margin-top: 0.95rem; font-size: 1.45rem; }
       .links-handle { font-size: 0.68rem; }
