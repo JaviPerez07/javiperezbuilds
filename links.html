@@ -191,11 +191,17 @@
     /* ---- Mobile optimisation (most traffic is IG/TikTok in-app browsers) ---- */
     @media (max-width: 480px) {
       .links-page {
-        /* Center content vertically + respect iPhone notch / home-bar safe areas */
+        /* Center content vertically + respect iPhone notch / home-bar safe areas.
+           Wider side padding so buttons have symmetric breathing room (were
+           nearly edge-to-edge before). */
         justify-content: center;
-        padding: calc(env(safe-area-inset-top, 0px) + 2rem) 1.1rem
-                 calc(env(safe-area-inset-bottom, 0px) + 1.75rem);
+        padding: calc(env(safe-area-inset-top, 0px) + 2rem)
+                 calc(env(safe-area-inset-left, 0px) + 1.75rem)
+                 calc(env(safe-area-inset-bottom, 0px) + 1.75rem)
+                 calc(env(safe-area-inset-right, 0px) + 1.75rem);
       }
+      /* Constrain the column a touch so it never feels cramped on wide phones */
+      .links-wrap { max-width: 22rem; }
       .links-avatar { width: 92px; height: 92px; }
       .links-name { margin-top: 0.95rem; font-size: 1.45rem; }
       .links-handle { font-size: 0.68rem; }
