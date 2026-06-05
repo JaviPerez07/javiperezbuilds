@@ -142,24 +142,16 @@
         border-color 280ms ease;
     }
     .link-btn:active { transform: scale(0.985); }
-    /* Icon pinned to a fixed left position so every button's icon lines up
-       vertically, while the label stays centered in the button. */
+    /* Icon + label are centered together as a group (flex justify-content:center
+       on .link-btn), so the whole pair sits in the middle of the button. */
     .link-btn .link-icon {
-      position: absolute;
-      left: 1.25rem;
-      top: 50%;
-      transform: translateY(-50%);
       display: inline-flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
     }
     .link-btn .link-icon svg { display: block; width: 20px; height: 20px; }
-    /* Label centered; reserve side padding so long labels never sit under the icon. */
-    .link-btn .link-label {
-      text-align: center;
-      padding: 0 2rem;
-    }
+    .link-btn .link-label { text-align: center; }
 
     /* Primary (most prominent) */
     .link-btn--primary {
