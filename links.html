@@ -37,7 +37,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="preload" as="image" href="assets/javi-portrait.jpg" fetchpriority="high" />
+  <link rel="preload" as="image" href="assets/javi-perfil.jpg" fetchpriority="high" />
 
   <!-- Inherit brand tokens, fonts + body base from the main stylesheet -->
   <link rel="stylesheet" href="styles/custom.css?v=seo4" />
@@ -167,30 +167,65 @@
       flex-shrink: 0;
     }
     .link-btn .link-icon svg { display: block; width: 20px; height: 20px; }
-    .link-btn .link-label { text-align: center; }
+    /* Label as a column so an optional sublabel stacks under the main text */
+    .link-btn .link-label {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+      text-align: center;
+      line-height: 1.25;
+    }
+    .link-btn .link-label-sub {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0;
+      opacity: 0.85;
+    }
 
-    /* Primary (most prominent) */
+    /* === Tier 1 — Primary (Telegram): coral fill, marked glow === */
     .link-btn--primary {
       background: var(--accent);
       color: var(--bg-base);
       box-shadow: 0 10px 28px -10px var(--accent-glow);
     }
+
+    /* === Tier 1 — Feature (Quant Forensics): dark card, strong orange glow
+       + accent border so it stands out without copying the coral fill === */
+    .link-btn--feature {
+      background:
+        linear-gradient(180deg, rgba(217,119,87,0.16), rgba(217,119,87,0.05)),
+        var(--bg-card);
+      color: var(--text-primary);
+      border: 1px solid rgba(217,119,87,0.55);
+      box-shadow: 0 0 0 1px rgba(217,119,87,0.12), 0 8px 30px -8px var(--accent-glow);
+    }
+    .link-btn--feature .link-icon { color: var(--accent); }
+    .link-btn--feature .link-label-sub { color: var(--accent); opacity: 1; }
+
+    /* === Tier 2 — Secondary: outlined card, subtle accent on rest === */
     .link-btn--secondary {
       background: var(--bg-card);
       color: var(--text-primary);
       border: 1px solid var(--border-subtle);
     }
 
-    /* Hover lift only on devices that actually hover (desktop) */
+    /* Hover lift + glow only on devices that actually hover (desktop).
+       Hierarchy: feature glow strongest, primary strong, secondary subtle. */
     @media (hover: hover) {
       .link-btn--primary:hover {
         transform: translateY(-2px);
         box-shadow: 0 16px 36px -10px var(--accent-glow), 0 0 48px -12px var(--accent-glow);
       }
-      .link-btn--secondary:hover {
+      .link-btn--feature:hover {
         transform: translateY(-2px);
         border-color: var(--accent);
-        box-shadow: 0 14px 32px -14px rgba(0, 0, 0, 0.7);
+        box-shadow: 0 0 0 1px rgba(217,119,87,0.25), 0 16px 40px -10px var(--accent-glow), 0 0 60px -10px var(--accent-glow);
+      }
+      .link-btn--secondary:hover {
+        transform: translateY(-2px);
+        border-color: rgba(217,119,87,0.45);
+        box-shadow: 0 10px 26px -12px rgba(0,0,0,0.7), 0 0 22px -8px var(--accent-glow);
       }
     }
 
@@ -222,8 +257,8 @@
   <main class="links-page">
     <div class="links-wrap">
 
-      <img class="links-avatar" src="assets/javi-portrait.jpg" width="96" height="96"
-           alt="Javi Pérez" decoding="async" fetchpriority="high" />
+      <img class="links-avatar" src="assets/javi-perfil.jpg" width="96" height="96"
+           alt="Foto de perfil de Javi Pérez" loading="lazy" decoding="async" fetchpriority="high" />
 
       <h1 class="links-name">Javi Pérez</h1>
       <p class="links-handle">@javiperezbuilds</p>
@@ -234,16 +269,19 @@
       <nav class="links-list" id="links-list" aria-label="Mis enlaces">
         <noscript>
           <a class="link-btn link-btn--primary" href="https://t.me/javiperezbuilds7" target="_blank" rel="noopener noreferrer">
-            <span class="link-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71l-4.14-3.05-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg></span><span class="link-label">Únete a mi Telegram</span>
+            <span class="link-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71l-4.14-3.05-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg></span><span class="link-label"><span class="link-label-main">Únete a mi Telegram</span></span>
+          </a>
+          <a class="link-btn link-btn--feature" href="https://quantforensicsfx.com/" target="_blank" rel="noopener noreferrer">
+            <span class="link-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/><path d="M8 11l2 2 3-4"/></svg></span><span class="link-label"><span class="link-label-main">Convierte a Claude en tu analista cuantitativo — 15 skills</span><span class="link-label-sub">Precio fundador 9,49€ · antes de que suba</span></span>
           </a>
           <a class="link-btn link-btn--secondary" href="index.html">
-            <span class="link-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></span><span class="link-label">Mis servicios de IA</span>
+            <span class="link-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></span><span class="link-label"><span class="link-label-main">Mis servicios de IA</span></span>
           </a>
           <a class="link-btn link-btn--secondary" href="https://www.instagram.com/javiperezbuilds/" target="_blank" rel="noopener noreferrer">
-            <span class="link-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></span><span class="link-label">Instagram</span>
+            <span class="link-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></span><span class="link-label"><span class="link-label-main">Instagram</span></span>
           </a>
           <a class="link-btn link-btn--secondary" href="https://www.tiktok.com/@javiperezbuilds" target="_blank" rel="noopener noreferrer">
-            <span class="link-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 3c.3 2.1 1.6 3.7 3.9 3.9v2.7c-1.3.1-2.5-.2-3.9-1v5.9c0 3.4-2.6 5.6-5.7 5.6-3 0-5.3-2.3-5.3-5.3 0-3.1 2.6-5.5 6-5.1v2.8c-.5-.1-1-.2-1.4-.2-1.4 0-2.4 1-2.4 2.4 0 1.5 1.1 2.5 2.5 2.5 1.5 0 2.6-1.1 2.6-2.9V3h3.2z"/></svg></span><span class="link-label">TikTok</span>
+            <span class="link-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 3c.3 2.1 1.6 3.7 3.9 3.9v2.7c-1.3.1-2.5-.2-3.9-1v5.9c0 3.4-2.6 5.6-5.7 5.6-3 0-5.3-2.3-5.3-5.3 0-3.1 2.6-5.5 6-5.1v2.8c-.5-.1-1-.2-1.4-.2-1.4 0-2.4 1-2.4 2.4 0 1.5 1.1 2.5 2.5 2.5 1.5 0 2.6-1.1 2.6-2.9V3h3.2z"/></svg></span><span class="link-label"><span class="link-label-main">TikTok</span></span>
           </a>
         </noscript>
       </nav>
@@ -260,14 +298,19 @@
       services: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>',
       instagram: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>',
       tiktok: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 3c.3 2.1 1.6 3.7 3.9 3.9v2.7c-1.3.1-2.5-.2-3.9-1v5.9c0 3.4-2.6 5.6-5.7 5.6-3 0-5.3-2.3-5.3-5.3 0-3.1 2.6-5.5 6-5.1v2.8c-.5-.1-1-.2-1.4-.2-1.4 0-2.4 1-2.4 2.4 0 1.5 1.1 2.5 2.5 2.5 1.5 0 2.6-1.1 2.6-2.9V3h3.2z"/></svg>',
+      quant: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/><path d="M8 11l2 2 3-4"/></svg>',
     };
 
     // ---- Edit this list to add / reorder buttons ----
     // type: 'primary' = highlighted (coral) · 'secondary' = outlined card
     // external: true opens in a new tab (target=_blank + rel=noopener)
     // icon: key into ICONS above (add a new SVG there to support more brands)
+    // type: 'primary' = coral (Telegram) · 'feature' = highlighted w/ orange glow
+    //       (Quant Forensics) · 'secondary' = outlined card w/ subtle glow on hover
+    // sublabel: optional smaller second line (used for the founder-price note)
     const LINKS = [
       { icon: 'telegram',  label: 'Únete a mi Telegram', url: 'https://t.me/javiperezbuilds7', type: 'primary', external: true },
+      { icon: 'quant',     label: 'Convierte a Claude en tu analista cuantitativo — 15 skills', sublabel: 'Precio fundador 9,49€ · antes de que suba', url: 'https://quantforensicsfx.com/', type: 'feature', external: true },
       { icon: 'services',  label: 'Mis servicios de IA', url: 'index.html', type: 'secondary', external: false },
       { icon: 'instagram', label: 'Instagram', url: 'https://www.instagram.com/javiperezbuilds/', type: 'secondary', external: true },
       { icon: 'tiktok',    label: 'TikTok', url: 'https://www.tiktok.com/@javiperezbuilds', type: 'secondary', external: true },
@@ -279,17 +322,26 @@
       list.innerHTML = ''; // replace the <noscript> fallback when JS is available
       for (const item of LINKS) {
         const a = document.createElement('a');
-        a.className = 'link-btn link-btn--' + (item.type === 'primary' ? 'primary' : 'secondary');
+        a.className = 'link-btn link-btn--' + item.type;
         a.href = item.url;
         if (item.external) { a.target = '_blank'; a.rel = 'noopener noreferrer'; }
         const icon = document.createElement('span');
         icon.className = 'link-icon';
         icon.setAttribute('aria-hidden', 'true');
         icon.innerHTML = ICONS[item.icon] || '';
-        const label = document.createElement('span');
-        label.className = 'link-label';
-        label.textContent = item.label;
-        a.append(icon, label);
+        const labelWrap = document.createElement('span');
+        labelWrap.className = 'link-label';
+        const main = document.createElement('span');
+        main.className = 'link-label-main';
+        main.textContent = item.label;
+        labelWrap.appendChild(main);
+        if (item.sublabel) {
+          const sub = document.createElement('span');
+          sub.className = 'link-label-sub';
+          sub.textContent = item.sublabel;
+          labelWrap.appendChild(sub);
+        }
+        a.append(icon, labelWrap);
         list.appendChild(a);
       }
     })();
