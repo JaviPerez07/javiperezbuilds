@@ -81,24 +81,6 @@
   setInterval(updateIntakeCountdown, 1000);
 
   // ============================================
-  // Funnel · live "$ burned" hero counter
-  // Visual illustration of compounding busywork cost. Baseline + small random tick.
-  // ============================================
-  const burnedEl = document.getElementById('burned-num');
-  if (burnedEl && !reducedMotion) {
-    const baseline = 2847;
-    const cap = baseline + 1000; // Hard ceiling so long sessions don't show absurd $50k
-    let v = baseline;
-    const render = () => { burnedEl.textContent = '$' + v.toLocaleString('en-US'); };
-    render();
-    setInterval(() => {
-      if (v >= cap) return; // Stop ticking once cap reached
-      v = Math.min(cap, v + Math.floor(Math.random() * 3) + 1);
-      render();
-    }, 1100);
-  }
-
-  // ============================================
   // Funnel · sticky mobile CTA visibility
   // Shows after the hero (75% of first viewport) and hides when the
   // final CTA is already in view (so we don't double-stack CTAs).

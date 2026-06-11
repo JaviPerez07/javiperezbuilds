@@ -18,3 +18,6 @@ serve.py
 # Node (none used at runtime, but keep clean if anyone runs lighthouse locally)
 node_modules/
 npm-debug.log*
+
+# Scratch local (no publicar)
+__scroll-local.html
