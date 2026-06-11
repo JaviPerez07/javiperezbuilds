@@ -5,12 +5,10 @@
 - **27 enlaces de pago cableados** (buy.stripe.com verificados HTTP 200): bundle
   Polígrafo 99€, 3 packs quant 39,99€, 5 sueltas web y 14 sueltas quant a 12,99€.
 - **Schema actualizado:** ofertas con enlace vivo pasan de PreOrder a InStock.
-- **PENDIENTES (2):** faltan en la lista de Javi —
-  1. `#stripe-pack-web` — **Pack Web Forense 39,99€** (4 botones esperando: 3 en
-     /skills y 1 en /skills/web-forense; su oferta sigue PreOrder en el schema).
-  2. `#stripe-qf-regime-classifier` — **/javiperez-regime 12,99€** (la lista salta
-     de ...9fW0v a ...9fW0x: el 9fW0w probablemente quedó sin pegar).
-  En cuanto lleguen, mismo cableado: sustituir href + data-stripe="PENDIENTE".
+- **COMPLETADO en el segundo pase:** Pack Web Forense (…9fW0z) y
+  /javiperez-regime (…9fW0y) cableados (5 botones más, verificados HTTP 200).
+  **Cero placeholders data-stripe="PENDIENTE" en el sitio: los 32 botones de
+  compra cobran.** Todas las ofertas del schema en InStock.
 
 ---
 
