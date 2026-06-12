@@ -295,7 +295,7 @@
       testimonial_nico_quote: '“Javi, what a crazy website optimization — nothing like before. This is what converted today on autopilot without me having to be glued to my phone, letting me focus on what really matters: attending to the community and the bots. Great work man, let’s go for more.”',
       testimonial_nico_role: 'Founder, nico66fx PRO · Algorithmic trading community',
       testimonial_nico_link: 'See the live project →',
-      screenshot_badge: 'Real WhatsApp · May 27, 2026',
+      screenshot_badge: 'Real WhatsApp testimonial · May 27, 2026',
       tag_funnel: 'Sales funnel',
       tag_stripe: 'Stripe integration',
       tag_segmentation: '3-tier segmentation',
@@ -303,7 +303,7 @@
       testimonial_leo_quote: '“One week with the site live and new people are walking in — after 32 years in business. Thank you for your professionalism and kindness at such a young age; it has real merit.”',
       testimonial_leo_role: 'Owner, Leo Cano Íntimo · Lingerie boutique in Roquetas de Mar (since 1994)',
       testimonial_leo_link: 'See the live site →',
-      screenshot_badge_leo: 'Real WhatsApp · Roquetas de Mar',
+      screenshot_badge_leo: 'Real WhatsApp testimonial · Roquetas de Mar',
       tag_leo1: 'Local business website',
       tag_leo2: 'First website in 32 years',
       tag_leo3: 'Mobile-first',
@@ -462,7 +462,7 @@
 
       // ===== Footer =====
       footer_tagline: 'Production AI systems · shipped in days',
-      footer_copyright: '© 2026 Javi Pérez · Spain',
+      footer_copyright: '© 2026 Javi Pérez · Almería, Spain',
 
       // ===== Intake reopens (when countdown hits 0) =====
       countdown_reopens: 'Intake reopens 1st',
@@ -760,7 +760,7 @@
       testimonial_nico_quote: '“Javi, qué locura la optimización de la web, no tiene nada que ver a como estaba antes. Esto es lo que ha convertido solo hoy automáticamente sin tener que estar atento al móvil y pudiéndome centrar en lo que de verdad importa, que es atender a la comunidad y los robots. Gran trabajo tío, vamos a por más.”',
       testimonial_nico_role: 'Founder, nico66fx PRO · Comunidad de trading algorítmico',
       testimonial_nico_link: 'Ver el proyecto en vivo →',
-      screenshot_badge: 'WhatsApp real · 27 mayo 2026',
+      screenshot_badge: 'Testimonio real de WhatsApp · 27 mayo 2026',
       tag_funnel: 'Funnel de ventas',
       tag_stripe: 'Integración Stripe',
       tag_segmentation: 'Segmentación 3 perfiles',
@@ -768,7 +768,7 @@
       testimonial_leo_quote: '“Después de 1 semana con la web activa está llegando gente nueva después de 32 años. Muchas gracias por tu profesionalidad y amabilidad a tu corta edad, tiene mucho mérito.”',
       testimonial_leo_role: 'Dueña, Leo Cano Íntimo · Lencería en Roquetas de Mar (desde 1994)',
       testimonial_leo_link: 'Ver la web en vivo →',
-      screenshot_badge_leo: 'WhatsApp real · Roquetas de Mar',
+      screenshot_badge_leo: 'Testimonio real de WhatsApp · Roquetas de Mar',
       tag_leo1: 'Web para negocio local',
       tag_leo2: 'Primera web en 32 años',
       tag_leo3: 'Mobile-first',
@@ -927,7 +927,7 @@
 
       // ===== Footer =====
       footer_tagline: 'Sistemas de IA en producción · shipped en días',
-      footer_copyright: '© 2026 Javi Pérez · España',
+      footer_copyright: '© 2026 Javi Pérez · Almería, España',
 
       // ===== Intake reopens =====
       countdown_reopens: 'Próxima entrada el día 1',
