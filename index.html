@@ -37,35 +37,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://unpkg.com" />
-  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Geist+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 
-  <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            'bg-base': '#0D1320',
-            'bg-elevated': '#111A2C',
-            'bg-card': '#16213A',
-            'text-primary': '#FAF9F5',
-            'text-secondary': '#B6BDC9',
-            'text-dim': '#8A92A1',
-            'accent': '#D97757',
-            'border-subtle': '#243049',
-          },
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-            mono: ['JetBrains Mono', 'Geist Mono', 'ui-monospace', 'monospace'],
-            serif: ['Instrument Serif', 'Georgia', 'serif'],
-            display: ['Space Grotesk', 'Inter', 'sans-serif'],
-          },
-        },
-      },
-    };
-  </script>
+  <!-- Tailwind compilado en build (antes: runtime JIT por CDN, JS bloqueante).
+       Regenerar tras tocar clases: ver tailwind.config.js -->
+  <link rel="stylesheet" href="styles/tailwind.css?v=1" />
 
   <link rel="stylesheet" href="styles/custom.css?v=funnel4" />
 
