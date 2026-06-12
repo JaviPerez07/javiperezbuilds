@@ -18,6 +18,8 @@
   <meta property="og:title" content="Skills /javiperez-* — webs que convierten y trading bajo El Polígrafo" />
   <meta property="og:description" content="Diagnóstico forense para Claude Code y Codex. Pack Web 39,99€ · Bundle trading 99€. Precio fundador: solo las primeras 50 ventas." />
   <meta property="og:image" content="https://javiperezbuilds.com/assets/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta property="og:locale" content="es_ES" />
   <meta property="og:site_name" content="Javi Pérez" />
 
@@ -66,7 +68,6 @@
       { "@type": "Question", "name": "¿Claude Code o Codex?", "acceptedAnswer": { "@type": "Answer", "text": "Los dos. Cada skill trae su versión para Claude Code y para Codex. Compras una vez, usas donde quieras." } },
       { "@type": "Question", "name": "¿Cómo se instala?", "acceptedAnswer": { "@type": "Answer", "text": "Dentro del pack va un PDF de instalación y uso paso a paso, con capturas. Lo abres, lo sigues, funciona. Menos de 5 minutos." } },
       { "@type": "Question", "name": "¿Incluye actualizaciones?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Las mejoras del pack te llegan incluidas, sin pagar de nuevo." } },
-      { "@type": "Question", "name": "¿Hay reembolso?", "acceptedAnswer": { "@type": "Answer", "text": "Sí: 14 días sin preguntas. Si no te aporta, un email y te devuelvo el dinero." } },
       { "@type": "Question", "name": "¿Qué soporte hay?", "acceptedAnswer": { "@type": "Answer", "text": "Email y Telegram. Respondo yo, normalmente en menos de 24 horas laborables." } }
     ]
   }
@@ -100,7 +101,7 @@
             <a href="#web" class="sk-price-cta">Webs que convierten ↓</a>
             <a href="#trading" class="sk-price-cta sk-price-cta--trading">El Polígrafo (trading) ↓</a>
           </div>
-          <p class="sk-urgency">Precio fundador: solo las primeras 50 ventas. Después sube.</p>
+          <p class="sk-urgency"><span class="founder-counter">Precio fundador: quedan 2 de 50. Después sube.</span></p>
         </div>
       </div>
     </section>
@@ -205,7 +206,7 @@
             <span class="pay-pill">Link</span>
             <span class="pay-pill">Amazon&nbsp;Pay</span>
         </div>
-        <p class="sk-urgency" data-reveal>Precio fundador: solo las primeras 50 ventas. Después sube. Reembolso 14 días sin preguntas.</p>
+        <p class="sk-urgency" data-reveal><span class="founder-counter" data-remaining="2">Precio fundador: quedan 2 de 50. Después sube.</span> · Ya hay gente cerrando llamadas y proyectos gracias a detectar los fallos.</p>
         <p class="sk-deep-link" data-reveal>¿Quieres ver cada skill a fondo, con outputs reales? <a href="skills/web-forense.html">Ver el pack en detalle →</a></p>
       </div>
     </section>
@@ -267,7 +268,7 @@
             <span class="pay-pill">Link</span>
             <span class="pay-pill">Amazon&nbsp;Pay</span>
           </div>
-          <p class="sk-urgency" style="margin-top:0.25rem;">Precio fundador: solo las primeras 50 ventas. Después sube.</p>
+          <p class="sk-urgency" style="margin-top:0.25rem;"><span class="founder-counter" data-remaining="3">Precio fundador: quedan 3 de 50. Después sube.</span> · +40 traders ya auditan sus sistemas con ellas.</p>
         </div>
 
         <p class="sk-deep-link" data-reveal>Packs sueltos, compra por skill, para quién es y qué NO es: <a href="skills/poligrafo.html">Ver El Polígrafo a fondo →</a></p>
@@ -313,10 +314,6 @@
             <div class="faq-body">Sí. Las mejoras del pack te llegan incluidas, sin pagar de nuevo.</div>
           </details>
           <details class="faq-item">
-            <summary>¿Hay reembolso?</summary>
-            <div class="faq-body">Sí: 14 días sin preguntas. Si no te aporta, un email y te devuelvo el dinero.</div>
-          </details>
-          <details class="faq-item">
             <summary>¿Qué soporte hay?</summary>
             <div class="faq-body">Email y Telegram. Respondo yo, normalmente en menos de 24 horas laborables.</div>
           </details>
@@ -339,7 +336,7 @@
             <a href="https://buy.stripe.com/eVqdR9e27bHI4479oP9fW0z" class="sk-price-cta">Pack Web — 39,99€</a>
             <a href="https://buy.stripe.com/3cIdR98HNcLMasv6cD9fW0a" class="sk-price-cta">Bundle Polígrafo — 99€</a>
           </div>
-          <p class="sk-urgency">Precio fundador: solo las primeras 50 ventas. Después sube. PDF de instalación incluido.</p>
+          <p class="sk-urgency"><span class="founder-counter">Precio fundador: quedan 2 de 50. Después sube.</span> PDF de instalación incluido.</p>
         </div>
       </div>
     </section>
@@ -362,6 +359,7 @@
 
   <script src="scripts/terminal.js?v=funnel4" defer></script>
   <script src="scripts/animations.js?v=funnel4" defer></script>
+  <script src="scripts/founder-counter.js?v=2" defer></script>
   <script>
     // Terminal del Polígrafo (bloque trading) — mismas reglas que la del hero
     (function () {

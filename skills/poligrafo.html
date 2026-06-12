@@ -18,6 +18,8 @@
   <meta property="og:title" content="El Polígrafo — tu backtest miente. Y se puede demostrar." />
   <meta property="og:description" content="Auditoría forense educativa para trading algorítmico, en tu Claude Code o Codex. 3 packs de 5 skills · bundle fundador 99€. Nunca señales." />
   <meta property="og:image" content="https://javiperezbuilds.com/assets/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta property="og:locale" content="es_ES" />
   <meta property="og:site_name" content="Javi Pérez" />
 
@@ -55,6 +57,31 @@
   }
   </script>
 
+  <style>
+    /* Deep-dive por skill: misma estética que el Pack Web Forense */
+    .wf-skill-section { border-top: 1px solid var(--border-subtle); }
+    .wf-skill-grid2 { display: grid; grid-template-columns: 1fr; gap: 2rem; align-items: start; margin-top: 1.75rem; }
+    @media (min-width: 880px) { .wf-skill-grid2 { grid-template-columns: 0.9fr 1.1fr; } }
+    .wf-skill-name { font-family: var(--font-term); font-size: 1.15rem; font-weight: 600; color: var(--accent); }
+    .wf-skill-role {
+      display: inline-block; margin-left: 0.6rem;
+      font-family: var(--font-term); font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 0.2rem 0.6rem; border-radius: 999px; border: 1px solid var(--border-subtle); color: var(--text-dim);
+      vertical-align: middle;
+    }
+    .wf-skill-desc { margin-top: 0.9rem; color: var(--text-secondary); line-height: 1.65; }
+    .wf-skill-desc strong { color: var(--text-primary); }
+    .wf-term { margin-top: 0; }
+    .wf-term .term-body { min-height: 0; }
+    .wf-pack-group {
+      margin-top: clamp(36px, 5vw, 60px);
+      font-family: var(--font-term); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--accent);
+    }
+    .wf-pack-group:first-of-type { margin-top: 0; }
+    .wf-pack-group + .wf-skill-section { border-top: none; }
+  </style>
+
   <!-- Schema.org FAQPage -->
   <script type="application/ld+json">
   {
@@ -65,8 +92,7 @@
       { "@type": "Question", "name": "¿Claude Code o Codex?", "acceptedAnswer": { "@type": "Answer", "text": "Los dos. Cada skill trae su versión para Claude Code y para Codex." } },
       { "@type": "Question", "name": "¿Cómo se instala?", "acceptedAnswer": { "@type": "Answer", "text": "Dentro del pack va un PDF de instalación y uso paso a paso, con capturas. Lo abres, lo sigues, funciona." } },
       { "@type": "Question", "name": "¿Da señales de trading?", "acceptedAnswer": { "@type": "Answer", "text": "No. Nunca. Son herramientas educativas de auditoría: te enseñan a examinar tus propios sistemas. No prometen rentabilidad ni sustituyen tu juicio." } },
-      { "@type": "Question", "name": "¿Incluye actualizaciones?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, las mejoras del pack te llegan incluidas, sin pagar de nuevo." } },
-      { "@type": "Question", "name": "¿Hay reembolso?", "acceptedAnswer": { "@type": "Answer", "text": "Sí: 14 días sin preguntas. Un email y te devuelvo el dinero." } }
+      { "@type": "Question", "name": "¿Incluye actualizaciones?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, las mejoras del pack te llegan incluidas, sin pagar de nuevo." } }
     ]
   }
   </script>
@@ -80,6 +106,7 @@
       <nav class="sk-nav-links" aria-label="Navegación">
         <a href="../skills.html">← Skills</a>
         <a href="#packs">Los 3 packs</a>
+        <a href="#skills-detalle">Las 15 skills</a>
         <a href="#bundle">Bundle</a>
         <a href="#faq">FAQ</a>
       </nav>
@@ -111,7 +138,7 @@
             <div class="term-out" id="qf-out"></div>
           </div>
         </div>
-        <p class="sk-urgency sk-urgency--hl" data-reveal>Precio fundador activo: solo las primeras 50 ventas. Después sube.</p>
+        <p class="sk-urgency sk-urgency--hl" data-reveal><span class="founder-counter" data-remaining="3">Precio fundador: quedan 3 de 50. Después sube.</span> · +40 traders ya auditan sus sistemas con ellas.</p>
       </div>
     </section>
 
@@ -202,10 +229,344 @@
             <span class="pay-pill">Link</span>
             <span class="pay-pill">Amazon&nbsp;Pay</span>
           </div>
-          <p class="sk-urgency" style="margin-top:0.25rem;">Precio fundador: solo las primeras 50 ventas. Después sube. Reembolso 14 días.</p>
+          <p class="sk-urgency" style="margin-top:0.25rem;"><span class="founder-counter" data-remaining="3">Precio fundador: quedan 3 de 50. Después sube.</span> · +40 traders ya auditan sus sistemas con ellas.</p>
         </div>
       </div>
     </section>
+
+    <!-- ===== 5 · LAS 15 SKILLS EN DETALLE (output real por skill) ===== -->
+    <div id="skills-detalle">
+
+      <section style="padding-top: 0;">
+        <div class="sk-wrap">
+          <div class="sk-center">
+            <h2 class="section-h2">Las 15 skills, una a una — <span class="accent-italic">con su output.</span></h2>
+            <p class="sk-hero-sub" style="max-width: 52ch; margin-inline: auto;">Sin capturas retocadas: así es exactamente lo que devuelve cada skill en tu terminal. Veredictos claros, límites declarados.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Pack Backtest Forense ── -->
+      <section class="wf-skill-section" style="padding-top: clamp(40px, 6vw, 70px);">
+        <div class="sk-wrap">
+          <p class="wf-pack-group">Pack Backtest Forense — "¿tu backtest dice la verdad?"</p>
+          <div class="wf-skill-grid2">
+            <div>
+              <span class="wf-skill-name">/javiperez-curvefit</span><span class="wf-skill-role">Diagnóstico</span>
+              <p class="wf-skill-desc"><strong>¿Edge real o curve-fitting?</strong> Calcula PBO (probabilidad de overfitting), Deflated Sharpe y sensibilidad de parámetros sobre tu backtest. Si la curva bonita es un ajuste al pasado, lo dice con números — antes de que lo descubra tu cuenta.</p>
+            </div>
+            <div class="term wf-term" aria-label="Output de curvefit">
+              <div class="term-bar" aria-hidden="true"><span class="term-dot term-dot--r"></span><span class="term-dot term-dot--y"></span><span class="term-dot term-dot--g"></span><span class="term-title">curvefit — veredicto</span></div>
+              <div class="term-body">
+                <div class="term-line"><span class="term-prompt">~&nbsp;</span><span class="term-cmd">/javiperez-curvefit backtest_eurusd_m15.csv</span></div>
+                <div class="term-line term-line--info"><span>▸ 1.847 trades · 2019–2025 · 12 parámetros optimizados</span></div>
+                <div class="term-line"><span class="term-badge term-badge--warn">PBO</span><span>Probabilidad de overfitting: 0,64 — zona de peligro</span></div>
+                <div class="term-line"><span class="term-badge term-badge--crit">DSR</span><span>Deflated Sharpe: 0,31 (Sharpe 1,9 en el report)</span></div>
+                <div class="term-line term-line--score"><span>Veredicto: </span><span class="term-score">CURVE-FITTING PROBABLE</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="wf-skill-section">
+        <div class="sk-wrap">
+          <div class="wf-skill-grid2">
+            <div>
+              <span class="wf-skill-name">/javiperez-backtest</span><span class="wf-skill-role">Diagnóstico</span>
+              <p class="wf-skill-desc"><strong>Las métricas que MetaTrader no te enseña.</strong> Recalcula desde el historial crudo: SQN, expectancy, rachas, distribución de retornos. Contrasta lo que dice el report con lo que dicen los datos — y cuando no cuadran, te enseña la diferencia.</p>
+            </div>
+            <div class="term wf-term" aria-label="Output de backtest">
+              <div class="term-bar" aria-hidden="true"><span class="term-dot term-dot--r"></span><span class="term-dot term-dot--y"></span><span class="term-dot term-dot--g"></span><span class="term-title">backtest — métricas</span></div>
+              <div class="term-body">
+                <div class="term-line"><span class="term-prompt">~&nbsp;</span><span class="term-cmd">/javiperez-backtest report_mt5.html</span></div>
+                <div class="term-line term-line--info"><span>▸ 23 métricas recalculadas desde el historial crudo</span></div>
+                <div class="term-line"><span class="term-badge term-badge--warn">SQN</span><span>SQN 1,4 — el report decía «excelente»; los datos dicen mediocre</span></div>
+                <div class="term-line"><span class="term-badge term-badge--pass">PF</span><span>Profit factor 1,31 confirmado contra el historial</span></div>
+                <div class="term-line term-line--route"><span>→ contrasta la robustez con /javiperez-montecarlo</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="wf-skill-section">
+        <div class="sk-wrap">
+          <div class="wf-skill-grid2">
+            <div>
+              <span class="wf-skill-name">/javiperez-montecarlo</span><span class="wf-skill-role">Diagnóstico</span>
+              <p class="wf-skill-desc"><strong>¿Sistema o suerte en el orden de los trades?</strong> Permuta tu historial miles de veces y enseña la distribución completa: drawdown esperado, riesgo de ruina con tu sizing real. El backtest te enseñó una película; esto te enseña todas las posibles.</p>
+            </div>
+            <div class="term wf-term" aria-label="Output de montecarlo">
+              <div class="term-bar" aria-hidden="true"><span class="term-dot term-dot--r"></span><span class="term-dot term-dot--y"></span><span class="term-dot term-dot--g"></span><span class="term-title">montecarlo — simulación</span></div>
+              <div class="term-body">
+                <div class="term-line"><span class="term-prompt">~&nbsp;</span><span class="term-cmd">/javiperez-montecarlo trades.csv --runs 10000</span></div>
+                <div class="term-line term-line--info"><span>▸ 10.000 permutaciones del orden de trades</span></div>
+                <div class="term-line"><span class="term-badge term-badge--warn">DD</span><span>Drawdown máx. esperado p95: −34% (el backtest enseñó −18%)</span></div>
+                <div class="term-line"><span class="term-badge term-badge--crit">RUIN</span><span>Riesgo de ruina con tu sizing actual: 11%</span></div>
+                <div class="term-line term-line--score"><span>Veredicto: </span><span class="term-score">EL DD DEL BACKTEST ERA EL MEJOR CASO</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="wf-skill-section">
+        <div class="sk-wrap">
+          <div class="wf-skill-grid2">
+            <div>
+              <span class="wf-skill-name">/javiperez-walkforward</span><span class="wf-skill-role">Diagnóstico</span>
+              <p class="wf-skill-desc"><strong>Lo que funciona fuera de la muestra.</strong> Divide el histórico en ventanas: optimiza en una, valida en la siguiente. Si la estrategia solo gana en los datos donde se optimizó, no tienes un sistema — tienes una foto del pasado.</p>
+            </div>
+            <div class="term wf-term" aria-label="Output de walkforward">
+              <div class="term-bar" aria-hidden="true"><span class="term-dot term-dot--r"></span><span class="term-dot term-dot--y"></span><span class="term-dot term-dot--g"></span><span class="term-title">walkforward — validación</span></div>
+              <div class="term-body">
+                <div class="term-line"><span class="term-prompt">~&nbsp;</span><span class="term-cmd">/javiperez-walkforward estrategia.set --ventanas 8</span></div>
+                <div class="term-line term-line--info"><span>▸ 8 ventanas IS/OOS · 2019–2025</span></div>
+                <div class="term-line"><span class="term-badge term-badge--crit">OOS</span><span>Rendimiento fuera de muestra: 22% del de dentro — degradación severa</span></div>
+                <div class="term-line"><span class="term-badge term-badge--warn">WIN</span><span>Solo 3 de 8 ventanas positivas fuera de muestra</span></div>
+                <div class="term-line term-line--score"><span>Veredicto: </span><span class="term-score">NO GENERALIZA</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="wf-skill-section">
+        <div class="sk-wrap">
+          <div class="wf-skill-grid2">
+            <div>
+              <span class="wf-skill-name">/javiperez-optimizer</span><span class="wf-skill-role">Diagnóstico</span>
+              <p class="wf-skill-desc"><strong>¿Meseta robusta o pico frágil?</strong> Analiza el mapa completo de tu optimización: si el óptimo elegido es un pico aislado, cualquier cambio de mercado lo tumba. Si hay meseta, hay robustez — y te dice dónde está.</p>
+            </div>
+            <div class="term wf-term" aria-label="Output de optimizer">
+              <div class="term-bar" aria-hidden="true"><span class="term-dot term-dot--r"></span><span class="term-dot term-dot--y"></span><span class="term-dot term-dot--g"></span><span class="term-title">optimizer — mapa</span></div>
+              <div class="term-body">
+                <div class="term-line"><span class="term-prompt">~&nbsp;</span><span class="term-cmd">/javiperez-optimizer optimizacion_mt5.xml</span></div>
+                <div class="term-line term-line--info"><span>▸ 4.212 combinaciones analizadas</span></div>
+                <div class="term-line"><span class="term-badge term-badge--warn">PICO</span><span>El óptimo elegido es un pico aislado: sus vecinos rinden −63%</span></div>
+                <div class="term-line"><span class="term-badge term-badge--pass">MESETA</span><span>Existe meseta robusta en SL 40–60 / TP 80–120</span></div>
+                <div class="term-line term-line--route"><span>→ re-valida la meseta con /javiperez-walkforward</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Pack Código & EA ── -->
+      <section class="wf-skill-section" style="padding-top: clamp(40px, 6vw, 70px);">
+        <div class="sk-wrap">
+          <p class="wf-pack-group">Pack Código &amp; EA — "¿qué hace de verdad tu robot?"</p>
+          <div class="wf-skill-grid2">
+            <div>
+              <span class="wf-skill-name">/javiperez-ealogic</span><span class="wf-skill-role">Diagnóstico</span>
+              <p class="wf-skill-desc"><strong>La caja negra deja de serlo.</strong> Deduce la lógica de un EA cerrado desde su historial de operaciones: sesiones, distancias entre entradas, gestión de pérdidas. Si lo que te vendieron como «inteligencia artificial» es una martingala, lo verás aquí.</p>
+            </div>
+            <div class="term wf-term" aria-label="Output de ealogic">
+              <div class="term-bar" aria-hidden="true"><span class="term-dot term-dot--r"></span><span class="term-dot term-dot--y"></span><span class="term-dot term-dot--g"></span><span class="term-title">ealogic — ingeniería inversa</span></div>
+              <div class="term-body">
+                <div class="term-line"><span class="term-prompt">~&nbsp;</span><span class="term-cmd">/javiperez-ealogic historial_ea_xauusd.csv</span></div>
+                <div class="term-line term-line--info"><span>▸ 612 operaciones · EA caja-negra</span></div>
+                <div class="term-line"><span class="term-badge term-badge--pass">PATRÓN</span><span>Solo opera 14:00–17:00 GMT — sesgo de sesión NY</span></div>
+                <div class="term-line"><span class="term-badge term-badge--warn">GRID</span><span>Entradas cada ~18 pips contra tendencia, lote creciente</span></div>
+                <div class="term-line term-line--score"><span>Veredicto: </span><span class="term-score">MARTINGALA ENCUBIERTA</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="wf-skill-section">
+        <div class="sk-wrap">
+          <div class="wf-skill-grid2">
+            <div>
+              <span class="wf-skill-name">/javiperez-mqlaudit</span><span class="wf-skill-role">Diagnóstico</span>
+              <p class="wf-skill-desc"><strong>Auditoría de código MQL4/MQL5.</strong> No busca elegancia: busca los bugs que cuestan dinero — sizing sin tope, órdenes sin comprobar errores, divisiones por cero en vivo. Cada hallazgo con su línea y su riesgo real de trading.</p>
+            </div>
+            <div class="term wf-term" aria-label="Output de mqlaudit">
+              <div class="term-bar" aria-hidden="true"><span class="term-dot term-dot--r"></span><span class="term-dot term-dot--y"></span><span class="term-dot term-dot--g"></span><span class="term-title">mqlaudit — auditoría</span></div>
+              <div class="term-body">
+                <div class="term-line"><span class="term-prompt">~&nbsp;</span><span class="term-cmd">/javiperez-mqlaudit MiEA_v3.mq5</span></div>
+                <div class="term-line term-line--info"><span>▸ 1.480 líneas · MQL5</span></div>
+                <div class="term-line"><span class="term-badge term-badge--crit">RISK</span><span>Lote calculado sin tope: tras racha de pérdidas crece sin límite (L312)</span></div>
+                <div class="term-line"><span class="term-badge term-badge--warn">ERR</span><span>6 OrderSend sin comprobar el código de error</span></div>
+                <div class="term-line"><span class="term-badge term-badge--pass">LOGIC</span><span>Sin look-ahead en el cálculo de señales</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="wf-skill-section">
+        <div class="sk-wrap">
+          <div class="wf-skill-grid2">
+            <div>
+              <span class="wf-skill-name">/javiperez-lookahead</span><span class="wf-skill-role">Diagnóstico</span>
+              <p class="wf-skill-desc"><strong>Caza el look-ahead bias.</strong> El error más caro del trading algorítmico: usar en el backtest información que en vivo todavía no existe. Escanea el código buscando accesos a la vela en curso, repintado y cierres anticipados — el motivo nº1 de «funcionaba en backtest y murió en real».</p>
+            </div>
+            <div class="term wf-term" aria-label="Output de lookahead">
+              <div class="term-bar" aria-hidden="true"><span class="term-dot term-dot--r"></span><span class="term-dot term-dot--y"></span><span class="term-dot term-dot--g"></span><span class="term-title">lookahead — escaneo</span></div>
+              <div class="term-body">
+                <div class="term-line"><span class="term-prompt">~&nbsp;</span><span class="term-cmd">/javiperez-lookahead estrategia.mq5</span></div>
+                <div class="term-line term-line--info"><span>▸ escaneo de acceso a barras y eventos de cierre</span></div>
+                <div class="term-line"><span class="term-badge term-badge--crit">BIAS</span><span>Usa High/Low de la vela en curso para la señal de entrada (L207)</span></div>
+                <div class="term-line term-line--info"><span>En vivo esa información no existe aún → backtest inflado</span></div>
+                <div class="term-line term-line--score"><span>Veredicto: </span><span class="term-score">LOOK-AHEAD CONFIRMADO</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="wf-skill-section">
+        <div class="sk-wrap">
+          <div class="wf-skill-grid2">
+            <div>
+              <span class="wf-skill-name">/javiperez-mqlskeleton</span><span class="wf-skill-role">Tratamiento</span>
+              <p class="wf-skill-desc"><strong>De idea a esqueleto de EA, con el riesgo bien hecho desde el día uno.</strong> Convierte tu estrategia descrita en un esqueleto MQL compilable: entradas, salidas, filtros de sesión y — lo importante — sizing con tope y freno de drawdown por defecto.</p>
+            </div>
+            <div class="term wf-term" aria-label="Output de mqlskeleton">
+              <div class="term-bar" aria-hidden="true"><span class="term-dot term-dot--r"></span><span class="term-dot term-dot--y"></span><span class="term-dot term-dot--g"></span><span class="term-title">mqlskeleton — generador</span></div>
+              <div class="term-body">
+                <div class="term-line"><span class="term-prompt">~&nbsp;</span><span class="term-cmd">/javiperez-mqlskeleton ficha_estrategia.md</span></div>
+                <div class="term-line"><span class="term-badge term-badge--pass">GEN</span><span>Esqueleto EA generado: entradas, salidas, filtro de sesión</span></div>
+                <div class="term-line"><span class="term-badge term-badge--pass">RISK</span><span>Sizing 0,5% por operación con tope · freno de DD diario incluido</span></div>
+                <div class="term-line term-line--route"><span>→ compílalo y pásalo por /javiperez-mqlaudit</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="wf-skill-section">
+        <div class="sk-wrap">
+          <div class="wf-skill-grid2">
+            <div>
+              <span class="wf-skill-name">/javiperez-tickdata</span><span class="wf-skill-role">Diagnóstico</span>
+              <p class="wf-skill-desc"><strong>¿Los datos que alimentan tu backtest son fiables?</strong> Audita la serie: huecos, spreads irreales, ticks duplicados, fines de semana fantasma. Un backtest sobre datos malos no es optimista ni pesimista — es ficción.</p>
+            </div>
+            <div class="term wf-term" aria-label="Output de tickdata">
+              <div class="term-bar" aria-hidden="true"><span class="term-dot term-dot--r"></span><span class="term-dot term-dot--y"></span><span class="term-dot term-dot--g"></span><span class="term-title">tickdata — calidad de datos</span></div>
+              <div class="term-body">
+                <div class="term-line"><span class="term-prompt">~&nbsp;</span><span class="term-cmd">/javiperez-tickdata EURUSD_2019_2025.csv</span></div>
+                <div class="term-line term-line--info"><span>▸ 312M ticks · 7 años</span></div>
+                <div class="term-line"><span class="term-badge term-badge--warn">GAP</span><span>14 huecos &gt;1h en horario de mercado (varios en NFP)</span></div>
+                <div class="term-line"><span class="term-badge term-badge--crit">SPREAD</span><span>Spread fijo de 2 pips en el backtest; el real osciló 0,9–11</span></div>
+                <div class="term-line term-line--score"><span>Veredicto: </span><span class="term-score">DATOS DEMASIADO LIMPIOS</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Pack Riesgo Real ── -->
+      <section class="wf-skill-section" style="padding-top: clamp(40px, 6vw, 70px);">
+        <div class="sk-wrap">
+          <p class="wf-pack-group">Pack Riesgo Real — "¿sobrevivirá en real?"</p>
+          <div class="wf-skill-grid2">
+            <div>
+              <span class="wf-skill-name">/javiperez-deconstruct</span><span class="wf-skill-role">Diagnóstico</span>
+              <p class="wf-skill-desc"><strong>Tu estrategia, en una ficha sin piedad.</strong> Descompone el sistema en lo que de verdad es: edge declarado, reglas exactas, supuestos ocultos que nadie escribió. Los supuestos no examinados son donde mueren las cuentas.</p>
+            </div>
+            <div class="term wf-term" aria-label="Output de deconstruct">
+              <div class="term-bar" aria-hidden="true"><span class="term-dot term-dot--r"></span><span class="term-dot term-dot--y"></span><span class="term-dot term-dot--g"></span><span class="term-title">deconstruct — ficha</span></div>
+              <div class="term-body">
+                <div class="term-line"><span class="term-prompt">~&nbsp;</span><span class="term-cmd">/javiperez-deconstruct "cruce EMA 20/50 + RSI"</span></div>
+                <div class="term-line term-line--info"><span>▸ ficha generada: edge, reglas, supuestos ocultos</span></div>
+                <div class="term-line"><span class="term-badge term-badge--warn">SUPUESTO</span><span>Asume ejecución al cierre exacto de vela — irreal en M5</span></div>
+                <div class="term-line term-line--info"><span>Edge declarado: momentum · sin ventaja estructural identificada</span></div>
+                <div class="term-line term-line--route"><span>→ somete el supuesto a /javiperez-stresstest</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="wf-skill-section">
+        <div class="sk-wrap">
+          <div class="wf-skill-grid2">
+            <div>
+              <span class="wf-skill-name">/javiperez-portfolio</span><span class="wf-skill-role">Diagnóstico</span>
+              <p class="wf-skill-desc"><strong>¿Diversificas o repites la misma apuesta?</strong> Mide la correlación entre tus estrategias donde importa: en los peores días. Cuatro sistemas que caen juntos no son una cartera — son una posición grande con cuatro nombres.</p>
+            </div>
+            <div class="term wf-term" aria-label="Output de portfolio">
+              <div class="term-bar" aria-hidden="true"><span class="term-dot term-dot--r"></span><span class="term-dot term-dot--y"></span><span class="term-dot term-dot--g"></span><span class="term-title">portfolio — correlación</span></div>
+              <div class="term-body">
+                <div class="term-line"><span class="term-prompt">~&nbsp;</span><span class="term-cmd">/javiperez-portfolio cartera/*.csv</span></div>
+                <div class="term-line term-line--info"><span>▸ 4 estrategias · 6 años de historial común</span></div>
+                <div class="term-line"><span class="term-badge term-badge--crit">CORR</span><span>Correlación media en los 20 peores días: 0,87</span></div>
+                <div class="term-line"><span class="term-badge term-badge--warn">DIV</span><span>Las 4 dependen de la misma exposición al USD</span></div>
+                <div class="term-line term-line--score"><span>Veredicto: </span><span class="term-score">CAEN JUNTAS</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="wf-skill-section">
+        <div class="sk-wrap">
+          <div class="wf-skill-grid2">
+            <div>
+              <span class="wf-skill-name">/javiperez-edgedecay</span><span class="wf-skill-role">Diagnóstico</span>
+              <p class="wf-skill-desc"><strong>¿Mala racha o muerte del edge?</strong> La pregunta que más dinero cuesta responder con las tripas. Analiza tu operativa en real con estadística de ventanas móviles y te dice qué hipótesis sostienen los datos — incluyendo «aún no concluyente», si es la verdad.</p>
+            </div>
+            <div class="term wf-term" aria-label="Output de edgedecay">
+              <div class="term-bar" aria-hidden="true"><span class="term-dot term-dot--r"></span><span class="term-dot term-dot--y"></span><span class="term-dot term-dot--g"></span><span class="term-title">edgedecay — seguimiento</span></div>
+              <div class="term-body">
+                <div class="term-line"><span class="term-prompt">~&nbsp;</span><span class="term-cmd">/javiperez-edgedecay live_2024_2026.csv</span></div>
+                <div class="term-line term-line--info"><span>▸ 214 operaciones en real · ventana móvil de 50</span></div>
+                <div class="term-line"><span class="term-badge term-badge--warn">DRIFT</span><span>Expectancy móvil: +0,42R → +0,08R en 8 meses</span></div>
+                <div class="term-line term-line--info"><span>El test no descarta mala racha (p = 0,11)</span></div>
+                <div class="term-line term-line--score"><span>Veredicto: </span><span class="term-score">VIGILAR — NO CONCLUYENTE</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="wf-skill-section">
+        <div class="sk-wrap">
+          <div class="wf-skill-grid2">
+            <div>
+              <span class="wf-skill-name">/javiperez-regime</span><span class="wf-skill-role">Diagnóstico</span>
+              <p class="wf-skill-desc"><strong>En qué mercado vive tu sistema — y en cuál muere.</strong> Cruza tus operaciones con regímenes de volatilidad y tendencia. Saber que tu estrategia pierde en rango no la arregla, pero te dice exactamente cuándo no operarla.</p>
+            </div>
+            <div class="term wf-term" aria-label="Output de regime">
+              <div class="term-bar" aria-hidden="true"><span class="term-dot term-dot--r"></span><span class="term-dot term-dot--y"></span><span class="term-dot term-dot--g"></span><span class="term-title">regime — análisis</span></div>
+              <div class="term-body">
+                <div class="term-line"><span class="term-prompt">~&nbsp;</span><span class="term-cmd">/javiperez-regime trades.csv --atr --tendencia</span></div>
+                <div class="term-line term-line--info"><span>▸ trades cruzados con régimen de volatilidad y tendencia</span></div>
+                <div class="term-line"><span class="term-badge term-badge--pass">EDGE</span><span>Gana en tendencia con volatilidad media: 61% de su resultado</span></div>
+                <div class="term-line"><span class="term-badge term-badge--crit">MUERTE</span><span>En rango con ATR bajo pierde de forma consistente</span></div>
+                <div class="term-line term-line--route"><span>→ añade filtro de régimen y re-valida con /javiperez-walkforward</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="wf-skill-section">
+        <div class="sk-wrap">
+          <div class="wf-skill-grid2">
+            <div>
+              <span class="wf-skill-name">/javiperez-stresstest</span><span class="wf-skill-role">Diagnóstico</span>
+              <p class="wf-skill-desc"><strong>Cuánto edge queda después de la realidad.</strong> Re-simula tu backtest con los costes que el report ignora: slippage, spread variable, comisiones y swap reales de tu broker. Muchas estrategias no mueren por malas — mueren por caras.</p>
+            </div>
+            <div class="term wf-term" aria-label="Output de stresstest">
+              <div class="term-bar" aria-hidden="true"><span class="term-dot term-dot--r"></span><span class="term-dot term-dot--y"></span><span class="term-dot term-dot--g"></span><span class="term-title">stresstest — costes reales</span></div>
+              <div class="term-body">
+                <div class="term-line"><span class="term-prompt">~&nbsp;</span><span class="term-cmd">/javiperez-stresstest backtest.csv --broker real</span></div>
+                <div class="term-line term-line--info"><span>▸ re-simulación con costes reales del broker</span></div>
+                <div class="term-line"><span class="term-badge term-badge--warn">COST</span><span>Slippage + spread variable + swap: −41% del resultado neto</span></div>
+                <div class="term-line"><span class="term-badge term-badge--crit">EDGE</span><span>Con costes reales la expectancy cae a +0,04R</span></div>
+                <div class="term-line term-line--score"><span>Veredicto: </span><span class="term-score">EL EDGE APENAS SOBREVIVE A LOS COSTES</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
 
     <!-- ===== 5 · QUÉ INCLUYE ESTA VERSIÓN (diferenciación honesta) ===== -->
     <section style="padding-top: 0;">
@@ -296,10 +657,6 @@
             <summary>¿Incluye actualizaciones?</summary>
             <div class="faq-body">Sí, las mejoras del pack te llegan incluidas, sin pagar de nuevo.</div>
           </details>
-          <details class="faq-item">
-            <summary>¿Hay reembolso?</summary>
-            <div class="faq-body">Sí: 14 días sin preguntas. Un email y te devuelvo el dinero.</div>
-          </details>
         </div>
 
 
@@ -324,7 +681,7 @@
             <span class="pay-pill">Link</span>
             <span class="pay-pill">Amazon&nbsp;Pay</span>
           </div>
-          <p class="sk-urgency">15 skills · 3 packs · PDF de instalación incluido · reembolso 14 días.</p>
+          <p class="sk-urgency">15 skills · 3 packs · PDF de instalación incluido.</p>
         </div>
       </div>
     </section>
@@ -409,5 +766,6 @@
     })();
   </script>
   <script src="../scripts/animations.js?v=funnel4" defer></script>
+  <script src="../scripts/founder-counter.js?v=2" defer></script>
 </body>
 </html>

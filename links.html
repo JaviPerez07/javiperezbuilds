@@ -272,7 +272,7 @@
             <span class="link-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71l-4.14-3.05-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg></span><span class="link-label"><span class="link-label-main">Únete a mi Telegram</span></span>
           </a>
           <a class="link-btn link-btn--feature" href="skills.html">
-            <span class="link-icon" aria-hidden="true"><span style="font-size:18px;line-height:1;">⚡</span></span><span class="link-label"><span class="link-label-main">Mis Skills — diagnóstico forense para Claude Code y Codex</span><span class="link-label-sub">Webs y trading · precio fundador: primeras 50 ventas</span></span>
+            <span class="link-icon" aria-hidden="true"><span style="font-size:18px;line-height:1;">⚡</span></span><span class="link-label"><span class="link-label-main">Mis Skills — diagnóstico forense para Claude Code y Codex</span><span class="link-label-sub">Webs y trading · <span class="founder-counter" data-format="short">Precio fundador · quedan 2 de 50</span></span></span>
           </a>
           <a class="link-btn link-btn--secondary" href="index.html">
             <span class="link-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></span><span class="link-label"><span class="link-label-main">Mis servicios de IA</span></span>
@@ -297,6 +297,7 @@
     </div>
   </main>
 
+  <script src="scripts/founder-counter.js?v=2" defer></script>
   <script>
     // ---- Brand icon SVGs (reused by the render below) ----
     const ICONS = {
@@ -319,7 +320,7 @@
     // sublabel: optional smaller second line (used for the founder-price note)
     const LINKS = [
       { icon: 'telegram',  label: 'Únete a mi Telegram', url: 'https://t.me/javiperezbuilds7', type: 'primary', external: true },
-      { icon: 'bolt',      label: 'Mis Skills — diagnóstico forense para Claude Code y Codex', sublabel: 'Webs y trading · precio fundador: primeras 50 ventas', url: 'skills.html', type: 'feature', external: false },
+      { icon: 'bolt',      label: 'Mis Skills — diagnóstico forense para Claude Code y Codex', sublabel: 'Webs y trading', founderCounter: true, url: 'skills.html', type: 'feature', external: false },
       { icon: 'services',  label: 'Mis servicios de IA', url: 'index.html', type: 'secondary', external: false },
       { icon: 'wrench',    label: 'Skills Web — encuentra y cobra', url: 'skills.html#web', type: 'secondary', external: false },
       { icon: 'chart',     label: 'El Polígrafo — tu backtest miente', url: 'skills/poligrafo.html', type: 'secondary', external: false },
@@ -350,6 +351,15 @@
           const sub = document.createElement('span');
           sub.className = 'link-label-sub';
           sub.textContent = item.sublabel;
+          if (item.founderCounter) {
+            // El texto lo rellena scripts/founder-counter.js (única fuente de verdad)
+            sub.textContent += ' · ';
+            const fc = document.createElement('span');
+            fc.className = 'founder-counter';
+            fc.setAttribute('data-format', 'short');
+            fc.textContent = 'Precio fundador · quedan 2 de 50';
+            sub.appendChild(fc);
+          }
           labelWrap.appendChild(sub);
         }
         a.append(icon, labelWrap);
