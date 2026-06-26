@@ -6,3 +6,7 @@ https://www.javiperezbuilds.com/* https://javiperezbuilds.com/:splat 301!
 # Rename comercial del pack de trading
 /skills/quant-forensics  /skills/poligrafo  301
 /skills/quant-forensics.html  /skills/poligrafo  301
+
+# Rename del catálogo /skills -> /agentes (las subpáginas /skills/* siguen vivas)
+/skills      /agentes  301
+/skills.html /agentes  301

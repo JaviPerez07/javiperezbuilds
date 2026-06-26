@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Skills /javiperez-* — diagnóstico forense para Claude Code/Codex</title>
-  <meta name="description" content="Medir, demostrar, tratar. Pack Web Forense (5 skills, 39,99€) y El Polígrafo para trading (15 skills, bundle 99€). Precio fundador: solo las primeras 50 ventas." />
-  <link rel="canonical" href="https://javiperezbuilds.com/skills" />
+  <title>Agentes de IA /javiperez-* · diagnóstico forense · Almería</title>
+  <meta name="description" content="Medir, demostrar, tratar. Pack Web Forense (5 agentes, 39,99€) y El Polígrafo para trading (15 agentes, bundle 99€). Precio fundador hasta el 15 de julio." />
+  <link rel="canonical" href="https://javiperezbuilds.com/agentes" />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
   <meta name="theme-color" content="#0D1320" />
@@ -14,9 +14,9 @@
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://javiperezbuilds.com/skills" />
-  <meta property="og:title" content="Skills /javiperez-* — webs que convierten y trading bajo El Polígrafo" />
-  <meta property="og:description" content="Diagnóstico forense para Claude Code y Codex. Pack Web 39,99€ · Bundle trading 99€. Precio fundador: solo las primeras 50 ventas." />
+  <meta property="og:url" content="https://javiperezbuilds.com/agentes" />
+  <meta property="og:title" content="Agentes de IA /javiperez-* — webs que convierten y trading bajo El Polígrafo" />
+  <meta property="og:description" content="Diagnóstico forense para Claude Code y Codex. Pack Web 39,99€ · Bundle trading 99€. Precio fundador hasta el 15 de julio." />
   <meta property="og:image" content="https://javiperezbuilds.com/assets/og-image-v2.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -25,8 +25,8 @@
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Skills /javiperez-* — diagnóstico forense para Claude Code" />
-  <meta name="twitter:description" content="Webs que convierten + trading bajo El Polígrafo. Precio fundador: solo las primeras 50 ventas." />
+  <meta name="twitter:title" content="Agentes de IA /javiperez-* — diagnóstico forense para Claude Code" />
+  <meta name="twitter:description" content="Webs que convierten + trading bajo El Polígrafo. Precio fundador hasta el 15 de julio." />
   <meta name="twitter:image" content="https://javiperezbuilds.com/assets/og-image-v2.jpg" />
   <meta name="twitter:creator" content="@javiperezbuilds" />
 
@@ -36,7 +36,7 @@
 
   <link rel="stylesheet" href="styles/custom.css?v=funnel4" />
   <link rel="stylesheet" href="styles/skills.css?v=funnel4" />
-  <!-- Botón secundario ghost/outline coral ("ver a fondo") — scoped a skills.html -->
+  <!-- Botón secundario ghost/outline coral ("ver a fondo") — scoped a agentes.html -->
   <style>
     .sk-deep-cta { margin-top: 0.85rem; text-align: center; }
     .sk-deep-sub { margin: 0 0 0.55rem; color: var(--text-secondary); font-size: 0.85rem; line-height: 1.5; }
@@ -56,6 +56,15 @@
       .sk-nav { height: auto; min-height: 68px; flex-wrap: wrap; row-gap: 4px; }
       .sk-nav-links { flex-wrap: wrap; gap: 0.55rem 1rem; }
     }
+    /* ---- carrusel de testimonios (auto-scroll derecha→izquierda, lento) ---- */
+    .testi-viewport{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
+    .testi-track{display:flex;width:max-content;animation:testiScroll 60s linear infinite;will-change:transform}
+    .testi-viewport:hover .testi-track{animation-play-state:paused}
+    @keyframes testiScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+    .testi-card{flex:0 0 auto;width:clamp(200px,58vw,236px);margin:0 16px 0 0;background:#141E30;border:1px solid #26314A;border-radius:14px;overflow:hidden}
+    .testi-card img{display:block;width:100%;height:clamp(360px,52vh,440px);object-fit:cover;object-position:top}
+    @media (prefers-reduced-motion: reduce){ .testi-track{animation:none} .testi-viewport{overflow-x:auto} }
+    @media (max-width: 760px){ .testi-pay{grid-template-columns:1fr !important} }
   </style>
 
   <!-- Schema.org Product — Pack Web Forense (precios reales comprables) -->
@@ -64,17 +73,17 @@
     "@context": "https://schema.org",
     "@type": "Product",
     "name": "Pack Web Forense /javiperez-*",
-    "description": "5 skills para Claude Code y Codex: diagnóstico forense de webs (webblood) y tratamientos de SEO local, velocidad, identidad de negocio y reseñas.",
+    "description": "5 agentes para Claude Code y Codex: diagnóstico forense de webs (webblood) y tratamientos de SEO local, velocidad, identidad de negocio y reseñas.",
     "brand": { "@type": "Person", "name": "Javi Pérez" },
-    "url": "https://javiperezbuilds.com/skills",
+    "url": "https://javiperezbuilds.com/agentes",
     "image": "https://javiperezbuilds.com/assets/og-image-v2.jpg",
     "offers": [
-      { "@type": "Offer", "name": "Pack completo (5 skills) — precio fundador", "price": "39.99", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://javiperezbuilds.com/skills" },
-      { "@type": "Offer", "name": "Skill suelta /javiperez-webblood", "price": "12.99", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://javiperezbuilds.com/skills" },
-      { "@type": "Offer", "name": "Skill suelta /javiperez-seolocal", "price": "12.99", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://javiperezbuilds.com/skills" },
-      { "@type": "Offer", "name": "Skill suelta /javiperez-speed", "price": "12.99", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://javiperezbuilds.com/skills" },
-      { "@type": "Offer", "name": "Skill suelta /javiperez-businessdna", "price": "12.99", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://javiperezbuilds.com/skills" },
-      { "@type": "Offer", "name": "Skill suelta /javiperez-reviews", "price": "12.99", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://javiperezbuilds.com/skills" }
+      { "@type": "Offer", "name": "Pack completo (5 agentes) — precio fundador", "price": "39.99", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://javiperezbuilds.com/agentes" },
+      { "@type": "Offer", "name": "Agente suelto /javiperez-webblood", "price": "12.99", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://javiperezbuilds.com/agentes" },
+      { "@type": "Offer", "name": "Agente suelto /javiperez-seolocal", "price": "12.99", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://javiperezbuilds.com/agentes" },
+      { "@type": "Offer", "name": "Agente suelto /javiperez-speed", "price": "12.99", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://javiperezbuilds.com/agentes" },
+      { "@type": "Offer", "name": "Agente suelto /javiperez-businessdna", "price": "12.99", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://javiperezbuilds.com/agentes" },
+      { "@type": "Offer", "name": "Agente suelto /javiperez-reviews", "price": "12.99", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://javiperezbuilds.com/agentes" }
     ]
   }
   </script>
@@ -101,8 +110,8 @@
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      { "@type": "Question", "name": "¿Qué necesito para usar las skills?", "acceptedAnswer": { "@type": "Answer", "text": "Claude Code o Codex instalado en tu ordenador. Nada más. Si sabes abrir un programa y pegar un comando, te vale." } },
-      { "@type": "Question", "name": "¿Claude Code o Codex?", "acceptedAnswer": { "@type": "Answer", "text": "Los dos. Cada skill trae su versión para Claude Code y para Codex. Compras una vez, usas donde quieras." } },
+      { "@type": "Question", "name": "¿Qué necesito para usar los agentes?", "acceptedAnswer": { "@type": "Answer", "text": "Claude Code o Codex instalado en tu ordenador. Nada más. Si sabes abrir un programa y pegar un comando, te vale." } },
+      { "@type": "Question", "name": "¿Claude Code o Codex?", "acceptedAnswer": { "@type": "Answer", "text": "Los dos. Cada agente trae su versión para Claude Code y para Codex. Compras una vez, usas donde quieras." } },
       { "@type": "Question", "name": "¿Cómo se instala?", "acceptedAnswer": { "@type": "Answer", "text": "Dentro del pack va un PDF de instalación y uso paso a paso, con capturas. Lo abres, lo sigues, funciona. Menos de 5 minutos." } },
       { "@type": "Question", "name": "¿Incluye actualizaciones?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Las mejoras del pack te llegan incluidas, sin pagar de nuevo." } },
       { "@type": "Question", "name": "¿Qué soporte hay?", "acceptedAnswer": { "@type": "Answer", "text": "Email y Telegram. Respondo yo, normalmente en menos de 24 horas laborables." } }
@@ -131,7 +140,7 @@
     <section class="sk-hero sk-hero--compact">
       <div class="sk-wrap">
         <div class="sk-hero-inner" data-reveal>
-          <span class="sk-hero-kicker"><span class="dot"></span> skills /javiperez-* · claude code &amp; codex</span>
+          <span class="sk-hero-kicker"><span class="dot"></span> agentes /javiperez-* · claude code &amp; codex</span>
           <h1 class="sk-h1">Un método: medir, demostrar, <span class="accent-italic">tratar.</span></h1>
           <p class="sk-hero-sub">Diagnóstico forense que encuentra lo que está roto — con evidencia, no con opiniones. Hoy, dos terrenos: webs que tienen que convertir y sistemas de trading que tienen que decir la verdad.</p>
           <div class="sk-cta-row">
@@ -149,9 +158,9 @@
     <section id="web" class="sk-twin">
       <div class="sk-wrap">
         <div class="sk-twin-head" data-reveal>
-          <span class="sk-hero-kicker"><span class="dot"></span> webs que convierten · pack web forense · 5 skills</span>
+          <span class="sk-hero-kicker"><span class="dot"></span> webs que convierten · pack web forense · 5 agentes</span>
           <h2 class="sk-h1 sk-twin-h">Cada web local rota es un cliente que no sabes cerrar. <span class="accent-italic">Todavía.</span></h2>
-          <p class="sk-hero-sub">Tecleas <strong>/javiperez-webblood</strong> y sale el informe que cierra la venta: cada fallo con evidencia, severidad y la skill que lo cura.</p>
+          <p class="sk-hero-sub">Tecleas <strong>/javiperez-webblood</strong> y sale el informe con la evidencia delante: cada fallo con su severidad y el agente que lo cura.</p>
         </div>
 
         <div class="term sk-demo-term" id="wb-term" aria-label="Demo: informe webblood en una terminal" data-reveal>
@@ -168,7 +177,7 @@
         <div class="sk-skill-grid sk-skill-grid--buy">
           <div class="sk-skill sk-skill--diag" data-reveal>
             <span class="sk-skill-name">/javiperez-webblood</span>
-            <span class="sk-skill-what">Diagnóstico forense: audita la web, puntúa 8 áreas con evidencia y mapea cada fallo a su tratamiento.</span>
+            <span class="sk-skill-what"><strong>Auditor web.</strong> Audita la web, puntúa 8 áreas con evidencia y mapea cada fallo a su tratamiento.</span>
             <span class="sk-skill-badge">Claude Code · Codex · DIAGNÓSTICO</span>
             <div class="sk-skill-buy">
               <span class="sk-skill-price">Suelta: 12,99€</span>
@@ -177,7 +186,7 @@
           </div>
           <div class="sk-skill" data-reveal>
             <span class="sk-skill-name">/javiperez-seolocal</span>
-            <span class="sk-skill-what">Tratamiento SEO local: schema, NAP, titles con keyword local — aplicado sobre el código, no sugerido.</span>
+            <span class="sk-skill-what"><strong>Agente de SEO local.</strong> Schema, NAP, titles con keyword local — aplicado sobre el código, no sugerido.</span>
             <span class="sk-skill-badge">Claude Code · Codex</span>
             <div class="sk-skill-buy">
               <span class="sk-skill-price">Suelta: 12,99€</span>
@@ -186,7 +195,7 @@
           </div>
           <div class="sk-skill" data-reveal>
             <span class="sk-skill-name">/javiperez-speed</span>
-            <span class="sk-skill-what">Tratamiento de velocidad: imágenes, lazy-load, JS bloqueante, caché — con antes/después medido.</span>
+            <span class="sk-skill-what"><strong>Agente de rendimiento.</strong> Imágenes, lazy-load, JS bloqueante, caché — con antes/después medido.</span>
             <span class="sk-skill-badge">Claude Code · Codex</span>
             <div class="sk-skill-buy">
               <span class="sk-skill-price">Suelta: 12,99€</span>
@@ -195,7 +204,7 @@
           </div>
           <div class="sk-skill" data-reveal>
             <span class="sk-skill-name">/javiperez-businessdna</span>
-            <span class="sk-skill-what">Identidad de negocio: qué hace, para quién y dónde — la base estructurada de todo el contenido.</span>
+            <span class="sk-skill-what"><strong>Agente de identidad de negocio.</strong> Qué hace el negocio, para quién y dónde — la base estructurada de todo el contenido.</span>
             <span class="sk-skill-badge">Claude Code · Codex</span>
             <div class="sk-skill-buy">
               <span class="sk-skill-price">Suelta: 12,99€</span>
@@ -204,7 +213,7 @@
           </div>
           <div class="sk-skill" data-reveal>
             <span class="sk-skill-name">/javiperez-reviews</span>
-            <span class="sk-skill-what">Confianza: reseñas reales visibles, valoraciones bien implementadas, páginas legales al día.</span>
+            <span class="sk-skill-what"><strong>Agente de reseñas.</strong> Reseñas reales visibles, valoraciones bien implementadas, páginas legales al día.</span>
             <span class="sk-skill-badge">Claude Code · Codex</span>
             <div class="sk-skill-buy">
               <span class="sk-skill-price">Suelta: 12,99€</span>
@@ -223,20 +232,20 @@
 
         <div class="sk-pricing" data-reveal>
           <div class="sk-price-card">
-            <span class="sk-price-plan">Skills sueltas</span>
-            <span class="sk-price-num">12,99€<small> /skill</small></span>
+            <span class="sk-price-plan">Agentes sueltos</span>
+            <span class="sk-price-num">12,99€<small> /agente</small></span>
             <span class="sk-price-anchor">Las 5 por separado: 64,95€</span>
           </div>
           <div class="sk-price-card sk-price-card--best">
             <span class="sk-price-best-badge">Ahorras 38%</span>
-            <span class="sk-price-plan">Pack completo · 5 skills</span>
+            <span class="sk-price-plan">Pack completo · 5 agentes</span>
             <span class="sk-price-num">39,99€<small> una vez</small></span>
             <span class="sk-price-anchor">Sueltas: <s>64,95€</s> · actualizaciones incluidas</span>
             <a href="https://buy.stripe.com/eVqdR9e27bHI4479oP9fW0z" class="sk-price-cta">Llevarme el pack</a>
           </div>
         </div>
         <div class="sk-deep-cta" data-reveal>
-          <p class="sk-deep-sub">Cada skill a fondo, con outputs reales.</p>
+          <p class="sk-deep-sub">Cada agente a fondo, con outputs reales.</p>
           <a href="skills/web-forense.html" class="sk-cta-outline">Ver el pack a fondo <span aria-hidden="true">→</span></a>
         </div>
         <div class="pay-row" aria-label="Métodos de pago aceptados">
@@ -257,7 +266,7 @@
     <section id="trading" class="sk-twin sk-twin--alt">
       <div class="sk-wrap">
         <div class="sk-twin-head" data-reveal>
-          <span class="sk-hero-kicker"><span class="dot"></span> trading bajo el polígrafo · 15 skills · 3 packs</span>
+          <span class="sk-hero-kicker"><span class="dot"></span> trading bajo el polígrafo · 15 agentes · 3 packs</span>
           <h2 class="sk-h1 sk-twin-h">Tu backtest miente. El Polígrafo <span class="accent-italic">lo demuestra.</span></h2>
           <p class="sk-hero-sub">El detector de mentiras de tu trading algorítmico: estadística a la vista, veredictos claros. <strong>Nunca señales, nunca promesas de rentabilidad.</strong></p>
         </div>
@@ -278,19 +287,19 @@
             <p class="qf-pack-q">"¿Tu backtest dice la verdad?"</p>
             <h3 class="qf-pack-name">Backtest Forense</h3>
             <p class="qf-mini-skills">/javiperez-curvefit · backtest · montecarlo · walkforward · optimizer</p>
-            <span class="sk-skill-price sk-skill-price--pack">5 skills · 39,99€</span>
+            <span class="sk-skill-price sk-skill-price--pack">5 agentes · 39,99€</span>
           </div>
           <div class="qf-mini">
             <p class="qf-pack-q">"¿Qué hace de verdad tu robot?"</p>
             <h3 class="qf-pack-name">Código &amp; EA</h3>
             <p class="qf-mini-skills">/javiperez-ealogic · mqlaudit · lookahead · mqlskeleton · tickdata</p>
-            <span class="sk-skill-price sk-skill-price--pack">5 skills · 39,99€</span>
+            <span class="sk-skill-price sk-skill-price--pack">5 agentes · 39,99€</span>
           </div>
           <div class="qf-mini">
             <p class="qf-pack-q">"¿Sobrevivirá en real?"</p>
             <h3 class="qf-pack-name">Riesgo Real</h3>
             <p class="qf-mini-skills">/javiperez-deconstruct · portfolio · edgedecay · regime · stresstest</p>
-            <span class="sk-skill-price sk-skill-price--pack">5 skills · 39,99€</span>
+            <span class="sk-skill-price sk-skill-price--pack">5 agentes · 39,99€</span>
           </div>
         </div>
 
@@ -312,7 +321,7 @@
             <span class="pay-pill">Link</span>
             <span class="pay-pill">Amazon&nbsp;Pay</span>
           </div>
-          <p class="sk-urgency" style="margin-top:0.25rem;"><span data-offer-deadline>Precio fundador hasta el 15 de julio. Después sube.</span> · +40 traders ya auditan sus sistemas con ellas.</p>
+          <p class="sk-urgency" style="margin-top:0.25rem;"><span data-offer-deadline>Precio fundador hasta el 15 de julio. Después sube.</span></p>
         </div>
 
       </div>
@@ -333,6 +342,59 @@
       </div>
     </section>
 
+    <!-- ===== PRUEBA SOCIAL (testimonios reales + pagos) ===== -->
+    <section style="padding-top:0; overflow:hidden;">
+      <div class="sk-wrap">
+        <div class="sk-center" data-reveal>
+          <h2 class="section-h2">Esto no es teoría. <span class="accent-italic">Es lo que dicen mis clientes.</span></h2>
+          <p class="sk-hero-sub" style="max-width:58ch; margin-inline:auto;">Mensajes reales de clientes (anonimizados) y cobros reales. La prueba, no el discurso.</p>
+        </div>
+      </div>
+      <div class="testi-viewport" role="group" aria-label="Testimonios reales de clientes (anonimizados)" data-reveal style="margin-top:2rem;">
+        <div class="testi-track">
+          <figure class="testi-card"><img src="assets/testimonios/testi-web-1.jpg" width="473" height="981" loading="lazy" decoding="async" alt="Testimonio real de un cliente (anonimizado) sobre los agentes web."></figure>
+          <figure class="testi-card"><img src="assets/testimonios/testi-web-2.jpg" width="473" height="982" loading="lazy" decoding="async" alt="Testimonio real de un cliente (anonimizado) sobre los agentes web."></figure>
+          <figure class="testi-card"><img src="assets/testimonios/testi-poligrafo-1.jpg" width="473" height="975" loading="lazy" decoding="async" alt="Testimonio real de un cliente (anonimizado) sobre los agentes de El Polígrafo (trading)."></figure>
+          <figure class="testi-card"><img src="assets/testimonios/testi-poligrafo-2.jpg" width="473" height="979" loading="lazy" decoding="async" alt="Testimonio real de un cliente (anonimizado) sobre los agentes de El Polígrafo (trading)."></figure>
+          <figure class="testi-card"><img src="assets/testimonios/lead-1-anon.png" width="1170" height="2532" loading="lazy" decoding="async" alt="Conversación real con un cliente (anonimizada)."></figure>
+          <figure class="testi-card"><img src="assets/testimonios/lead-3-anon.png" width="1170" height="2532" loading="lazy" decoding="async" alt="Conversación real con un cliente (anonimizada)."></figure>
+          <figure class="testi-card" aria-hidden="true"><img src="assets/testimonios/testi-web-1.jpg" width="473" height="981" loading="lazy" decoding="async" alt=""></figure>
+          <figure class="testi-card" aria-hidden="true"><img src="assets/testimonios/testi-web-2.jpg" width="473" height="982" loading="lazy" decoding="async" alt=""></figure>
+          <figure class="testi-card" aria-hidden="true"><img src="assets/testimonios/testi-poligrafo-1.jpg" width="473" height="975" loading="lazy" decoding="async" alt=""></figure>
+          <figure class="testi-card" aria-hidden="true"><img src="assets/testimonios/testi-poligrafo-2.jpg" width="473" height="979" loading="lazy" decoding="async" alt=""></figure>
+          <figure class="testi-card" aria-hidden="true"><img src="assets/testimonios/lead-1-anon.png" width="1170" height="2532" loading="lazy" decoding="async" alt=""></figure>
+          <figure class="testi-card" aria-hidden="true"><img src="assets/testimonios/lead-3-anon.png" width="1170" height="2532" loading="lazy" decoding="async" alt=""></figure>
+        </div>
+      </div>
+      <div class="sk-wrap">
+        <div class="testi-pay" data-reveal style="margin-top:2.5rem; display:grid; grid-template-columns:1.1fr 0.9fr; gap:1.75rem; align-items:center; background:#141E30; border:1px solid #26314A; border-radius:18px; padding:clamp(1.5rem,4vw,2.5rem);">
+          <div>
+            <span class="sk-hero-kicker"><span class="dot"></span> pagos reales</span>
+            <h3 style="font-family:'Space Grotesk',sans-serif; font-size:clamp(1.5rem,3vw,2.2rem); line-height:1.1; margin:0.5rem 0 0.6rem; color:#F4F2EC; font-weight:700;">Pagos reales, <span class="accent-italic">no promesas.</span></h3>
+            <p style="color:#A6B0C2; line-height:1.6; margin:0; max-width:46ch;">Cobros reales por agentes y servicios. La prueba, no el discurso. <span style="color:#6E7890">Importes y fechas reales; datos de cliente pixelados.</span></p>
+          </div>
+          <figure style="position:relative; margin:0; background:#0D1320; border:1px solid #26314A; border-radius:14px; overflow:hidden; min-height:180px; display:flex; align-items:center; justify-content:center;">
+            <span aria-hidden="true" style="position:absolute; font-family:'JetBrains Mono',monospace; font-size:12px; color:#6E7890; padding:20px; text-align:center; line-height:1.6;">Captura de Stripe →<br>guárdala en assets/stripe-prueba.png</span>
+            <img src="assets/stripe-prueba.png" loading="lazy" decoding="async" alt="Actividad reciente de pagos en Stripe: varios cobros marcados como Pagada. Importes y fechas reales; datos de cliente pixelados." style="position:relative; display:block; width:100%; height:auto;">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== AGENTE A MEDIDA (servicio bajo demanda) ===== -->
+    <section style="padding-top: 0;">
+      <div class="sk-wrap">
+        <div data-reveal style="background:#141E30;border:1px solid #26314A;border-radius:18px;padding:clamp(1.6rem,4vw,2.6rem);text-align:center;">
+          <span class="sk-hero-kicker" style="justify-content:center;"><span class="dot"></span> agente a medida · bajo demanda</span>
+          <h2 class="section-h2" style="margin-top:0.6rem;">¿Necesitas un agente para una tarea concreta de tu trabajo?</h2>
+          <p class="sk-hero-sub" style="max-width:58ch; margin-inline:auto;">Cuéntame a qué te dedicas y qué tarea repetitiva te come tiempo, y te digo si te lo puedo construir — y si no, también te lo digo. No es un catálogo de agentes que no existen: es un encargo, y cada caso es distinto. El precio lo cerramos por privado.</p>
+          <div class="sk-cta-row" style="justify-content:center; margin-top:1rem;">
+            <a href="https://wa.me/34644289776?text=Hola%20Javi%2C%20quiero%20un%20agente%20a%20medida" class="sk-price-cta" target="_blank" rel="noopener noreferrer">Cuéntame tu caso</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ===== FAQ + CIERRE ===== -->
     <section id="faq" style="padding-top: 0;">
       <div class="sk-wrap">
@@ -341,12 +403,12 @@
         </div>
         <div class="faq-list sk-faq sk-mt-6" data-reveal>
           <details class="faq-item">
-            <summary>¿Qué necesito para usar las skills?</summary>
+            <summary>¿Qué necesito para usar los agentes?</summary>
             <div class="faq-body">Claude Code o Codex instalado en tu ordenador. Nada más. Si sabes abrir un programa y pegar un comando, te vale.</div>
           </details>
           <details class="faq-item">
             <summary>¿Claude Code o Codex?</summary>
-            <div class="faq-body">Los dos. Cada skill trae su versión para Claude Code y para Codex. Compras una vez, usas donde quieras.</div>
+            <div class="faq-body">Los dos. Cada agente trae su versión para Claude Code y para Codex. Compras una vez, usas donde quieras.</div>
           </details>
           <details class="faq-item">
             <summary>¿Cómo se instala?</summary>
@@ -366,7 +428,7 @@
         <div class="sk-prebuy" data-reveal>
           <span>¿Dudas antes de comprar? Pregunta directamente:</span>
           <div class="sk-prebuy-links">
-            <a href="https://wa.me/34644289776?text=Hola%20Javi%2C%20tengo%20una%20duda%20sobre%20las%20skills" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            <a href="https://wa.me/34644289776?text=Hola%20Javi%2C%20tengo%20una%20duda%20sobre%20los%20agentes" target="_blank" rel="noopener noreferrer">WhatsApp</a>
             <a href="mailto:javiperezguides@gmail.com">javiperezguides@gmail.com</a>
             <a href="https://t.me/javiperezchallenger" target="_blank" rel="noopener noreferrer">Telegram</a>
           </div>

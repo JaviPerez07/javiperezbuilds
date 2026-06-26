@@ -7,7 +7,7 @@
 
    Propaga el texto a:
      · .founder-counter           (formato largo; data-format="short" para link-in-bio)
-     · [data-offer-deadline]      (spans de skills.html)
+     · [data-offer-deadline]      (spans de agentes.html)
    Los elementos llevan texto estático de respaldo (sin JS); este script lo
    sobrescribe en cada carga. No se rompe si la fecha ya pasó.
    ============================================================================ */

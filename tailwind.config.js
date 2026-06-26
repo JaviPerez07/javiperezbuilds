@@ -8,7 +8,7 @@
 module.exports = {
   content: [
     './index.html',
-    './skills.html',
+    './agentes.html',
     './skills/*.html',
     './links.html',
     './legal.html',

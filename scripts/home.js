@@ -7,7 +7,7 @@ const VIDEO_URL      = "assets/web-animada.mp4";          /* grabación del Must
                                                               Para cambiarla: comprime con avconvert/ffmpeg a <4 MB y reemplaza el archivo. */
 const VIDEO_POSTER   = "assets/web-animada-poster.jpg";   /* primer frame (poster mientras carga el vídeo). */
 const OFFER_DEADLINE = "2026-07-15T23:59:59";             /* fin de la oferta de lanzamiento. ÚNICA fuente de verdad de la fecha. */
-const BUILDERS_COUNT = 40;                                /* prueba social "+N builders ya las usan". Pon 0 para ocultarla.
+const BUILDERS_COUNT = 40;                                /* prueba social "+N builders ya los usan". Pon 0 para ocultarla.
                                                               (Si no la puedes respaldar con datos, déjala en 0 — regla anti-humo.) */
 const WHATSAPP       = "https://wa.me/34644289776";
 /* ============================================================ */
@@ -42,13 +42,13 @@ const WHATSAPP       = "https://wa.me/34644289776";
     proofLine.textContent = ""; /* el constante manda: 0 oculta la afirmación aunque el HTML traiga el fallback */
   } else if (proofLine && BUILDERS_COUNT > 0) {
     if (reduceMotion) {
-      proofLine.textContent = " · +" + BUILDERS_COUNT + " builders ya las usan";
+      proofLine.textContent = " · +" + BUILDERS_COUNT + " builders ya los usan";
     } else {
       var target = BUILDERS_COUNT, dur = 1300, t0 = performance.now();
       (function tick(t) {
         var p = Math.min(1, (t - t0) / dur);
         var eased = 1 - Math.pow(1 - p, 3);
-        proofLine.textContent = " · +" + Math.round(eased * target) + " builders ya las usan";
+        proofLine.textContent = " · +" + Math.round(eased * target) + " builders ya los usan";
         if (p < 1) requestAnimationFrame(tick);
       })(t0);
     }

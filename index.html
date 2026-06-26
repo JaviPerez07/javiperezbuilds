@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <!-- i18n: ES por defecto (los textos EN están como [PENDIENTE_EN] hasta que Javi los complete). Sólo fija si no hay preferencia previa. -->
   <script>try{if(!localStorage.getItem('preferred-lang'))localStorage.setItem('preferred-lang','es');}catch(e){}</script>
-  <title>Javi Pérez — Webs que venden + skills de Claude | Almería</title>
-  <meta name="description" content="Resuelvo problemas reales de negocio con IA y código: webs que venden, funnels y skills de Claude listas para usar. Precio y plazo cerrados por adelantado." />
+  <title>Javi Pérez — Webs que venden + agentes de IA | Almería</title>
+  <meta name="description" content="Resuelvo problemas reales de negocio con IA y código: webs que venden, funnels y agentes de IA listos para usar. Precio y plazo cerrados por adelantado." />
   <link rel="canonical" href="https://javiperezbuilds.com/" />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
@@ -19,7 +19,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://javiperezbuilds.com/" />
   <meta property="og:title" content="Javi Pérez — Resuelvo problemas reales de negocio con IA y código" />
-  <meta property="og:description" content="Skills de Claude listas para usar y webs/sistemas a medida. Precio y plazo cerrados por adelantado. Método: medir → demostrar → tratar." />
+  <meta property="og:description" content="Agentes de IA listos para usar y webs/sistemas a medida. Precio y plazo cerrados por adelantado. Método: medir → demostrar → tratar." />
   <meta property="og:image" content="https://javiperezbuilds.com/assets/og-image-v2.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -29,8 +29,8 @@
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Javi Pérez — Webs que venden + skills de Claude" />
-  <meta name="twitter:description" content="IA y código para resolver problemas reales de negocio. Precio y plazo cerrados. Skills de Claude listas para usar." />
+  <meta name="twitter:title" content="Javi Pérez — Webs que venden + agentes de IA" />
+  <meta name="twitter:description" content="IA y código para resolver problemas reales de negocio. Precio y plazo cerrados. Agentes de IA listos para usar." />
   <meta name="twitter:image" content="https://javiperezbuilds.com/assets/og-image-v2.jpg" />
   <meta name="twitter:image:alt" content="Javi Pérez — IA y código." />
   <meta name="twitter:creator" content="@javiperezbuilds" />
@@ -92,6 +92,16 @@
     @media (max-width:760px){ .dc-doors{grid-template-columns:1fr !important} .dc-services{grid-template-columns:1fr !important} }
     @media (max-width:560px){ .dc-nav-extra{display:none !important} }
     @media (prefers-reduced-motion:reduce){ *{animation:none !important;scroll-behavior:auto !important} .dc-btn,.dc-door,.dc-svc{transition:none !important} .term-cursor{display:none} }
+
+    /* ---- carrusel de testimonios (auto-scroll derecha→izquierda, lento) ---- */
+    .testi-viewport{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
+    .testi-track{display:flex;width:max-content;animation:testiScroll 60s linear infinite;will-change:transform}
+    .testi-viewport:hover .testi-track{animation-play-state:paused}
+    @keyframes testiScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+    .testi-card{flex:0 0 auto;width:clamp(200px,58vw,236px);margin:0 16px 0 0;background:#141E30;border:1px solid #26314A;border-radius:14px;overflow:hidden}
+    .testi-card img{display:block;width:100%;height:clamp(360px,52vh,440px);object-fit:cover;object-position:top}
+    @media (prefers-reduced-motion:reduce){ .testi-viewport{overflow-x:auto} }
+    @media (max-width:760px){ .dc-pay{grid-template-columns:1fr !important} }
   </style>
 
   <!-- Schema.org Person (hardcoded, sin JS) -->
@@ -102,7 +112,7 @@
     "name": "Javi Pérez",
     "url": "https://javiperezbuilds.com/",
     "image": "https://javiperezbuilds.com/assets/javi-perfil.jpg",
-    "jobTitle": "Builder de sistemas con IA y skills de Claude",
+    "jobTitle": "Builder de agentes de IA y sistemas a medida",
     "email": "javiperezguides@gmail.com",
     "telephone": "+34644289776",
     "address": { "@type": "PostalAddress", "addressLocality": "Almería", "addressRegion": "Andalucía", "addressCountry": "ES" },
@@ -133,8 +143,8 @@
       { "@type": "Offer", "name": "Web animada (hero con vídeo)", "priceCurrency": "EUR", "price": "800-1500", "description": "Hero cinematográfico con vídeo en bucle y micro-animaciones de scroll. 7–14 días." },
       { "@type": "Offer", "name": "Funnel de ventas local", "priceCurrency": "EUR", "price": "500-1500", "description": "Captación y cualificación de leads conectada a tus herramientas. 7–14 días." },
       { "@type": "Offer", "name": "AI Site Deploy", "priceCurrency": "EUR", "price": "200-750", "description": "De tu build de Claude/Lovable a producción: dominio, SSL, analítica. 48–72h." },
-      { "@type": "Offer", "name": "Pack Web Forense (5 skills de Claude)", "priceCurrency": "EUR", "price": "39.99", "description": "Auditoría web en 8 módulos y tratamientos. Skill suelta 12,99€." },
-      { "@type": "Offer", "name": "El Polígrafo (bundle 15 skills de trading)", "priceCurrency": "EUR", "price": "99", "description": "Diagnóstico forense de backtests. No da señales ni promesas de rentabilidad." }
+      { "@type": "Offer", "name": "Pack Web Forense (5 agentes de IA)", "priceCurrency": "EUR", "price": "39.99", "description": "Auditoría web en 8 módulos y tratamientos. Agente suelto 12,99€." },
+      { "@type": "Offer", "name": "El Polígrafo (bundle 15 agentes de trading)", "priceCurrency": "EUR", "price": "99", "description": "Diagnóstico forense de backtests. No da señales ni promesas de rentabilidad." }
     ]
   }
   </script>
@@ -151,7 +161,7 @@
         <svg viewBox="0 0 150 28" width="124" height="23" role="img" aria-hidden="true" focusable="false"><text x="0" y="21" font-family="'JetBrains Mono','Geist Mono',ui-monospace,monospace" font-size="21" font-weight="600"><tspan fill="#D97757">/</tspan><tspan fill="#FAF9F5">javiperez</tspan></text></svg>
       </a>
       <div style="display:flex;align-items:center;gap:18px">
-        <a href="#skills" class="dc-nav-link dc-nav-extra" data-i18n="nh_nav_skills" style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#A6B0C2;text-decoration:none">Skills</a>
+        <a href="#skills" class="dc-nav-link dc-nav-extra" data-i18n="nh_nav_skills" style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#A6B0C2;text-decoration:none">Agentes</a>
         <a href="#servicios" class="dc-nav-link dc-nav-extra" data-i18n="nh_nav_serv" style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#A6B0C2;text-decoration:none">Servicios</a>
         <div class="lang-toggle-wrap" role="group" aria-label="Idioma / Language">
           <button type="button" class="lang-toggle" data-lang="es" onclick="setLanguage('es')" aria-pressed="true">ES</button>
@@ -175,19 +185,19 @@
           <span aria-hidden="true" style="width:6px;height:6px;border-radius:50%;background:#D97757;animation:pulseDot 2.4s infinite"></span>
           <span data-i18n="nh_hero_eyebrow">Construyo con IA · Almería, España</span>
         </div>
-        <h1 data-i18n-html="nh_hero_h1" style="font-size:clamp(36px,5.6vw,72px);line-height:1.04;letter-spacing:-0.035em;font-weight:700;margin:0 0 22px;text-wrap:balance">Resuelvo problemas reales de negocio — con <em style="color:#D97757;font-style:italic;font-weight:500">IA</em> y código.</h1>
-        <p data-i18n="nh_hero_sub" style="font-size:clamp(16px,1.4vw,20px);line-height:1.55;color:#A6B0C2;max-width:600px;margin:0 auto;text-wrap:pretty">Skills de Claude listas para usar y webs/sistemas a medida. Tú eliges la puerta; yo te enseño la evidencia.</p>
+        <h1 data-i18n-html="nh_hero_h1" style="font-size:clamp(36px,5.6vw,72px);line-height:1.04;letter-spacing:-0.035em;font-weight:700;margin:0 0 22px;text-wrap:balance">Agentes de IA que hacen <em style="color:#D97757;font-style:italic;font-weight:500">un trabajo concreto</em>. Tú ganas tiempo.</h1>
+        <p data-i18n="nh_hero_sub" style="font-size:clamp(16px,1.4vw,20px);line-height:1.55;color:#A6B0C2;max-width:600px;margin:0 auto;text-wrap:pretty">Agentes listos para usar y webs/sistemas a medida. Tú eliges la puerta; yo te enseño la evidencia.</p>
       </div>
 
       <!-- ====== LAS DOS PUERTAS ====== -->
       <div class="dc-doors" style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:clamp(40px,6vw,72px);max-width:960px;margin-left:auto;margin-right:auto">
-        <a href="skills.html" class="dc-door" style="position:relative;display:flex;flex-direction:column;justify-content:space-between;min-height:230px;text-decoration:none;background:#141E30;border:1px solid #26314A;border-radius:18px;padding:30px 28px">
+        <a href="agentes.html" class="dc-door" style="position:relative;display:flex;flex-direction:column;justify-content:space-between;min-height:230px;text-decoration:none;background:#141E30;border:1px solid #26314A;border-radius:18px;padding:30px 28px">
           <div>
             <div data-i18n="nh_d1_label" style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#D97757;margin-bottom:16px">Puerta 01 — Producto</div>
-            <h2 data-i18n-html="nh_d1_title" style="font-size:clamp(22px,2.4vw,28px);font-weight:600;letter-spacing:-0.02em;margin:0 0 12px;color:#F4F2EC">Quiero <span style="color:#D97757">skills</span> de Claude</h2>
-            <p data-i18n="nh_d1_desc" style="font-size:15px;line-height:1.5;color:#A6B0C2;margin:0">Packs listos para usar: auditoría web forense y diagnóstico de trading. Compra, descarga, ejecuta.</p>
+            <h2 data-i18n-html="nh_d1_title" style="font-size:clamp(22px,2.4vw,28px);font-weight:600;letter-spacing:-0.02em;margin:0 0 12px;color:#F4F2EC">Quiero <span style="color:#D97757">agentes</span> de IA</h2>
+            <p data-i18n="nh_d1_desc" style="font-size:15px;line-height:1.5;color:#A6B0C2;margin:0">Agentes listos para usar: auditoría web forense y diagnóstico de trading. Compra, descarga, ejecuta.</p>
           </div>
-          <div style="display:inline-flex;align-items:center;gap:8px;font-weight:600;color:#F4F2EC;margin-top:24px"><span data-i18n="nh_d1_cta">Ver las skills</span> <span aria-hidden="true" style="color:#D97757">→</span></div>
+          <div style="display:inline-flex;align-items:center;gap:8px;font-weight:600;color:#F4F2EC;margin-top:24px"><span data-i18n="nh_d1_cta">Ver los agentes</span> <span aria-hidden="true" style="color:#D97757">→</span></div>
         </a>
 
         <a href="#servicios" class="dc-door" style="position:relative;display:flex;flex-direction:column;justify-content:space-between;min-height:230px;text-decoration:none;background:#141E30;border:1px solid #26314A;border-radius:18px;padding:30px 28px">
@@ -267,14 +277,14 @@
     </div>
   </section>
 
-  <!-- ============ SKILLS ============ -->
+  <!-- ============ AGENTES (catálogo) ============ -->
   <section id="skills" style="position:relative;padding:clamp(80px,11vw,130px) clamp(20px,4vw,32px);border-top:1px solid #26314A">
     <div style="max-width:1200px;margin:0 auto">
       <div style="display:inline-flex;align-items:center;gap:10px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#D97757;margin-bottom:20px">
         <span aria-hidden="true" style="width:6px;height:6px;border-radius:50%;background:#D97757;animation:pulseDot 2.4s infinite"></span>
-        <span data-i18n="nh_skills_eyebrow">Skills de Claude</span><span id="proof-line"> · +40 builders ya las usan</span>
+        <span data-i18n="nh_skills_eyebrow">Agentes de IA</span><span id="proof-line"> · +40 builders ya los usan</span>
       </div>
-      <h2 data-i18n-html="nh_skills_h2" style="font-size:clamp(30px,4.4vw,54px);line-height:1.05;letter-spacing:-0.03em;font-weight:700;margin:0 0 18px;max-width:780px;text-wrap:balance">Skills listas para usar. <em style="color:#D97757;font-style:italic;font-weight:500">Compra, descarga, ejecuta.</em></h2>
+      <h2 data-i18n-html="nh_skills_h2" style="font-size:clamp(30px,4.4vw,54px);line-height:1.05;letter-spacing:-0.03em;font-weight:700;margin:0 0 18px;max-width:780px;text-wrap:balance">Agentes listos para usar. <em style="color:#D97757;font-style:italic;font-weight:500">Compra, descarga, ejecuta.</em></h2>
       <p data-i18n="nh_skills_p" style="font-size:18px;line-height:1.55;color:#A6B0C2;max-width:600px;margin:0 0 56px;text-wrap:pretty">Sin mensualidad. Método: medir → demostrar → tratar. Cada dato lleva su etiqueta MEDIDO / INFERIDO. Cero cifras inventadas.</p>
 
       <!-- ===== PACK WEB FORENSE ===== -->
@@ -282,9 +292,9 @@
         <!-- CTA grande arriba (funnel: beneficio → CTA) -->
         <div class="dc-split" style="display:grid;grid-template-columns:1fr auto;gap:24px;align-items:end;padding-bottom:30px;border-bottom:1px solid #26314A">
           <div style="max-width:560px">
-            <div data-i18n="nh_pwf_label" style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#D97757;margin-bottom:14px">Pack Web Forense · 5 skills</div>
+            <div data-i18n="nh_pwf_label" style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#D97757;margin-bottom:14px">Pack Web Forense · 5 agentes</div>
             <h3 data-i18n-html="nh_pwf_h3" style="font-size:clamp(24px,3vw,38px);line-height:1.08;letter-spacing:-0.025em;font-weight:700;margin:0 0 12px;text-wrap:balance">Audita cualquier web en 8 módulos y sabe <em style="color:#D97757;font-style:italic;font-weight:500">exactamente</em> qué arreglar.</h3>
-            <p data-i18n="nh_pwf_sub" style="font-size:16px;line-height:1.5;color:#A6B0C2;margin:0">Puntúa /100 y mapea cada fallo a la skill que lo trata. Etiquetas MEDIDO / INFERIDO. Cero datos inventados.</p>
+            <p data-i18n="nh_pwf_sub" style="font-size:16px;line-height:1.5;color:#A6B0C2;margin:0">Puntúa /100 y mapea cada fallo al agente que lo trata. Etiquetas MEDIDO / INFERIDO. Cero datos inventados.</p>
           </div>
           <a href="https://buy.stripe.com/eVqdR9e27bHI4479oP9fW0z" data-stripe="https://buy.stripe.com/eVqdR9e27bHI4479oP9fW0z" target="_blank" rel="noopener" class="dc-btn" style="display:inline-flex;align-items:center;gap:10px;background:#D97757;color:#0D1320;font-weight:600;font-size:17px;padding:17px 30px;border-radius:10px;text-decoration:none;white-space:nowrap;box-shadow:0 16px 40px -14px rgba(217,119,87,0.7),inset 0 0 0 1px rgba(255,255,255,0.12)"><span data-i18n="nh_pwf_cta1">Llevarme el pack — 39,99€</span> <span aria-hidden="true">→</span></a>
         </div>
@@ -292,13 +302,13 @@
         <!-- PRUEBA -->
         <div class="dc-split" style="display:grid;grid-template-columns:1.05fr 0.95fr;gap:36px;align-items:start;padding:34px 0">
           <div>
-            <div data-i18n="nh_pwf_skills_label" style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#6E7890;margin-bottom:18px">Las 5 skills del pack</div>
-            <div style="display:flex;flex-direction:column;gap:14px">
-              <div style="display:flex;gap:13px"><span style="font-family:'JetBrains Mono',monospace;color:#D97757;font-size:13px;flex:none;width:84px">webblood</span><span data-i18n="nh_pwf_sk1" style="font-size:14px;color:#C7CDD8;line-height:1.45">Audita en 8 módulos, puntúa /100 y mapea cada fallo a su tratamiento.</span></div>
-              <div style="display:flex;gap:13px"><span style="font-family:'JetBrains Mono',monospace;color:#D97757;font-size:13px;flex:none;width:84px">seolocal</span><span data-i18n="nh_pwf_sk2" style="font-size:14px;color:#C7CDD8;line-height:1.45">SEO local: schema LocalBusiness, title/meta, NAP, sitemap.</span></div>
-              <div style="display:flex;gap:13px"><span style="font-family:'JetBrains Mono',monospace;color:#D97757;font-size:13px;flex:none;width:84px">speed</span><span data-i18n="nh_pwf_sk3" style="font-size:14px;color:#C7CDD8;line-height:1.45">Plan de rendimiento por causa, con snippets reales (.htaccess, Nginx, Cloudflare).</span></div>
-              <div style="display:flex;gap:13px"><span style="font-family:'JetBrains Mono',monospace;color:#D97757;font-size:13px;flex:none;width:84px">reviews</span><span data-i18n="nh_pwf_sk4" style="font-size:14px;color:#C7CDD8;line-height:1.45">Captación de reseñas reales + schema Review (solo con datos reales).</span></div>
-              <div style="display:flex;gap:13px"><span style="font-family:'JetBrains Mono',monospace;color:#D97757;font-size:13px;flex:none;width:84px">businessdna</span><span data-i18n="nh_pwf_sk5" style="font-size:14px;color:#C7CDD8;line-height:1.45">Extrae la identidad del negocio para alimentar a las demás.</span></div>
+            <div data-i18n="nh_pwf_skills_label" style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#6E7890;margin-bottom:18px">Los 5 agentes del pack</div>
+            <div style="display:flex;flex-direction:column;gap:13px">
+              <div style="display:flex;gap:12px;align-items:flex-start"><span aria-hidden="true" style="color:#D97757;flex:none">›</span><span data-i18n-html="nh_pwf_sk1" style="font-size:14px;color:#C7CDD8;line-height:1.45"><strong style="color:#F4F2EC;font-weight:500">Auditor web</strong> <span style="font-family:'JetBrains Mono',monospace;color:#D97757">(webblood)</span> — analiza 8 áreas de tu web y mapea cada fallo a su tratamiento.</span></div>
+              <div style="display:flex;gap:12px;align-items:flex-start"><span aria-hidden="true" style="color:#D97757;flex:none">›</span><span data-i18n-html="nh_pwf_sk2" style="font-size:14px;color:#C7CDD8;line-height:1.45"><strong style="color:#F4F2EC;font-weight:500">Agente de SEO local</strong> <span style="font-family:'JetBrains Mono',monospace;color:#D97757">(seolocal)</span> — schema LocalBusiness, title/meta, NAP y sitemap listos para aplicar.</span></div>
+              <div style="display:flex;gap:12px;align-items:flex-start"><span aria-hidden="true" style="color:#D97757;flex:none">›</span><span data-i18n-html="nh_pwf_sk3" style="font-size:14px;color:#C7CDD8;line-height:1.45"><strong style="color:#F4F2EC;font-weight:500">Agente de rendimiento</strong> <span style="font-family:'JetBrains Mono',monospace;color:#D97757">(speed)</span> — plan por causa con snippets reales (.htaccess, Nginx, Cloudflare).</span></div>
+              <div style="display:flex;gap:12px;align-items:flex-start"><span aria-hidden="true" style="color:#D97757;flex:none">›</span><span data-i18n-html="nh_pwf_sk4" style="font-size:14px;color:#C7CDD8;line-height:1.45"><strong style="color:#F4F2EC;font-weight:500">Agente de reseñas</strong> <span style="font-family:'JetBrains Mono',monospace;color:#D97757">(reviews)</span> — capta reseñas reales y genera schema Review solo con datos reales.</span></div>
+              <div style="display:flex;gap:12px;align-items:flex-start"><span aria-hidden="true" style="color:#D97757;flex:none">›</span><span data-i18n-html="nh_pwf_sk5" style="font-size:14px;color:#C7CDD8;line-height:1.45"><strong style="color:#F4F2EC;font-weight:500">Agente de identidad de negocio</strong> <span style="font-family:'JetBrains Mono',monospace;color:#D97757">(businessdna)</span> — extrae el ADN del negocio para alimentar al resto.</span></div>
             </div>
           </div>
           <div>
@@ -328,7 +338,7 @@ Veredicto: 3 fallos que cuestan clientes · plan de tratamiento listo</pre></nos
               <span data-i18n="nh_pwf_anchor" style="font-size:17px;color:#6E7890;text-decoration:line-through">64,95€ sueltas</span>
               <span style="font-size:12px;color:#4ADE80;border:1px solid rgba(74,222,128,0.4);border-radius:999px;padding:3px 9px">−38%</span>
             </div>
-            <p data-i18n-html="nh_pwf_market" style="font-size:14px;line-height:1.5;color:#A6B0C2;margin:12px 0 0;max-width:520px">Una skill suelta: <span style="font-family:'JetBrains Mono',monospace;color:#F4F2EC">12,99€</span>. <span style="color:#6E7890">[INFERIDO]</span> Las agencias cobran <strong style="color:#F4F2EC;font-weight:500">300–800€</strong> por una auditoría así — echa tú la cuenta. <span style="color:#6E7890">No es promesa de resultado.</span></p>
+            <p data-i18n-html="nh_pwf_market" style="font-size:14px;line-height:1.5;color:#A6B0C2;margin:12px 0 0;max-width:520px">Un agente suelto: <span style="font-family:'JetBrains Mono',monospace;color:#F4F2EC">12,99€</span>. <span style="color:#6E7890">[INFERIDO]</span> Las agencias cobran <strong style="color:#F4F2EC;font-weight:500">300–800€</strong> por una auditoría así — echa tú la cuenta. <span style="color:#6E7890">No es promesa de resultado.</span></p>
           </div>
           <a href="https://buy.stripe.com/eVqdR9e27bHI4479oP9fW0z" data-stripe="https://buy.stripe.com/eVqdR9e27bHI4479oP9fW0z" target="_blank" rel="noopener" class="dc-btn" style="display:inline-flex;align-items:center;gap:10px;background:#D97757;color:#0D1320;font-weight:600;font-size:16px;padding:15px 26px;border-radius:10px;text-decoration:none;white-space:nowrap;box-shadow:0 16px 40px -14px rgba(217,119,87,0.7)"><span data-i18n="nh_pwf_cta2">Quiero el Pack Web Forense</span> <span aria-hidden="true">→</span></a>
         </div>
@@ -338,7 +348,7 @@ Veredicto: 3 fallos que cuestan clientes · plan de tratamiento listo</pre></nos
       <article style="background:#141E30;border:1px solid #26314A;border-radius:22px;padding:clamp(28px,4vw,48px)">
         <div class="dc-split" style="display:grid;grid-template-columns:1fr auto;gap:24px;align-items:end;padding-bottom:30px;border-bottom:1px solid #26314A">
           <div style="max-width:560px">
-            <div data-i18n="nh_pol_label" style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#D97757;margin-bottom:14px">El Polígrafo · 15 skills de trading</div>
+            <div data-i18n="nh_pol_label" style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#D97757;margin-bottom:14px">El Polígrafo · 15 agentes de trading</div>
             <h3 data-i18n-html="nh_pol_h3" style="font-size:clamp(24px,3vw,38px);line-height:1.08;letter-spacing:-0.025em;font-weight:700;margin:0 0 12px;text-wrap:balance">Detecta si tu backtest <em style="color:#D97757;font-style:italic;font-weight:500">miente.</em></h3>
             <p data-i18n="nh_pol_sub" style="font-size:16px;line-height:1.5;color:#A6B0C2;margin:0">Overfitting, martingala oculta, falsa diversificación, edge muerto. Informe forense con evidencia concreta de cada fallo.</p>
           </div>
@@ -361,7 +371,7 @@ Veredicto: 3 fallos que cuestan clientes · plan de tratamiento listo</pre></nos
             <!-- MINI-TERMINAL animada (output REAL de El Polígrafo / curvefit). Para sustituir por captura real,
                  reemplaza este bloque .term por:
                  <img src="assets/proof-poligrafo.webp" alt="Informe del Polígrafo anonimizado" loading="lazy" decoding="async" width="520" height="220" style="width:100%;height:220px;object-fit:cover;border-radius:14px;border:1px solid #26314A"> -->
-            <div class="term" data-term="poligrafo" role="img" aria-label="Salida de ejemplo de la skill curvefit: overfitting detectado y gestión de riesgo correcta; veredicto con informe forense.">
+            <div class="term" data-term="poligrafo" role="img" aria-label="Salida de ejemplo del agente curvefit: overfitting detectado y gestión de riesgo correcta; veredicto con informe forense.">
               <div class="term-bar" aria-hidden="true"><span class="term-dot"></span><span class="term-dot"></span><span class="term-dot"></span></div>
               <pre class="term-body" aria-hidden="true"></pre>
               <noscript><pre class="term-body" style="white-space:pre-wrap">$ /javiperez-curvefit backtest.htm
@@ -381,11 +391,70 @@ Veredicto: backtest poco fiable · informe forense listo</pre></noscript>
               <span data-i18n="nh_pol_anchor" style="font-size:17px;color:#6E7890;text-decoration:line-through">194,85€ sueltas</span>
               <span data-i18n="nh_pol_badge" style="font-size:12px;color:#4ADE80;border:1px solid rgba(74,222,128,0.4);border-radius:999px;padding:3px 9px">bundle 15</span>
             </div>
-            <p data-i18n-html="nh_pol_pricedetail" style="font-size:14px;line-height:1.5;color:#A6B0C2;margin:12px 0 0;max-width:520px">Skill suelta <span style="font-family:'JetBrains Mono',monospace;color:#F4F2EC">12,99€</span> · pack de 5 <span style="font-family:'JetBrains Mono',monospace;color:#F4F2EC">39,99€</span> · bundle 15 <span style="font-family:'JetBrains Mono',monospace;color:#F4F2EC">99€</span> <span style="color:#6E7890">(los 3 packs sueltos: 119,97€)</span>.</p>
+            <p data-i18n-html="nh_pol_pricedetail" style="font-size:14px;line-height:1.5;color:#A6B0C2;margin:12px 0 0;max-width:520px">Agente suelto <span style="font-family:'JetBrains Mono',monospace;color:#F4F2EC">12,99€</span> · pack de 5 <span style="font-family:'JetBrains Mono',monospace;color:#F4F2EC">39,99€</span> · bundle 15 <span style="font-family:'JetBrains Mono',monospace;color:#F4F2EC">99€</span> <span style="color:#6E7890">(los 3 packs sueltos: 119,97€)</span>.</p>
           </div>
           <a href="https://buy.stripe.com/3cIdR98HNcLMasv6cD9fW0a" data-stripe="https://buy.stripe.com/3cIdR98HNcLMasv6cD9fW0a" target="_blank" rel="noopener" class="dc-btn" style="display:inline-flex;align-items:center;gap:10px;background:#D97757;color:#0D1320;font-weight:600;font-size:16px;padding:15px 26px;border-radius:10px;text-decoration:none;white-space:nowrap;box-shadow:0 16px 40px -14px rgba(217,119,87,0.7)"><span data-i18n="nh_pol_cta2">Quiero El Polígrafo</span> <span aria-hidden="true">→</span></a>
         </div>
       </article>
+    </div>
+  </section>
+
+  <!-- ============ PRUEBA SOCIAL (testimonios reales + pagos) ============ -->
+  <section id="prueba" style="position:relative;padding:clamp(70px,9vw,110px) 0;border-top:1px solid #26314A;overflow:hidden">
+    <div style="max-width:1200px;margin:0 auto;padding:0 clamp(20px,4vw,32px)">
+      <div style="display:inline-flex;align-items:center;gap:10px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#D97757;margin-bottom:20px">
+        <span aria-hidden="true" style="width:6px;height:6px;border-radius:50%;background:#D97757;animation:pulseDot 2.4s infinite"></span>
+        <span data-i18n="nh_proof_eyebrow">Prueba real</span>
+      </div>
+      <h2 data-i18n-html="nh_proof_h2" style="font-size:clamp(30px,4.4vw,54px);line-height:1.05;letter-spacing:-0.03em;font-weight:700;margin:0 0 18px;max-width:780px;text-wrap:balance">Esto no es teoría. <em style="color:#D97757;font-style:italic;font-weight:500">Es lo que dicen mis clientes.</em></h2>
+      <p data-i18n="nh_proof_p" style="font-size:18px;line-height:1.55;color:#A6B0C2;max-width:620px;margin:0;text-wrap:pretty">Mensajes reales de clientes (anonimizados) y cobros reales. La prueba, no el discurso.</p>
+    </div>
+
+    <div class="testi-viewport" role="group" aria-label="Testimonios reales de clientes (anonimizados)" style="margin-top:38px">
+      <div class="testi-track">
+        <figure class="testi-card" style="margin-block:0"><img src="assets/testimonios/testi-web-1.jpg" width="473" height="981" loading="lazy" decoding="async" alt="Testimonio real de un cliente (anonimizado) sobre los agentes web."></figure>
+        <figure class="testi-card" style="margin-block:0"><img src="assets/testimonios/testi-web-2.jpg" width="473" height="982" loading="lazy" decoding="async" alt="Testimonio real de un cliente (anonimizado) sobre los agentes web."></figure>
+        <figure class="testi-card" style="margin-block:0"><img src="assets/testimonios/testi-poligrafo-1.jpg" width="473" height="975" loading="lazy" decoding="async" alt="Testimonio real de un cliente (anonimizado) sobre los agentes de El Polígrafo (trading)."></figure>
+        <figure class="testi-card" style="margin-block:0"><img src="assets/testimonios/testi-poligrafo-2.jpg" width="473" height="979" loading="lazy" decoding="async" alt="Testimonio real de un cliente (anonimizado) sobre los agentes de El Polígrafo (trading)."></figure>
+        <figure class="testi-card" style="margin-block:0"><img src="assets/testimonios/lead-1-anon.png" width="1170" height="2532" loading="lazy" decoding="async" alt="Conversación real con un cliente (anonimizada)."></figure>
+        <figure class="testi-card" style="margin-block:0"><img src="assets/testimonios/lead-3-anon.png" width="1170" height="2532" loading="lazy" decoding="async" alt="Conversación real con un cliente (anonimizada)."></figure>
+        <!-- duplicado para bucle continuo (oculto a lectores de pantalla) -->
+        <figure class="testi-card" style="margin-block:0" aria-hidden="true"><img src="assets/testimonios/testi-web-1.jpg" width="473" height="981" loading="lazy" decoding="async" alt=""></figure>
+        <figure class="testi-card" style="margin-block:0" aria-hidden="true"><img src="assets/testimonios/testi-web-2.jpg" width="473" height="982" loading="lazy" decoding="async" alt=""></figure>
+        <figure class="testi-card" style="margin-block:0" aria-hidden="true"><img src="assets/testimonios/testi-poligrafo-1.jpg" width="473" height="975" loading="lazy" decoding="async" alt=""></figure>
+        <figure class="testi-card" style="margin-block:0" aria-hidden="true"><img src="assets/testimonios/testi-poligrafo-2.jpg" width="473" height="979" loading="lazy" decoding="async" alt=""></figure>
+        <figure class="testi-card" style="margin-block:0" aria-hidden="true"><img src="assets/testimonios/lead-1-anon.png" width="1170" height="2532" loading="lazy" decoding="async" alt=""></figure>
+        <figure class="testi-card" style="margin-block:0" aria-hidden="true"><img src="assets/testimonios/lead-3-anon.png" width="1170" height="2532" loading="lazy" decoding="async" alt=""></figure>
+      </div>
+    </div>
+
+    <div style="max-width:1200px;margin:44px auto 0;padding:0 clamp(20px,4vw,32px)">
+      <div class="dc-pay" style="display:grid;grid-template-columns:1.1fr 0.9fr;gap:28px;align-items:center;background:#141E30;border:1px solid #26314A;border-radius:18px;padding:clamp(24px,4vw,40px)">
+        <div>
+          <div data-i18n="nh_pay_label" style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#D97757;margin-bottom:14px">Pagos reales</div>
+          <h3 data-i18n-html="nh_pay_h3" style="font-size:clamp(24px,3vw,38px);line-height:1.08;letter-spacing:-0.025em;font-weight:700;margin:0 0 12px;text-wrap:balance">Pagos reales, <em style="color:#D97757;font-style:italic;font-weight:500">no promesas.</em></h3>
+          <p data-i18n-html="nh_pay_p" style="font-size:16px;line-height:1.55;color:#A6B0C2;margin:0;max-width:460px">Cobros reales por agentes y servicios. La prueba, no el discurso. <span style="color:#6E7890">Importes y fechas reales; datos de cliente pixelados.</span></p>
+        </div>
+        <figure style="position:relative;margin:0;background:#0D1320;border:1px solid #26314A;border-radius:14px;overflow:hidden;min-height:180px;display:flex;align-items:center;justify-content:center">
+          <span aria-hidden="true" style="position:absolute;font-family:'JetBrains Mono',monospace;font-size:12px;color:#6E7890;padding:20px;text-align:center;line-height:1.6">Captura de Stripe →<br>guárdala en assets/stripe-prueba.png</span>
+          <img src="assets/stripe-prueba.png" loading="lazy" decoding="async" alt="Actividad reciente de pagos en Stripe: varios cobros marcados como Pagada. Importes y fechas reales; datos de cliente pixelados." style="position:relative;display:block;width:100%;height:auto">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ AGENTE A MEDIDA (servicio bajo demanda) ============ -->
+  <section id="agente-medida" style="position:relative;padding:clamp(70px,9vw,110px) clamp(20px,4vw,32px);border-top:1px solid #26314A">
+    <div style="max-width:1200px;margin:0 auto">
+      <div style="background:#141E30;border:1px solid #26314A;border-radius:22px;padding:clamp(28px,4vw,48px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:28px">
+        <div style="max-width:620px">
+          <div data-i18n="nh_custom_label" style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#D97757;margin-bottom:14px">Agente a medida · bajo demanda</div>
+          <h3 data-i18n-html="nh_custom_h3" style="font-size:clamp(24px,3vw,38px);line-height:1.08;letter-spacing:-0.025em;font-weight:700;margin:0 0 12px;text-wrap:balance">¿Necesitas un agente para <em style="color:#D97757;font-style:italic;font-weight:500">tu</em> trabajo concreto?</h3>
+          <p data-i18n="nh_custom_p" style="font-size:16px;line-height:1.55;color:#A6B0C2;margin:0;max-width:560px;text-wrap:pretty">Cuéntame a qué te dedicas y qué tarea repetitiva te come tiempo. Te digo sin rodeos si te lo puedo construir — y si no, también te lo digo. Cada caso es distinto, así que no hay tarifa fija: el precio lo cerramos por privado.</p>
+          <p data-i18n="nh_custom_note" style="font-size:13px;line-height:1.5;color:#6E7890;margin:18px 0 0;border-left:2px solid #26314A;padding-left:14px">No es un catálogo de agentes que no existen: es un encargo. Solo construyo lo que puedo demostrar con código.</p>
+        </div>
+        <a href="https://wa.me/34644289776" data-wa target="_blank" rel="noopener" class="dc-btn" style="display:inline-flex;align-items:center;gap:10px;background:#D97757;color:#0D1320;font-weight:600;font-size:16px;padding:16px 28px;border-radius:10px;text-decoration:none;white-space:nowrap;box-shadow:0 16px 40px -14px rgba(217,119,87,0.7),inset 0 0 0 1px rgba(255,255,255,0.12)"><span data-i18n="nh_custom_cta">Cuéntame tu caso</span> <span aria-hidden="true">→</span></a>
+      </div>
     </div>
   </section>
 
@@ -427,7 +496,7 @@ Veredicto: backtest poco fiable · informe forense listo</pre></noscript>
     <footer style="position:relative;max-width:1200px;margin:clamp(70px,10vw,120px) auto 0;padding-top:32px;border-top:1px solid #26314A;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px">
       <a href="#top" aria-label="/javiperez — inicio" style="display:inline-flex;align-items:center;text-decoration:none"><svg viewBox="0 0 150 28" width="110" height="20" role="img" aria-hidden="true" focusable="false"><text x="0" y="21" font-family="'JetBrains Mono','Geist Mono',ui-monospace,monospace" font-size="21" font-weight="600"><tspan fill="#D97757">/</tspan><tspan fill="#FAF9F5">javiperez</tspan></text></svg></a>
       <nav style="display:flex;flex-wrap:wrap;gap:16px;font-family:'JetBrains Mono',monospace;font-size:12px;color:#A6B0C2">
-        <a href="skills.html" class="dc-nav-link" data-i18n="nh_nav_skills" style="color:#A6B0C2;text-decoration:none">Skills</a>
+        <a href="agentes.html" class="dc-nav-link" data-i18n="nh_nav_skills" style="color:#A6B0C2;text-decoration:none">Agentes</a>
         <a href="#servicios" class="dc-nav-link" data-i18n="nh_nav_serv" style="color:#A6B0C2;text-decoration:none">Servicios</a>
         <a href="links.html" class="dc-nav-link" data-i18n="nh_foot_links" style="color:#A6B0C2;text-decoration:none">Links</a>
         <a href="legal.html#aviso-legal" class="dc-nav-link" data-i18n="nh_foot_legal" style="color:#A6B0C2;text-decoration:none">Aviso legal</a>
