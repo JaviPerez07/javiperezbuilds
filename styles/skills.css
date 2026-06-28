@@ -359,3 +359,46 @@
 
 /* hero stat principal (home) */
 .hero-counter-block--main .num { font-size: 2rem; }
+
+/* ============================================================
+   FASE 3 · pulido visual (microinteracciones CSS, 0 librerías)
+   Solo transform/opacity. Todo respeta prefers-reduced-motion.
+   ============================================================ */
+html { scroll-behavior: smooth; }
+
+@media (hover: hover) {
+  /* Tarjetas de agente: lift + borde acento */
+  .sk-skill { transition: transform 240ms var(--ease-out-quart), border-color 240ms ease, box-shadow 240ms ease; }
+  .sk-skill:hover { transform: translateY(-3px); border-color: rgba(217,119,87,0.45); box-shadow: 0 16px 40px -20px var(--accent-glow); }
+  .sk-skill--diag:hover { border-color: rgba(217,119,87,0.7); }
+
+  /* Tarjetas de precio */
+  .sk-price-card { transition: transform 240ms var(--ease-out-quart), border-color 240ms ease, box-shadow 240ms ease; }
+  .sk-price-card:hover { transform: translateY(-3px); box-shadow: 0 18px 44px -22px var(--accent-glow); }
+
+  /* Flecha de los CTA: empujón al pasar */
+  .sk-price-cta [aria-hidden="true"], .sk-cta-outline [aria-hidden="true"] { display: inline-block; transition: transform 250ms var(--ease-out-quart); }
+  .sk-price-cta:hover [aria-hidden="true"], .sk-cta-outline:hover [aria-hidden="true"] { transform: translateX(4px); }
+
+  /* Imagen de producto: realce sutil */
+  .pf-media img { transition: transform 400ms var(--ease-out-quart), box-shadow 400ms ease; }
+  .pf-media:hover img { transform: scale(1.015); box-shadow: 0 40px 90px -40px var(--accent-glow); }
+
+  /* Nav: subrayado animado + estado de página actual */
+  .sk-nav-links a { position: relative; }
+  .sk-nav-links a::after { content: ""; position: absolute; left: 0; right: 100%; bottom: -3px; height: 1.5px; background: var(--accent); transition: right 240ms var(--ease-out-quart); }
+  .sk-nav-links a:hover::after { right: 0; }
+  .sk-nav-links a[aria-current="page"]::after { right: 0; opacity: 0.55; }
+
+  /* Deep-dive: la terminal del agente se eleva levemente al hover */
+  .wf-skill-grid2 .wf-term { transition: transform 300ms var(--ease-out-quart); }
+  .wf-skill-grid2:hover .wf-term { transform: translateY(-2px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .sk-skill, .sk-price-card, .pf-media img,
+  .sk-price-cta [aria-hidden="true"], .sk-cta-outline [aria-hidden="true"],
+  .wf-skill-grid2 .wf-term { transition: none !important; }
+  .sk-nav-links a::after { transition: none !important; }
+}

@@ -9,7 +9,7 @@ module.exports = {
   content: [
     './index.html',
     './agentes.html',
-    './skills/*.html',
+    './agentes/*.html',
     './links.html',
     './legal.html',
     './scripts/*.js',

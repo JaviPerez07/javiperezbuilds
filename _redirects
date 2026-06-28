@@ -3,10 +3,17 @@ http://javiperezbuilds.com/*    https://javiperezbuilds.com/:splat  301!
 http://www.javiperezbuilds.com/* https://javiperezbuilds.com/:splat 301!
 https://www.javiperezbuilds.com/* https://javiperezbuilds.com/:splat 301!
 
-# Rename comercial del pack de trading
-/skills/quant-forensics  /skills/poligrafo  301
-/skills/quant-forensics.html  /skills/poligrafo  301
+# Renombrado de rutas /skills/* -> /agentes/* — URLs ABSOLUTAS (Cloudflare ignora las relativas), 301.
+# Subpáginas (las más específicas primero)
+https://javiperezbuilds.com/skills/web-forense       https://javiperezbuilds.com/agentes/web      301
+https://javiperezbuilds.com/skills/web-forense.html  https://javiperezbuilds.com/agentes/web      301
+https://javiperezbuilds.com/skills/poligrafo         https://javiperezbuilds.com/agentes/trading  301
+https://javiperezbuilds.com/skills/poligrafo.html    https://javiperezbuilds.com/agentes/trading  301
 
-# Rename del catálogo /skills -> /agentes (las subpáginas /skills/* siguen vivas)
-/skills      /agentes  301
-/skills.html /agentes  301
+# Legacy comercial del pack de trading -> nueva ruta de trading
+https://javiperezbuilds.com/skills/quant-forensics       https://javiperezbuilds.com/agentes/trading  301
+https://javiperezbuilds.com/skills/quant-forensics.html  https://javiperezbuilds.com/agentes/trading  301
+
+# Catálogo /skills (exacto) -> hub /agentes
+https://javiperezbuilds.com/skills       https://javiperezbuilds.com/agentes  301
+https://javiperezbuilds.com/skills.html  https://javiperezbuilds.com/agentes  301
