@@ -21,3 +21,6 @@ npm-debug.log*
 
 # Scratch local (no publicar)
 __scroll-local.html
+
+# Copy retirada de la home (guardada para referencia, nunca se despliega)
+archive/
