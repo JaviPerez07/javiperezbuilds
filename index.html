@@ -366,15 +366,18 @@
 </div>
 
 <script src="scripts/config.js?v=1" defer></script>
-<script defer>
-  (function () {
+<script>
+  /* "defer" no afecta a scripts inline (solo a scripts con src) — esperamos a
+     DOMContentLoaded para que el config.js diferido ya haya cargado antes de
+     usar window.JP_CONFIG / JP_TRACK. */
+  document.addEventListener('DOMContentLoaded', function () {
     if (window.JP_CONFIG && window.JP_CONFIG.SHOW_CLIENT_RESULTS) {
       var slot = document.getElementById('casos-clientes-slot');
       var tpl = document.getElementById('tpl-casos-clientes');
       if (slot && tpl) { slot.hidden = false; slot.appendChild(tpl.content.cloneNode(true)); }
     }
     window.JP_TRACK && window.JP_TRACK('view_home');
-  })();
+  });
 </script>
 </body>
 </html>
