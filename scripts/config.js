@@ -8,11 +8,7 @@
 window.JP_CONFIG = {
   WHATSAPP_NUMBER: "34644289776",
   CONTACT_EMAIL: "javiperezguides@gmail.com",
-  /* Javi: crea una cuenta gratis en https://web3forms.com con tu email,
-     copia el "Access Key" que te den y pégalo aquí en lugar del placeholder.
-     En cuanto esta constante deje de valer "WEB3FORMS_ACCESS_KEY_PENDIENTE",
-     /auditoria empieza a enviar de verdad — no hay que tocar nada más. */
-  WEB3FORMS_ACCESS_KEY: "WEB3FORMS_ACCESS_KEY_PENDIENTE",
+  WEB3FORMS_ACCESS_KEY: "ac4cecc6-fe8c-4ff4-8292-a13cb0dd37e8",
   /* Pon esto en true SOLO cuando exista el primer resultado de cliente real
      (ver plantilla #tpl-casos-clientes en index.html) — nunca antes. */
   SHOW_CLIENT_RESULTS: false
