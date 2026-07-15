@@ -14,6 +14,7 @@ const contentTypes = {
   '.webp': 'image/webp',
   '.woff2': 'font/woff2'
 };
+const stylesheet = await readFile(path.join(root, 'styles/operator-atelier.css'), 'utf8');
 
 const server = http.createServer(async (request, response) => {
   try {
@@ -58,6 +59,14 @@ async function verifyPage(name, options = {}) {
         }
       });
     });
+  }
+
+  if (options.staleRevealCss) {
+    await page.route('**/styles/operator-atelier.css*', (route) => route.fulfill({
+      status: 200,
+      contentType: 'text/css; charset=utf-8',
+      body: `${stylesheet}\n[data-oa-reveal]{opacity:0;transform:translateY(24px)}`
+    }));
   }
 
   const response = await page.goto(baseURL, { waitUntil: 'load' });
@@ -106,6 +115,7 @@ try {
   await verifyPage('motion initialization failure', { breakIntersectionObserver: true });
   await verifyPage('JavaScript disabled desktop', { javaScriptEnabled: false });
   await verifyPage('JavaScript disabled mobile', { javaScriptEnabled: false, viewport: { width: 390, height: 844 } });
+  await verifyPage('cached stylesheet with JavaScript disabled', { javaScriptEnabled: false, staleRevealCss: true });
 } finally {
   await browser.close();
   await new Promise((resolve) => server.close(resolve));
