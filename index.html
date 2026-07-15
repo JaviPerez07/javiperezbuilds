@@ -3,381 +3,200 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Javi Pérez — Convierte tus anuncios en citas | Almería</title>
-  <meta name="description" content="Landing específica, WhatsApp o reservas, seguimiento y medición para clínicas y negocios premium que ya invierten en publicidad. Entregado en 7–14 días." />
+  <title>Javi Pérez — Sistemas de captación que convierten anuncios en citas</title>
+  <meta name="description" content="Diseño y construyo el recorrido completo anuncio → landing → WhatsApp o reserva → cita medible para clínicas y negocios locales premium." />
   <link rel="canonical" href="https://javiperezbuilds.com/" />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
   <link rel="manifest" href="manifest.webmanifest" />
-  <meta name="theme-color" content="#0D1320" />
+  <meta name="theme-color" content="#0A100F" />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <meta name="author" content="Javi Pérez" />
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://javiperezbuilds.com/" />
-  <meta property="og:title" content="Javi Pérez — Convierte tus anuncios en citas" />
-  <meta property="og:description" content="Sistema completo anuncio → landing → WhatsApp/reserva → cita medible para clínicas y negocios locales premium. Precio y plazo cerrados por adelantado." />
+  <meta property="og:title" content="Javi Pérez — De anuncio a cita, sin fugas por el camino" />
+  <meta property="og:description" content="Landing, cualificación, WhatsApp o reservas y medición para negocios locales premium." />
   <meta property="og:image" content="https://javiperezbuilds.com/assets/og-image-v2.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="Javi Pérez — sistemas de captación para negocios locales." />
   <meta property="og:locale" content="es_ES" />
   <meta property="og:site_name" content="Javi Pérez" />
-
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Javi Pérez — Convierte tus anuncios en citas" />
-  <meta name="twitter:description" content="Landing específica, WhatsApp o reservas, seguimiento y medición. Entregado en 7–14 días." />
+  <meta name="twitter:title" content="Javi Pérez — De anuncio a cita" />
+  <meta name="twitter:description" content="Diseño y construyo sistemas de captación medibles para clínicas y negocios locales premium." />
   <meta name="twitter:image" content="https://javiperezbuilds.com/assets/og-image-v2.jpg" />
-  <meta name="twitter:image:alt" content="Javi Pérez — sistemas de captación para negocios locales." />
-  <meta name="twitter:creator" content="@javiperezbuilds" />
 
-  <!-- Fuentes self-hosted (subset latin + latin-ext, sin Google Fonts: más rápido y RGPD-friendly) -->
   <link rel="preload" href="assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="assets/fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin />
-
   <style>
-    /* ---- @font-face (variable, un fichero por subset) ---- */
-    @font-face{font-family:'Space Grotesk';font-style:normal;font-weight:400 700;font-display:swap;src:url('assets/fonts/space-grotesk-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
-    @font-face{font-family:'Space Grotesk';font-style:normal;font-weight:400 700;font-display:swap;src:url('assets/fonts/space-grotesk-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}
-    @font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400 700;font-display:swap;src:url('assets/fonts/jetbrains-mono-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
-    @font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400 700;font-display:swap;src:url('assets/fonts/jetbrains-mono-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}
-
-    /* ---- base ---- */
-    *{box-sizing:border-box}
-    body{margin:0;background:#0D1320}
-    html{scroll-behavior:smooth}
-    ::selection{background:#D97757;color:#0D1320}
-    a{color:inherit}
-    img{max-width:100%}
-    @keyframes pulseDot{0%,100%{box-shadow:0 0 0 0 rgba(217,119,87,0.45)}50%{box-shadow:0 0 0 5px rgba(217,119,87,0)}}
-    :focus-visible{outline:2px solid #D97757;outline-offset:3px;border-radius:6px}
-
-    /* ---- hover ---- */
-    .dc-nav-link{transition:color .2s}
-    .dc-nav-link:hover{color:#F4F2EC !important}
-    .dc-btn{transition:transform .2s}
-    .dc-btn:hover{transform:translateY(-2px)}
-    .dc-svc{transition:transform .25s,border-color .25s;text-decoration:none}
-    .dc-svc:hover{transform:translateY(-3px);border-color:rgba(217,119,87,0.35) !important}
-
-    /* ---- grids ---- */
-    .dc-leaks{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-    .dc-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
-    .dc-casos{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .dc-flow{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap}
-
-    /* ---- responsive (mobile-first: probado a 380px sin scroll horizontal) ---- */
-    @media (max-width:920px){ .dc-steps{grid-template-columns:repeat(2,1fr)} .dc-casos{grid-template-columns:1fr} }
-    @media (max-width:760px){ .dc-leaks{grid-template-columns:1fr} .dc-steps{grid-template-columns:1fr} }
-    @media (max-width:900px){ .dc-nav-extra{display:none !important} }
-    @media (prefers-reduced-motion:reduce){ *{animation:none !important;scroll-behavior:auto !important} .dc-btn,.dc-svc{transition:none !important} }
+    @font-face{font-family:'Space Grotesk';font-style:normal;font-weight:400 700;font-display:swap;src:url('assets/fonts/space-grotesk-latin.woff2') format('woff2')}
+    @font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400 700;font-display:swap;src:url('assets/fonts/jetbrains-mono-latin.woff2') format('woff2')}
   </style>
+  <link rel="stylesheet" href="styles/operator-atelier.css?v=1" />
 
-  <!-- Schema.org Person (hardcoded, sin JS) -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Javi Pérez",
-    "url": "https://javiperezbuilds.com/",
-    "image": "https://javiperezbuilds.com/assets/javi-perfil.jpg",
-    "jobTitle": "Sistemas de captación para negocios locales",
-    "email": "javiperezguides@gmail.com",
-    "telephone": "+34644289776",
-    "address": { "@type": "PostalAddress", "addressLocality": "Almería", "addressRegion": "Andalucía", "addressCountry": "ES" },
-    "knowsAbout": ["Claude Code", "Automatización con IA", "Cloudflare Pages", "SEO local", "Sistemas de captación de leads"],
-    "sameAs": [
-      "https://github.com/JaviPerez07",
-      "https://www.linkedin.com/in/javi-perez-guides",
-      "https://twitter.com/javiperezbuilds"
-    ]
-  }
-  </script>
-
-  <!-- Schema.org ProfessionalService (hardcoded, sin JS) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Javi Pérez — Ad-to-Appointment Sprint",
-    "url": "https://javiperezbuilds.com/",
-    "image": "https://javiperezbuilds.com/assets/javi-perfil.jpg",
-    "areaServed": "ES",
-    "priceRange": "€€€",
-    "telephone": "+34644289776",
-    "address": { "@type": "PostalAddress", "addressLocality": "Almería", "addressRegion": "Andalucía", "addressCountry": "ES" },
-    "founder": { "@type": "Person", "name": "Javi Pérez" },
-    "makesOffer": [
-      { "@type": "Offer", "name": "Ad-to-Appointment Sprint", "priceCurrency": "EUR", "price": "1500", "description": "Recorrido completo anuncio → landing → WhatsApp/reserva → cita medible, para clínicas y negocios premium. Entrega 7–14 días. 50% al comenzar, 30 días de correcciones. Precio desde 1.500€." }
-    ]
+    "@context":"https://schema.org",
+    "@type":"ProfessionalService",
+    "name":"Javi Pérez — sistemas de captación",
+    "url":"https://javiperezbuilds.com/",
+    "image":"https://javiperezbuilds.com/assets/javi-perfil.jpg",
+    "areaServed":"ES",
+    "priceRange":"€€€",
+    "telephone":"+34644289776",
+    "address":{"@type":"PostalAddress","addressLocality":"Almería","addressRegion":"Andalucía","addressCountry":"ES"},
+    "founder":{"@type":"Person","name":"Javi Pérez"},
+    "makesOffer":[{"@type":"Offer","name":"Ad-to-Appointment Sprint","priceCurrency":"EUR","price":"1500","description":"Recorrido anuncio → landing → WhatsApp o reserva → cita medible. Entrega estimada de 7–14 días. Precio desde 1.500€."}]
   }
   </script>
 </head>
-
 <body>
-
-<div id="top" style="background:#0D1320;color:#F4F2EC;font-family:'Space Grotesk',sans-serif;min-height:100vh;overflow-x:hidden;position:relative">
-
-  <!-- ============ NAV ============ -->
-  <header style="position:fixed;top:0;left:0;right:0;z-index:150;height:66px;display:flex;align-items:center;background:rgba(13,19,32,0.72);backdrop-filter:saturate(160%) blur(20px);-webkit-backdrop-filter:saturate(160%) blur(20px);border-bottom:1px solid rgba(38,49,74,0.7)">
-    <nav style="max-width:1200px;margin:0 auto;width:100%;padding:0 clamp(20px,4vw,32px);display:flex;align-items:center;justify-content:space-between">
-      <a href="#top" aria-label="/javiperez — inicio" style="display:inline-flex;align-items:center;text-decoration:none">
-        <svg viewBox="0 0 150 28" width="124" height="23" role="img" aria-hidden="true" focusable="false"><text x="0" y="21" font-family="'JetBrains Mono','Geist Mono',ui-monospace,monospace" font-size="21" font-weight="600"><tspan fill="#D97757">/</tspan><tspan fill="#FAF9F5">javiperez</tspan></text></svg>
-      </a>
-      <div style="display:flex;align-items:center;gap:16px">
-        <a href="#servicios" class="dc-nav-link dc-nav-extra" style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#A6B0C2;text-decoration:none">Servicios</a>
-        <a href="#casos" class="dc-nav-link dc-nav-extra" style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#A6B0C2;text-decoration:none">Casos</a>
-        <a href="#proceso" class="dc-nav-link dc-nav-extra" style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#A6B0C2;text-decoration:none">Proceso</a>
-        <a href="agentes.html" class="dc-nav-link dc-nav-extra" style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#A6B0C2;text-decoration:none">Agentes</a>
-        <a href="#sobre-mi" class="dc-nav-link dc-nav-extra" style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#A6B0C2;text-decoration:none">Sobre mí</a>
-        <a href="/auditoria" class="dc-btn" data-track="cta_audit_click" style="display:inline-flex;align-items:center;gap:8px;background:#D97757;color:#0D1320;font-weight:600;font-size:13px;padding:9px 16px;border-radius:8px;text-decoration:none;box-shadow:0 10px 28px -12px rgba(217,119,87,0.6)">Solicitar auditoría</a>
+  <div class="oa-shell" id="top">
+    <header class="oa-nav">
+      <div class="oa-wrap oa-nav__inner">
+        <a class="oa-wordmark" href="#top" aria-label="Javi Pérez — inicio"><span class="oa-wordmark__mark">/</span>javiperez</a>
+        <nav class="oa-nav__links" aria-label="Navegación principal">
+          <a href="#solucion" data-es="Solución" data-en="Solution">Solución</a>
+          <a href="#builds" data-es="Builds" data-en="Builds">Builds</a>
+          <a href="#proceso" data-es="Proceso" data-en="Process">Proceso</a>
+          <a href="agentes.html" data-es="Agentes" data-en="Agents">Agentes</a>
+          <span class="oa-lang" role="group" aria-label="Idioma / Language">
+            <button type="button" data-oa-lang="es" aria-pressed="true">ES</button>
+            <button type="button" data-oa-lang="en" aria-pressed="false">EN</button>
+          </span>
+          <a class="oa-btn oa-btn--primary oa-btn--small" href="/auditoria" data-track="cta_audit_click" data-es="Solicitar auditoría" data-en="Request an audit">Solicitar auditoría</a>
+        </nav>
       </div>
-    </nav>
-  </header>
+    </header>
 
-  <!-- ============ HERO ============ -->
-  <section style="position:relative;min-height:100vh;display:flex;align-items:center;padding:120px clamp(20px,4vw,32px) 80px;overflow:hidden">
-    <div aria-hidden="true" style="position:absolute;top:-10%;right:-5%;width:60vw;height:60vw;max-width:760px;max-height:760px;background:radial-gradient(circle,rgba(217,119,87,0.18),transparent 62%);filter:blur(50px);pointer-events:none"></div>
-    <div aria-hidden="true" style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.025) 1px,transparent 1px);background-size:80px 80px;mask-image:radial-gradient(ellipse 70% 60% at 50% 40%,#000,transparent);-webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 40%,#000,transparent);pointer-events:none"></div>
+    <main>
+      <section class="oa-hero">
+        <div class="oa-wrap oa-hero__grid">
+          <div class="oa-hero__copy" data-oa-reveal>
+            <span class="oa-kicker" data-es="Estudio digital boutique · Almería" data-en="Boutique digital studio · Almería">Estudio digital boutique · Almería</span>
+            <h1 class="oa-title" data-es-html="De anuncio a cita, <em>sin fugas</em> por el camino." data-en-html="From ad to appointment, <em>without leaks</em> in between.">De anuncio a cita, <em>sin fugas</em> por el camino.</h1>
+            <p class="oa-sub" data-es="Diseño y construyo landings, cualificación, WhatsApp o reservas y medición para clínicas y negocios premium que ya invierten en captar clientes." data-en="I design and build landing pages, qualification, WhatsApp or booking flows and measurement for premium local businesses already investing in acquisition.">Diseño y construyo landings, cualificación, WhatsApp o reservas y medición para clínicas y negocios premium que ya invierten en captar clientes.</p>
+            <div class="oa-actions">
+              <a class="oa-btn oa-btn--primary" href="/auditoria" data-track="cta_audit_click" data-es="Solicitar auditoría" data-en="Request an audit">Solicitar auditoría</a>
+              <a class="oa-btn oa-btn--ghost" href="https://wa.me/34644289776" data-wa data-wa-text="Hola Javi, quiero revisar el recorrido de captación de mi negocio." target="_blank" rel="noopener" data-es="Hablar por WhatsApp" data-en="Talk on WhatsApp">Hablar por WhatsApp</a>
+            </div>
+            <div class="oa-hero__proof" aria-label="Datos del servicio">
+              <span data-es="Entrega estimada 7–14 días" data-en="Estimated delivery 7–14 days">Entrega estimada 7–14 días</span>
+              <span data-es="Proyectos desde 1.500€" data-en="Projects from €1,500">Proyectos desde 1.500€</span>
+              <span data-es="Trabajo directo con Javi" data-en="Work directly with Javi">Trabajo directo con Javi</span>
+            </div>
+          </div>
 
-    <div style="position:relative;max-width:900px;margin:0 auto;width:100%;text-align:center">
-      <div style="display:inline-flex;align-items:center;gap:10px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#D97757;margin-bottom:24px">
-        <span aria-hidden="true" style="width:6px;height:6px;border-radius:50%;background:#D97757;animation:pulseDot 2.4s infinite"></span>
-        <span>Sistemas de captación para negocios que ya hacen publicidad</span>
-      </div>
-      <h1 style="font-size:clamp(36px,5.6vw,68px);line-height:1.04;letter-spacing:-0.035em;font-weight:700;margin:0 0 22px;text-wrap:balance">Tus anuncios ya consiguen clics. Yo construyo <em style="color:#D97757;font-style:italic;font-weight:500">el sistema que los convierte en citas.</em></h1>
-      <p style="font-size:clamp(16px,1.4vw,20px);line-height:1.55;color:#A6B0C2;max-width:620px;margin:0 auto;text-wrap:pretty">Landing específica, WhatsApp o reservas, seguimiento y medición para clínicas y negocios premium. Entregado en 7–14 días.</p>
-
-      <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:36px">
-        <a href="/auditoria" data-track="cta_audit_click" class="dc-btn" style="display:inline-flex;align-items:center;gap:10px;background:#D97757;color:#0D1320;font-weight:600;font-size:17px;padding:16px 28px;border-radius:10px;text-decoration:none;box-shadow:0 16px 40px -14px rgba(217,119,87,0.7),inset 0 0 0 1px rgba(255,255,255,0.12)">Solicitar auditoría de 60 segundos <span aria-hidden="true">→</span></a>
-        <a href="#proceso" class="dc-btn" style="display:inline-flex;align-items:center;gap:8px;background:transparent;color:#F4F2EC;font-weight:600;font-size:17px;padding:16px 24px;border-radius:10px;text-decoration:none;border:1px solid #26314A">Ver cómo funciona</a>
-      </div>
-
-      <!-- Barra de confianza — solo hechos -->
-      <div style="margin-top:40px;display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:center;align-items:center;font-family:'JetBrains Mono',monospace;font-size:12.5px;color:#6E7890">
-        <span>Almería, España</span><span aria-hidden="true">·</span>
-        <span>Trabajo en español</span><span aria-hidden="true">·</span>
-        <span>Presupuesto y fecha cerrados</span><span aria-hidden="true">·</span>
-        <span>50% al comenzar</span><span aria-hidden="true">·</span>
-        <span>30 días de soporte técnico</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ PROBLEMA ============ -->
-  <section id="problema" style="position:relative;padding:clamp(70px,9vw,110px) clamp(20px,4vw,32px);background:#111A2B;border-top:1px solid #26314A">
-    <div style="max-width:1100px;margin:0 auto">
-      <h2 style="font-size:clamp(28px,4vw,46px);line-height:1.08;letter-spacing:-0.03em;font-weight:700;margin:0 0 14px;max-width:760px;text-wrap:balance">No siempre te faltan clics. <em style="color:#D97757;font-style:italic;font-weight:500">Muchas veces se pierden después.</em></h2>
-      <p style="font-size:16px;line-height:1.55;color:#A6B0C2;max-width:600px;margin:0 0 40px">El recorrido completo, de un vistazo:</p>
-
-      <!-- Esquema estático del recorrido (sin animación) -->
-      <div class="dc-flow" style="margin-bottom:48px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#C7CDD8">
-        <span style="background:#141E30;border:1px solid #26314A;border-radius:10px;padding:10px 16px">Anuncio</span>
-        <span aria-hidden="true" style="color:#D97757">→</span>
-        <span style="background:#141E30;border:1px solid #26314A;border-radius:10px;padding:10px 16px">Landing</span>
-        <span aria-hidden="true" style="color:#D97757">→</span>
-        <span style="background:#141E30;border:1px solid #26314A;border-radius:10px;padding:10px 16px">WhatsApp / reserva</span>
-        <span aria-hidden="true" style="color:#D97757">→</span>
-        <span style="background:#141E30;border:1px solid #26314A;border-radius:10px;padding:10px 16px">Cita medida</span>
-      </div>
-
-      <div class="dc-leaks">
-        <article class="dc-svc" style="background:#141E30;border:1px solid #26314A;border-radius:16px;padding:24px">
-          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#D97757;margin-bottom:10px">FUGA 01</div>
-          <p style="margin:0;font-size:15px;line-height:1.5;color:#C7CDD8">El anuncio promete una oferta y la home habla de todo.</p>
-        </article>
-        <article class="dc-svc" style="background:#141E30;border:1px solid #26314A;border-radius:16px;padding:24px">
-          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#D97757;margin-bottom:10px">FUGA 02</div>
-          <p style="margin:0;font-size:15px;line-height:1.5;color:#C7CDD8">El visitante no sabe cuál es el siguiente paso.</p>
-        </article>
-        <article class="dc-svc" style="background:#141E30;border:1px solid #26314A;border-radius:16px;padding:24px">
-          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#D97757;margin-bottom:10px">FUGA 03</div>
-          <p style="margin:0;font-size:15px;line-height:1.5;color:#C7CDD8">WhatsApp recibe mensajes sin contexto ni cualificación.</p>
-        </article>
-        <article class="dc-svc" style="background:#141E30;border:1px solid #26314A;border-radius:16px;padding:24px">
-          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#D97757;margin-bottom:10px">FUGA 04</div>
-          <p style="margin:0;font-size:15px;line-height:1.5;color:#C7CDD8">Nadie mide anuncio → lead → cita.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ SERVICIOS (oferta única) ============ -->
-  <section id="servicios" style="position:relative;padding:clamp(80px,11vw,130px) clamp(20px,4vw,32px);border-top:1px solid #26314A">
-    <div style="max-width:1100px;margin:0 auto">
-      <div style="display:inline-flex;align-items:center;gap:10px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#D97757;margin-bottom:20px">
-        <span aria-hidden="true" style="width:6px;height:6px;border-radius:50%;background:#D97757;animation:pulseDot 2.4s infinite"></span>
-        <span>El servicio</span>
-      </div>
-      <h2 style="font-size:clamp(30px,4.4vw,54px);line-height:1.05;letter-spacing:-0.03em;font-weight:700;margin:0 0 40px;max-width:760px;text-wrap:balance">Ad-to-Appointment Sprint</h2>
-
-      <article style="background:#141E30;border:1px solid #26314A;border-radius:22px;padding:clamp(28px,4vw,48px)">
-        <p style="font-size:17px;line-height:1.6;color:#A6B0C2;margin:0 0 28px;max-width:640px">Recorrido completo: anuncio → landing → WhatsApp/reserva → cita medible.</p>
-        <ul style="list-style:none;margin:0 0 32px;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:12px 24px">
-          <li style="display:flex;gap:10px;font-size:14.5px;color:#C7CDD8;line-height:1.5"><span aria-hidden="true" style="color:#D97757;flex:none">✓</span>Auditoría anuncio → landing</li>
-          <li style="display:flex;gap:10px;font-size:14.5px;color:#C7CDD8;line-height:1.5"><span aria-hidden="true" style="color:#D97757;flex:none">✓</span>Landing de una oferta concreta</li>
-          <li style="display:flex;gap:10px;font-size:14.5px;color:#C7CDD8;line-height:1.5"><span aria-hidden="true" style="color:#D97757;flex:none">✓</span>Copy y estructura</li>
-          <li style="display:flex;gap:10px;font-size:14.5px;color:#C7CDD8;line-height:1.5"><span aria-hidden="true" style="color:#D97757;flex:none">✓</span>Formulario o WhatsApp cualificado</li>
-          <li style="display:flex;gap:10px;font-size:14.5px;color:#C7CDD8;line-height:1.5"><span aria-hidden="true" style="color:#D97757;flex:none">✓</span>Calendario si procede</li>
-          <li style="display:flex;gap:10px;font-size:14.5px;color:#C7CDD8;line-height:1.5"><span aria-hidden="true" style="color:#D97757;flex:none">✓</span>Respuesta/seguimiento automático</li>
-          <li style="display:flex;gap:10px;font-size:14.5px;color:#C7CDD8;line-height:1.5"><span aria-hidden="true" style="color:#D97757;flex:none">✓</span>Píxel y eventos</li>
-          <li style="display:flex;gap:10px;font-size:14.5px;color:#C7CDD8;line-height:1.5"><span aria-hidden="true" style="color:#D97757;flex:none">✓</span>Panel básico de leads</li>
-          <li style="display:flex;gap:10px;font-size:14.5px;color:#C7CDD8;line-height:1.5"><span aria-hidden="true" style="color:#D97757;flex:none">✓</span>30 días de correcciones</li>
-        </ul>
-        <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px;padding-top:28px;border-top:1px solid #26314A">
-          <div style="font-family:'JetBrains Mono',monospace;font-size:20px;font-weight:600;color:#F4F2EC">Proyectos desde 1.500€</div>
-          <a href="/auditoria" data-track="cta_audit_click" class="dc-btn" style="display:inline-flex;align-items:center;gap:10px;background:#D97757;color:#0D1320;font-weight:600;font-size:16px;padding:15px 26px;border-radius:10px;text-decoration:none;box-shadow:0 16px 40px -14px rgba(217,119,87,0.7)">Solicitar auditoría <span aria-hidden="true">→</span></a>
+          <div class="oa-signal-card" aria-label="Recorrido de captación: anuncio, landing, WhatsApp o formulario y cita" data-oa-reveal>
+            <div class="oa-signal-card__label"><span>SIGNAL ROUTE / 01</span><span>LIVE SYSTEM</span></div>
+            <div class="oa-signal-card__flow">
+              <div class="oa-flow-stage"><span class="oa-flow-node">01</span><span class="oa-flow-copy"><b data-es="Anuncio" data-en="Ad">Anuncio</b><small data-es="Una promesa concreta" data-en="One clear promise">Una promesa concreta</small></span><span class="oa-flow-state">INPUT</span></div>
+              <div class="oa-flow-stage"><span class="oa-flow-node">02</span><span class="oa-flow-copy"><b>Landing</b><small data-es="Mismo mensaje, sin distracciones" data-en="Same message, no distractions">Mismo mensaje, sin distracciones</small></span><span class="oa-flow-state">MATCH</span></div>
+              <div class="oa-flow-stage"><span class="oa-flow-node">03</span><span class="oa-flow-copy"><b data-es="WhatsApp / formulario" data-en="WhatsApp / form">WhatsApp / formulario</b><small data-es="Contexto y cualificación" data-en="Context and qualification">Contexto y cualificación</small></span><span class="oa-flow-state">QUALIFY</span></div>
+              <div class="oa-flow-stage"><span class="oa-flow-node">04</span><span class="oa-flow-copy"><b data-es="Cita" data-en="Appointment">Cita</b><small data-es="Seguimiento y medición" data-en="Follow-up and measurement">Seguimiento y medición</small></span><span class="oa-flow-state">OUTPUT</span></div>
+            </div>
+          </div>
         </div>
-      </article>
-    </div>
-  </section>
+      </section>
 
-  <!-- ============ PROCESO ============ -->
-  <section id="proceso" style="position:relative;padding:clamp(80px,11vw,130px) clamp(20px,4vw,32px);background:#111A2B;border-top:1px solid #26314A">
-    <div style="max-width:1100px;margin:0 auto">
-      <h2 style="font-size:clamp(28px,4vw,46px);line-height:1.08;letter-spacing:-0.03em;font-weight:700;margin:0 0 40px;max-width:700px;text-wrap:balance">Cómo funciona</h2>
-      <div class="dc-steps">
-        <div>
-          <div style="font-family:'JetBrains Mono',monospace;font-size:22px;font-weight:600;color:#D97757;margin-bottom:10px">01</div>
-          <h3 style="font-size:16px;font-weight:600;margin:0 0 6px;color:#F4F2EC">Revisión</h3>
-          <p style="font-size:13.5px;line-height:1.5;color:#A6B0C2;margin:0">Anuncio, landing y seguimiento.</p>
+      <section class="oa-facts" aria-label="Credenciales verificables">
+        <div class="oa-wrap oa-facts__grid">
+          <div class="oa-fact"><b data-es="Almería, España" data-en="Almería, Spain">Almería, España</b><span data-es="Trabajo remoto" data-en="Remote work">Trabajo remoto</span></div>
+          <div class="oa-fact"><b data-es="Diseño + desarrollo" data-en="Design + development">Diseño + desarrollo</b><span data-es="Un único responsable" data-en="One accountable operator">Un único responsable</span></div>
+          <div class="oa-fact"><b data-es="Alcance cerrado" data-en="Fixed scope">Alcance cerrado</b><span data-es="Antes de empezar" data-en="Before starting">Antes de empezar</span></div>
+          <div class="oa-fact"><b data-es="30 días" data-en="30 days">30 días</b><span data-es="Correcciones técnicas" data-en="Technical corrections">Correcciones técnicas</span></div>
         </div>
-        <div>
-          <div style="font-family:'JetBrains Mono',monospace;font-size:22px;font-weight:600;color:#D97757;margin-bottom:10px">02</div>
-          <h3 style="font-size:16px;font-weight:600;margin:0 0 6px;color:#F4F2EC">Diagnóstico</h3>
-          <p style="font-size:13.5px;line-height:1.5;color:#A6B0C2;margin:0">Vídeo corto con la fuga principal.</p>
-        </div>
-        <div>
-          <div style="font-family:'JetBrains Mono',monospace;font-size:22px;font-weight:600;color:#D97757;margin-bottom:10px">03</div>
-          <h3 style="font-size:16px;font-weight:600;margin:0 0 6px;color:#F4F2EC">Alcance</h3>
-          <p style="font-size:13.5px;line-height:1.5;color:#A6B0C2;margin:0">Precio, fecha y entregables cerrados.</p>
-        </div>
-        <div>
-          <div style="font-family:'JetBrains Mono',monospace;font-size:22px;font-weight:600;color:#D97757;margin-bottom:10px">04</div>
-          <h3 style="font-size:16px;font-weight:600;margin:0 0 6px;color:#F4F2EC">Construcción</h3>
-          <p style="font-size:13.5px;line-height:1.5;color:#A6B0C2;margin:0">Landing, automatización y tracking.</p>
-        </div>
-        <div>
-          <div style="font-family:'JetBrains Mono',monospace;font-size:22px;font-weight:600;color:#D97757;margin-bottom:10px">05</div>
-          <h3 style="font-size:16px;font-weight:600;margin:0 0 6px;color:#F4F2EC">Medición</h3>
-          <p style="font-size:13.5px;line-height:1.5;color:#A6B0C2;margin:0">30 días de correcciones.</p>
-        </div>
-      </div>
-      <p style="margin-top:40px;font-size:14px;color:#6E7890">¿Prefieres hablarlo? <a href="https://wa.me/34644289776" data-wa data-wa-text="Hola Javi, prefiero hablar 15 minutos antes de pedir la auditoría." target="_blank" rel="noopener" style="color:#D97757;text-decoration:none;font-weight:600">Llamada opcional de 15 minutos</a> — no es obligatoria.</p>
-    </div>
-  </section>
+      </section>
 
-  <!-- ============ CASOS ============ -->
-  <section id="casos" style="position:relative;padding:clamp(80px,11vw,130px) clamp(20px,4vw,32px);border-top:1px solid #26314A">
-    <div style="max-width:1100px;margin:0 auto">
-      <h2 style="font-size:clamp(28px,4vw,46px);line-height:1.08;letter-spacing:-0.03em;font-weight:700;margin:0 0 8px;max-width:700px;text-wrap:balance">Casos</h2>
+      <section class="oa-section oa-section--tint" id="problema">
+        <div class="oa-wrap oa-problem-grid">
+          <div data-oa-reveal>
+            <span class="oa-kicker" data-es="El problema" data-en="The problem">El problema</span>
+            <h2 class="oa-heading" data-es-html="Los clics no pagan las facturas. El <em>recorrido</em> sí importa." data-en-html="Clicks do not pay the bills. The <em>journey</em> matters.">Los clics no pagan las facturas. El <em>recorrido</em> sí importa.</h2>
+            <p class="oa-sub" data-es="Cuando anuncio, web y contacto cuentan historias distintas, el interés se enfría antes de llegar a tu equipo." data-en="When the ad, website and contact flow tell different stories, interest cools before reaching your team.">Cuando anuncio, web y contacto cuentan historias distintas, el interés se enfría antes de llegar a tu equipo.</p>
+          </div>
+          <div class="oa-leaks">
+            <article class="oa-leak" data-oa-reveal><span class="oa-leak__id">LEAK / 01</span><h3 data-es="Promesa desconectada" data-en="Disconnected promise">Promesa desconectada</h3><p data-es="El anuncio ofrece algo concreto y la web vuelve a hablar de todo." data-en="The ad offers something specific and the website goes back to talking about everything.">El anuncio ofrece algo concreto y la web vuelve a hablar de todo.</p></article>
+            <article class="oa-leak" data-oa-reveal><span class="oa-leak__id">LEAK / 02</span><h3 data-es="Siguiente paso débil" data-en="Weak next step">Siguiente paso débil</h3><p data-es="Botones genéricos dejan al visitante decidir qué hacer y qué contar." data-en="Generic buttons leave visitors to decide what to do and what to say.">Botones genéricos dejan al visitante decidir qué hacer y qué contar.</p></article>
+            <article class="oa-leak" data-oa-reveal><span class="oa-leak__id">LEAK / 03</span><h3 data-es="Conversación sin contexto" data-en="Contextless conversation">Conversación sin contexto</h3><p data-es="WhatsApp recibe un “hola” en vez de una oportunidad cualificada." data-en="WhatsApp receives a 'hello' instead of a qualified opportunity.">WhatsApp recibe un “hola” en vez de una oportunidad cualificada.</p></article>
+            <article class="oa-leak" data-oa-reveal><span class="oa-leak__id">LEAK / 04</span><h3 data-es="Medición incompleta" data-en="Incomplete measurement">Medición incompleta</h3><p data-es="Se mide el clic, pero no el paso de lead a cita." data-en="The click is measured, but not the journey from lead to appointment.">Se mide el clic, pero no el paso de lead a cita.</p></article>
+          </div>
+        </div>
+      </section>
 
-      <div style="margin-top:36px">
-        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#6E7890;margin-bottom:16px">Proyectos propios — capacidad técnica, no resultados de cliente</div>
-        <div class="dc-casos">
-          <article class="dc-svc" style="background:#141E30;border:1px solid #26314A;border-radius:16px;padding:24px">
-            <h3 style="font-size:17px;font-weight:600;margin:0 0 8px;color:#F4F2EC">OperatorStack</h3>
-            <p style="font-size:14px;line-height:1.55;color:#A6B0C2;margin:0">Herramienta propia que audita la economía unitaria real de una tienda online: márgenes, CPA de equilibrio y comisiones ocultas. <span style="color:#6E7890">[CONFIRMAR con Javi la descripción exacta]</span></p>
-          </article>
-          <article class="dc-svc" style="background:#141E30;border:1px solid #26314A;border-radius:16px;padding:24px">
-            <h3 style="font-size:17px;font-weight:600;margin:0 0 8px;color:#F4F2EC">Motor de auditoría /javiperez-*</h3>
-            <p style="font-size:14px;line-height:1.55;color:#A6B0C2;margin:0">El mismo motor que ves en <a href="agentes.html" style="color:#D97757;text-decoration:none">/agentes</a>: diagnostica webs de negocio local en varias áreas con evidencia, no opiniones.</p>
-          </article>
-          <article class="dc-svc" style="background:#141E30;border:1px solid #26314A;border-radius:16px;padding:24px">
-            <h3 style="font-size:17px;font-weight:600;margin:0 0 8px;color:#F4F2EC">Build en Shopify</h3>
-            <p style="font-size:14px;line-height:1.55;color:#A6B0C2;margin:0">Sistema propio sobre Shopify, en desarrollo. <span style="color:#6E7890">[CONFIRMAR con Javi la descripción exacta — sin detalles verificados todavía]</span></p>
+      <section class="oa-section" id="solucion">
+        <div class="oa-wrap">
+          <div data-oa-reveal>
+            <span class="oa-kicker" data-es="La solución" data-en="The solution">La solución</span>
+            <h2 class="oa-heading" data-es-html="Un solo sistema. <em>Cuatro decisiones</em> bien conectadas." data-en-html="One system. <em>Four decisions</em> connected properly.">Un solo sistema. <em>Cuatro decisiones</em> bien conectadas.</h2>
+          </div>
+          <article class="oa-service" data-oa-reveal>
+            <div class="oa-service__head">
+              <div><h3>Ad-to-Appointment Sprint</h3><p data-es="Construyo el recorrido completo para una oferta concreta: desde el mensaje del anuncio hasta el contacto cualificado y la medición." data-en="I build the complete journey for one specific offer: from the ad message to qualified contact and measurement.">Construyo el recorrido completo para una oferta concreta: desde el mensaje del anuncio hasta el contacto cualificado y la medición.</p></div>
+              <div class="oa-service__price"><span data-es="Inversión" data-en="Investment">Inversión</span><strong data-es="Desde 1.500€" data-en="From €1,500">Desde 1.500€</strong></div>
+            </div>
+            <div class="oa-solutions">
+              <div class="oa-solution"><span class="oa-solution__icon">01 / ALIGN</span><h4 data-es="Mensaje y oferta" data-en="Message and offer">Mensaje y oferta</h4><p data-es="Auditoría del anuncio y una landing dedicada a la misma promesa." data-en="Ad audit and a landing page dedicated to the same promise.">Auditoría del anuncio y una landing dedicada a la misma promesa.</p></div>
+              <div class="oa-solution"><span class="oa-solution__icon">02 / CONVERT</span><h4 data-es="Landing de conversión" data-en="Conversion landing">Landing de conversión</h4><p data-es="Estructura, copy, diseño responsive y desarrollo sin dependencia de plantillas." data-en="Structure, copy, responsive design and development without template dependency.">Estructura, copy, diseño responsive y desarrollo sin dependencia de plantillas.</p></div>
+              <div class="oa-solution"><span class="oa-solution__icon">03 / QUALIFY</span><h4 data-es="Cualificación" data-en="Qualification">Cualificación</h4><p data-es="Formulario, WhatsApp precargado o reserva según cómo venda tu negocio." data-en="Form, pre-filled WhatsApp or booking flow based on how your business sells.">Formulario, WhatsApp precargado o reserva según cómo venda tu negocio.</p></div>
+              <div class="oa-solution"><span class="oa-solution__icon">04 / MEASURE</span><h4 data-es="Seguimiento" data-en="Measurement">Seguimiento</h4><p data-es="Eventos, UTMs, automatización básica y un panel de leads cuando procede." data-en="Events, UTMs, basic automation and a lead view when appropriate.">Eventos, UTMs, automatización básica y un panel de leads cuando procede.</p></div>
+            </div>
+            <div class="oa-service__foot"><p data-es="Entrega estimada: 7–14 días · 50% al comenzar · 30 días de correcciones" data-en="Estimated delivery: 7–14 days · 50% to start · 30 days of corrections">Entrega estimada: 7–14 días · 50% al comenzar · 30 días de correcciones</p><a class="oa-btn oa-btn--primary" href="/auditoria" data-track="cta_audit_click" data-es="Solicitar auditoría" data-en="Request an audit">Solicitar auditoría</a></div>
           </article>
         </div>
-      </div>
+      </section>
 
-      <!-- Resultados de cliente: oculto hasta que exista el primero real.
-           Activar: (1) rellenar la plantilla #tpl-casos-clientes de abajo con datos reales
-           (cliente, qué se construyó, señal real medible con fecha) y (2) poner
-           SHOW_CLIENT_RESULTS: true en scripts/config.js. Nunca rellenar con datos inventados. -->
-      <div id="casos-clientes-slot" hidden style="margin-top:44px"></div>
-      <template id="tpl-casos-clientes">
-        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#6E7890;margin-bottom:16px">Resultados de cliente</div>
-        <div class="dc-casos">
-          <article class="dc-svc" style="background:#141E30;border:1px solid #26314A;border-radius:16px;padding:24px">
-            <h3 style="font-size:17px;font-weight:600;margin:0 0 8px;color:#F4F2EC">[Nombre del negocio o "Cliente anónimo, sector"]</h3>
-            <p style="font-size:14px;line-height:1.55;color:#A6B0C2;margin:0">[Problema real] → [qué se construyó] → [señal real medible, con fecha]</p>
-          </article>
+      <section class="oa-section oa-section--tint" id="builds">
+        <div class="oa-wrap">
+          <div data-oa-reveal><span class="oa-kicker" data-es="Ejecución real" data-en="Real execution">Ejecución real</span><h2 class="oa-heading" data-es-html="Productos propios para demostrar <em>cómo construyo.</em>" data-en-html="Products I own that show <em>how I build.</em>">Productos propios para demostrar <em>cómo construyo.</em></h2><p class="oa-sub" data-es="No son resultados de cliente. Son builds propios que puedes inspeccionar como evidencia de producto, criterio y capacidad técnica." data-en="These are not client results. They are products I own that you can inspect as evidence of product thinking and technical execution.">No son resultados de cliente. Son builds propios que puedes inspeccionar como evidencia de producto, criterio y capacidad técnica.</p></div>
+          <div class="oa-cases">
+            <article class="oa-case" data-oa-reveal>
+              <span class="oa-case__tag">OWN PRODUCT / LIVE</span><h3>OperatorStack</h3>
+              <p data-es="Producto propio para detectar fugas de margen y convertir costes dispersos en decisiones operativas. Incluye motor determinista, informes auditables y un sistema que diferencia datos medidos, inferidos y ausentes." data-en="A product I own to detect margin leaks and turn scattered costs into operational decisions. It includes a deterministic engine, auditable reports and a system that separates measured, inferred and missing data.">Producto propio para detectar fugas de margen y convertir costes dispersos en decisiones operativas. Incluye motor determinista, informes auditables y un sistema que diferencia datos medidos, inferidos y ausentes.</p>
+              <div class="oa-case__visual" aria-hidden="true"><div class="oa-case__bars"><span class="oa-case__bar" style="--w:82%" data-label="Measured data / 82%"></span><span class="oa-case__bar" style="--w:61%" data-label="Margin clarity / 61%"></span><span class="oa-case__bar" style="--w:38%" data-label="Cost exposure / 38%"></span></div></div>
+              <div class="oa-actions"><a class="oa-btn oa-btn--ghost oa-btn--small" href="https://getoperatorstack.com" target="_blank" rel="noopener" data-es="Ver producto" data-en="View product">Ver producto</a></div>
+            </article>
+            <article class="oa-case oa-case--secondary" data-oa-reveal>
+              <span class="oa-case__tag">OWN BUILD / MVP</span><h3>Shopify SaaS build</h3>
+              <p data-es="MVP embedded para Shopify con onboarding, Profit Leaks, Cost Map, simulador e informes. Diseñado y desarrollado de extremo a extremo, con reglas explicables y una arquitectura preparada para conectar datos reales." data-en="Embedded Shopify MVP with onboarding, Profit Leaks, Cost Map, simulator and reports. Designed and developed end to end, with explainable rules and an architecture ready to connect real data.">MVP embedded para Shopify con onboarding, Profit Leaks, Cost Map, simulador e informes. Diseñado y desarrollado de extremo a extremo, con reglas explicables y una arquitectura preparada para conectar datos reales.</p>
+              <div class="oa-case__visual" aria-hidden="true"><div class="oa-case__map"><span class="is-live">01 · Onboarding</span><span>02 · Profit Leaks</span><span>03 · Cost Map</span><span>04 · Simulator</span><span>05 · Reports</span><span class="is-live">06 · Data ready</span></div></div>
+            </article>
+          </div>
         </div>
-      </template>
-    </div>
-  </section>
+      </section>
 
-  <!-- ============ SOBRE MÍ ============ -->
-  <section id="sobre-mi" style="position:relative;padding:clamp(80px,11vw,130px) clamp(20px,4vw,32px);background:#111A2B;border-top:1px solid #26314A">
-    <div style="max-width:820px;margin:0 auto;display:flex;gap:32px;align-items:flex-start;flex-wrap:wrap">
-      <img src="assets/javi-perfil.jpg" width="96" height="96" loading="lazy" decoding="async" alt="Foto de Javi Pérez" style="width:96px;height:96px;border-radius:50%;object-fit:cover;border:2px solid #26314A;flex:none" />
-      <div style="flex:1;min-width:240px">
-        <h2 style="font-size:clamp(24px,3vw,32px);font-weight:700;letter-spacing:-0.02em;margin:0 0 14px;color:#F4F2EC">Sobre mí</h2>
-        <p style="font-size:16px;line-height:1.6;color:#A6B0C2;margin:0 0 12px">Soy Javi Pérez. Trabajo desde Almería y construyo sistemas de captación con código, no con plantillas.</p>
-        <p style="font-size:16px;line-height:1.6;color:#A6B0C2;margin:0">Sin equipo ni intermediarios: hablas conmigo, decides conmigo, y soy yo quien construye el sistema de principio a fin.</p>
-      </div>
-    </div>
-  </section>
+      <section class="oa-section" id="proceso">
+        <div class="oa-wrap">
+          <div data-oa-reveal><span class="oa-kicker" data-es="Proceso" data-en="Process">Proceso</span><h2 class="oa-heading" data-es-html="De la fuga a un sistema <em>medible.</em>" data-en-html="From the leak to a <em>measurable</em> system.">De la fuga a un sistema <em>medible.</em></h2></div>
+          <div class="oa-process">
+            <article class="oa-step" data-oa-reveal><span class="oa-step__num">01 / AUDIT</span><h3 data-es="Auditar" data-en="Audit">Auditar</h3><p data-es="Reviso anuncio, landing, contacto y medición. Te devuelvo la fuga principal." data-en="I review the ad, landing, contact flow and measurement. You get the main leak.">Reviso anuncio, landing, contacto y medición. Te devuelvo la fuga principal.</p></article>
+            <article class="oa-step" data-oa-reveal><span class="oa-step__num">02 / BUILD</span><h3 data-es="Construir" data-en="Build">Construir</h3><p data-es="Diseño y desarrollo una landing para una oferta y una acción concretas." data-en="I design and develop a landing page for one specific offer and action.">Diseño y desarrollo una landing para una oferta y una acción concretas.</p></article>
+            <article class="oa-step" data-oa-reveal><span class="oa-step__num">03 / CONNECT</span><h3 data-es="Conectar" data-en="Connect">Conectar</h3><p data-es="Formulario, WhatsApp, calendario y seguimiento comparten el mismo contexto." data-en="Form, WhatsApp, calendar and follow-up share the same context.">Formulario, WhatsApp, calendario y seguimiento comparten el mismo contexto.</p></article>
+            <article class="oa-step" data-oa-reveal><span class="oa-step__num">04 / MEASURE</span><h3 data-es="Medir" data-en="Measure">Medir</h3><p data-es="Dejo eventos y UTMs preparados para saber qué recorrido genera oportunidades." data-en="I prepare events and UTMs to understand which journey creates opportunities.">Dejo eventos y UTMs preparados para saber qué recorrido genera oportunidades.</p></article>
+          </div>
+        </div>
+      </section>
 
-  <!-- ============ CONTACTO / FOOTER ============ -->
-  <section id="contacto" style="position:relative;padding:clamp(90px,12vw,150px) clamp(20px,4vw,32px) 60px;text-align:center;overflow:hidden">
-    <div aria-hidden="true" style="position:absolute;bottom:-20%;left:50%;transform:translateX(-50%);width:80vw;height:50vw;max-width:900px;background:radial-gradient(circle,rgba(217,119,87,0.16),transparent 65%);filter:blur(60px);pointer-events:none"></div>
-    <div style="position:relative;max-width:680px;margin:0 auto">
-      <div style="display:inline-flex;align-items:center;gap:10px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#D97757;margin-bottom:24px">
-        <span aria-hidden="true" style="width:6px;height:6px;border-radius:50%;background:#D97757;animation:pulseDot 2.4s infinite"></span>
-        <span>¿Hablamos?</span>
-      </div>
-      <h2 style="font-size:clamp(34px,5vw,56px);line-height:1.03;letter-spacing:-0.035em;font-weight:700;margin:0 0 20px;text-wrap:balance">Solicita tu auditoría de 60 segundos.</h2>
-      <p style="font-size:18px;line-height:1.55;color:#A6B0C2;margin:0 0 36px;text-wrap:pretty">Reviso hasta 5 solicitudes cualificadas por semana. Async, sin reuniones de descubrimiento.</p>
-      <a href="/auditoria" data-track="cta_audit_click" class="dc-btn" style="display:inline-flex;align-items:center;gap:11px;background:#D97757;color:#0D1320;font-weight:600;font-size:18px;padding:18px 34px;border-radius:10px;text-decoration:none;box-shadow:0 20px 50px -16px rgba(217,119,87,0.7),inset 0 0 0 1px rgba(255,255,255,0.12)"><span>Solicitar auditoría</span> <span aria-hidden="true">→</span></a>
-      <div style="margin-top:28px;display:flex;flex-wrap:wrap;gap:10px 22px;justify-content:center;align-items:center;font-family:'JetBrains Mono',monospace;font-size:13px;color:#6E7890">
-        <a href="https://wa.me/34644289776" data-wa target="_blank" rel="noopener" class="dc-nav-link" style="color:#A6B0C2;text-decoration:none">o escríbeme por WhatsApp</a>
-        <span aria-hidden="true">·</span>
-        <a href="tel:+34644289776" class="dc-nav-link" style="color:#A6B0C2;text-decoration:none">Tel · +34 644 28 97 76</a>
-        <span aria-hidden="true">·</span>
-        <a id="email-link" data-email-user="javiperezguides" data-email-domain="gmail.com" href="#contacto" class="dc-nav-link" style="color:#A6B0C2;text-decoration:none">Email</a>
-        <span aria-hidden="true">·</span>
-        <span>Almería, Andalucía · España</span>
-      </div>
-    </div>
+      <section class="oa-section oa-section--tint" id="agentes">
+        <div class="oa-wrap"><div class="oa-tools" data-oa-reveal><div><span class="oa-kicker" data-es="Línea secundaria" data-en="Secondary line">Línea secundaria</span><h2 data-es="Agentes digitales listos para trabajar." data-en="Digital agents ready to work.">Agentes digitales listos para trabajar.</h2><p data-es="Herramientas profesionales para auditar webs y poner a prueba sistemas de trading. Productos independientes del servicio boutique, con precios y demos en su propia tienda." data-en="Professional tools to audit websites and stress-test trading systems. Separate from the boutique service, with pricing and demos in their own store.">Herramientas profesionales para auditar webs y poner a prueba sistemas de trading. Productos independientes del servicio boutique, con precios y demos en su propia tienda.</p></div><a class="oa-btn oa-btn--ghost" href="agentes.html" data-track="agents_cta_click" data-es="Explorar agentes" data-en="Explore agents">Explorar agentes</a></div></div>
+      </section>
 
-    <footer style="position:relative;max-width:1200px;margin:clamp(70px,10vw,120px) auto 0;padding-top:32px;border-top:1px solid #26314A;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px">
-      <a href="#top" aria-label="/javiperez — inicio" style="display:inline-flex;align-items:center;text-decoration:none"><svg viewBox="0 0 150 28" width="110" height="20" role="img" aria-hidden="true" focusable="false"><text x="0" y="21" font-family="'JetBrains Mono','Geist Mono',ui-monospace,monospace" font-size="21" font-weight="600"><tspan fill="#D97757">/</tspan><tspan fill="#FAF9F5">javiperez</tspan></text></svg></a>
-      <nav style="display:flex;flex-wrap:wrap;gap:16px;font-family:'JetBrains Mono',monospace;font-size:12px;color:#A6B0C2">
-        <a href="#servicios" class="dc-nav-link" style="color:#A6B0C2;text-decoration:none">Servicios</a>
-        <a href="#casos" class="dc-nav-link" style="color:#A6B0C2;text-decoration:none">Casos</a>
-        <a href="#proceso" class="dc-nav-link" style="color:#A6B0C2;text-decoration:none">Proceso</a>
-        <a href="agentes.html" class="dc-nav-link" style="color:#A6B0C2;text-decoration:none">Agentes</a>
-        <a href="#sobre-mi" class="dc-nav-link" style="color:#A6B0C2;text-decoration:none">Sobre mí</a>
-        <a href="links.html" class="dc-nav-link" style="color:#A6B0C2;text-decoration:none">Links</a>
-        <a href="legal.html#aviso-legal" class="dc-nav-link" style="color:#A6B0C2;text-decoration:none">Aviso legal</a>
-        <a href="legal.html#privacidad" class="dc-nav-link" style="color:#A6B0C2;text-decoration:none">Privacidad</a>
-        <a href="legal.html#cookies" class="dc-nav-link" style="color:#A6B0C2;text-decoration:none">Cookies</a>
-      </nav>
-      <span style="display:inline-flex;align-items:center;gap:9px;font-family:'JetBrains Mono',monospace;font-size:12px;color:#6E7890">
-        <span aria-hidden="true" style="width:5px;height:5px;border-radius:50%;background:#4ADE80;box-shadow:0 0 0 3px rgba(74,222,128,0.18)"></span>
-        <span>Almería, España · Working async</span>
-      </span>
+      <section class="oa-section" id="sobre-mi">
+        <div class="oa-wrap"><div class="oa-about" data-oa-reveal><img src="assets/javi-perfil.webp" width="180" height="180" loading="lazy" decoding="async" alt="Javi Pérez" /><div><h2 data-es="Un estudio boutique de una persona." data-en="A one-person boutique studio.">Un estudio boutique de una persona.</h2><p data-es="Soy Javi Pérez. Hablas conmigo, defines el alcance conmigo y soy yo quien diseña y construye el sistema. Sin capas comerciales ni trabajo delegado a desconocidos." data-en="I’m Javi Pérez. You speak with me, define the scope with me and I design and build the system. No sales layers and no work delegated to strangers.">Soy Javi Pérez. Hablas conmigo, defines el alcance conmigo y soy yo quien diseña y construye el sistema. Sin capas comerciales ni trabajo delegado a desconocidos.</p></div></div></div>
+      </section>
+
+      <section class="oa-section oa-final" id="contacto">
+        <div class="oa-wrap" data-oa-reveal><span class="oa-kicker" data-es="Siguiente paso" data-en="Next step">Siguiente paso</span><h2 class="oa-heading" data-es-html="Encuentra la fuga antes de <em>construir más tráfico.</em>" data-en-html="Find the leak before <em>buying more traffic.</em>">Encuentra la fuga antes de <em>construir más tráfico.</em></h2><p class="oa-sub" data-es="Cuéntame cómo captas clientes ahora. Revisaré el recorrido y te diré dónde empezaría." data-en="Tell me how you acquire customers today. I’ll review the journey and tell you where I would start.">Cuéntame cómo captas clientes ahora. Revisaré el recorrido y te diré dónde empezaría.</p><div class="oa-actions"><a class="oa-btn oa-btn--primary" href="/auditoria" data-track="cta_audit_click" data-es="Solicitar auditoría" data-en="Request an audit">Solicitar auditoría</a><a class="oa-btn oa-btn--ghost" href="https://wa.me/34644289776" data-wa data-wa-text="Hola Javi, quiero revisar el recorrido de captación de mi negocio." target="_blank" rel="noopener" data-es="WhatsApp directo" data-en="Direct WhatsApp">WhatsApp directo</a></div></div>
+      </section>
+    </main>
+
+    <footer class="oa-footer">
+      <div class="oa-wrap"><div class="oa-footer__grid"><a class="oa-wordmark" href="#top"><span class="oa-wordmark__mark">/</span>javiperez</a><nav aria-label="Footer"><a href="#solucion">Servicio</a><a href="#builds">Builds</a><a href="agentes.html">Agentes</a><a href="links.html">Links</a><a href="legal.html#aviso-legal">Aviso legal</a><a href="legal.html#privacidad">Privacidad</a><a href="legal.html#cookies">Cookies</a></nav></div><div class="oa-footer__meta">© 2026 · Javi Pérez · Almería, España · javiperezbuilds.com</div></div>
     </footer>
-  </section>
-
-</div>
-
-<script src="scripts/config.js?v=1" defer></script>
-<script>
-  /* "defer" no afecta a scripts inline (solo a scripts con src) — esperamos a
-     DOMContentLoaded para que el config.js diferido ya haya cargado antes de
-     usar window.JP_CONFIG / JP_TRACK. */
-  document.addEventListener('DOMContentLoaded', function () {
-    if (window.JP_CONFIG && window.JP_CONFIG.SHOW_CLIENT_RESULTS) {
-      var slot = document.getElementById('casos-clientes-slot');
-      var tpl = document.getElementById('tpl-casos-clientes');
-      if (slot && tpl) { slot.hidden = false; slot.appendChild(tpl.content.cloneNode(true)); }
-    }
-    window.JP_TRACK && window.JP_TRACK('view_home');
-  });
-</script>
+  </div>
+  <script src="scripts/config.js?v=2" defer></script>
+  <script src="scripts/operator-atelier.js?v=1" defer></script>
 </body>
 </html>

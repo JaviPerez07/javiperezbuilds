@@ -76,6 +76,12 @@ window.JP_CONFIG = {
     if (el) window.JP_TRACK(el.getAttribute("data-track"));
   }, true);
 
+  /* ---- Clic a Stripe: mide intención de compra sin alterar los enlaces de pago. ---- */
+  document.addEventListener("click", function (ev) {
+    var a = ev.target.closest && ev.target.closest("a[data-stripe], a[href*='buy.stripe.com']");
+    if (a) window.JP_TRACK("stripe_click", { product_path: window.location.pathname });
+  }, true);
+
   /* ---- Email anti-spam: se ensambla en cliente desde data-email-* (igual que antes en home.js) ---- */
   var em = document.getElementById("email-link");
   if (em) {
