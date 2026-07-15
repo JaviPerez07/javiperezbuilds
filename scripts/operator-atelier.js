@@ -2,6 +2,41 @@
   'use strict';
 
   var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var root = document.documentElement;
+  var revealItems = document.querySelectorAll('[data-oa-reveal]');
+
+  function revealEverything() {
+    root.classList.remove('motion-ready');
+    revealItems.forEach(function (el) { el.classList.add('is-visible'); });
+  }
+
+  function revealPending() {
+    revealItems.forEach(function (el) { el.classList.add('is-visible'); });
+  }
+
+  /* Motion is progressive enhancement. CSS remains visible until this succeeds. */
+  if (reduced || !('IntersectionObserver' in window)) {
+    revealEverything();
+  } else {
+    try {
+      var revealObserver = new IntersectionObserver(function (entries, observer) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+
+      revealItems.forEach(function (el) { revealObserver.observe(el); });
+      root.classList.add('motion-ready');
+
+      /* Last-resort watchdog: no content may remain hidden indefinitely. */
+      window.setTimeout(revealPending, 3000);
+    } catch (error) {
+      revealEverything();
+    }
+  }
+
   var nav = document.querySelector('.oa-nav');
 
   function syncNav() {
@@ -9,20 +44,6 @@
   }
   syncNav();
   window.addEventListener('scroll', syncNav, { passive: true });
-
-  var revealItems = document.querySelectorAll('[data-oa-reveal]');
-  if (reduced || !('IntersectionObserver' in window)) {
-    revealItems.forEach(function (el) { el.classList.add('is-visible'); });
-  } else {
-    var revealObserver = new IntersectionObserver(function (entries, observer) {
-      entries.forEach(function (entry) {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add('is-visible');
-        observer.unobserve(entry.target);
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
-    revealItems.forEach(function (el) { revealObserver.observe(el); });
-  }
 
   var signalCard = document.querySelector('[data-oa-signal]');
   if (signalCard) {
@@ -36,17 +57,21 @@
         window.setTimeout(function () { stage.classList.add('is-active'); }, index * 820);
       });
     };
-    if (reduced || !('IntersectionObserver' in window)) {
-      activateSignal();
-    } else {
-      var signalObserver = new IntersectionObserver(function (entries, observer) {
-        entries.forEach(function (entry) {
-          if (!entry.isIntersecting) return;
-          activateSignal();
-          observer.unobserve(entry.target);
-        });
-      }, { threshold: 0.32 });
-      signalObserver.observe(signalCard);
+    try {
+      if (reduced || !('IntersectionObserver' in window)) {
+        activateSignal();
+      } else {
+        var signalObserver = new IntersectionObserver(function (entries, observer) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            activateSignal();
+            observer.unobserve(entry.target);
+          });
+        }, { threshold: 0.32 });
+        signalObserver.observe(signalCard);
+      }
+    } catch (error) {
+      signalStages.forEach(function (stage) { stage.classList.add('is-active'); });
     }
   }
 

@@ -229,8 +229,11 @@ img { max-width: 100%; }
 .oa-footer nav a { color: var(--oa-dim); text-decoration: none; font: 500 10px var(--oa-mono); letter-spacing: .06em; text-transform: uppercase; }
 .oa-footer__meta { margin-top: 22px; color: var(--oa-dim); font: 500 10px var(--oa-mono); }
 
-[data-oa-reveal] { opacity: 0; transform: translateY(24px); transition: opacity .72s var(--oa-ease), transform .72s var(--oa-ease); }
-[data-oa-reveal].is-visible { opacity: 1; transform: none; }
+/* Fail open: content is visible unless motion has initialized successfully. */
+[data-oa-reveal] { opacity: 1; transform: none; transition: opacity .72s var(--oa-ease), transform .72s var(--oa-ease); }
+.motion-ready [data-oa-reveal] { opacity: 0; transform: translateY(24px); }
+.motion-ready [data-oa-reveal].is-visible,
+.motion-ready .oa-hero [data-oa-reveal] { opacity: 1; transform: none; }
 @keyframes oaNodePulse {
   0% { box-shadow: 0 0 20px -12px rgba(87,242,163,.45); background: var(--oa-bg); }
   42% { box-shadow: 0 0 0 6px rgba(87,242,163,.08), 0 0 34px -4px rgba(87,242,163,.72); background: #10241b; }
