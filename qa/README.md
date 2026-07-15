@@ -15,3 +15,5 @@ Revisión local realizada el 15 de julio de 2026.
 ## Capturas
 
 Las capturas de escritorio y móvil están guardadas en esta carpeta con el patrón `pagina-dispositivo-ancho.png`.
+
+La pasada final del hero añade cuatro comprobaciones específicas: `hero-final-1440.png`, `hero-final-390.png`, `panel-final-1440.png` y `panel-final-390.png`.

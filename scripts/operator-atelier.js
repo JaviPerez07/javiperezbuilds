@@ -24,6 +24,32 @@
     revealItems.forEach(function (el) { revealObserver.observe(el); });
   }
 
+  var signalCard = document.querySelector('[data-oa-signal]');
+  if (signalCard) {
+    var signalStages = signalCard.querySelectorAll('.oa-flow-stage');
+    var activateSignal = function () {
+      signalStages.forEach(function (stage, index) {
+        if (reduced) {
+          stage.classList.add('is-active');
+          return;
+        }
+        window.setTimeout(function () { stage.classList.add('is-active'); }, index * 820);
+      });
+    };
+    if (reduced || !('IntersectionObserver' in window)) {
+      activateSignal();
+    } else {
+      var signalObserver = new IntersectionObserver(function (entries, observer) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          activateSignal();
+          observer.unobserve(entry.target);
+        });
+      }, { threshold: 0.32 });
+      signalObserver.observe(signalCard);
+    }
+  }
+
   var langButtons = document.querySelectorAll('[data-oa-lang]');
   function setLanguage(lang) {
     if (lang !== 'es' && lang !== 'en') lang = 'es';
