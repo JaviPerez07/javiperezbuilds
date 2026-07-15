@@ -15,6 +15,12 @@ serve.py
 # Logs
 *.log
 
+# Cloudflare Pages Functions — local variables and secrets
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
+
 # Node (none used at runtime, but keep clean if anyone runs lighthouse locally)
 node_modules/
 npm-debug.log*

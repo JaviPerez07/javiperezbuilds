@@ -104,12 +104,15 @@
   </main>
 
   <script src="scripts/config.js?v=2" defer></script>
-  <script defer>
+  <script>
     (function () {
+      'use strict';
+
       var form = document.getElementById('audit-form');
       var thanks = document.getElementById('audit-thanks');
       var errorBox = document.getElementById('audit-error');
       var submitBtn = document.getElementById('audit-submit');
+      var isSubmitting = false;
       if (!form) return;
 
       function hydrate() {
@@ -117,56 +120,123 @@
         var keyInput = document.getElementById('audit-access-key');
         if (keyInput && cfg.WEB3FORMS_ACCESS_KEY) keyInput.value = cfg.WEB3FORMS_ACCESS_KEY;
         var utms = (window.JP_GET_UTMS && window.JP_GET_UTMS()) || {};
-        ['utm_source','utm_medium','utm_campaign','utm_term','utm_content'].forEach(function (key) {
+        ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'].forEach(function (key) {
           var field = form.querySelector('[name="' + key + '"]');
           if (field && utms[key]) field.value = utms[key];
         });
       }
-      document.addEventListener('DOMContentLoaded', hydrate);
 
       function keyIsPending() {
         var key = (window.JP_CONFIG && window.JP_CONFIG.WEB3FORMS_ACCESS_KEY) || '';
         return !key || key.indexOf('PENDIENTE') !== -1;
       }
-      function whatsappNumber() { return (window.JP_CONFIG && window.JP_CONFIG.WHATSAPP_NUMBER) || '34644289776'; }
+
+      function track(eventName, data) {
+        if (window.JP_TRACK) window.JP_TRACK(eventName, data || {});
+      }
+
+      function whatsappNumber() {
+        return (window.JP_CONFIG && window.JP_CONFIG.WHATSAPP_NUMBER) || '34644289776';
+      }
+
       function buildWhatsAppMessage() {
         var company = (new FormData(form).get('company') || '').toString().trim();
         return 'Hola, quiero revisar mi recorrido de captación. Mi negocio es ' + (company || '[cuéntamelo aquí]') + '.';
       }
-      function showThanks(viaWhatsapp) {
+
+      function showThanks(viaWhatsApp, notificationFailed) {
         form.hidden = true;
         thanks.hidden = false;
-        if (viaWhatsapp) {
-          var note = thanks.querySelector('[data-thanks-note]');
-          if (note) note.textContent = 'He abierto WhatsApp con el mensaje preparado. Envíalo para que pueda revisar el contexto contigo.';
+        var note = thanks.querySelector('[data-thanks-note]');
+        if (!note) return;
+        if (viaWhatsApp) {
+          note.textContent = 'He abierto WhatsApp con el mensaje preparado. Envíalo para que pueda revisar el contexto contigo.';
+        } else if (notificationFailed) {
+          note.textContent = 'Tu solicitud ha quedado guardada correctamente. Si quieres acelerar el contacto, también puedes escribirme por WhatsApp.';
         }
       }
 
-      form.addEventListener('submit', function (event) {
+      function buildNotifyPayload(web3Payload, honeypot) {
+        var allowedKeys = [
+          'name', 'company', 'city', 'sector', 'website_url', 'has_active_ad',
+          'ad_description', 'channel', 'monthly_ad_spend', 'valid_lead_definition',
+          'contact_whatsapp_email', 'utm_source', 'utm_medium', 'utm_campaign',
+          'utm_term', 'utm_content'
+        ];
+        var notifyPayload = {};
+        allowedKeys.forEach(function (key) {
+          if (Object.prototype.hasOwnProperty.call(web3Payload, key)) notifyPayload[key] = web3Payload[key];
+        });
+        notifyPayload.botcheck = !!(honeypot && honeypot.checked);
+        notifyPayload.source_url = window.location.href;
+        return notifyPayload;
+      }
+
+      async function readJson(response) {
+        try { return await response.json(); } catch (error) { return null; }
+      }
+
+      hydrate();
+
+      form.addEventListener('submit', async function (event) {
         event.preventDefault();
+        if (isSubmitting) return;
         errorBox.classList.remove('is-visible');
         if (!form.checkValidity()) { form.reportValidity(); return; }
+
         var honeypot = form.querySelector('[name="botcheck"]');
         if (honeypot && honeypot.checked) return;
+
+        isSubmitting = true;
         if (keyIsPending()) {
-          window.JP_TRACK && window.JP_TRACK('audit_form_submit', { via: 'whatsapp_fallback' });
+          track('audit_form_submit', { via: 'whatsapp_fallback' });
           window.open('https://wa.me/' + whatsappNumber() + '?text=' + encodeURIComponent(buildWhatsAppMessage()), '_blank', 'noopener');
-          showThanks(true);
+          showThanks(true, false);
           return;
         }
 
         submitBtn.disabled = true;
         submitBtn.textContent = 'Enviando…';
-        var payload = {};
-        new FormData(form).forEach(function (value, key) { payload[key] = value; });
-        fetch('https://api.web3forms.com/submit', { method:'POST', headers:{'Content-Type':'application/json',Accept:'application/json'}, body:JSON.stringify(payload) })
-          .then(function (response) { return response.json(); })
-          .then(function (result) {
-            if (!result || !result.success) throw new Error((result && result.message) || 'web3forms error');
-            window.JP_TRACK && window.JP_TRACK('audit_form_submit', { via: 'web3forms' });
-            showThanks(false);
-          })
-          .catch(function () { errorBox.classList.add('is-visible'); submitBtn.disabled = false; submitBtn.textContent = 'Enviar para revisión'; });
+        var web3Payload = {};
+        new FormData(form).forEach(function (value, key) { web3Payload[key] = value; });
+
+        try {
+          var web3Response = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+            body: JSON.stringify(web3Payload)
+          });
+          var web3Result = await readJson(web3Response);
+          if (!web3Response.ok || !web3Result || !web3Result.success) throw new Error('web3forms rejected');
+        } catch (error) {
+          track('audit_form_submit_failed', { provider: 'web3forms' });
+          errorBox.classList.add('is-visible');
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Enviar para revisión';
+          isSubmitting = false;
+          return;
+        }
+
+        var notificationSucceeded = false;
+        try {
+          var notifyResponse = await fetch('/api/audit-notify', {
+            method: 'POST',
+            credentials: 'same-origin',
+            headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+            body: JSON.stringify(buildNotifyPayload(web3Payload, honeypot))
+          });
+          var notifyResult = await readJson(notifyResponse);
+          notificationSucceeded = !!(notifyResponse.ok && notifyResult && notifyResult.success);
+        } catch (error) {
+          notificationSucceeded = false;
+        }
+
+        if (notificationSucceeded) {
+          track('audit_form_submit_success', { via: 'web3forms_brevo' });
+        } else {
+          track('audit_notification_failed', { provider: 'brevo' });
+        }
+        showThanks(false, !notificationSucceeded);
       });
     })();
   </script>

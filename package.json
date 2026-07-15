@@ -1,10 +1,11 @@
 {
   "name": "javiperezbuilds-static",
   "private": true,
+  "type": "module",
   "scripts": {
     "build": "node scripts/validate-static.mjs",
-    "lint": "node --check scripts/config.js && node --check scripts/operator-atelier.js && node --check tests/production-visibility.mjs",
-    "test": "node tests/production-visibility.mjs"
+    "lint": "node --check scripts/config.js && node --check scripts/operator-atelier.js && node --check functions/api/audit-notify.js && node --check tests/production-visibility.mjs && node --check tests/audit-notify-function.test.mjs && node --check tests/audit-form-notifications.mjs",
+    "test": "node tests/production-visibility.mjs && node --test tests/audit-notify-function.test.mjs && node tests/audit-form-notifications.mjs"
   },
   "devDependencies": {
     "playwright": "1.61.1"

@@ -1,0 +1,5 @@
+BREVO_API_KEY="replace-with-encrypted-secret"
+AUDIT_NOTIFY_EMAIL="notifications@example.com"
+AUDIT_FROM_EMAIL="verified-sender@example.com"
+AUDIT_FROM_NAME="JaviPerezBuilds Auditorías"
+BREVO_LIST_ID_AUDIT="optional-numeric-list-id"
