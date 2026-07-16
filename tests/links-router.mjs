@@ -89,11 +89,19 @@ try {
     assert.equal(response.status(), 200, 'links should respond 200');
     await assertVisible(page.getByRole('heading', { name: 'Javi Pérez' }), 'H1');
     await assertVisible(page.getByRole('link', { name: /Solicitar auditoría/ }), 'audit link');
+    const operatorStackLink = page.getByRole('link', { name: /Explorar OperatorStack/ });
+    await assertVisible(operatorStackLink, 'OperatorStack link');
+    assert.equal(await operatorStackLink.getAttribute('href'), 'https://getoperatorstack.com');
+    assert.equal(await operatorStackLink.getAttribute('data-links-track'), 'links_operatorstack_click');
     await assertVisible(page.getByRole('link', { name: /Explorar agentes de IA/ }), 'agents link');
     const telegramLink = page.getByRole('link', { name: /Entrar al canal de Telegram/ });
     await assertVisible(telegramLink, 'telegram channel link');
     assert.equal(await telegramLink.getAttribute('href'), 'https://t.me/javiperezchallenger');
     assert.equal(await telegramLink.getAttribute('data-links-track'), 'links_telegram_click');
+    const whatsappLink = page.getByRole('link', { name: /Hablar conmigo por WhatsApp/ });
+    await assertVisible(whatsappLink, 'WhatsApp contact link');
+    assert.match(await whatsappLink.getAttribute('href'), /^https:\/\/wa\.me\/34644289776\?text=/);
+    assert.equal(await whatsappLink.getAttribute('data-links-track'), 'links_whatsapp_click');
     await assertVisible(page.getByRole('link', { name: 'Instagram' }), 'instagram link');
     await assertVisible(page.getByRole('link', { name: 'TikTok' }), 'tiktok link');
     await assertVisible(page.getByRole('link', { name: 'LinkedIn' }), 'linkedin link');
@@ -135,14 +143,26 @@ try {
     await page.getByRole('link', { name: /Entrar al canal de Telegram/ }).evaluate((link) => {
       link.addEventListener('click', (event) => event.preventDefault());
     });
+    await page.getByRole('link', { name: /Explorar OperatorStack/ }).evaluate((link) => {
+      link.addEventListener('click', (event) => event.preventDefault());
+    });
+    await page.getByRole('link', { name: /Hablar conmigo por WhatsApp/ }).evaluate((link) => {
+      link.addEventListener('click', (event) => event.preventDefault());
+    });
     await page.getByRole('link', { name: /Solicitar auditoría/ }).click();
     await page.getByRole('link', { name: /Entrar al canal de Telegram/ }).click();
+    await page.getByRole('link', { name: /Explorar OperatorStack/ }).click();
+    await page.getByRole('link', { name: /Hablar conmigo por WhatsApp/ }).click();
     const events = await page.evaluate(() => ({
       audit: window.dataLayer.filter((item) => item.event === 'links_audit_click').length,
-      telegram: window.dataLayer.filter((item) => item.event === 'links_telegram_click').length
+      telegram: window.dataLayer.filter((item) => item.event === 'links_telegram_click').length,
+      operatorStack: window.dataLayer.filter((item) => item.event === 'links_operatorstack_click').length,
+      whatsapp: window.dataLayer.filter((item) => item.event === 'links_whatsapp_click').length
     }));
     assert.equal(events.audit, 1, 'audit click analytics should fire once');
     assert.equal(events.telegram, 1, 'Telegram click analytics should fire once');
+    assert.equal(events.operatorStack, 1, 'OperatorStack click analytics should fire once');
+    assert.equal(events.whatsapp, 1, 'WhatsApp click analytics should fire once');
     await assertNoRuntimeErrors('analytics click', consoleErrors, pageErrors);
     await context.close();
     console.log('✓ /links analytics fires once per click');
@@ -153,7 +173,9 @@ try {
     await page.goto(`${baseURL}/links`, { waitUntil: 'load' });
     await assertVisible(page.getByRole('heading', { name: 'Javi Pérez' }), 'no-JS H1');
     await assertVisible(page.getByRole('link', { name: /Solicitar auditoría/ }), 'no-JS audit link');
+    await assertVisible(page.getByRole('link', { name: /Explorar OperatorStack/ }), 'no-JS OperatorStack link');
     await assertVisible(page.getByRole('link', { name: /Entrar al canal de Telegram/ }), 'no-JS telegram channel link');
+    await assertVisible(page.getByRole('link', { name: /Hablar conmigo por WhatsApp/ }), 'no-JS WhatsApp contact link');
     await assertNoHorizontalOverflow(page, 'no-JS 320px links');
     await assertNoRuntimeErrors('no-JS 320px links', consoleErrors, pageErrors);
     await context.close();
