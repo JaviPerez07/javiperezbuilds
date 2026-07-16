@@ -3,20 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Enlaces | Javi Pérez</title>
-  <meta name="description" content="Auditoría de captación, servicios, agentes digitales, OperatorStack y contacto directo con Javi Pérez." />
+  <title>Javi Pérez | Enlaces oficiales</title>
+  <meta name="description" content="Router oficial de Javi Pérez: auditoría de captación, agentes de IA, Telegram y redes sociales." />
   <link rel="canonical" href="https://javiperezbuilds.com/links" />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
-  <meta name="theme-color" content="#0A100F" />
+  <meta name="theme-color" content="#0a100f" />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <meta property="og:type" content="profile" />
-  <meta property="og:title" content="Javi Pérez — enlaces" />
-  <meta property="og:description" content="Sistemas de captación, productos propios y agentes digitales." />
+  <meta property="og:url" content="https://javiperezbuilds.com/links" />
+  <meta property="og:title" content="Javi Pérez | Enlaces oficiales" />
+  <meta property="og:description" content="Sistemas de captación, productos y agentes de IA." />
   <meta property="og:image" content="https://javiperezbuilds.com/assets/og-image-v2.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Javi Pérez — enlaces" />
-  <meta name="twitter:description" content="Sistemas de captación, productos propios y agentes digitales." />
+  <meta name="twitter:title" content="Javi Pérez | Enlaces oficiales" />
+  <meta name="twitter:description" content="Sistemas de captación, productos y agentes de IA." />
   <meta name="twitter:image" content="https://javiperezbuilds.com/assets/og-image-v2.jpg" />
   <link rel="preload" href="assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="assets/fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin />
@@ -26,26 +27,452 @@
     @font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400 700;font-display:swap;src:url('assets/fonts/jetbrains-mono-latin.woff2') format('woff2')}
   </style>
   <link rel="stylesheet" href="styles/operator-atelier.css?v=1" />
+  <style>
+    .links-router,
+    .links-router * { box-sizing: border-box; }
+
+    html,
+    body { max-width: 100%; overflow-x: hidden; }
+
+    .links-router {
+      --links-shell: min(100% - 32px, 560px);
+      min-height: 100svh;
+      padding:
+        calc(env(safe-area-inset-top, 0px) + clamp(28px, 6vw, 64px))
+        0
+        calc(env(safe-area-inset-bottom, 0px) + 34px);
+      display: grid;
+      place-items: center;
+      background:
+        radial-gradient(circle at 50% -12%, rgba(87, 242, 163, .16), transparent 34%),
+        linear-gradient(180deg, #0d1512 0%, #08100e 54%, #060a09 100%);
+      color: var(--oa-paper);
+      position: relative;
+      overflow: clip;
+      isolation: isolate;
+    }
+
+    .links-router::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      background:
+        linear-gradient(rgba(87, 242, 163, .045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(87, 242, 163, .035) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,.65), transparent 72%);
+      opacity: .55;
+    }
+
+    .links-router__wrap {
+      width: var(--links-shell);
+      margin-inline: auto;
+    }
+
+    .links-card {
+      position: relative;
+      padding: clamp(20px, 4vw, 30px);
+      border: 1px solid var(--oa-border);
+      border-radius: 28px;
+      background: linear-gradient(180deg, rgba(19, 33, 29, .74), rgba(8, 15, 13, .82));
+      box-shadow: 0 30px 90px -58px rgba(0, 0, 0, .96);
+      backdrop-filter: blur(16px) saturate(120%);
+    }
+
+    .links-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      border-radius: inherit;
+      box-shadow: inset 0 1px rgba(255,255,255,.055), inset 0 -1px rgba(87,242,163,.05);
+    }
+
+    .links-profile {
+      display: grid;
+      grid-template-columns: 76px minmax(0, 1fr);
+      gap: 16px;
+      align-items: center;
+    }
+
+    .links-profile img {
+      width: 76px;
+      aspect-ratio: 1;
+      border-radius: 22px;
+      object-fit: cover;
+      border: 1px solid var(--oa-border-strong);
+      filter: saturate(.88) contrast(1.03);
+      box-shadow: 0 0 0 6px rgba(87, 242, 163, .055), 0 16px 38px -22px rgba(87,242,163,.7);
+    }
+
+    .links-kicker {
+      margin: 0 0 8px;
+      color: var(--oa-emerald);
+      font: 650 10px/1 var(--oa-mono);
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .links-profile h1 {
+      margin: 0;
+      color: var(--oa-paper);
+      font-size: clamp(34px, 8vw, 48px);
+      line-height: .94;
+      letter-spacing: -.04em;
+    }
+
+    .links-copy {
+      margin: 20px 0 0;
+      color: #c8d1cc;
+      font-size: clamp(17px, 4.3vw, 20px);
+      line-height: 1.45;
+      letter-spacing: 0;
+      text-wrap: balance;
+    }
+
+    .links-meta {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin: 14px 0 0;
+      color: var(--oa-dim);
+      font: 600 11px/1 var(--oa-mono);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .links-meta::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 99px;
+      background: var(--oa-emerald);
+      box-shadow: 0 0 18px rgba(87,242,163,.48);
+    }
+
+    .links-list {
+      display: grid;
+      gap: 11px;
+      margin-top: 26px;
+    }
+
+    .link-tile {
+      min-height: 64px;
+      display: grid;
+      grid-template-columns: 38px minmax(0, 1fr) 22px;
+      align-items: center;
+      gap: 13px;
+      width: 100%;
+      padding: 14px;
+      border: 1px solid var(--oa-border);
+      border-radius: 18px;
+      background: rgba(255,255,255,.024);
+      color: var(--oa-paper);
+      text-decoration: none;
+      transition: transform .22s var(--oa-ease), border-color .22s ease, background .22s ease, box-shadow .22s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .link-tile__mark {
+      display: grid;
+      place-items: center;
+      width: 38px;
+      height: 38px;
+      border: 1px solid rgba(87, 242, 163, .22);
+      border-radius: 12px;
+      background: rgba(87, 242, 163, .07);
+      color: var(--oa-emerald);
+      font: 700 10px/1 var(--oa-mono);
+      letter-spacing: .02em;
+    }
+
+    .link-tile__copy {
+      min-width: 0;
+      display: grid;
+      gap: 4px;
+    }
+
+    .link-tile__copy b {
+      display: block;
+      overflow-wrap: anywhere;
+      font-size: 16px;
+      line-height: 1.12;
+      font-weight: 680;
+      letter-spacing: -.015em;
+    }
+
+    .link-tile__copy small {
+      display: block;
+      color: var(--oa-muted);
+      font-size: 13px;
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+
+    .link-tile__arrow {
+      color: var(--oa-dim);
+      font: 600 17px/1 var(--oa-mono);
+      text-align: right;
+      transition: transform .22s var(--oa-ease), color .22s ease;
+    }
+
+    .link-tile--hero {
+      min-height: 76px;
+      padding: 17px 15px;
+      border-color: rgba(87, 242, 163, .62);
+      background: linear-gradient(135deg, rgba(87,242,163,.96), rgba(76,224,150,.82));
+      color: #06100c;
+      box-shadow: 0 24px 56px -32px rgba(87,242,163,.9), 0 0 44px -28px rgba(87,242,163,.95);
+    }
+
+    .link-tile--hero .link-tile__mark {
+      border-color: rgba(5, 15, 10, .16);
+      background: rgba(5, 15, 10, .1);
+      color: #06100c;
+    }
+
+    .link-tile--hero .link-tile__copy small,
+    .link-tile--hero .link-tile__arrow { color: rgba(6, 16, 12, .72); }
+
+    .link-tile--feature {
+      border-color: var(--oa-border-strong);
+      background: linear-gradient(180deg, rgba(87, 242, 163, .12), rgba(255,255,255,.024));
+    }
+
+    .link-tile--creator[hidden] { display: none; }
+
+    .links-social {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 9px;
+      margin-top: 16px;
+    }
+
+    .social-link {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 10px;
+      border: 1px solid var(--oa-border);
+      border-radius: 15px;
+      background: rgba(255,255,255,.018);
+      color: var(--oa-muted);
+      text-decoration: none;
+      font: 700 11px/1 var(--oa-mono);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      transition: transform .22s var(--oa-ease), border-color .22s ease, color .22s ease, background .22s ease;
+    }
+
+    .links-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-top: 18px;
+      color: var(--oa-dim);
+      font: 600 10px/1.5 var(--oa-mono);
+      letter-spacing: .09em;
+      text-transform: uppercase;
+    }
+
+    .links-footer a {
+      color: var(--oa-muted);
+      text-decoration: none;
+    }
+
+    @media (hover: hover) {
+      .link-tile:hover {
+        transform: translateY(-2px);
+        border-color: var(--oa-border-strong);
+        background: rgba(87,242,163,.065);
+        box-shadow: 0 18px 48px -34px rgba(0,0,0,.9);
+      }
+
+      .link-tile:hover .link-tile__arrow {
+        color: var(--oa-emerald);
+        transform: translate(2px, -2px);
+      }
+
+      .link-tile--hero:hover {
+        background: linear-gradient(135deg, #6fffb7, #57f2a3);
+        box-shadow: 0 28px 64px -30px rgba(87,242,163,.95), 0 0 58px -24px rgba(87,242,163,.95);
+      }
+
+      .social-link:hover,
+      .links-footer a:hover {
+        color: var(--oa-paper);
+        border-color: var(--oa-border-strong);
+        background: rgba(87,242,163,.06);
+      }
+    }
+
+    .link-tile:active,
+    .social-link:active { transform: scale(.99); }
+
+    @media (max-width: 374px) {
+      .links-router { --links-shell: min(100% - 24px, 560px); }
+      .links-card { padding: 18px; border-radius: 24px; }
+      .links-profile { grid-template-columns: 64px minmax(0, 1fr); gap: 13px; }
+      .links-profile img { width: 64px; border-radius: 18px; }
+      .link-tile { grid-template-columns: 34px minmax(0, 1fr) 18px; padding: 13px 12px; gap: 10px; }
+      .link-tile__mark { width: 34px; height: 34px; border-radius: 10px; }
+      .link-tile__copy b { font-size: 15px; }
+      .link-tile__copy small { font-size: 12.5px; }
+      .links-social { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .links-footer { flex-direction: column; align-items: flex-start; gap: 6px; }
+    }
+
+    @media (min-width: 768px) {
+      .links-router { --links-shell: min(100% - 56px, 620px); }
+      .links-card { padding: 34px; }
+      .links-list { gap: 12px; }
+      .link-tile { padding-inline: 16px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .link-tile,
+      .link-tile__arrow,
+      .social-link { transition: none; }
+      .link-tile:hover,
+      .link-tile:active,
+      .social-link:hover,
+      .social-link:active { transform: none; }
+    }
+  </style>
 </head>
 <body>
-  <main class="oa-links">
-    <div class="oa-links__wrap">
-      <header class="oa-links__head">
-        <img src="assets/javi-perfil.webp" width="72" height="72" alt="Javi Pérez" fetchpriority="high" />
-        <div><h1>Javi Pérez</h1><p>Diseño y construyo sistemas de captación y productos digitales.</p></div>
-      </header>
+  <main class="links-router">
+    <div class="links-router__wrap">
+      <section class="links-card" aria-labelledby="links-title">
+        <header class="links-profile">
+          <img src="assets/javi-perfil.webp" width="76" height="76" alt="Javi Pérez" fetchpriority="high" decoding="async" />
+          <div>
+            <p class="links-kicker">Router oficial</p>
+            <h1 id="links-title">Javi Pérez</h1>
+          </div>
+        </header>
 
-      <nav class="oa-links__list" aria-label="Enlaces principales">
-        <a class="oa-link oa-link--primary" href="auditoria.html" data-track="cta_audit_click"><span class="oa-link__icon">01</span><span><b>Solicitar auditoría de captación</b><small>Localiza la fuga principal del recorrido</small></span><span class="oa-link__arrow">↗</span></a>
-        <a class="oa-link" href="https://wa.me/34644289776" data-wa data-wa-text="Hola Javi, quiero hablar sobre el recorrido de captación de mi negocio." target="_blank" rel="noopener"><span class="oa-link__icon">WA</span><span><b>Hablar por WhatsApp</b><small>Contacto directo conmigo</small></span><span class="oa-link__arrow">↗</span></a>
-        <a class="oa-link" href="index.html#solucion"><span class="oa-link__icon">02</span><span><b>Ver servicio y builds</b><small>Ad-to-Appointment Sprint y trabajo propio</small></span><span class="oa-link__arrow">→</span></a>
-        <a class="oa-link" href="agentes.html" data-track="agents_cta_click"><span class="oa-link__icon">03</span><span><b>Explorar agentes digitales</b><small>Webs y sistemas de trading</small></span><span class="oa-link__arrow">→</span></a>
-        <a class="oa-link" href="https://getoperatorstack.com" target="_blank" rel="noopener"><span class="oa-link__icon">04</span><span><b>OperatorStack</b><small>Producto propio para margen ecommerce</small></span><span class="oa-link__arrow">↗</span></a>
-      </nav>
+        <p class="links-copy">Construyo sistemas de captación, productos y agentes de IA.</p>
+        <p class="links-meta">Building from Almería</p>
 
-      <footer class="oa-links__foot"><span>ALMERÍA / ESPAÑA</span><a href="legal.html">Legal y privacidad</a></footer>
+        <nav class="links-list" aria-label="Enlaces principales">
+          <a class="link-tile link-tile--hero" href="auditoria.html" data-links-track="links_audit_click">
+            <span class="link-tile__mark" aria-hidden="true">01</span>
+            <span class="link-tile__copy">
+              <b>Solicitar auditoría</b>
+              <small>Detecta dónde se enfría tu captación.</small>
+            </span>
+            <span class="link-tile__arrow" aria-hidden="true">-></span>
+          </a>
+
+          <a class="link-tile link-tile--creator" hidden data-creator-deal-link data-links-track="links_creator_deal_click" target="_blank" rel="noopener noreferrer">
+            <span class="link-tile__mark" aria-hidden="true">CD</span>
+            <span class="link-tile__copy">
+              <b>Analiza tu próximo brand deal</b>
+              <small>Entiende qué está comprando realmente la marca.</small>
+            </span>
+            <span class="link-tile__arrow" aria-hidden="true">-></span>
+          </a>
+
+          <a class="link-tile link-tile--feature" href="agentes.html" data-links-track="links_agents_click">
+            <span class="link-tile__mark" aria-hidden="true">AI</span>
+            <span class="link-tile__copy">
+              <b>Explorar agentes de IA</b>
+              <small>Sistemas y agentes que ejecutan trabajo real.</small>
+            </span>
+            <span class="link-tile__arrow" aria-hidden="true">-></span>
+          </a>
+
+          <a class="link-tile link-tile--feature" href="https://t.me/javiperezchallenger" data-links-track="links_telegram_click" target="_blank" rel="noopener noreferrer">
+            <span class="link-tile__mark" aria-hidden="true">TG</span>
+            <span class="link-tile__copy">
+              <b>Entrar a Telegram</b>
+              <small>Builds, agentes y recursos nuevos.</small>
+            </span>
+            <span class="link-tile__arrow" aria-hidden="true">-></span>
+          </a>
+        </nav>
+
+        <div class="links-social" aria-label="Redes sociales secundarias">
+          <a class="social-link" href="https://www.instagram.com/javiperezbuilds/" data-social-platform="instagram" data-links-track="links_social_click" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a class="social-link" href="https://www.tiktok.com/@javiperezbuilds" data-social-platform="tiktok" data-links-track="links_social_click" target="_blank" rel="noopener noreferrer">TikTok</a>
+          <a class="social-link" href="https://www.linkedin.com/in/javi-perez-guides" data-social-platform="linkedin" data-links-track="links_social_click" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a class="social-link" href="https://twitter.com/javiperezbuilds" data-social-platform="x" data-links-track="links_social_click" target="_blank" rel="noopener noreferrer">X</a>
+        </div>
+      </section>
+
+      <footer class="links-footer">
+        <span>Almería / España</span>
+        <a href="legal.html">Legal y privacidad</a>
+      </footer>
     </div>
   </main>
+
   <script src="scripts/config.js?v=2" defer></script>
+  <script>
+    (function () {
+      "use strict";
+
+      var CREATOR_DEAL_WHOP_URL = "";
+
+      function track(eventName, data) {
+        if (typeof window.JP_TRACK === "function") {
+          window.JP_TRACK(eventName, data || {});
+        }
+      }
+
+      function isValidWhopUrl(value) {
+        try {
+          var url = new URL(value);
+          return url.protocol === "https:" && /(^|\.)whop\.com$/i.test(url.hostname);
+        } catch (error) {
+          return false;
+        }
+      }
+
+      window.JP_LINKS_CONFIG = Object.freeze({
+        creatorDealWhopUrl: CREATOR_DEAL_WHOP_URL,
+        recoveredUrls: {
+          telegram: "https://t.me/javiperezchallenger",
+          instagram: "https://www.instagram.com/javiperezbuilds/",
+          tiktok: "https://www.tiktok.com/@javiperezbuilds",
+          linkedin: "https://www.linkedin.com/in/javi-perez-guides",
+          twitter: "https://twitter.com/javiperezbuilds",
+          agentes: "agentes.html",
+          auditoria: "auditoria.html"
+        }
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        var creatorLink = document.querySelector("[data-creator-deal-link]");
+        if (creatorLink && isValidWhopUrl(CREATOR_DEAL_WHOP_URL)) {
+          creatorLink.href = CREATOR_DEAL_WHOP_URL;
+          creatorLink.hidden = false;
+        } else if (creatorLink) {
+          creatorLink.removeAttribute("href");
+          creatorLink.hidden = true;
+        }
+
+        track("links_view", { path: window.location.pathname });
+
+        document.addEventListener("click", function (event) {
+          var link = event.target.closest && event.target.closest("[data-links-track]");
+          if (!link) return;
+
+          var eventName = link.getAttribute("data-links-track");
+          var payload = {};
+          var platform = link.getAttribute("data-social-platform");
+          if (platform) payload.platform = platform;
+
+          track(eventName, payload);
+        }, true);
+      });
+    })();
+  </script>
 </body>
 </html>
