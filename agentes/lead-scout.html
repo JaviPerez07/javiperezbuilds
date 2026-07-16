@@ -30,15 +30,31 @@
   <link rel="stylesheet" href="../styles/custom.css?v=funnel6" />
   <link rel="stylesheet" href="../styles/skills.css?v=funnel5" />
   <link rel="stylesheet" href="../styles/operator-atelier.css?v=1" />
-  <link rel="stylesheet" href="../styles/agent-store.css?v=1" />
+  <link rel="stylesheet" href="../styles/agent-store.css?v=2" />
 
-  <!-- Product/Offer schema se añadirá cuando checkout, oferta y entrega estén conectados. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Lead Scout — Agente de Prospección Local",
+    "description": "Agente para Claude Code que investiga negocios con información pública, prioriza señales verificables y prepara borradores para revisión humana.",
+    "brand": {"@type":"Brand","name":"JaviPerezBuilds"},
+    "url": "https://javiperezbuilds.com/agentes/lead-scout",
+    "offers": {
+      "@type": "Offer",
+      "url": "https://buy.stripe.com/fZu7sLf6bbHIasv7gH9fW0I",
+      "priceCurrency": "EUR",
+      "price": "3.00",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      {"@type":"Question","name":"¿Necesito saber programar?","acceptedAnswer":{"@type":"Answer","text":"El objetivo es que no. La guía cubrirá la instalación paso a paso, aunque los requisitos exactos de plataforma y plan se confirmarán antes de activar el checkout."}},
+      {"@type":"Question","name":"¿Necesito saber programar?","acceptedAnswer":{"@type":"Answer","text":"No necesitas programar para usar el paquete, pero sí tener Claude Code con una herramienta de navegación web real. La instalación está guiada paso a paso."}},
       {"@type":"Question","name":"¿Envía mensajes automáticamente?","acceptedAnswer":{"@type":"Answer","text":"No. Lead Scout prepara contexto y borradores, pero una persona debe revisar y decidir cada contacto."}},
       {"@type":"Question","name":"¿Incluye contactos privados?","acceptedAnswer":{"@type":"Answer","text":"No. Trabaja con información empresarial pública y no debe utilizarse para recopilar datos sensibles."}},
       {"@type":"Question","name":"¿Garantiza clientes o respuestas?","acceptedAnswer":{"@type":"Answer","text":"No. Ayuda a investigar y priorizar mejor; no garantiza respuestas, reuniones ni ventas."}}
@@ -67,16 +83,26 @@
           <h1 class="as-display">Encuentra negocios con señales reales de oportunidad <em>antes de escribirles.</em></h1>
           <p class="as-sub">Introduce un sector y una zona. Lead Scout investiga información empresarial pública, prioriza oportunidades y prepara el contexto necesario para redactar un primer contacto personalizado.</p>
           <div class="as-actions">
-            <a class="as-btn" role="link" data-lead-checkout data-agent-event="begin_lead_scout_checkout" aria-disabled="true">Conseguir Lead Scout</a>
+            <a class="as-btn" href="https://buy.stripe.com/fZu7sLf6bbHIasv7gH9fW0I" data-lead-checkout data-agent-event="begin_lead_scout_checkout">Conseguir Lead Scout por 3 €</a>
             <a class="as-btn as-btn--ghost" href="#demo" data-agent-event="click_lead_scout_demo">Ver cómo funciona <span aria-hidden="true">↓</span></a>
           </div>
+          <ul class="as-purchase-facts" aria-label="Condiciones de compra">
+            <li>Pago único.</li>
+            <li>Funciona con Claude Code.</li>
+            <li>Instalación guiada.</li>
+            <li>Sin suscripción.</li>
+            <li>No envía mensajes automáticamente.</li>
+            <li>Usa información empresarial pública.</li>
+            <li>No garantiza respuestas, reuniones ni ventas.</li>
+          </ul>
+          <p class="as-delivery-note">Recibirás Lead Scout de forma privada en el email utilizado durante el pago.</p>
         </div>
         <aside class="as-price-panel" aria-label="Precio y estado de compra">
-          <span class="as-price-panel__label" data-lead-launch-label>Precio de lanzamiento</span>
-          <div class="as-price-panel__price"><strong data-lead-price-current>3 €</strong><s data-lead-price-normal>7 €</s></div>
-          <p class="as-copy">Compra única. La ficha no activa renovaciones ni suscripciones.</p>
-          <a class="as-btn" role="link" data-lead-checkout data-agent-event="begin_lead_scout_checkout" aria-disabled="true">Conseguir Lead Scout</a>
-          <p class="as-checkout-state" data-checkout-state data-state="pending" role="status">Checkout pendiente de conectar. No se realizará ningún cobro desde esta página.</p>
+          <span class="as-price-panel__label" data-lead-launch-label>Precio de lanzamiento: 3 €</span>
+          <div class="as-price-panel__price"><strong data-lead-price-current>3 €</strong></div>
+          <p class="as-copy">Pago único. Sin suscripción ni renovaciones.</p>
+          <a class="as-btn" href="https://buy.stripe.com/fZu7sLf6bbHIasv7gH9fW0I" data-lead-checkout data-agent-event="begin_lead_scout_checkout">Comprar con Stripe</a>
+          <p class="as-checkout-state" data-checkout-state data-state="ready" role="status">Pago seguro con Stripe. Recibirás Lead Scout de forma privada en el email utilizado durante el pago.</p>
         </aside>
       </div>
     </section>
@@ -84,29 +110,46 @@
     <section class="as-section" id="demo" aria-labelledby="demo-title">
       <div class="as-wrap">
         <div class="as-section-head">
-          <span class="as-kicker">Demostración visual</span>
-          <h2 class="as-heading" id="demo-title">El recorrido, sin adornar resultados.</h2>
-          <p class="as-sub">Estos espacios están reservados para una demo real y una captura de salida. Hasta que existan los archivos definitivos, no se muestra ningún resultado comercial simulado.</p>
+          <span class="as-kicker">Ejemplo demostrativo con datos ficticios</span>
+          <h2 class="as-heading" id="demo-title">Así pasa de un encargo concreto a una lista corta y revisable.</h2>
+          <p class="as-sub">La estructura y los campos proceden de <code>EXAMPLE_RUN.md</code>. Todas las empresas, ubicaciones, webs, señales y puntuaciones mostradas son ficticias; no representan resultados comerciales reales.</p>
         </div>
-        <div class="as-demo-grid">
-          <div class="as-media-shell as-media-shell--vertical">
-            <!-- Sustituir mediante LEAD_SCOUT_DEMO_VIDEO_URL cuando exista una demo real revisada. -->
-            <video hidden data-lead-demo-video controls playsinline preload="metadata" aria-label="Demostración vertical de Lead Scout"></video>
-            <div class="as-media-placeholder" data-video-placeholder>
-              <span class="as-placeholder-tag">Placeholder de desarrollo</span>
-              <strong>Vídeo vertical / GIF pendiente</strong>
-              La demo se publicará cuando el flujo final esté grabado y revisado. No se incluye una demostración ficticia.
-            </div>
+        <div class="as-demo-board" aria-label="Ejemplo ficticio de salida de Lead Scout">
+          <div class="as-demo-board__bar">
+            <span>EXAMPLE_RUN.md</span>
+            <span class="as-demo-board__status">Datos 100 % ficticios</span>
           </div>
-          <div class="as-media-shell">
-            <!-- Sustituir mediante LEAD_SCOUT_RESULT_IMAGE_URL con una captura real, ficticia o anonimizada. -->
-            <img hidden data-lead-result-image alt="Captura real de una salida de Lead Scout, anonimizada" />
-            <div class="as-media-placeholder" data-image-placeholder>
-              <span class="as-placeholder-tag">Placeholder de desarrollo</span>
-              <strong>Captura de resultado pendiente</strong>
-              Se añadirá una salida real, ficticia o anonimizada cuando esté revisada y lista para publicar.
-            </div>
+          <div class="as-demo-board__input">
+            <div><span>Sector</span><strong>Clínicas dentales</strong></div>
+            <div><span>Ubicación</span><strong>San Marcial de la Vega · ciudad ficticia</strong></div>
+            <div><span>Límite de prueba</span><strong>Máximo 5 candidatos</strong></div>
           </div>
+          <article class="as-demo-lead">
+            <div class="as-demo-lead__head">
+              <div><span>Candidato ficticio 01</span><h3>Clínica Dental Ejemplo Ficticia</h3></div>
+              <strong class="as-demo-score">9/10</strong>
+            </div>
+            <dl class="as-demo-fields">
+              <div><dt>Señal pública observable</dt><dd>Anuncio activo ficticio sobre implantes con financiación.</dd></div>
+              <div><dt>Fuente</dt><dd>Biblioteca pública de anuncios · URL de evidencia ficticia incluida.</dd></div>
+              <div><dt>Motivo de prioridad</dt><dd>Zona prioritaria, señal activa y una página de destino desalineada con la oferta anunciada.</dd></div>
+              <div><dt>Ángulo de contacto sugerido</dt><dd>Preguntar si sería útil revisar el recorrido entre el anuncio y la página de destino; es una hipótesis, no una certeza.</dd></div>
+            </dl>
+            <div class="as-demo-review"><span>Revisión humana requerida</span><p>Abre la fuente, reconfirma la señal y decide si el contacto es adecuado. Lead Scout no envía ningún mensaje.</p></div>
+          </article>
+          <div class="as-demo-board__foot">
+            <span>Información empresarial pública</span>
+            <span>Fuente visible</span>
+            <span>Sin garantías de respuesta o venta</span>
+          </div>
+        </div>
+        <div class="as-conversion-band">
+          <div>
+            <span class="as-kicker">Agent Drop 001</span>
+            <h3>Empieza con una tanda pequeña y revisa cada evidencia.</h3>
+            <p>Precio de lanzamiento: 3 €. Pago único, instalación guiada y sin suscripción.</p>
+          </div>
+          <a class="as-btn" href="https://buy.stripe.com/fZu7sLf6bbHIasv7gH9fW0I" data-lead-checkout data-agent-event="begin_lead_scout_checkout">Conseguir Lead Scout por 3 €</a>
         </div>
       </div>
     </section>
@@ -178,16 +221,16 @@
         <div class="as-requirements">
           <div>
             <span class="as-kicker">Requisitos transparentes</span>
-            <h2 class="as-heading" id="requisitos-title">Los requisitos exactos se confirmarán con el paquete final.</h2>
-            <p class="as-copy">El checkout permanecerá desconectado hasta que estas dependencias estén verificadas. No se ocultarán planes, APIs ni posibles costes externos.</p>
+            <h2 class="as-heading" id="requisitos-title">Probado en Claude Code con navegación web real.</h2>
+            <p class="as-copy">No es un scraper ni una base de datos de leads. El agente abre fuentes públicas una a una y necesita navegación real para poder verificar lo que encuentra.</p>
           </div>
           <div class="as-requirements__grid">
-            <div class="as-requirement"><span>Plataforma compatible</span><strong>Pendiente de confirmación final.</strong></div>
-            <div class="as-requirement"><span>Plan o suscripción</span><strong>Se indicará antes de activar la compra.</strong></div>
-            <div class="as-requirement"><span>MCP / API / herramientas</span><strong>Opcionales y obligatorias, separadas con claridad.</strong></div>
-            <div class="as-requirement"><span>Costes externos</span><strong>No incluidos; se detallarán si existen.</strong></div>
-            <div class="as-requirement"><span>Nivel técnico</span><strong>Objetivo: instalación guiada, sin programar.</strong></div>
-            <div class="as-requirement"><span>Tiempo de instalación</span><strong>Pendiente de medir con el paquete final.</strong></div>
+            <div class="as-requirement"><span>Plataforma verificada</span><strong>Claude Code con navegador y orquestación multiagente.</strong></div>
+            <div class="as-requirement"><span>Otras herramientas</span><strong>No verificadas. Un chat sin navegación real no sirve.</strong></div>
+            <div class="as-requirement"><span>Fuentes</span><strong>Bibliotecas públicas de anuncios y webs oficiales.</strong></div>
+            <div class="as-requirement"><span>API o base de datos</span><strong>No requiere una API de pago ni una lista comprada.</strong></div>
+            <div class="as-requirement"><span>Hoja de cálculo</span><strong>Google Sheets, LibreOffice Calc o equivalente.</strong></div>
+            <div class="as-requirement"><span>Nivel técnico</span><strong>Instalación guiada; no necesitas programar.</strong></div>
           </div>
         </div>
       </div>
@@ -244,18 +287,33 @@
       </div>
     </section>
 
+    <section class="as-section" aria-labelledby="final-buy-title">
+      <div class="as-wrap">
+        <div class="as-final-buy">
+          <span class="as-kicker">Compra directa y sin suscripción</span>
+          <h2 class="as-heading" id="final-buy-title">Investiga con evidencia. Decide tú a quién escribir.</h2>
+          <p class="as-sub">Lead Scout usa información empresarial pública, prepara una lista priorizada y deja siempre el envío bajo revisión humana. No garantiza respuestas, reuniones, ventas ni resultados comerciales.</p>
+          <p class="as-delivery-note">Recibirás Lead Scout de forma privada en el email utilizado durante el pago.</p>
+          <div class="as-actions">
+            <a class="as-btn" href="https://buy.stripe.com/fZu7sLf6bbHIasv7gH9fW0I" data-lead-checkout data-agent-event="begin_lead_scout_checkout">Comprar Lead Scout por 3 €</a>
+            <a class="as-btn as-btn--ghost" href="#requisitos">Revisar requisitos</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="as-section as-section--tint" id="faq" aria-labelledby="faq-title">
       <div class="as-wrap">
         <span class="as-kicker">Preguntas frecuentes</span>
         <h2 class="as-heading" id="faq-title">Lo que conviene saber antes de comprar.</h2>
         <div class="as-faq">
-          <details><summary>¿Necesito saber programar?</summary><p>El objetivo es que no. La guía cubrirá la instalación paso a paso, pero la plataforma, el plan y el nivel técnico exactos se confirmarán con el paquete final antes de activar el checkout.</p></details>
+          <details><summary>¿Necesito saber programar?</summary><p>No necesitas programar para usar el paquete. Sí necesitas Claude Code con una herramienta de navegación web real; la instalación está guiada paso a paso.</p></details>
           <details><summary>¿Funciona con cualquier sector?</summary><p>Los criterios se pueden adaptar, pero la calidad y cantidad de información pública varían según el sector y la zona. No todos los negocios ofrecerán las mismas señales.</p></details>
           <details><summary>¿Envía mensajes automáticamente?</summary><p>No. Prepara contexto y borradores. Tú revisas, corriges y decides cada envío.</p></details>
           <details><summary>¿Incluye contactos privados?</summary><p>No. Trabaja con información empresarial pública. No incluye ni busca bases de datos privadas o datos sensibles.</p></details>
           <details><summary>¿Garantiza clientes o respuestas?</summary><p>No. Ayuda a investigar y priorizar mejor. No garantiza respuestas, reuniones, ventas ni resultados comerciales.</p></details>
-          <details><summary>¿Qué herramientas necesito?</summary><p>Los requisitos exactos de plataforma, plan, MCP, API y posibles costes externos se publicarán aquí antes de conectar el checkout.</p></details>
-          <details><summary>¿Cómo recibo el producto?</summary><p>Cuando el checkout esté activo, la entrega se realizará de forma privada mediante la plataforma de pago y su correo de confirmación. No habrá archivos ZIP públicos en esta web.</p></details>
+          <details><summary>¿Qué herramientas necesito?</summary><p>El método está probado en Claude Code con navegación web real y orquestación multiagente. También necesitas acceso a fuentes públicas y una hoja de cálculo para trabajar el CSV. No requiere una API de pago ni una base de datos de leads comprada.</p></details>
+          <details><summary>¿Cómo recibo el producto?</summary><p>Recibirás Lead Scout de forma privada en el email utilizado durante el pago. No habrá archivos ZIP públicos en esta web.</p></details>
           <details><summary>¿Puedo pedir devolución?</summary><p>La política aplicable se mostrará en el checkout antes de pagar. Revísala antes de completar la compra, especialmente por tratarse de un producto digital.</p></details>
           <details><summary>¿Incluye soporte personalizado?</summary><p>Incluye la guía de instalación y los materiales descritos. La instalación y adaptación al negocio se ofrecen como servicio separado y se valoran según el caso.</p></details>
         </div>
@@ -279,12 +337,12 @@
 
   <div class="as-mobile-buy" aria-label="Compra de Lead Scout">
     <div class="as-mobile-buy__inner">
-      <span class="as-mobile-buy__price"><strong data-lead-price-current>3 €</strong><span data-lead-launch-label>Precio de lanzamiento</span></span>
-      <a class="as-btn" role="link" data-lead-checkout data-agent-event="begin_lead_scout_checkout" aria-disabled="true">Conseguir Lead Scout</a>
+      <span class="as-mobile-buy__price"><strong data-lead-price-current>3 €</strong><span data-lead-launch-label>Precio de lanzamiento: 3 €</span></span>
+      <a class="as-btn" href="https://buy.stripe.com/fZu7sLf6bbHIasv7gH9fW0I" data-lead-checkout data-agent-event="begin_lead_scout_checkout">Comprar Lead Scout</a>
     </div>
   </div>
 
   <script src="../scripts/config.js?v=2"></script>
-  <script src="../scripts/agent-store-config.js?v=1"></script>
+  <script src="../scripts/agent-store-config.js?v=2"></script>
 </body>
 </html>

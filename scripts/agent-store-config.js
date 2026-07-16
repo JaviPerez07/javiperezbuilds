@@ -5,13 +5,11 @@
    precios y medios que ya pueden mostrarse públicamente.
    ============================================================ */
 window.JP_AGENT_STORE_CONFIG = Object.freeze({
-  NEXT_PUBLIC_LEAD_SCOUT_CHECKOUT_URL: "",
-  LEAD_SCOUT_PRICE: 7,
+  NEXT_PUBLIC_LEAD_SCOUT_CHECKOUT_URL: "https://buy.stripe.com/fZu7sLf6bbHIasv7gH9fW0I",
+  LEAD_SCOUT_PRICE: 3,
   LEAD_SCOUT_LAUNCH_PRICE: 3,
   LEAD_SCOUT_LAUNCH_ENDS_AT: "",
   LEAD_SCOUT_SETUP_URL: "/auditoria?service=lead-scout-setup",
-  LEAD_SCOUT_DEMO_VIDEO_URL: "",
-  LEAD_SCOUT_RESULT_IMAGE_URL: "",
   TELEGRAM_URL: "https://t.me/javiperezchallenger"
 });
 
@@ -70,8 +68,8 @@ window.JP_AGENT_STORE_CONFIG = Object.freeze({
         return;
       }
       el.textContent = pricing.launchEnd
-        ? "Precio de lanzamiento hasta el " + new Intl.DateTimeFormat("es-ES", { day: "numeric", month: "long", year: "numeric" }).format(pricing.launchEnd)
-        : "Precio de lanzamiento";
+        ? "Precio de lanzamiento: " + money(pricing.current) + " hasta el " + new Intl.DateTimeFormat("es-ES", { day: "numeric", month: "long", year: "numeric" }).format(pricing.launchEnd)
+        : "Precio de lanzamiento: " + money(pricing.current);
     });
   }
 
@@ -82,19 +80,13 @@ window.JP_AGENT_STORE_CONFIG = Object.freeze({
         link.href = config.NEXT_PUBLIC_LEAD_SCOUT_CHECKOUT_URL;
         link.removeAttribute("aria-disabled");
         link.removeAttribute("data-disabled");
-        link.target = "_blank";
-        link.rel = "noopener noreferrer";
-      } else {
-        link.removeAttribute("href");
-        link.setAttribute("aria-disabled", "true");
-        link.setAttribute("data-disabled", "true");
+        link.removeAttribute("target");
+        link.removeAttribute("rel");
       }
     });
     document.querySelectorAll("[data-checkout-state]").forEach(function (el) {
-      el.textContent = enabled
-        ? "Checkout seguro disponible. La entrega se realiza desde la plataforma de pago."
-        : "Checkout pendiente de conectar. No se realizará ningún cobro desde esta página.";
-      el.dataset.state = enabled ? "ready" : "pending";
+      el.textContent = "Pago seguro con Stripe. Recibirás Lead Scout de forma privada en el email utilizado durante el pago.";
+      el.dataset.state = "ready";
     });
   }
 
@@ -114,27 +106,6 @@ window.JP_AGENT_STORE_CONFIG = Object.freeze({
     document.querySelectorAll("[data-agent-telegram]").forEach(function (link) {
       if (validHttpsUrl(config.TELEGRAM_URL)) link.href = config.TELEGRAM_URL;
     });
-  }
-
-  function hydrateMedia() {
-    var videoUrl = config.LEAD_SCOUT_DEMO_VIDEO_URL;
-    var imageUrl = config.LEAD_SCOUT_RESULT_IMAGE_URL;
-    var video = document.querySelector("[data-lead-demo-video]");
-    var image = document.querySelector("[data-lead-result-image]");
-
-    if (video && validInternalOrHttpsUrl(videoUrl)) {
-      video.src = videoUrl;
-      video.hidden = false;
-      var videoPlaceholder = document.querySelector("[data-video-placeholder]");
-      if (videoPlaceholder) videoPlaceholder.hidden = true;
-    }
-
-    if (image && validInternalOrHttpsUrl(imageUrl)) {
-      image.src = imageUrl;
-      image.hidden = false;
-      var imagePlaceholder = document.querySelector("[data-image-placeholder]");
-      if (imagePlaceholder) imagePlaceholder.hidden = true;
-    }
   }
 
   function setupMobileBuy() {
@@ -179,14 +150,17 @@ window.JP_AGENT_STORE_CONFIG = Object.freeze({
       var target = event.target.closest && event.target.closest("[data-agent-event]");
       if (!target) return;
 
-      if (target.matches("[data-lead-checkout][aria-disabled='true']")) {
-        event.preventDefault();
-        var state = document.querySelector("[data-checkout-state]");
-        if (state) {
-          state.setAttribute("tabindex", "-1");
-          state.focus();
+      if (target.matches("[data-lead-checkout]")) {
+        if (target.hasAttribute("data-checkout-started")) {
+          event.preventDefault();
+          return;
         }
-        return;
+        target.setAttribute("data-checkout-started", "true");
+        target.setAttribute("aria-busy", "true");
+        window.setTimeout(function () {
+          target.removeAttribute("data-checkout-started");
+          target.removeAttribute("aria-busy");
+        }, 1600);
       }
 
       track(target.getAttribute("data-agent-event"));
@@ -197,7 +171,6 @@ window.JP_AGENT_STORE_CONFIG = Object.freeze({
   hydrateCheckout();
   hydrateSetup();
   hydrateTelegram();
-  hydrateMedia();
   setupMobileBuy();
   setupTracking();
 })();

@@ -101,7 +101,7 @@
   }
   </script>
   <link rel="stylesheet" href="styles/operator-atelier.css?v=1" />
-  <link rel="stylesheet" href="styles/agent-store.css?v=1" />
+  <link rel="stylesheet" href="styles/agent-store.css?v=2" />
 </head>
 
 <body class="sk-page as-page" data-agent-view-event="view_agent_catalog">
@@ -152,7 +152,7 @@
           <article class="as-product-card">
             <div class="as-product-card__top">
               <span class="as-badge">Disponible</span>
-              <span class="as-price-mini"><s data-lead-price-normal>7 €</s> <strong data-lead-price-current>3 €</strong></span>
+              <span class="as-price-mini" data-lead-launch-label>Precio de lanzamiento: 3 €</span>
             </div>
             <h3>Lead Scout — Agente de Prospección Local</h3>
             <p>Investiga negocios con información pública, prioriza señales de oportunidad y prepara el contexto para un primer contacto personalizado.</p>
@@ -162,7 +162,8 @@
               <li>Revisión humana</li>
             </ul>
             <div class="as-actions">
-              <a class="as-btn" href="agentes/lead-scout.html">Ver Lead Scout <span aria-hidden="true">→</span></a>
+              <a class="as-btn as-btn--ghost" href="agentes/lead-scout.html">Ver Lead Scout <span aria-hidden="true">→</span></a>
+              <a class="as-btn" href="https://buy.stripe.com/fZu7sLf6bbHIasv7gH9fW0I" data-lead-checkout data-agent-event="begin_lead_scout_checkout">Comprar por 3 €</a>
             </div>
           </article>
           <article class="as-product-card as-product-card--soon">
@@ -455,7 +456,7 @@
   </footer>
 
   <script src="scripts/config.js?v=2" defer></script>
-  <script src="scripts/agent-store-config.js?v=1" defer></script>
+  <script src="scripts/agent-store-config.js?v=2" defer></script>
   <script src="scripts/terminal.js?v=funnel4" defer></script>
   <script src="scripts/animations.js?v=funnel4" defer></script>
   <script>

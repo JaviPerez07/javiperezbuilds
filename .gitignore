@@ -19,6 +19,11 @@ serve.py
 node_modules/
 npm-debug.log*
 
+# Variables locales. Solo se versiona el ejemplo público.
+.env
+.env.*
+!.env.example
+
 # Scratch local (no publicar)
 __scroll-local.html
 
