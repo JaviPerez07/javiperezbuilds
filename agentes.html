@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Agentes de IA /javiperez-* · diagnóstico forense · Almería</title>
-  <meta name="description" content="Medir, demostrar, tratar. Dos departamentos de agentes de IA para Claude Code y Codex: Web (11 agentes que auditan y curan tu web) y El Polígrafo (15 agentes que auditan tu trading algorítmico). Mira qué cura cada uno." />
+  <title>Agentes y skills de IA que ejecutan trabajo | Javi Pérez</title>
+  <meta name="description" content="Agentes de IA empaquetados para investigar, analizar y ejecutar tareas reales. Descubre Lead Scout, el primer drop de la tienda de Javi Pérez." />
   <link rel="canonical" href="https://javiperezbuilds.com/agentes" />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
@@ -15,8 +15,8 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://javiperezbuilds.com/agentes" />
-  <meta property="og:title" content="Agentes de IA /javiperez-* — webs que convierten y trading bajo El Polígrafo" />
-  <meta property="og:description" content="Diagnóstico forense para Claude Code y Codex. Ultimate SEO Agents Pack (11 agentes) y El Polígrafo (15 agentes de trading). Mira qué cura cada uno." />
+  <meta property="og:title" content="Agentes que hacen trabajo. No prompts bonitos." />
+  <meta property="og:description" content="Sistemas de IA empaquetados con instrucciones, ejemplos y requisitos claros. Lead Scout es el primer drop." />
   <meta property="og:image" content="https://javiperezbuilds.com/assets/og-image-v2.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -25,8 +25,8 @@
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Agentes de IA /javiperez-* — diagnóstico forense para Claude Code" />
-  <meta name="twitter:description" content="Webs que convierten + trading bajo El Polígrafo. 11 + 15 agentes para Claude Code y Codex." />
+  <meta name="twitter:title" content="Agentes que hacen trabajo. No prompts bonitos." />
+  <meta name="twitter:description" content="Sistemas de IA empaquetados para investigar, analizar y ejecutar tareas reales." />
   <meta name="twitter:image" content="https://javiperezbuilds.com/assets/og-image-v2.jpg" />
   <meta name="twitter:creator" content="@javiperezbuilds" />
 
@@ -101,40 +101,86 @@
   }
   </script>
   <link rel="stylesheet" href="styles/operator-atelier.css?v=1" />
+  <link rel="stylesheet" href="styles/agent-store.css?v=1" />
 </head>
 
-<body class="sk-page">
+<body class="sk-page as-page" data-agent-view-event="view_agent_catalog">
 
   <header>
     <div class="sk-wrap sk-nav">
       <a href="index.html" class="wordmark" aria-label="Javi Pérez — inicio"><svg class="logo-mark" viewBox="0 0 150 28" width="130" height="24" role="img" aria-hidden="true" focusable="false"><text x="0" y="21" font-family="'JetBrains Mono','Geist Mono',ui-monospace,monospace" font-size="21" font-weight="600"><tspan fill="#D97757">/</tspan><tspan fill="#FAF9F5">javiperez</tspan></text></svg></a>
       <nav class="sk-nav-links" aria-label="Navegación">
         <a href="index.html">Inicio</a>
-        <a href="agentes.html" aria-current="page">Agentes</a>
+        <a href="#catalogo" aria-current="page">Catálogo</a>
+        <a href="agentes/lead-scout.html">Lead Scout</a>
         <a href="#web">Webs</a>
         <a href="#trading">Trading</a>
-        <a href="#faq">FAQ</a>
       </nav>
     </div>
   </header>
 
   <main>
 
-    <!-- ===== HERO CORTO NEUTRO — el método, no el nicho ===== -->
-    <section class="sk-hero sk-hero--compact">
-      <div class="sk-wrap">
-        <div class="sk-hero-inner" data-reveal>
-          <span class="sk-hero-kicker"><span class="dot"></span> agentes /javiperez-* · claude code &amp; codex</span>
-          <h1 class="sk-h1">Un método: medir, demostrar, <span class="accent-italic">tratar.</span></h1>
-          <p class="sk-hero-sub">Diagnóstico forense que encuentra lo que está roto — con evidencia, no con opiniones. Hoy, dos terrenos: webs que tienen que convertir y sistemas de trading que tienen que decir la verdad.</p>
-          <div class="sk-cta-row">
-            <a href="#web" class="sk-price-cta" data-track="agents_cta_click">Ultimate SEO Agents Pack ↓</a>
-            <a href="#trading" class="sk-price-cta sk-price-cta--trading" data-track="agents_cta_click">El Polígrafo · Trading ↓</a>
+    <section class="as-hero">
+      <div class="as-wrap">
+        <div class="as-hero__inner">
+          <span class="as-kicker">Tienda de agentes / drops verificables</span>
+          <h1 class="as-display">Agentes que hacen trabajo. <em>No prompts bonitos.</em></h1>
+          <p class="as-sub">Sistemas de IA empaquetados para investigar, vender, analizar y ejecutar tareas reales. Con instrucciones, ejemplos y requisitos claros.</p>
+          <div class="as-hero__actions">
+            <a class="as-btn" href="#catalogo">Ver el primer drop <span aria-hidden="true">↓</span></a>
+            <a class="as-btn as-btn--ghost" href="https://t.me/javiperezchallenger" data-agent-telegram data-agent-event="click_telegram" target="_blank" rel="noopener noreferrer">Entrar al Telegram <span aria-hidden="true">↗</span></a>
           </div>
-          <p class="sk-deep-sub" style="margin-top:1.1rem;">Dos departamentos. Mira qué hace cada agente — el precio y la compra están dentro de cada uno.</p>
+          <div class="as-trust-row" aria-label="Condiciones del catálogo">
+            <span>Compra única.</span>
+            <span>Instalación guiada.</span>
+            <span>Requisitos transparentes.</span>
+            <span>Ejemplos ficticios o anonimizados. Sin promesas de resultados.</span>
+          </div>
         </div>
       </div>
     </section>
+
+    <section class="as-section" id="catalogo" aria-labelledby="catalogo-title">
+      <div class="as-wrap">
+        <div class="as-section-head">
+          <span class="as-kicker">Catálogo / Drop 001</span>
+          <h2 class="as-heading" id="catalogo-title">Un producto disponible. <em>Todo lo demás, cuando exista.</em></h2>
+          <p class="as-sub">Cada ficha explica qué hace el agente, qué necesitas y dónde están sus límites antes de pedirte que compres.</p>
+        </div>
+        <div class="as-catalog-grid">
+          <article class="as-product-card">
+            <div class="as-product-card__top">
+              <span class="as-badge">Disponible</span>
+              <span class="as-price-mini"><s data-lead-price-normal>7 €</s> <strong data-lead-price-current>3 €</strong></span>
+            </div>
+            <h3>Lead Scout — Agente de Prospección Local</h3>
+            <p>Investiga negocios con información pública, prioriza señales de oportunidad y prepara el contexto para un primer contacto personalizado.</p>
+            <ul aria-label="Características principales">
+              <li>Investigación pública</li>
+              <li>Scoring configurable</li>
+              <li>Revisión humana</li>
+            </ul>
+            <div class="as-actions">
+              <a class="as-btn" href="agentes/lead-scout.html">Ver Lead Scout <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+          <article class="as-product-card as-product-card--soon">
+            <div class="as-product-card__top"><span class="as-badge as-badge--muted">Próximamente</span></div>
+            <h3>Drop SEO / GEO</h3>
+            <p>Una próxima herramienta para investigar visibilidad en buscadores y respuestas generativas. La ficha se publicará cuando el producto y sus requisitos estén cerrados.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <div class="as-library-intro" id="biblioteca">
+      <div class="as-wrap">
+        <span class="as-kicker">Biblioteca existente</span>
+        <h2 class="as-heading">Colecciones que ya estaban publicadas.</h2>
+        <p class="as-sub">Se mantienen disponibles sin mezclarlas con el catálogo de drops. Sus páginas, precios y funcionalidades no cambian.</p>
+      </div>
+    </div>
 
     <!-- ============================================================
          DEPARTAMENTO WEB · 11 agentes (informativo, sin precio)
@@ -409,6 +455,7 @@
   </footer>
 
   <script src="scripts/config.js?v=2" defer></script>
+  <script src="scripts/agent-store-config.js?v=1" defer></script>
   <script src="scripts/terminal.js?v=funnel4" defer></script>
   <script src="scripts/animations.js?v=funnel4" defer></script>
   <script>
