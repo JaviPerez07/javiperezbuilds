@@ -90,7 +90,10 @@ try {
     await assertVisible(page.getByRole('heading', { name: 'Javi Pérez' }), 'H1');
     await assertVisible(page.getByRole('link', { name: /Solicitar auditoría/ }), 'audit link');
     await assertVisible(page.getByRole('link', { name: /Explorar agentes de IA/ }), 'agents link');
-    await assertVisible(page.getByRole('link', { name: /Entrar a Telegram/ }), 'telegram link');
+    const telegramLink = page.getByRole('link', { name: /Entrar al canal de Telegram/ });
+    await assertVisible(telegramLink, 'telegram channel link');
+    assert.equal(await telegramLink.getAttribute('href'), 'https://t.me/javiperezchallenger');
+    assert.equal(await telegramLink.getAttribute('data-links-track'), 'links_telegram_click');
     await assertVisible(page.getByRole('link', { name: 'Instagram' }), 'instagram link');
     await assertVisible(page.getByRole('link', { name: 'TikTok' }), 'tiktok link');
     await assertVisible(page.getByRole('link', { name: 'LinkedIn' }), 'linkedin link');
@@ -129,9 +132,17 @@ try {
     await page.getByRole('link', { name: /Solicitar auditoría/ }).evaluate((link) => {
       link.addEventListener('click', (event) => event.preventDefault());
     });
+    await page.getByRole('link', { name: /Entrar al canal de Telegram/ }).evaluate((link) => {
+      link.addEventListener('click', (event) => event.preventDefault());
+    });
     await page.getByRole('link', { name: /Solicitar auditoría/ }).click();
-    const events = await page.evaluate(() => window.dataLayer.filter((item) => item.event === 'links_audit_click').length);
-    assert.equal(events, 1, 'audit click analytics should fire once');
+    await page.getByRole('link', { name: /Entrar al canal de Telegram/ }).click();
+    const events = await page.evaluate(() => ({
+      audit: window.dataLayer.filter((item) => item.event === 'links_audit_click').length,
+      telegram: window.dataLayer.filter((item) => item.event === 'links_telegram_click').length
+    }));
+    assert.equal(events.audit, 1, 'audit click analytics should fire once');
+    assert.equal(events.telegram, 1, 'Telegram click analytics should fire once');
     await assertNoRuntimeErrors('analytics click', consoleErrors, pageErrors);
     await context.close();
     console.log('✓ /links analytics fires once per click');
@@ -142,7 +153,7 @@ try {
     await page.goto(`${baseURL}/links`, { waitUntil: 'load' });
     await assertVisible(page.getByRole('heading', { name: 'Javi Pérez' }), 'no-JS H1');
     await assertVisible(page.getByRole('link', { name: /Solicitar auditoría/ }), 'no-JS audit link');
-    await assertVisible(page.getByRole('link', { name: /Entrar a Telegram/ }), 'no-JS telegram link');
+    await assertVisible(page.getByRole('link', { name: /Entrar al canal de Telegram/ }), 'no-JS telegram channel link');
     await assertNoHorizontalOverflow(page, 'no-JS 320px links');
     await assertNoRuntimeErrors('no-JS 320px links', consoleErrors, pageErrors);
     await context.close();
