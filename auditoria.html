@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Auditoría de captación | Javi Pérez</title>
-  <meta name="description" content="Cuéntame cómo captas clientes. Revisaré el recorrido anuncio, landing y contacto para señalar la fuga principal si detecto una oportunidad concreta." />
+  <title>Auditoría | Javi Pérez</title>
+  <meta name="description" content="Elige qué recorrido quieres que revise: tu funnel de captación o tu visibilidad en ChatGPT, Gemini y Perplexity. Te diré qué puedo verificar y por dónde empezaría." />
   <link rel="canonical" href="https://javiperezbuilds.com/auditoria" />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
@@ -14,16 +14,16 @@
 
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://javiperezbuilds.com/auditoria" />
-  <meta property="og:title" content="Auditoría de captación — Javi Pérez" />
-  <meta property="og:description" content="Revisaré el recorrido entre tu anuncio, landing y contacto para localizar la fuga principal." />
+  <meta property="og:title" content="Auditoría — Javi Pérez" />
+  <meta property="og:description" content="¿Dónde se está perdiendo la oportunidad? Elige el diagnóstico: funnel de captación o visibilidad en IA." />
   <meta property="og:image" content="https://javiperezbuilds.com/assets/og-image-v2.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:locale" content="es_ES" />
   <meta property="og:site_name" content="Javi Pérez" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Auditoría de captación — Javi Pérez" />
-  <meta name="twitter:description" content="Revisaré tu recorrido de captación y te diré dónde empezaría." />
+  <meta name="twitter:title" content="Auditoría — Javi Pérez" />
+  <meta name="twitter:description" content="Elige qué recorrido quieres que revise." />
   <meta name="twitter:image" content="https://javiperezbuilds.com/assets/og-image-v2.jpg" />
 
   <link rel="preload" href="assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
@@ -31,10 +31,20 @@
   <style>
     @font-face{font-family:'Space Grotesk';font-style:normal;font-weight:400 700;font-display:swap;src:url('assets/fonts/space-grotesk-latin.woff2') format('woff2')}
     @font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400 700;font-display:swap;src:url('assets/fonts/jetbrains-mono-latin.woff2') format('woff2')}
-    #botcheck-field{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
-    .oa-optional{font-weight:400;text-transform:none;letter-spacing:0;color:var(--oa-dim)}
+
+    .oa-select-intro{max-width:720px;margin:0 auto;text-align:center}
+    .oa-select-intro h1{margin:18px 0 0;font-size:clamp(34px,5.5vw,58px);line-height:1.05;letter-spacing:-.045em}
+    .oa-select-intro > p{margin:18px auto 0;max-width:56ch;color:var(--oa-muted);font-size:17px;line-height:1.6}
+    .oa-select-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:56px}
+    .oa-select-card{display:flex;flex-direction:column;padding:clamp(28px,4vw,40px);border:1px solid var(--oa-border);border-radius:var(--oa-radius-lg);background:var(--oa-surface);transition:border-color .2s ease}
+    .oa-select-card:hover{border-color:var(--oa-border-strong)}
+    .oa-select-card__tag{color:var(--oa-emerald);font:600 10px var(--oa-mono);letter-spacing:.14em;text-transform:uppercase}
+    .oa-select-card h2{margin:16px 0 0;font-size:clamp(22px,2.6vw,28px);line-height:1.15;letter-spacing:-.02em}
+    .oa-select-card p{margin:14px 0 0;color:var(--oa-muted);font-size:15px;line-height:1.6;flex:1}
+    .oa-select-card .oa-btn{margin-top:24px;align-self:flex-start}
+    @media (max-width:760px){.oa-select-grid{grid-template-columns:1fr}.oa-select-card .oa-btn{align-self:stretch;justify-content:center}}
   </style>
-  <link rel="stylesheet" href="styles/operator-atelier.css?v=1" />
+  <link rel="stylesheet" href="styles/operator-atelier.css?v=3" />
 </head>
 <body class="oa-audit">
   <header class="oa-audit__nav">
@@ -45,130 +55,36 @@
   </header>
 
   <main class="oa-audit__main">
-    <div class="oa-wrap oa-audit__grid">
-      <section class="oa-audit__intro" aria-labelledby="audit-title">
+    <div class="oa-wrap">
+      <div class="oa-select-intro">
         <span class="oa-kicker">Diagnóstico inicial</span>
-        <h1 id="audit-title">¿Dónde se enfría el interés?</h1>
-        <p>Cuéntame el recorrido actual. Si detecto una fuga concreta entre anuncio, landing y contacto, te la señalaré en un vídeo corto. Si no veo base suficiente, también te lo diré.</p>
-        <div class="oa-actions"><a class="oa-btn oa-btn--primary" href="#audit-form">Continuar al formulario</a></div>
-        <ol class="oa-audit__deliverables">
-          <li><span>01</span><div><strong>Contexto en menos de 2 minutos.</strong><br />Solo pregunto lo necesario para entender el recorrido.</div></li>
-          <li><span>02</span><div><strong>Una prioridad clara.</strong><br />Sin una lista genérica de cambios ni un informe automático.</div></li>
-          <li><span>03</span><div><strong>Sin compromiso.</strong><br />La auditoría no te obliga a contratar el sprint.</div></li>
-        </ol>
-        <a class="oa-audit__wa" href="https://wa.me/34644289776" data-wa data-wa-text="Hola Javi, quiero revisar el recorrido de captación de mi negocio." target="_blank" rel="noopener">¿Prefieres explicarlo por WhatsApp? →</a>
-      </section>
+        <h1>¿Dónde se está perdiendo la oportunidad?</h1>
+        <p>Elige qué recorrido quieres que revise. Te diré qué puedo verificar, qué son hipótesis y por dónde empezaría.</p>
+      </div>
 
-      <section aria-label="Formulario de auditoría">
-        <form id="audit-form" class="oa-form-card" novalidate>
-          <div class="oa-form-card__head"><b>Cuéntame cómo captas clientes</b><span>Campos concretos · sin llamadas sorpresa</span></div>
-          <div class="oa-form-grid">
-            <div><label class="oa-label" for="f-name">Nombre</label><input class="oa-input" type="text" id="f-name" name="name" required autocomplete="name" /></div>
-            <div><label class="oa-label" for="f-company">Empresa</label><input class="oa-input" type="text" id="f-company" name="company" required autocomplete="organization" /></div>
-            <div><label class="oa-label" for="f-city">Ciudad</label><input class="oa-input" type="text" id="f-city" name="city" required autocomplete="address-level2" /></div>
-            <div><label class="oa-label" for="f-sector">Sector</label><input class="oa-input" type="text" id="f-sector" name="sector" required placeholder="Clínica dental, estética…" /></div>
-            <div class="oa-field--full"><label class="oa-label" for="f-website">Web o landing actual</label><input class="oa-input" type="url" id="f-website" name="website_url" required placeholder="https://" inputmode="url" /></div>
-            <div class="oa-field--full">
-              <span class="oa-label">¿Tienes anuncio u oferta activa?</span>
-              <div class="oa-radio-group" role="radiogroup" aria-label="¿Tienes anuncio u oferta activa?">
-                <label class="oa-radio"><input type="radio" name="has_active_ad" value="Sí" required /><span>Sí</span></label>
-                <label class="oa-radio"><input type="radio" name="has_active_ad" value="No" required /><span>No</span></label>
-              </div>
-            </div>
-            <div class="oa-field--full"><label class="oa-label" for="f-ad-desc">Descripción del anuncio <span class="oa-optional">(opcional)</span></label><input class="oa-input" type="text" id="f-ad-desc" name="ad_description" placeholder="Qué ofrece y dónde se publica" /></div>
-            <div><label class="oa-label" for="f-channel">Canal</label><select class="oa-input" id="f-channel" name="channel" required><option value="" disabled selected>Elige uno</option><option>Meta</option><option>Google</option><option>Otro</option><option>Ninguno</option></select></div>
-            <div><label class="oa-label" for="f-spend">Inversión mensual aprox.</label><select class="oa-input" id="f-spend" name="monthly_ad_spend" required><option value="" disabled selected>Elige un rango</option><option>0€</option><option>&lt;300€</option><option>300–1000€</option><option>&gt;1000€</option></select></div>
-            <div class="oa-field--full"><label class="oa-label" for="f-valid-lead">¿Qué es un lead válido para ti?</label><input class="oa-input" type="text" id="f-valid-lead" name="valid_lead_definition" required placeholder="Ej.: alguien que pide cita, no solo un mensaje" /></div>
-            <div class="oa-field--full"><label class="oa-label" for="f-contact">WhatsApp o email de contacto</label><input class="oa-input" type="text" id="f-contact" name="contact_whatsapp_email" required autocomplete="email" /></div>
-          </div>
+      <div class="oa-select-grid">
+        <article class="oa-select-card">
+          <span class="oa-select-card__tag">Recorrido 01 · Funnel</span>
+          <h2>Recibo clics, pero pocos contactos</h2>
+          <p>Reviso el recorrido desde el anuncio hasta la cita para detectar fricciones, mensajes desalineados y pasos innecesarios.</p>
+          <a class="oa-btn oa-btn--primary" href="auditoria/funnel.html" data-track="funnel_audit_selected">Revisar mi funnel</a>
+        </article>
 
-          <div id="botcheck-field" aria-hidden="true"><label>No rellenar<input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" /></label></div>
-          <input type="hidden" name="utm_source" /><input type="hidden" name="utm_medium" /><input type="hidden" name="utm_campaign" /><input type="hidden" name="utm_term" /><input type="hidden" name="utm_content" />
-          <input type="hidden" id="audit-access-key" name="access_key" value="WEB3FORMS_ACCESS_KEY_PENDIENTE" />
-          <input type="hidden" name="subject" value="Nueva auditoría de captación — javiperezbuilds.com" />
-          <input type="hidden" name="from_name" value="Formulario /auditoria" />
-
-          <button type="submit" id="audit-submit" class="oa-btn oa-btn--primary oa-form-submit">Enviar para revisión</button>
-          <p class="oa-form-note">Usaré estos datos únicamente para revisar y responder a tu solicitud.</p>
-          <div id="audit-error" class="oa-error">No se ha podido enviar. Prueba de nuevo o escríbeme por WhatsApp.</div>
-        </form>
-
-        <div id="audit-thanks" class="oa-thanks" hidden>
-          <span class="oa-kicker">Solicitud recibida</span>
-          <h2>Gracias. Ya tengo el contexto.</h2>
-          <p data-thanks-note>Revisaré el recorrido y responderé por el canal que has indicado. Si detecto una fuga concreta, te explicaré por dónde empezaría.</p>
-          <a class="oa-btn oa-btn--ghost" href="index.html">Volver al inicio</a>
-        </div>
-      </section>
+        <article class="oa-select-card">
+          <span class="oa-select-card__tag">Recorrido 02 · Visibilidad IA</span>
+          <h2>Aparezco en Google, pero no en las respuestas de IA</h2>
+          <p>Compruebo cómo aparece tu negocio cuando un cliente pide recomendaciones a ChatGPT, Gemini o Perplexity.</p>
+          <a class="oa-btn oa-btn--primary" href="auditoria/visibilidad-ia.html" data-track="ai_visibility_audit_selected">Revisar mi visibilidad en IA</a>
+        </article>
+      </div>
     </div>
   </main>
 
   <script src="scripts/config.js?v=2" defer></script>
   <script defer>
-    (function () {
-      var form = document.getElementById('audit-form');
-      var thanks = document.getElementById('audit-thanks');
-      var errorBox = document.getElementById('audit-error');
-      var submitBtn = document.getElementById('audit-submit');
-      if (!form) return;
-
-      function hydrate() {
-        var cfg = window.JP_CONFIG || {};
-        var keyInput = document.getElementById('audit-access-key');
-        if (keyInput && cfg.WEB3FORMS_ACCESS_KEY) keyInput.value = cfg.WEB3FORMS_ACCESS_KEY;
-        var utms = (window.JP_GET_UTMS && window.JP_GET_UTMS()) || {};
-        ['utm_source','utm_medium','utm_campaign','utm_term','utm_content'].forEach(function (key) {
-          var field = form.querySelector('[name="' + key + '"]');
-          if (field && utms[key]) field.value = utms[key];
-        });
-      }
-      document.addEventListener('DOMContentLoaded', hydrate);
-
-      function keyIsPending() {
-        var key = (window.JP_CONFIG && window.JP_CONFIG.WEB3FORMS_ACCESS_KEY) || '';
-        return !key || key.indexOf('PENDIENTE') !== -1;
-      }
-      function whatsappNumber() { return (window.JP_CONFIG && window.JP_CONFIG.WHATSAPP_NUMBER) || '34644289776'; }
-      function buildWhatsAppMessage() {
-        var company = (new FormData(form).get('company') || '').toString().trim();
-        return 'Hola, quiero revisar mi recorrido de captación. Mi negocio es ' + (company || '[cuéntamelo aquí]') + '.';
-      }
-      function showThanks(viaWhatsapp) {
-        form.hidden = true;
-        thanks.hidden = false;
-        if (viaWhatsapp) {
-          var note = thanks.querySelector('[data-thanks-note]');
-          if (note) note.textContent = 'He abierto WhatsApp con el mensaje preparado. Envíalo para que pueda revisar el contexto contigo.';
-        }
-      }
-
-      form.addEventListener('submit', function (event) {
-        event.preventDefault();
-        errorBox.classList.remove('is-visible');
-        if (!form.checkValidity()) { form.reportValidity(); return; }
-        var honeypot = form.querySelector('[name="botcheck"]');
-        if (honeypot && honeypot.checked) return;
-        if (keyIsPending()) {
-          window.JP_TRACK && window.JP_TRACK('audit_form_submit', { via: 'whatsapp_fallback' });
-          window.open('https://wa.me/' + whatsappNumber() + '?text=' + encodeURIComponent(buildWhatsAppMessage()), '_blank', 'noopener');
-          showThanks(true);
-          return;
-        }
-
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Enviando…';
-        var payload = {};
-        new FormData(form).forEach(function (value, key) { payload[key] = value; });
-        fetch('https://api.web3forms.com/submit', { method:'POST', headers:{'Content-Type':'application/json',Accept:'application/json'}, body:JSON.stringify(payload) })
-          .then(function (response) { return response.json(); })
-          .then(function (result) {
-            if (!result || !result.success) throw new Error((result && result.message) || 'web3forms error');
-            window.JP_TRACK && window.JP_TRACK('audit_form_submit', { via: 'web3forms' });
-            showThanks(false);
-          })
-          .catch(function () { errorBox.classList.add('is-visible'); submitBtn.disabled = false; submitBtn.textContent = 'Enviar para revisión'; });
-      });
-    })();
+    document.addEventListener('DOMContentLoaded', function () {
+      window.JP_TRACK && window.JP_TRACK('audit_selector_view');
+    });
   </script>
 </body>
 </html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Auditoría de visibilidad en IA | Javi Pérez</title>
+  <meta name="description" content="Compruebo cómo aparece tu negocio cuando un cliente pide recomendaciones a ChatGPT, Gemini o Perplexity, frente a tus competidores locales." />
+  <link rel="canonical" href="https://javiperezbuilds.com/auditoria/visibilidad-ia" />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png" />
+  <meta name="theme-color" content="#0A100F" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="author" content="Javi Pérez" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://javiperezbuilds.com/auditoria/visibilidad-ia" />
+  <meta property="og:title" content="Auditoría de visibilidad en IA — Javi Pérez" />
+  <meta property="og:description" content="Compruebo cómo aparece tu negocio en ChatGPT, Gemini y Perplexity frente a tus competidores locales." />
+  <meta property="og:image" content="https://javiperezbuilds.com/assets/og-image-v2.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:site_name" content="Javi Pérez" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Auditoría de visibilidad en IA — Javi Pérez" />
+  <meta name="twitter:description" content="Reviso tu presencia en las respuestas de IA generativa." />
+  <meta name="twitter:image" content="https://javiperezbuilds.com/assets/og-image-v2.jpg" />
+
+  <link rel="preload" href="../assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="../assets/fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <style>
+    @font-face{font-family:'Space Grotesk';font-style:normal;font-weight:400 700;font-display:swap;src:url('../assets/fonts/space-grotesk-latin.woff2') format('woff2')}
+    @font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400 700;font-display:swap;src:url('../assets/fonts/jetbrains-mono-latin.woff2') format('woff2')}
+    #botcheck-field{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+    .oa-optional{font-weight:400;text-transform:none;letter-spacing:0;color:var(--oa-dim)}
+    .oa-disclaimer{margin-top:26px;padding:16px 18px;border:1px solid var(--oa-border);border-radius:14px;background:rgba(255,255,255,.018);color:var(--oa-dim);font-size:13px;line-height:1.6}
+    .oa-consent{display:flex;gap:10px;align-items:flex-start;font-size:13.5px;color:var(--oa-muted);line-height:1.5}
+    .oa-consent input{margin-top:3px;flex:none;width:16px;height:16px;accent-color:var(--oa-emerald)}
+    .oa-consent a{color:var(--oa-paper);text-decoration:underline;text-underline-offset:2px}
+  </style>
+  <link rel="stylesheet" href="../styles/operator-atelier.css?v=3" />
+</head>
+<body class="oa-audit">
+  <header class="oa-audit__nav">
+    <div class="oa-wrap">
+      <a class="oa-wordmark" href="../index.html" aria-label="Javi Pérez — inicio"><span class="oa-wordmark__mark">/</span>javiperez</a>
+      <a class="oa-audit__back" href="../auditoria.html">← Elegir otro diagnóstico</a>
+    </div>
+  </header>
+
+  <main class="oa-audit__main">
+    <div class="oa-wrap oa-audit__grid">
+      <section class="oa-audit__intro" aria-labelledby="audit-title">
+        <span class="oa-kicker">Diagnóstico de visibilidad en IA</span>
+        <h1 id="audit-title">¿Recomiendan tu negocio ChatGPT, Gemini o Perplexity?</h1>
+        <p>Cuéntame tu negocio y la consulta en la que quieres aparecer. Reviso qué dicen hoy los motores generativos y te digo qué es hipótesis y qué es verificable.</p>
+        <div class="oa-actions"><a class="oa-btn oa-btn--primary" href="#audit-form">Continuar al formulario</a></div>
+        <ol class="oa-audit__deliverables">
+          <li><span>01</span><div><strong>Contexto en menos de 2 minutos.</strong><br />Solo pregunto lo necesario para revisar tu presencia.</div></li>
+          <li><span>02</span><div><strong>Capturas reales, no una tabla genérica.</strong><br />Te muestro las respuestas tal cual las da cada motor.</div></li>
+          <li><span>03</span><div><strong>Sin promesas de ranking.</strong><br />Te explico qué es reproducible y qué varía según el prompt.</div></li>
+        </ol>
+        <a class="oa-audit__wa" href="https://wa.me/34644289776" data-wa data-wa-text="Hola Javi, quiero revisar la visibilidad de mi negocio en IA." target="_blank" rel="noopener">¿Prefieres explicarlo por WhatsApp? →</a>
+        <p class="oa-disclaimer">Las respuestas pueden variar según el prompt, la ubicación, el momento y el motor utilizado. Esta auditoría mide una muestra reproducible y propone mejoras; no garantiza aparecer en una posición concreta.</p>
+      </section>
+
+      <section aria-label="Formulario de auditoría de visibilidad en IA">
+        <form id="audit-form" class="oa-form-card" novalidate>
+          <div class="oa-form-card__head"><b>Cuéntame tu negocio y qué quieres verificar</b><span>Campos concretos · sin llamadas sorpresa</span></div>
+          <div class="oa-form-grid">
+            <div><label class="oa-label" for="f-name">Nombre</label><input class="oa-input" type="text" id="f-name" name="name" required autocomplete="name" /></div>
+            <div><label class="oa-label" for="f-contact">Email o WhatsApp</label><input class="oa-input" type="text" id="f-contact" name="contact_whatsapp_email" required autocomplete="email" /></div>
+            <div class="oa-field--full"><label class="oa-label" for="f-website">URL del negocio</label><input class="oa-input" type="url" id="f-website" name="website_url" required placeholder="https://" inputmode="url" /></div>
+            <div><label class="oa-label" for="f-service">Servicio principal</label><input class="oa-input" type="text" id="f-service" name="main_service" required placeholder="Ej.: implantes dentales" /></div>
+            <div><label class="oa-label" for="f-zone">Ciudad o zona</label><input class="oa-input" type="text" id="f-zone" name="city_zone" required autocomplete="address-level2" /></div>
+            <div class="oa-field--full"><label class="oa-label" for="f-query">Consulta en la que quieres aparecer</label><input class="oa-input" type="text" id="f-query" name="target_query" required placeholder="Ej.: mejor dentista en Almería" /></div>
+            <div class="oa-field--full"><label class="oa-label" for="f-competitor">Competidor <span class="oa-optional">(opcional)</span></label><input class="oa-input" type="text" id="f-competitor" name="competitor" placeholder="Un negocio con el que te compares" /></div>
+            <div><label class="oa-label" for="f-channel">Canal preferido de respuesta</label><select class="oa-input" id="f-channel" name="preferred_channel" required><option value="" disabled selected>Elige uno</option><option>Email</option><option>WhatsApp</option></select></div>
+          </div>
+
+          <label class="oa-consent" for="f-consent" style="margin-top:16px">
+            <input type="checkbox" id="f-consent" name="privacy_consent" value="Sí" required />
+            <span>He leído y acepto la <a href="../legal.html#privacidad" target="_blank" rel="noopener">política de privacidad</a>.</span>
+          </label>
+
+          <div id="botcheck-field" aria-hidden="true"><label>No rellenar<input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" /></label></div>
+          <input type="hidden" name="utm_source" /><input type="hidden" name="utm_medium" /><input type="hidden" name="utm_campaign" /><input type="hidden" name="utm_term" /><input type="hidden" name="utm_content" />
+          <input type="hidden" name="audit_type" value="visibilidad_ia" />
+          <input type="hidden" name="referrer" />
+          <input type="hidden" name="landing_path" />
+          <input type="hidden" id="audit-access-key" name="access_key" value="WEB3FORMS_ACCESS_KEY_PENDIENTE" />
+          <input type="hidden" name="subject" value="Nueva consulta de visibilidad en IA — javiperezbuilds.com" />
+          <input type="hidden" name="from_name" value="Formulario /auditoria/visibilidad-ia" />
+
+          <button type="submit" id="audit-submit" class="oa-btn oa-btn--primary oa-form-submit">Enviar para revisión</button>
+          <p class="oa-form-note">Usaré estos datos únicamente para revisar y responder a tu solicitud.</p>
+          <div id="audit-error" class="oa-error">No se ha podido enviar. Prueba de nuevo o escríbeme por WhatsApp.</div>
+        </form>
+
+        <div id="audit-thanks" class="oa-thanks" hidden>
+          <span class="oa-kicker">Solicitud recibida</span>
+          <h2>Gracias. Ya tengo el contexto.</h2>
+          <p data-thanks-note>Reviso cómo aparece tu negocio en las respuestas de IA y respondo por el canal que has indicado.</p>
+          <a class="oa-btn oa-btn--ghost" href="../index.html">Volver al inicio</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="../scripts/config.js?v=2" defer></script>
+  <script defer>
+    (function () {
+      var form = document.getElementById('audit-form');
+      var thanks = document.getElementById('audit-thanks');
+      var errorBox = document.getElementById('audit-error');
+      var submitBtn = document.getElementById('audit-submit');
+      if (!form) return;
+
+      function hydrate() {
+        var cfg = window.JP_CONFIG || {};
+        var keyInput = document.getElementById('audit-access-key');
+        if (keyInput && cfg.WEB3FORMS_ACCESS_KEY) keyInput.value = cfg.WEB3FORMS_ACCESS_KEY;
+        var utms = (window.JP_GET_UTMS && window.JP_GET_UTMS()) || {};
+        ['utm_source','utm_medium','utm_campaign','utm_term','utm_content'].forEach(function (key) {
+          var field = form.querySelector('[name="' + key + '"]');
+          if (field && utms[key]) field.value = utms[key];
+        });
+        var referrerField = form.querySelector('[name="referrer"]');
+        if (referrerField) referrerField.value = document.referrer || '';
+        var landingPathField = form.querySelector('[name="landing_path"]');
+        if (landingPathField) landingPathField.value = window.location.pathname || '';
+      }
+      document.addEventListener('DOMContentLoaded', hydrate);
+
+      function keyIsPending() {
+        var key = (window.JP_CONFIG && window.JP_CONFIG.WEB3FORMS_ACCESS_KEY) || '';
+        return !key || key.indexOf('PENDIENTE') !== -1;
+      }
+      function whatsappNumber() { return (window.JP_CONFIG && window.JP_CONFIG.WHATSAPP_NUMBER) || '34644289776'; }
+      function buildWhatsAppMessage() {
+        var query = (new FormData(form).get('target_query') || '').toString().trim();
+        return 'Hola, quiero revisar mi visibilidad en IA' + (query ? ' para "' + query + '"' : '') + '.';
+      }
+      function showThanks(viaWhatsapp) {
+        form.hidden = true;
+        thanks.hidden = false;
+        if (viaWhatsapp) {
+          var note = thanks.querySelector('[data-thanks-note]');
+          if (note) note.textContent = 'He abierto WhatsApp con el mensaje preparado. Envíalo para que pueda revisar el contexto contigo.';
+        }
+      }
+
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        errorBox.classList.remove('is-visible');
+        if (!form.checkValidity()) { form.reportValidity(); return; }
+        var honeypot = form.querySelector('[name="botcheck"]');
+        if (honeypot && honeypot.checked) return;
+        if (keyIsPending()) {
+          window.JP_TRACK && window.JP_TRACK('ai_visibility_audit_submitted', { via: 'whatsapp_fallback' });
+          window.open('https://wa.me/' + whatsappNumber() + '?text=' + encodeURIComponent(buildWhatsAppMessage()), '_blank', 'noopener');
+          showThanks(true);
+          return;
+        }
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Enviando…';
+        var payload = {};
+        new FormData(form).forEach(function (value, key) { payload[key] = value; });
+        fetch('https://api.web3forms.com/submit', { method:'POST', headers:{'Content-Type':'application/json',Accept:'application/json'}, body:JSON.stringify(payload) })
+          .then(function (response) { return response.json(); })
+          .then(function (result) {
+            if (!result || !result.success) throw new Error((result && result.message) || 'web3forms error');
+            window.JP_TRACK && window.JP_TRACK('ai_visibility_audit_submitted', { via: 'web3forms' });
+            showThanks(false);
+          })
+          .catch(function () { errorBox.classList.add('is-visible'); submitBtn.disabled = false; submitBtn.textContent = 'Enviar para revisión'; });
+      });
+    })();
+  </script>
+</body>
+</html>
