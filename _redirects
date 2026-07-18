@@ -4,15 +4,19 @@ http://www.javiperezbuilds.com/* https://javiperezbuilds.com/:splat 301!
 https://www.javiperezbuilds.com/* https://javiperezbuilds.com/:splat 301!
 
 # Renombrado de rutas /skills/* -> /agentes/* — URLs ABSOLUTAS (Cloudflare ignora las relativas), 301.
-# Subpáginas (las más específicas primero)
+# Web forense (SEO) sigue en la web personal:
 https://javiperezbuilds.com/skills/web-forense       https://javiperezbuilds.com/agentes/web      301
 https://javiperezbuilds.com/skills/web-forense.html  https://javiperezbuilds.com/agentes/web      301
-https://javiperezbuilds.com/skills/poligrafo         https://javiperezbuilds.com/agentes/trading  301
-https://javiperezbuilds.com/skills/poligrafo.html    https://javiperezbuilds.com/agentes/trading  301
 
-# Legacy comercial del pack de trading -> nueva ruta de trading
-https://javiperezbuilds.com/skills/quant-forensics       https://javiperezbuilds.com/agentes/trading  301
-https://javiperezbuilds.com/skills/quant-forensics.html  https://javiperezbuilds.com/agentes/trading  301
+# ── TRADING RETIRADO DE LA WEB PERSONAL → ahora vive en Quant Forensics ──
+# Todas las rutas públicas de trading (nuevas y legacy) redirigen 301 a quantforensicsfx.com.
+# Se apuntan DIRECTAMENTE al destino final para no encadenar redirecciones.
+https://javiperezbuilds.com/agentes/trading          https://quantforensicsfx.com/?from=jpb       301
+https://javiperezbuilds.com/agentes/trading.html     https://quantforensicsfx.com/?from=jpb       301
+https://javiperezbuilds.com/skills/poligrafo         https://quantforensicsfx.com/?from=jpb       301
+https://javiperezbuilds.com/skills/poligrafo.html    https://quantforensicsfx.com/?from=jpb       301
+https://javiperezbuilds.com/skills/quant-forensics       https://quantforensicsfx.com/?from=jpb   301
+https://javiperezbuilds.com/skills/quant-forensics.html  https://quantforensicsfx.com/?from=jpb   301
 
 # Catálogo /skills (exacto) -> hub /agentes
 https://javiperezbuilds.com/skills       https://javiperezbuilds.com/agentes  301

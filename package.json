@@ -4,8 +4,8 @@
   "scripts": {
     "build": "node scripts/validate-static.mjs",
     "typecheck": "node --check scripts/config.js && node --check scripts/operator-atelier.js && node --check scripts/agent-store-config.js",
-    "lint": "node --check scripts/config.js && node --check scripts/operator-atelier.js && node --check scripts/agent-store-config.js && node --check tests/production-visibility.mjs && node --check tests/links-router.mjs && node --check tests/agent-store.mjs",
-    "test": "node tests/production-visibility.mjs && node tests/links-router.mjs && node tests/agent-store.mjs"
+    "lint": "node --check scripts/config.js && node --check scripts/operator-atelier.js && node --check scripts/agent-store-config.js && node --check tests/production-visibility.mjs && node --check tests/links-router.mjs && node --check tests/agent-store.mjs && node --check tests/restructure.mjs",
+    "test": "node tests/production-visibility.mjs && node tests/links-router.mjs && node tests/agent-store.mjs && node tests/restructure.mjs"
   },
   "devDependencies": {
     "playwright": "1.61.1"

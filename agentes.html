@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Agentes y skills de IA que ejecutan trabajo | Javi Pérez</title>
+  <title>Agentes de IA que ejecutan trabajo | Javi Pérez</title>
   <meta name="description" content="Agentes de IA empaquetados para investigar, analizar y ejecutar tareas reales. Descubre Lead Scout, el primer drop de la tienda de Javi Pérez." />
   <link rel="canonical" href="https://javiperezbuilds.com/agentes" />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
@@ -65,6 +65,10 @@
     .testi-card img{display:block;width:100%;height:clamp(360px,52vh,440px);object-fit:cover;object-position:top}
     @media (prefers-reduced-motion: reduce){ .testi-track{animation:none} .testi-viewport{overflow-x:auto} }
     @media (max-width: 760px){ .testi-pay{grid-template-columns:1fr !important} }
+    /* Puntero "trading movido a Quant Forensics" */
+    .sk-moved{ text-align:center; max-width:660px; margin-inline:auto; }
+    .sk-moved .sk-hero-kicker{ justify-content:center; }
+    .sk-moved .sk-hero-sub{ margin-inline:auto; }
   </style>
 
   <!-- /agentes es escaparate informativo: sin ofertas/precios aquí. El schema
@@ -114,7 +118,6 @@
         <a href="#catalogo" aria-current="page">Catálogo</a>
         <a href="agentes/lead-scout.html">Lead Scout</a>
         <a href="#web">Webs</a>
-        <a href="#trading">Trading</a>
       </nav>
     </div>
   </header>
@@ -271,51 +274,19 @@
     </section>
 
     <!-- ============================================================
-         DEPARTAMENTO TRADING · EL POLÍGRAFO · 15 agentes / 3 packs (informativo)
+         TRADING RETIRADO DE LA WEB PERSONAL → ahora en Quant Forensics.
+         Puntero discreto (sin precio, sin checkout). Los 15 agentes de
+         trading se venden en quantforensicsfx.com.
          ============================================================ -->
     <section id="trading" class="sk-twin sk-twin--alt">
       <div class="sk-wrap">
-        <div class="sk-twin-head" data-reveal>
-          <span class="sk-hero-kicker"><span class="dot"></span> departamento trading · el polígrafo · 15 agentes · 3 packs</span>
-          <h2 class="sk-h1 sk-twin-h">Tu backtest miente. El Polígrafo <span class="accent-italic">lo demuestra.</span></h2>
-          <p class="sk-hero-sub">El detector de mentiras de tu trading algorítmico: estadística a la vista, veredictos claros. <strong>Nunca señales, nunca promesas de rentabilidad.</strong></p>
-        </div>
-
-        <div class="term sk-demo-term" id="qf-term" aria-label="Demo: /javiperez-curvefit analizando un backtest" data-reveal>
-          <div class="term-bar" aria-hidden="true">
-            <span class="term-dot term-dot--r"></span><span class="term-dot term-dot--y"></span><span class="term-dot term-dot--g"></span>
-            <span class="term-title">el-poligrafo — zsh</span>
+        <div class="sk-moved" data-reveal>
+          <span class="sk-hero-kicker"><span class="dot"></span> ¿buscabas los agentes de trading?</span>
+          <h2 class="sk-h1 sk-twin-h">Los agentes de trading ahora están en <span class="accent-italic">Quant Forensics.</span></h2>
+          <p class="sk-hero-sub">El Polígrafo y los 15 agentes forenses de trading —auditar backtests, código de EAs y riesgo real— se han mudado a su propia casa. <strong>Nunca señales, nunca promesas de rentabilidad.</strong></p>
+          <div class="sk-deep-cta" style="margin-top:1.25rem;">
+            <a href="https://quantforensicsfx.com/?from=jpb" class="sk-price-cta sk-price-cta--trading" data-track="trading_redirect_to_quant" target="_blank" rel="noopener">Ir a Quant Forensics <span aria-hidden="true">→</span></a>
           </div>
-          <div class="term-body" id="qf-body">
-            <div class="term-line"><span class="term-prompt">~&nbsp;</span><span class="term-cmd" id="qf-cmd">/javiperez-curvefit backtest_eurusd_m15.csv</span><span class="term-caret" id="qf-caret" aria-hidden="true"></span></div>
-            <div class="term-out" id="qf-out"></div>
-          </div>
-        </div>
-
-        <div class="qf-mini-grid" data-reveal>
-          <div class="qf-mini">
-            <p class="qf-pack-q">"¿Tu backtest dice la verdad?"</p>
-            <h3 class="qf-pack-name">Backtest Forense</h3>
-            <p class="qf-mini-skills">/javiperez-curvefit · backtest · montecarlo · walkforward · optimizer</p>
-            <span class="sk-skill-price sk-skill-price--pack">5 agentes</span>
-          </div>
-          <div class="qf-mini">
-            <p class="qf-pack-q">"¿Qué hace de verdad tu robot?"</p>
-            <h3 class="qf-pack-name">Código &amp; EA</h3>
-            <p class="qf-mini-skills">/javiperez-ealogic · mqlaudit · lookahead · mqlskeleton · tickdata</p>
-            <span class="sk-skill-price sk-skill-price--pack">5 agentes</span>
-          </div>
-          <div class="qf-mini">
-            <p class="qf-pack-q">"¿Sobrevivirá en real?"</p>
-            <h3 class="qf-pack-name">Riesgo Real</h3>
-            <p class="qf-mini-skills">/javiperez-deconstruct · portfolio · edgedecay · regime · stresstest</p>
-            <span class="sk-skill-price sk-skill-price--pack">5 agentes</span>
-          </div>
-        </div>
-
-        <div class="sk-deep-cta" data-reveal>
-          <p class="sk-deep-sub">Ventajas, precio y compra de El Polígrafo completo.</p>
-          <a href="agentes/trading.html" class="sk-price-cta sk-price-cta--trading" data-track="agents_cta_click">Ver / comprar El Polígrafo <span aria-hidden="true">→</span></a>
         </div>
       </div>
     </section>
@@ -347,14 +318,10 @@
         <div class="testi-track">
           <figure class="testi-card"><img src="assets/testimonios/testi-web-1.webp" width="473" height="981" loading="lazy" decoding="async" alt="Testimonio real de un cliente (anonimizado) sobre los agentes web."></figure>
           <figure class="testi-card"><img src="assets/testimonios/testi-web-2.webp" width="473" height="982" loading="lazy" decoding="async" alt="Testimonio real de un cliente (anonimizado) sobre los agentes web."></figure>
-          <figure class="testi-card"><img src="assets/testimonios/testi-poligrafo-1.webp" width="473" height="975" loading="lazy" decoding="async" alt="Testimonio real de un cliente (anonimizado) sobre los agentes de El Polígrafo (trading)."></figure>
-          <figure class="testi-card"><img src="assets/testimonios/testi-poligrafo-2.webp" width="473" height="979" loading="lazy" decoding="async" alt="Testimonio real de un cliente (anonimizado) sobre los agentes de El Polígrafo (trading)."></figure>
           <figure class="testi-card"><img src="assets/testimonios/lead-1-anon.webp" width="1170" height="2532" loading="lazy" decoding="async" alt="Conversación real con un cliente (anonimizada)."></figure>
           <figure class="testi-card"><img src="assets/testimonios/lead-3-anon.webp" width="1170" height="2532" loading="lazy" decoding="async" alt="Conversación real con un cliente (anonimizada)."></figure>
           <figure class="testi-card" aria-hidden="true"><img src="assets/testimonios/testi-web-1.webp" width="473" height="981" loading="lazy" decoding="async" alt=""></figure>
           <figure class="testi-card" aria-hidden="true"><img src="assets/testimonios/testi-web-2.webp" width="473" height="982" loading="lazy" decoding="async" alt=""></figure>
-          <figure class="testi-card" aria-hidden="true"><img src="assets/testimonios/testi-poligrafo-1.webp" width="473" height="975" loading="lazy" decoding="async" alt=""></figure>
-          <figure class="testi-card" aria-hidden="true"><img src="assets/testimonios/testi-poligrafo-2.webp" width="473" height="979" loading="lazy" decoding="async" alt=""></figure>
           <figure class="testi-card" aria-hidden="true"><img src="assets/testimonios/lead-1-anon.webp" width="1170" height="2532" loading="lazy" decoding="async" alt=""></figure>
           <figure class="testi-card" aria-hidden="true"><img src="assets/testimonios/lead-3-anon.webp" width="1170" height="2532" loading="lazy" decoding="async" alt=""></figure>
         </div>
@@ -427,12 +394,12 @@
 
         <!-- CTA final — elegir departamento (sin precio aquí) -->
         <div class="sk-final-cta" id="elige" data-reveal>
-          <h2 class="section-h2">Elige tu departamento. El método es el mismo.</h2>
+          <h2 class="section-h2">Empieza por tu web. El método es el mismo.</h2>
           <div class="sk-cta-row" style="margin-top: 0.5rem;">
             <a href="agentes/web.html" class="sk-price-cta" data-track="agents_cta_click">Ultimate SEO Agents Pack <span aria-hidden="true">→</span></a>
-            <a href="agentes/trading.html" class="sk-price-cta sk-price-cta--trading" data-track="agents_cta_click">El Polígrafo <span aria-hidden="true">→</span></a>
+            <a href="https://quantforensicsfx.com/?from=jpb" class="sk-price-cta sk-price-cta--trading" data-track="trading_redirect_to_quant" target="_blank" rel="noopener">Agentes de trading · Quant Forensics <span aria-hidden="true">→</span></a>
           </div>
-          <p class="sk-deep-sub" style="margin-top:0.9rem;">Precio, ventajas y compra dentro de cada departamento. PDF de instalación incluido.</p>
+          <p class="sk-deep-sub" style="margin-top:0.9rem;">Precio, ventajas y compra dentro de cada ficha. PDF de instalación incluido.</p>
         </div>
       </div>
     </section>
@@ -446,7 +413,6 @@
         <a href="index.html">Inicio</a>
         <a href="agentes.html">Agentes</a>
         <a href="agentes/web.html">Ultimate SEO Agents Pack</a>
-        <a href="agentes/trading.html">El Polígrafo</a>
         <a href="index.html#contacto">Contacto</a>
         <a href="tel:+34644289776">+34 644 289 776</a>
       </nav>
@@ -463,67 +429,6 @@
     document.addEventListener('DOMContentLoaded', function () {
       window.JP_TRACK && window.JP_TRACK('agents_view');
     });
-  </script>
-  <script>
-    // Terminal del Polígrafo (bloque trading) — mismas reglas que la del hero
-    (function () {
-      'use strict';
-      const term = document.getElementById('qf-term');
-      const cmdEl = document.getElementById('qf-cmd');
-      const outEl = document.getElementById('qf-out');
-      const caret = document.getElementById('qf-caret');
-      if (!term || !cmdEl || !outEl) return;
-      const CMD = '/javiperez-curvefit backtest_eurusd_m15.csv';
-      const LINES = [
-        { cls: 'term-line term-line--info', html: '▸ 1.847 trades · 2019–2025 · 12 parámetros optimizados' },
-        { cls: 'term-line', html: '<span class="term-badge term-badge--warn">PBO</span><span>Probabilidad de overfitting: 0,64 — zona de peligro</span>' },
-        { cls: 'term-line', html: '<span class="term-badge term-badge--crit">DSR</span><span>Deflated Sharpe: 0,31 (Sharpe 1,9 en el report)</span>' },
-        { cls: 'term-line', html: '<span class="term-badge term-badge--pass">DATA</span><span>Serie de datos íntegra, sin huecos relevantes</span>' },
-        { cls: 'term-line term-line--score', html: '<span>Veredicto: </span><span class="term-score">CURVE-FITTING PROBABLE</span>' },
-        { cls: 'term-line term-line--route', html: '→ siguiente: /javiperez-montecarlo · /javiperez-walkforward' },
-      ];
-      function render(i) {
-        const div = document.createElement('div');
-        div.className = LINES[i].cls;
-        div.innerHTML = LINES[i].html;
-        outEl.appendChild(div);
-      }
-      const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (reduced) {
-        cmdEl.textContent = CMD;
-        if (caret) caret.style.display = 'none';
-        LINES.forEach((_, i) => render(i));
-        return;
-      }
-      let timer = null, running = false;
-      function typeCmd(i, done) {
-        cmdEl.textContent = CMD.slice(0, i);
-        if (i >= CMD.length) { timer = setTimeout(done, 420); return; }
-        timer = setTimeout(() => typeCmd(i + 1, done), 26 + Math.random() * 38);
-      }
-      function stream(i, done) {
-        if (i >= LINES.length) { done(); return; }
-        render(i);
-        timer = setTimeout(() => stream(i + 1, done), i === 0 ? 600 : 430);
-      }
-      function cycle() {
-        cmdEl.textContent = ''; outEl.textContent = '';
-        if (caret) caret.style.display = '';
-        typeCmd(0, () => {
-          if (caret) caret.style.display = 'none';
-          stream(0, () => { timer = setTimeout(cycle, 4600); });
-        });
-      }
-      function start() { if (!running) { running = true; cycle(); } }
-      function stop() { running = false; if (timer) { clearTimeout(timer); timer = null; } }
-      if ('IntersectionObserver' in window) {
-        new IntersectionObserver((es) => es.forEach((e) => e.isIntersecting ? start() : stop()), { threshold: 0.2 }).observe(term);
-      } else { start(); }
-      document.addEventListener('visibilitychange', () => {
-        if (document.hidden) stop();
-        else if (term.getBoundingClientRect().top < window.innerHeight) start();
-      });
-    })();
   </script>
 </body>
 </html>

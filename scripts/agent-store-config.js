@@ -10,7 +10,13 @@ window.JP_AGENT_STORE_CONFIG = Object.freeze({
   LEAD_SCOUT_LAUNCH_PRICE: 3,
   LEAD_SCOUT_LAUNCH_ENDS_AT: "",
   LEAD_SCOUT_SETUP_URL: "/auditoria?service=lead-scout-setup",
-  TELEGRAM_URL: "https://t.me/javiperezchallenger"
+  TELEGRAM_URL: "https://t.me/javiperezchallenger",
+
+  /* Pack SEO — producto único (no venta individual). FUENTE ÚNICA de precio y checkout.
+     Payment Link de Stripe que cobra 9,49€ (949 céntimos). */
+  SEO_PACK_CHECKOUT_URL: "https://buy.stripe.com/00w14n6zFaDEgQTfNd9fW0J",
+  SEO_PACK_PRICE: "9,49€",
+  SEO_PACK_PRICE_CENTS: 949
 });
 
 (function () {
@@ -108,6 +114,31 @@ window.JP_AGENT_STORE_CONFIG = Object.freeze({
     });
   }
 
+  /* Pack SEO: precio + checkout desde una sola fuente. Si no hay URL válida, el checkout
+     se desactiva (fail-safe) en vez de mandar al comprador a un importe equivocado. */
+  function hydrateSeoPack() {
+    document.querySelectorAll("[data-seo-price]").forEach(function (el) {
+      el.textContent = config.SEO_PACK_PRICE;
+    });
+    var ok = validHttpsUrl(config.SEO_PACK_CHECKOUT_URL);
+    document.querySelectorAll("[data-seo-checkout]").forEach(function (link) {
+      if (ok) {
+        link.href = config.SEO_PACK_CHECKOUT_URL;
+        link.removeAttribute("aria-disabled");
+        link.removeAttribute("data-disabled");
+      } else {
+        link.removeAttribute("href");
+        link.setAttribute("aria-disabled", "true");
+        link.setAttribute("data-disabled", "true");
+      }
+    });
+    document.querySelectorAll("[data-seo-checkout-state]").forEach(function (el) {
+      el.textContent = ok
+        ? "Pago único y seguro con Stripe. Recibirás el pack en el email usado en el pago."
+        : "Checkout en configuración. Vuelve en un momento.";
+    });
+  }
+
   function setupMobileBuy() {
     var bar = document.querySelector(".as-mobile-buy");
     var pricePanel = document.querySelector(".as-price-panel");
@@ -171,6 +202,7 @@ window.JP_AGENT_STORE_CONFIG = Object.freeze({
   hydrateCheckout();
   hydrateSetup();
   hydrateTelegram();
+  hydrateSeoPack();
   setupMobileBuy();
   setupTracking();
 })();
