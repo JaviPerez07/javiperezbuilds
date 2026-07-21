@@ -227,6 +227,62 @@
       box-shadow: 0 24px 56px -32px rgba(87,242,163,.9), 0 0 44px -28px rgba(87,242,163,.95);
     }
 
+    .link-tile--quant {
+      min-height: 132px;
+      align-items: start;
+      padding: 17px 15px;
+      border-color: rgba(224, 126, 68, .58);
+      background:
+        radial-gradient(circle at 5% 18%, rgba(224,126,68,.18), transparent 38%),
+        linear-gradient(145deg, rgba(224,126,68,.115), rgba(255,255,255,.026) 58%);
+      box-shadow: 0 24px 58px -42px rgba(224,126,68,.7);
+    }
+
+    .link-tile--quant .link-tile__mark {
+      margin-top: 2px;
+      border-color: rgba(224, 126, 68, .4);
+      background: rgba(224, 126, 68, .11);
+      color: #f09a68;
+    }
+
+    .link-tile--quant .link-tile__mark svg {
+      width: 20px;
+      height: 20px;
+      fill: none;
+      stroke: currentColor;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 1.7;
+    }
+
+    .link-tile--quant .link-tile__arrow { color: #d98859; }
+
+    .link-tile__badge {
+      width: fit-content;
+      padding: 4px 7px;
+      border: 1px solid rgba(224, 126, 68, .42);
+      border-radius: 999px;
+      background: rgba(224, 126, 68, .11);
+      color: #f2a171;
+      font: 700 9px/1 var(--oa-mono);
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .link-tile__price {
+      color: #d7aaa0;
+      font: 600 10px/1.35 var(--oa-mono);
+      letter-spacing: .02em;
+    }
+
+    .link-tile__cta {
+      margin-top: 2px;
+      color: #f2a171;
+      font-size: 13px;
+      line-height: 1.2;
+      font-weight: 700;
+    }
+
     .link-tile--hero .link-tile__mark {
       border-color: rgba(5, 15, 10, .16);
       background: rgba(5, 15, 10, .1);
@@ -336,6 +392,14 @@
         box-shadow: 0 28px 64px -30px rgba(87,242,163,.95), 0 0 58px -24px rgba(87,242,163,.95);
       }
 
+      .link-tile--quant:hover {
+        border-color: rgba(240, 154, 104, .82);
+        background:
+          radial-gradient(circle at 5% 18%, rgba(224,126,68,.23), transparent 40%),
+          linear-gradient(145deg, rgba(224,126,68,.15), rgba(255,255,255,.032) 58%);
+        box-shadow: 0 26px 60px -40px rgba(224,126,68,.78);
+      }
+
       .social-link:hover,
       .links-footer a:hover {
         color: var(--oa-paper);
@@ -395,6 +459,22 @@
         <p class="links-meta">Building from Almería</p>
 
         <nav class="links-list" aria-label="Enlaces principales">
+          <a class="link-tile link-tile--quant" href="https://quantforensicsfx.com/?utm_source=instagram&amp;utm_medium=organic&amp;utm_campaign=quant_launch&amp;utm_content=bio_links" data-links-track="quantforensics_link_click" data-links-source="instagram" data-links-placement="bio_links" data-links-product="quant_forensics" data-links-destination="quantforensicsfx.com" target="_blank" rel="noopener noreferrer">
+            <span class="link-tile__mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+                <path d="M4 18.5h16M5.5 16l4-4 3 2.5 5.5-7M16 7.5h2.5V10" />
+              </svg>
+            </span>
+            <span class="link-tile__copy">
+              <span class="link-tile__badge">NUEVO</span>
+              <b>Quant Forensics</b>
+              <small>15 agentes forenses para auditar backtests, estrategias y trading algorítmico. Con MT5 Bridge read-only en la versión Pro.</small>
+              <span class="link-tile__price">Core 9,49 € · Pro 24,99 €</span>
+              <span class="link-tile__cta">Audita tu estrategia →</span>
+            </span>
+            <span class="link-tile__arrow" aria-hidden="true">↗</span>
+          </a>
+
           <a class="link-tile link-tile--hero" href="auditoria.html" data-links-track="links_audit_click">
             <span class="link-tile__mark" aria-hidden="true">01</span>
             <span class="link-tile__copy">
@@ -530,6 +610,14 @@
           var payload = {};
           var platform = link.getAttribute("data-social-platform");
           if (platform) payload.platform = platform;
+          var source = link.getAttribute("data-links-source");
+          var placement = link.getAttribute("data-links-placement");
+          var product = link.getAttribute("data-links-product");
+          var destination = link.getAttribute("data-links-destination");
+          if (source) payload.source = source;
+          if (placement) payload.placement = placement;
+          if (product) payload.product = product;
+          if (destination) payload.destination = destination;
 
           track(eventName, payload);
         }, true);
