@@ -97,6 +97,7 @@ try {
     assert.equal(await quantLink.getAttribute('data-links-track'), 'quantforensics_link_click');
     await assertVisible(quantLink.getByText('NUEVO', { exact: true }), 'Quant Forensics badge');
     await assertVisible(quantLink.getByText('Audita tu estrategia →', { exact: true }), 'Quant Forensics CTA');
+    assert.equal(await quantLink.getByText(/9,49|24,99|Core/).count(), 0, 'Quant Forensics card should not expose prices');
     const quantParams = new URL(await quantLink.getAttribute('href')).searchParams;
     assert.equal(quantParams.get('utm_source'), 'instagram');
     assert.equal(quantParams.get('utm_medium'), 'organic');
